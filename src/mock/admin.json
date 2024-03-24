@@ -1,0 +1,13 @@
+{
+    "name": "ADMIN",
+    "email": "admin@gmail.com",
+    "avatar": "",
+    "password": "",
+    "role": "admin",
+    "cart": "",
+    "orders": "",
+    "addresses": "",
+    "status": "active",
+    "createDate": "",
+    "modifyDate": ""
+}
