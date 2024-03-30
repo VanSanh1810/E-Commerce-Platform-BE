@@ -15,11 +15,13 @@ const ProductSchema = new mongoose.Schema(
             trim: true,
             maxlength: [500, 'Name cannot be more than 120 characters'],
         },
-        name_slug: {
-            type: String,
-            trim: true,
-            maxlength: [500, 'Name cannot be more than 100 characters'],
-        },
+        tag: [
+            {
+                type: String,
+                trim: true,
+                maxlength: [10, 'Tag cannot be more than 10 characters'],
+            },
+        ],
         stock: {
             type: Number,
             required: [true, 'Please provide stock value'],
@@ -39,16 +41,38 @@ const ProductSchema = new mongoose.Schema(
             maxlength: [3000, 'Description can not be more than 3000 characters'],
         },
         images: [imageSchema],
-        createDate: {
-            type: String,
-        },
-        modifyDate: {
-            type: String,
-        },
+
         category: {
             type: mongoose.Schema.Types.ObjectId,
             required: [true, 'Please category'],
             ref: 'Category',
+        },
+        classify: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Classify',
+        },
+        shop: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Shop',
+        },
+        review: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Review',
+            },
+        ],
+        status: {
+            type: String,
+            enum: ['active', 'disabled', 'draft'],
+            default: 'active', // Set the default status to "active"
+        },
+        variantData: [
+            {
+                type: Object,
+            },
+        ],
+        variantDetail: {
+            type: Object,
         },
         orders: [
             {
@@ -59,6 +83,12 @@ const ProductSchema = new mongoose.Schema(
         ordersCount: {
             type: Number,
             default: 0,
+        },
+        createDate: {
+            type: String,
+        },
+        modifyDate: {
+            type: String,
         },
     },
     { toJSON: { virtuals: true }, toObject: { virtuals: true } },
@@ -80,6 +110,13 @@ ProductSchema.virtual('ordersCountVirtual').get(function () {
 ProductSchema.pre('remove', async function (next) {
     // Go to 'Reveiw; and delete all the review that are associated with this particular product
     await this.model('Review').deleteMany({ product: this._id });
+});
+
+ProductSchema.pre('save', function (next) {
+    const currentDate = new Date().getTime();
+    this.createDate = this.createDate || currentDate;
+    this.modifyDate = currentDate;
+    next();
 });
 
 const Product = mongoose.model('Product', ProductSchema);

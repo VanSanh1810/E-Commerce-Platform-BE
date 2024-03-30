@@ -15,7 +15,6 @@ const UserSchema = new mongoose.Schema({
         minlength: 3,
         maxlength: 50,
     },
-
     email: {
         type: String,
         unique: true,
@@ -55,11 +54,15 @@ const UserSchema = new mongoose.Schema({
         enum: ['active', 'banned'],
         default: 'active', // Set the default status to "active"
     },
+    shop: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Shop',
+    },
     createDate: {
-        type: String,
+        type: Number,
     },
     modifyDate: {
-        type: String,
+        type: Number,
     },
 });
 
@@ -77,11 +80,10 @@ UserSchema.methods.comparePassword = async function (candidatePassword) {
 };
 
 UserSchema.pre('save', function (next) {
-    const currentDate = new Date();
-    const formattedDate = format(currentDate, 'MMM d, eee HH:mm:ss');
-    this.createDate = this.createDate || formattedDate;
-    this.modifyDate = formattedDate;
+    const currentDate = new Date().getTime();
+    this.createDate = this.createDate || currentDate;
+    this.modifyDate = currentDate;
     next();
 });
 
-module.exports = mongoose.model('Account', UserSchema);
+module.exports = mongoose.model('User', UserSchema);

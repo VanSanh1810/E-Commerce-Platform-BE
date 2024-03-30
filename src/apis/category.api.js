@@ -6,9 +6,7 @@ const Product = require('../models/product.model');
 
 // ** ===================  CREATE Category  ===================
 const createCategory = async (req, res) => {
-    const { name } = req.body;
-    const createDate = format(new Date(), 'MMM d, eee HH:mm:ss');
-    const modifyDate = format(new Date(), 'MMM d, eee HH:mm:ss');
+    const { name, root } = req.body;
     try {
         const normalizedName = name.trim().toLowerCase();
         const existingCategories = await Category.find();
@@ -34,12 +32,18 @@ const createCategory = async (req, res) => {
 
         const category = new Category({
             name,
-            createDate,
-            modifyDate,
+            root: root,
+            child: [],
         });
 
         // Tạo category trong cơ sở dữ liệu
         await category.save();
+
+        if (root !== null) {
+            const rootCategory = await Category.findById(root);
+            rootCategory.child.push(category._id);
+            rootCategory.save();
+        }
 
         res.status(StatusCodes.CREATED).json({ status: 'success', data: category });
     } catch (error) {
@@ -50,7 +54,7 @@ const createCategory = async (req, res) => {
 
 const getAllCategories = async (req, res) => {
     try {
-        const categories = await Category.find();
+        const categories = await Category.find().populate('root', '_id');
         res.status(StatusCodes.OK).json({ status: 'success', data: categories });
     } catch (error) {
         console.error(error.stack);
@@ -67,7 +71,7 @@ const getSingleCategory = async (req, res) => {
         if (!category) {
             res.status(StatusCodes.NOT_FOUND).json({
                 status: 'error',
-                data: { message: `No product with the id ${categoryId}` },
+                data: { message: `No category with the id ${categoryId}` },
             });
         } else {
             res.status(StatusCodes.OK).json({ status: 'success', data: category });
@@ -77,9 +81,10 @@ const getSingleCategory = async (req, res) => {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Lỗi server' } });
     }
 };
+
 const updateCategory = async (req, res) => {
     const categoryId = req.params.id; // Lấy ID của danh mục cần cập nhật
-    const updatedData = req.body; // Dữ liệu cập nhật
+    const { name } = req.body; // Dữ liệu cập nhật
 
     try {
         const category = await Category.findById(categoryId);
@@ -89,7 +94,7 @@ const updateCategory = async (req, res) => {
         }
 
         // Kiểm tra trùng lặp dựa trên tên danh mục mới
-        const normalizedName = updatedData.name.trim().toLowerCase();
+        const normalizedName = name.trim().toLowerCase();
         const existingCategories = await Category.find();
 
         const matchingCategory = existingCategories.find((existingCategory) => {
@@ -105,11 +110,8 @@ const updateCategory = async (req, res) => {
                 data: { message: 'Danh mục với cùng tên đã tồn tại.' },
             });
         }
+        category.name = name;
 
-        // Sử dụng toán tử spread (...) để cập nhật tất cả thuộc tính mới từ req.body
-        Object.assign(category, updatedData);
-
-        category.modifyDate = format(new Date(), 'MMM d, eee HH:mm:ss');
         await category.save();
         res.json({ status: 'success', data: category });
     } catch (error) {

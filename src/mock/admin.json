@@ -1,13 +1,14 @@
 {
     "name": "ADMIN",
     "email": "admin@gmail.com",
-    "avatar": "",
-    "password": "",
+    "avatar": null,
+    "password": "123@admin",
     "role": "admin",
-    "cart": "",
-    "orders": "",
-    "addresses": "",
+    "cart": null,
+    "orders": null,
+    "addresses": null,
     "status": "active",
-    "createDate": "",
-    "modifyDate": ""
+    "shop": null,
+    "createDate": null,
+    "modifyDate": null
 }

@@ -1,19 +1,19 @@
 const mongoose = require('mongoose');
 
-const categorySchema = new mongoose.Schema(
+const classifySchema = new mongoose.Schema(
     {
         name: {
             type: String,
             required: true,
         },
-        root: {
+        shop: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Category',
+            ref: 'Shop',
         },
-        child: [
+        product: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'Category',
+                ref: 'Product',
             },
         ],
         createDate: {
@@ -26,13 +26,13 @@ const categorySchema = new mongoose.Schema(
     // { timestamps: true },
 );
 
-categorySchema.pre('save', function (next) {
+classifySchema.pre('save', function (next) {
     const currentDate = new Date().getTime();
     this.createDate = this.createDate || currentDate;
     this.modifyDate = currentDate;
     next();
 });
 
-const Category = mongoose.model('Category', categorySchema);
+const Classify = mongoose.model('Category', classifySchema);
 
-module.exports = Category;
+module.exports = Classify;

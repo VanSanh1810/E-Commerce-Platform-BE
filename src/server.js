@@ -13,6 +13,7 @@ const connectDB = require('./configs/connectDB');
 // Require Middleware
 const notFoundMiddleware = require('./middlewares/not-found');
 const errorHandlerMiddleware = require('./middlewares/error-handler');
+const genData = require('./mock/genData');
 
 app.use(
     cors({
@@ -71,6 +72,7 @@ const start = async () => {
     try {
         // Connect database
         await connectDB(process.env.MONGO_URL);
+        genData();
         app.listen(port, () => console.log(`🚀 Server is listening on port ${port}... ${__dirname}`));
     } catch (error) {
         console.log(error);

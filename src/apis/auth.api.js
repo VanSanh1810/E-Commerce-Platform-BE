@@ -25,11 +25,10 @@ const register = async (req, res) => {
         });
     }
     const currentDate = new Date();
-    const formattedDate = format(currentDate, 'MMM d, eee HH:mm:ss');
     // Add first registered user as admin
     const isFirstAccount = (await User.countDocuments({})) === 0;
     const role = isFirstAccount ? 'admin' : 'user';
-    const user = await User.create({ name, email, password, role, createDate: formattedDate, modifyDate: formattedDate });
+    const user = await User.create({ name, email, password, role, createDate: currentDate, modifyDate: currentDate });
 
     // Create token user
     const tokenUser = createUserToken(user);
@@ -84,6 +83,8 @@ const login = async (req, res) => {
             token,
             data: {
                 email,
+                role: user.role,
+                shop: user.shop?._id,
                 // Avoid sending the password in the response
             },
         };
