@@ -1,8 +1,11 @@
 const User = require('../models/user.model');
+const Cart = require('../models/cart.model');
+const Shop = require('../models/shop.model');
 const { StatusCodes } = require('http-status-codes');
 const CustomError = require('../errors');
-const { createUserToken, attachCookiesToResponse } = require('../utils');
+const { createUserToken, attachCookiesToResponse, isTokenValid } = require('../utils');
 const { format } = require('date-fns');
+const { use } = require('express/lib/router');
 // Register User
 const register = async (req, res) => {
     const { name, email, password } = req.body;
@@ -28,7 +31,11 @@ const register = async (req, res) => {
     // Add first registered user as admin
     const isFirstAccount = (await User.countDocuments({})) === 0;
     const role = isFirstAccount ? 'admin' : 'user';
+
     const user = await User.create({ name, email, password, role, createDate: currentDate, modifyDate: currentDate });
+    const cart = await Cart.create({ user: user.id, items: [] });
+    user.cart = cart._id;
+    user.save();
 
     // Create token user
     const tokenUser = createUserToken(user);
@@ -46,7 +53,7 @@ const register = async (req, res) => {
 // Login User
 const login = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, isAdminPage } = req.body;
 
         if (!email || !password) {
             throw new CustomError.BadRequestError('Please provide email and password');
@@ -74,6 +81,17 @@ const login = async (req, res) => {
                 data: { message: 'Incorrect email or password' },
             });
         }
+        let shopId = user.shop;
+        if (isAdminPage && user.role !== 'admin') {
+            if (!user.shop) {
+                const shop = new Shop({ vendor: user.id, status: 'pending', avatar: null });
+                user.shop = shop._id;
+                shopId = shop._id;
+                user.role = 'vendor';
+                await shop.save();
+                await user.save();
+            }
+        }
 
         const tokenUser = createUserToken(user);
         const token = attachCookiesToResponse({ res, user: tokenUser });
@@ -84,7 +102,7 @@ const login = async (req, res) => {
             data: {
                 email,
                 role: user.role,
-                shop: user.shop?._id,
+                shop: shopId,
                 // Avoid sending the password in the response
             },
         };
@@ -107,8 +125,34 @@ const logout = async (req, res) => {
     res.status(StatusCodes.OK).json({ msg: 'User logged out!' });
 };
 
+const validateToken = async (req, res) => {
+    const { token } = req.body;
+    if (token) {
+        try {
+            const decodedToken = await isTokenValid({ token: token });
+            console.log('Decoded: ', decodedToken);
+            const cart = await Cart.findOne({ user: decodedToken.userId }).populate('items.product');
+            res.status(StatusCodes.OK).json({
+                status: 'success',
+                data: { message: 'Valid token', cart: cart },
+            });
+        } catch (err) {
+            res.status(StatusCodes.UNAUTHORIZED).json({
+                status: 'error',
+                data: { message: `Invalid Token ${err}` },
+            });
+        }
+    } else {
+        res.status(StatusCodes.UNAUTHORIZED).json({
+            status: 'error',
+            data: { message: 'No token' },
+        });
+    }
+};
+
 module.exports = {
     register,
     login,
     logout,
+    validateToken,
 };

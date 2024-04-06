@@ -3,6 +3,10 @@ const categoryRoute = require('./category.route');
 const productRoute = require('./product.route');
 const userRoute = require('./user.route');
 const reviewRoute = require('./review.route');
+const classifyRoute = require('./classify.route');
+const shopRoute = require('./shop.route');
+const addressRoute = require('./address.route');
+const cartRoute = require('./cart.route');
 
 function route(app) {
     app.use('/api/auth', authRouter);
@@ -10,7 +14,10 @@ function route(app) {
     app.use('/api/product', productRoute);
     app.use('/api/user', userRoute);
     app.use('/api/review', reviewRoute);
-    // app.use('/api', userRouter);
+    app.use('/api/classify', classifyRoute);
+    app.use('/api/shop', shopRoute);
+    app.use('/api/address', addressRoute);
+    app.use('/api/cart', cartRoute);
 }
 
 module.exports = route;

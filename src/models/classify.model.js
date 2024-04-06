@@ -33,6 +33,6 @@ classifySchema.pre('save', function (next) {
     next();
 });
 
-const Classify = mongoose.model('Category', classifySchema);
+const Classify = mongoose.model('Classify', classifySchema);
 
 module.exports = Classify;

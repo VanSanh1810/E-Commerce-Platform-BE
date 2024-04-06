@@ -2,20 +2,24 @@ const mongoose = require('mongoose');
 
 const AddressSchema = new mongoose.Schema({
     name: {
-        type: String,
-        required: [true, 'Please provide name'],
+        type: mongoose.Schema.Types.String,
+        required: true,
+    },
+    phone: {
+        type: mongoose.Schema.Types.String,
+        required: true,
     },
     address: {
         province: {
-            type: mongoose.Schema.Types.String,
+            type: mongoose.Schema.Types.Number,
             required: true,
         },
         district: {
-            type: mongoose.Schema.Types.String,
+            type: mongoose.Schema.Types.Number,
             required: true,
         },
         ward: {
-            type: mongoose.Schema.Types.String,
+            type: mongoose.Schema.Types.Number,
             required: true,
         },
         detail: {
@@ -24,6 +28,10 @@ const AddressSchema = new mongoose.Schema({
         },
     },
     isHome: {
+        type: Boolean,
+        default: false,
+    },
+    isWork: {
         type: Boolean,
         default: false,
     },

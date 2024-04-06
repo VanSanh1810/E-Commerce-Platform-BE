@@ -8,8 +8,8 @@ const authenticateUser = async (req, res, next) => {
     }
 
     try {
-        const { name, userId, role } = isTokenValid({ token });
-        req.user = { name, userId, role };
+        const { name, userId, role, shop } = await isTokenValid({ token });
+        req.user = { name, userId, role, shop };
         console.log(req.user);
         next();
     } catch (error) {

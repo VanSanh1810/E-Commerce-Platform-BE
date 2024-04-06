@@ -1,5 +1,7 @@
 const Product = require('../models/product.model');
 const Category = require('../models/category.model');
+const Classify = require('../models/classify.model');
+const Shop = require('../models/shop.model');
 const Review = require('../models/review.model');
 // const Brand = require('../models/brandModel');
 // const Variation = require('../models/variationModel');
@@ -13,7 +15,8 @@ const path = require('path');
 // ** ===================  CREATE PRODUCT  ===================
 const createProduct = async (req, res) => {
     // Set the user ID in the request body
-    const { name, stock, price, description, discountPrice, categoryId } = req.body;
+    const { userId } = req.user;
+    const { name, description, classifyId, categoryId, tags, price, discountPrice, stock, variantData, variantDetail } = req.body;
     const images = req.files;
     // console.log(req.files);
     try {
@@ -38,37 +41,58 @@ const createProduct = async (req, res) => {
                 data: { message: 'Product with the same name already exists.' },
             });
         }
+
+        const userShop = await Shop.findOne({ vendor: userId });
+        if (!userShop) {
+            res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: { message: 'Người dùng không sở hữu shop !' } });
+        }
         const imageData = images.map((image) => {
             return {
                 url: `http://localhost:4000/public/uploads/${path.basename(image.path)}`, // Tạo URL cục bộ cho hình ảnh dựa trên đường dẫn tạm thời
             };
         });
-        const name_slug = name.trim().toLowerCase().replace(/\s+/g, '-');
         // Create the product object and set the image property
+
+        const newVDetail = variantDetail ? JSON.parse(variantDetail) : null;
+        const newVData = variantData ? JSON.parse(variantData) : null;
+
         const product = new Product({
-            name,
-            name_slug,
-            stock,
-            price,
-            discountPrice,
-            description,
+            name: name,
+            description: description,
+            // classify: classifyId,
+            // category: categoryId,
+            tag: tags,
+            discountPrice: discountPrice ? discountPrice : 0,
+            price: price ? price : 0,
+            stock: stock ? stock : 0,
             images: imageData,
-            category: categoryId,
+            variantData: newVData,
+            variantDetail: newVDetail,
+            review: [],
+            status: 'active',
+            order: [],
             //user: userId
             // Include other properties from req.body
             // For example: tensanpham, soluong, dongia, etc.
         });
 
-        product.publishedDate = format(new Date(), 'MMM d, eee HH:mm:ss');
-        product.updatedAt = format(new Date(), 'MMM d, eee HH:mm:ss');
         // Create the product in the database
         const category = await Category.findById(categoryId);
-        product.category = category;
+        if (category) {
+            product.category = category;
+        }
+
+        if (classifyId) {
+            const classify = await Classify.findById(classifyId);
+            product.classify = classify;
+        } else {
+            product.classify = null;
+        }
+        product.shop = userShop;
+
         await product.save();
 
-        category.products.push(product);
-        await category.save();
-        res.status(StatusCodes.CREATED).json({ status: 'success', data: { a: 1 } });
+        res.status(StatusCodes.CREATED).json({ status: 'success', data: { message: 'Product created' } });
     } catch (error) {
         console.error(error.stack);
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Lỗi server' } });
@@ -133,7 +157,10 @@ const getSingleProduct = async (req, res) => {
     const { id: productId } = req.params;
 
     try {
-        const product = await Product.findOne({ _id: productId }).populate({ path: 'category', select: 'name' });
+        const product = await Product.findOne({ _id: productId })
+            .populate({ path: 'category', select: 'name' })
+            .populate({ path: 'classify', select: 'name' })
+            .populate({ path: 'shop', select: 'name' });
 
         if (!product) {
             res.status(StatusCodes.NOT_FOUND).json({
@@ -233,9 +260,6 @@ const updateProduct = async (req, res) => {
             // Cập nhật thông tin khác của sản phẩm từ req.body
             Object.assign(product, updatedData);
         }
-        // product.newPrice = product.price - (product.price * product.discount) / 100;
-        // Cập nhật ngày cập nhật
-        product.updatedAt = format(new Date(), 'MMM d, eee HH:mm:ss');
 
         // Lưu sản phẩm đã cập nhật vào cơ sở dữ liệu
         await product.save();

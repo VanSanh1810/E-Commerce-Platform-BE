@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
 
 const imageSchema = new mongoose.Schema({
     url: {
@@ -10,15 +11,16 @@ const shopSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, 'Please provide name'],
             minlength: 3,
             maxlength: 50,
+            default: null,
         },
         avatar: imageSchema,
         description: {
             type: String,
             minlength: 3,
             maxlength: 50,
+            default: null,
         },
         vendor: {
             type: mongoose.Schema.Types.ObjectId,
@@ -50,8 +52,9 @@ const shopSchema = new mongoose.Schema(
         ],
         status: {
             type: String,
-            enum: ['active', 'banned', 'stop'],
-            default: 'active', // Set the default status to "active"
+            enum: ['active', 'banned', 'stop', 'pending'],
+            default: 'pending', // Set the default status to "pending"
+            // on first create , shop nead to provide  full information to change to the active state
         },
         addresses: [
             {
@@ -62,7 +65,6 @@ const shopSchema = new mongoose.Schema(
         email: {
             type: String,
             unique: true,
-            required: [true, 'Please provide email'],
             // Custom Validators package
             validate: {
                 // validator package
@@ -93,6 +95,12 @@ shopSchema.pre('save', function (next) {
     this.createDate = this.createDate || currentDate;
     this.modifyDate = currentDate;
     next();
+});
+
+shopSchema.pre('save', function (next) {
+    if (this.name && this.avatar && this.addresses && this.email){
+        this.status = 'active'
+    } next();
 });
 
 const Shop = mongoose.model('Shop', shopSchema);
