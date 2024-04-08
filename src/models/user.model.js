@@ -36,6 +36,12 @@ const UserSchema = new mongoose.Schema({
         enum: ['admin', 'user', 'vendor'],
         default: 'user',
     },
+    follow: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Shop',
+        },
+    ],
     cart: { type: mongoose.Schema.Types.ObjectId, ref: 'Cart' },
     orders: [
         {

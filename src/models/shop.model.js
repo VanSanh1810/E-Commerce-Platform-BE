@@ -26,22 +26,10 @@ const shopSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
         },
-        follower: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'User',
-            },
-        ],
         classify: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Classify',
-            },
-        ],
-        product: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Product',
             },
         ],
         voucher: [
@@ -56,12 +44,11 @@ const shopSchema = new mongoose.Schema(
             default: 'pending', // Set the default status to "pending"
             // on first create , shop nead to provide  full information to change to the active state
         },
-        addresses: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Address',
-            },
-        ],
+        addresses: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Address',
+            default: null,
+        },
         email: {
             type: String,
             unique: true,
@@ -72,14 +59,6 @@ const shopSchema = new mongoose.Schema(
                 message: 'Please provide valid email',
             },
         },
-
-        orders: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Order',
-            },
-        ],
-
         createDate: {
             type: Number,
         },
@@ -98,9 +77,12 @@ shopSchema.pre('save', function (next) {
 });
 
 shopSchema.pre('save', function (next) {
-    if (this.name && this.avatar && this.addresses && this.email){
-        this.status = 'active'
-    } next();
+    if (this.name && this.avatar && this.addresses && this.email) {
+        this.status = 'active';
+    } else {
+        this.status = 'pending';
+    }
+    next();
 });
 
 const Shop = mongoose.model('Shop', shopSchema);

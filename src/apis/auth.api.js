@@ -83,6 +83,7 @@ const login = async (req, res) => {
         }
         let shopId = user.shop;
         if (isAdminPage && user.role !== 'admin') {
+            // create shop went FIRST login to admin page
             if (!user.shop) {
                 const shop = new Shop({ vendor: user.id, status: 'pending', avatar: null });
                 user.shop = shop._id;
@@ -131,7 +132,7 @@ const validateToken = async (req, res) => {
         try {
             const decodedToken = await isTokenValid({ token: token });
             console.log('Decoded: ', decodedToken);
-            const cart = await Cart.findOne({ user: decodedToken.userId }).populate('items.product');
+            const cart = await Cart.findOne({ user: decodedToken.userId });
             res.status(StatusCodes.OK).json({
                 status: 'success',
                 data: { message: 'Valid token', cart: cart },

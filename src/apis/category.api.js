@@ -4,7 +4,7 @@ const { format } = require('date-fns');
 const { StatusCodes } = require('http-status-codes');
 const Product = require('../models/product.model');
 
-// ** ===================  CREATE Category  ===================
+// ** ===================  CREATE CATEGORY  ===================
 const createCategory = async (req, res) => {
     const { name, root } = req.body;
     try {
@@ -52,6 +52,7 @@ const createCategory = async (req, res) => {
     }
 };
 
+// ** ===================  GET ALL CATEGORY  ===================
 const getAllCategories = async (req, res) => {
     try {
         const categories = await Category.find().populate('root', '_id');
@@ -62,6 +63,7 @@ const getAllCategories = async (req, res) => {
     }
 };
 
+// ** ===================  GET SINGLE CATEGORY  ===================
 const getSingleCategory = async (req, res) => {
     const { id: categoryId } = req.params;
 
@@ -82,6 +84,7 @@ const getSingleCategory = async (req, res) => {
     }
 };
 
+// ** ===================  UPDATE CATEGORY  ===================
 const updateCategory = async (req, res) => {
     const categoryId = req.params.id; // Lấy ID của danh mục cần cập nhật
     const { name } = req.body; // Dữ liệu cập nhật
@@ -119,6 +122,7 @@ const updateCategory = async (req, res) => {
         res.status(500).json({ status: 'error', data: { message: 'Lỗi server' } });
     }
 };
+// ** ===================  DELETE CATEGORY  ===================
 const deleteCategory = async (req, res) => {
     const categoryId = req.params.id; // Extract the categoryId from the request body
 
@@ -133,10 +137,33 @@ const deleteCategory = async (req, res) => {
         // const currentCate = await Category.findById(categoryId);
 
         if (productsInCategory.length > 0) {
+            const currentCate = await Category.findById(categoryId);
+            const root = currentCate.root ? currentCate.root : null;
+            let allCateInTree = [];
+            //
+            const findAllCateInTreeFromAsignNode = async (id) => {
+                const cate = await Category.findById(id);
+                if (cate) {
+                    allCateInTree.push(cate._id);
+                    if (cate.child.length > 0) {
+                        for (let i = 0; i < cate.child.length; i++) {
+                            await findAllCateInTreeFromAsignNode(cate.child[i]);
+                        }
+                    } else {
+                        return;
+                    }
+                } else {
+                    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Vô lý' } });
+                }
+            };
+            //
+            await findAllCateInTreeFromAsignNode(categoryId);
+            await Product.updateMany({ category: { $in: allCateInTree } }, { category: root });
+            await currentCate.delete();
             // Nếu có sản phẩm trong danh mục, trả về lỗi và thông báo
             return res
-                .status(400)
-                .json({ status: 'error', data: { message: 'Không thể xóa danh mục vì có sản phẩm liên quan.' } });
+                .status(StatusCodes.OK)
+                .json({ status: 'sucess', data: { message: 'Category deleted and updated product !' } });
         } else {
             // Nếu không có sản phẩm trong danh mục, thì xóa danh mục
             const category = await Category.findByIdAndRemove(categoryId);

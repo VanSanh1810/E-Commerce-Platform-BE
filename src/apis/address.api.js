@@ -63,7 +63,7 @@ const getShopAddress = async (req, res) => {
     const { role, userId } = req.user;
     const { id } = req.params;
     if (role === 'user') {
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: '!!!' });
     }
     if (role === 'admin') {
         try {
@@ -71,7 +71,7 @@ const getShopAddress = async (req, res) => {
             if (!shop) {
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
             }
-            const listAddress = await Address.find({ _id: { $in: shop.addresses } });
+            const listAddress = await Address.findById(shop.addresses);
             res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
         } catch (err) {
             res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
@@ -86,7 +86,7 @@ const getShopAddress = async (req, res) => {
             if (!shop) {
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
             }
-            const listAddress = await Address.find({ _id: { $in: shop.addresses } });
+            const listAddress = await Address.findById(shop.addresses);
             res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
         } catch (err) {
             res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
@@ -110,13 +110,13 @@ const addAddress = async (req, res) => {
             }
             const { name, addressData, isHome, isWork } = req.body;
             const newAddress = await Address.create({
-                name: name,
+                name: null,
                 address: addressData,
                 phone: '0',
                 isHome: false,
                 isWork: false,
             });
-            shop.addresses.push(newAddress._id);
+            shop.addresses = newAddress._id;
             await shop.save();
             return res.status(StatusCodes.OK).json({ status: 'err', data: { msg: 'Address create' } });
         } else {
@@ -171,17 +171,12 @@ const deleteAddress = async (req, res) => {
                     .status(StatusCodes.INTERNAL_SERVER_ERROR)
                     .json({ status: 'error', data: { error: 'User have no shop' } });
             }
-            if (!shop.addresses.includes(address._id)) {
+            if (shop.addresses !== address._id) {
                 return res
                     .status(StatusCodes.INTERNAL_SERVER_ERROR)
                     .json({ status: 'error', data: { error: 'Your shop dont own this address' } });
             }
-            const addressRefToRemove = shop.addresses.indexOf(address._id);
-            if (addressRefToRemove !== -1) {
-                shop.addresses.splice(addressRefToRemove, 1);
-            } else {
-                throw new Error('Không tìm thấy phần tử cần loại bỏ trong mảng tham chiếu');
-            }
+            shop.addresses = null;
             await shop.save();
             await address.delete();
             return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Address deleted' } });

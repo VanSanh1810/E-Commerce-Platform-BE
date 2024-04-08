@@ -10,12 +10,6 @@ const classifySchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Shop',
         },
-        product: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Product',
-            },
-        ],
         createDate: {
             type: String,
         },

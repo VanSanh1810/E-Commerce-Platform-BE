@@ -3,11 +3,9 @@ const mongoose = require('mongoose');
 const AddressSchema = new mongoose.Schema({
     name: {
         type: mongoose.Schema.Types.String,
-        required: true,
     },
     phone: {
         type: mongoose.Schema.Types.String,
-        required: true,
     },
     address: {
         province: {

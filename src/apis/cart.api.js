@@ -7,6 +7,9 @@ const addProductToCart = async (req, res, next) => {
     const { userId } = req.user;
     const { product, variant, quantity } = req.body;
     try {
+        if (!product) {
+            return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: { msg: 'No user found' } });
+        }
         const user = await User.findById(userId);
         if (!user) {
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No user found' } });
@@ -16,20 +19,17 @@ const addProductToCart = async (req, res, next) => {
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No cart found' } });
         }
         //
-        let itemsInCart = cart.items.length > 0 ? [...cart.items] : [];
         let index = null;
-        index = itemsInCart.findIndex((cproduct) => cproduct.product === product && arraysAreEqual(cproduct.variant, variant));
+        index = cart.items.findIndex(
+            (cproduct) => cproduct.product.toString() === product && arraysAreEqual(cproduct.variant, variant),
+        );
 
         if (index !== -1) {
             // found a product
-            itemsInCart[index].quantity += quantity ? quantity : 1;
+            cart.items[index].quantity = cart.items[index].quantity + (quantity ? quantity : 1);
         } else {
-            itemsInCart = [
-                ...itemsInCart,
-                { product, variant: variant.length > 0 ? variant : [], quantity: quantity ? quantity : 1 },
-            ];
+            cart.items = [...cart.items, { product, variant: variant ? variant : [], quantity: quantity ? quantity : 1 }];
         }
-        cart.items = [...itemsInCart];
         await cart.save();
         return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Cart updated' } });
     } catch (err) {
@@ -39,16 +39,94 @@ const addProductToCart = async (req, res, next) => {
 
 const deleteProductFromCart = async (req, res, next) => {
     const { userId } = req.user;
-    const { id } = req.params;
+    const { product, variant } = req.body;
+    try {
+        if (!product) {
+            return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: { msg: 'No product found' } });
+        }
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No user found' } });
+        }
+        const cart = await Cart.findById(user.cart);
+        if (!cart) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No cart found' } });
+        }
+        //
+        const newCartItems = cart.items.filter(
+            (cproduct) => cproduct.product.toString() !== product || !arraysAreEqual(cproduct.variant, variant),
+        );
+        cart.items = newCartItems ? [...newCartItems] : [];
+        await cart.save();
+        return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Cart updated' } });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: err } });
+    }
 };
 
 const updateProductQuantity = async (req, res, next) => {
-    const { role, userId } = req.user;
-    const { id } = req.params;
+    const { userId } = req.user;
+    const { product, variant, gap } = req.body;
+    try {
+        if (!product) {
+            return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: { msg: 'No user found' } });
+        }
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No user found' } });
+        }
+        const cart = await Cart.findById(user.cart);
+        if (!cart) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No cart found' } });
+        }
+        //
+        let index = null;
+
+        index = cart.items.findIndex(
+            (cproduct) => cproduct.product.toString() === product && arraysAreEqual(cproduct.variant, variant),
+        );
+
+        if (index !== -1) {
+            // found a product
+            const q = cart.items[index].quantity + (gap ? gap : 0);
+            if (q > 0) {
+                cart.items[index].quantity = q;
+            } else {
+                cart.items[index].quantity = 1;
+            }
+        } else {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'Item not found' } });
+        }
+        await cart.save();
+        return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Cart updated' } });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: err } });
+    }
+};
+
+const clearCart = async (req, res, next) => {
+    const { userId } = req.user;
+    try {
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No user found' } });
+        }
+        const cart = await Cart.findById(user.cart);
+        if (!cart) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No cart found' } });
+        }
+        //
+        cart.items = [];
+        await cart.save();
+        return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Cart clear' } });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: err } });
+    }
 };
 
 module.exports = {
     addProductToCart,
     deleteProductFromCart,
     updateProductQuantity,
+    clearCart,
 };

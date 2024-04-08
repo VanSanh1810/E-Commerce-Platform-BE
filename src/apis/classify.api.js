@@ -6,7 +6,7 @@ const getShopClassify = async (req, res) => {
     const { shopId } = req.params;
     console.log(shopId);
     if (shopId) {
-        const listClassify = await Classify.find({ shop: shopId }).populate({ path: 'product', select: '_id' });
+        const listClassify = await Classify.find({ shop: shopId });
         if (listClassify.length > 0) {
             return res.status(StatusCodes.OK).json({ status: 'success', data: [...listClassify] });
         } else {
@@ -54,7 +54,6 @@ const createClassify = async (req, res) => {
             const newClassify = new Classify({
                 name: name,
                 shop: userShop._id,
-                product: [],
             });
             await newClassify.save();
             userShop.classify.push(newClassify._id);

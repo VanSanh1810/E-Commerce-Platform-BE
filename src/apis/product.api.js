@@ -102,7 +102,7 @@ const createProduct = async (req, res) => {
 // ** ===================  GET ALL PRODUCTS  ===================
 const getAllProducts = async (req, res) => {
     try {
-        const products = await Product.find().populate({ path: 'category', select: 'name' });
+        const products = await Product.find().populate({ path: 'category', select: 'name' }).populate({ path: 'shop', select: 'name' });
 
         if (products.length === 0) {
             return res.status(StatusCodes.NOT_FOUND).json({ status: 'error', data: { message: 'Không có sản phẩm nào.' } });

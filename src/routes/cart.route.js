@@ -3,11 +3,11 @@ const route = express.Router();
 
 const cartApi = require('../apis/cart.api');
 
-route.post('/', cartApi.addProductToCart);
-route.delete('/', cartApi.deleteProductFromCart);
-route.patch('/', cartApi.updateProductQuantity);
-// route.post('/logout', authApi.logout);
+const { authenticateUser, authorizePermissions } = require('../middlewares/authentication');
 
-// route.post('/validate', authApi.validateToken);
+route.delete('/', authenticateUser, authorizePermissions('user', 'vendor'), cartApi.clearCart);
+route.post('/', authenticateUser, authorizePermissions('user', 'vendor'), cartApi.addProductToCart);
+route.put('/', authenticateUser, authorizePermissions('user', 'vendor'), cartApi.deleteProductFromCart);
+route.patch('/', authenticateUser, authorizePermissions('user', 'vendor'), cartApi.updateProductQuantity);
 
 module.exports = route;
