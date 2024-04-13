@@ -6,10 +6,10 @@ const { authenticateUser, authorizePermissions } = require('../middlewares/authe
 
 const shopApi = require('../apis/shop.api');
 
-route.patch('/', authenticateUser, authorizePermissions('vendor'), shopApi.updateSingleShop);
-
 route.get('/:id', shopApi.getSingleShops);
+route.patch('/:id', authenticateUser, authorizePermissions('admin'), shopApi.changeShopStatus);
 route.get('/', shopApi.getAllShops);
+route.post('/', authenticateUser, authorizePermissions('vendor', 'admin'), uploadI.single('images'), shopApi.updateSingleShop);
 
 // route.get('/', authenticateUser, authorizePermissions('admin'), userApi.getAllUsers);
 

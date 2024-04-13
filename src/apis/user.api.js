@@ -11,12 +11,12 @@ const { createTokenUser, attachCookiesToResponse, checkPermissions } = require('
 const updateUserPassword = async (req, res) => {
     const { oldPassword, newPassword } = req.body;
     if (!oldPassword || !newPassword) {
-        res.status(StatusCodes.NOT_ACCEPTABLE).json({ msg: 'Please provide both values' });
+        return res.status(StatusCodes.NOT_ACCEPTABLE).json({ msg: 'Please provide both values' });
     }
     const user = await User.findOne({ _id: req.user.userId });
     const isPasswordCorrect = await user.comparePassword(oldPassword);
     if (!isPasswordCorrect) {
-        res.status(StatusCodes.NOT_ACCEPTABLE).json({ msg: 'Wrong password provided' });
+        return res.status(StatusCodes.NOT_ACCEPTABLE).json({ msg: 'Wrong password provided' });
     }
     user.password = newPassword;
     await user.save();
@@ -30,18 +30,18 @@ const updateUserData = async (req, res) => {
     if (role === 'admin') {
         const result = await User.findByIdAndUpdate(id, dataToUpdate, { runValidators: true });
         if (!result) {
-            res.status(StatusCodes.OK).json({ msg: 'No user found' });
+            return res.status(StatusCodes.OK).json({ msg: 'No user found' });
         }
-        res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Account updated' } });
+        return res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Account updated' } });
     } else {
         const user = await User.findById(userId);
         if (!user) {
-            res.status(StatusCodes.OK).json({ msg: 'No user found' });
+            return res.status(StatusCodes.OK).json({ msg: 'No user found' });
         }
         user.email = req.body.email;
         user.name = req.body.name;
         await user.save();
-        res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Account updated' } });
+        return res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Account updated' } });
     }
 };
 
@@ -50,35 +50,35 @@ const getUser = async (req, res) => {
     const { id } = req.params;
     if (role === 'admin') {
         try {
-            const user = await User.findById(id).select({ password: 0 });
+            const user = await User.findById(id).select({ password: 0 }).populate('shop', 'name');
             if (!user) {
-                const user2 = await User.findById(userId).select({ password: 0 });
+                const user2 = await User.findById(userId).select({ password: 0 }).populate('shop', 'name');
                 if (!user2) {
-                    res.status(StatusCodes.OK).json({ msg: 'No user found' });
+                    return res.status(StatusCodes.OK).json({ msg: 'No user found' });
                 }
-                res.status(StatusCodes.OK).json({ status: 'success', data: user2 });
+                return res.status(StatusCodes.OK).json({ status: 'success', data: user2 });
             }
-            res.status(StatusCodes.OK).json({ status: 'success', data: user });
+            return res.status(StatusCodes.OK).json({ status: 'success', data: user });
         } catch (error) {
             try {
-                const user2 = await User.findById(userId).select({ password: 0 });
+                const user2 = await User.findById(userId).select({ password: 0 }).populate('shop', 'name');
                 if (!user2) {
-                    res.status(StatusCodes.OK).json({ msg: 'No user found' });
+                    return res.status(StatusCodes.OK).json({ msg: 'No user found' });
                 }
-                res.status(StatusCodes.OK).json({ status: 'success', data: user2 });
+                return res.status(StatusCodes.OK).json({ status: 'success', data: user2 });
             } catch (err) {
-                res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: error });
+                return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: error });
             }
         }
     } else {
         try {
-            const user = await User.findById(userId).select({ password: 0 });
+            const user = await User.findById(userId).select({ password: 0 }).populate('shop', 'name');
             if (!user) {
-                res.status(StatusCodes.OK).json({ msg: 'No user found' });
+                return res.status(StatusCodes.OK).json({ msg: 'No user found' });
             }
-            res.status(StatusCodes.OK).json({ status: 'success', data: user });
+            return res.status(StatusCodes.OK).json({ status: 'success', data: user });
         } catch (error) {
-            res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: error });
+            return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: error });
         }
     }
 };

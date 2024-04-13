@@ -16,7 +16,7 @@ const productApi = require('../apis/product.api');
 
 
 route.get('/:id', productApi.getSingleProduct);
-route.patch('/:id', authenticateUser, authorizePermissions('admin', 'vendor'), uploadI.array('images'), productApi.updateProduct);
+route.post('/:id', authenticateUser, authorizePermissions('admin', 'vendor'), uploadI.array('images'), productApi.updateProduct);
 route.delete('/:id', authenticateUser, authorizePermissions('admin', 'vendor'), productApi.deleteProduct);
 
 route.post('/', authenticateUser, authorizePermissions('admin', 'vendor'), uploadI.array('images'), productApi.createProduct);

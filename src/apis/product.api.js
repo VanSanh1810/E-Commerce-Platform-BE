@@ -2,15 +2,14 @@ const Product = require('../models/product.model');
 const Category = require('../models/category.model');
 const Classify = require('../models/classify.model');
 const Shop = require('../models/shop.model');
+const User = require('../models/user.model');
 const Review = require('../models/review.model');
-// const Brand = require('../models/brandModel');
-// const Variation = require('../models/variationModel');
 const { format } = require('date-fns');
-// const Color = require('../models/colorsModel');
 const CustomError = require('../errors');
 const { StatusCodes } = require('http-status-codes');
 const fs = require('fs');
 const path = require('path');
+const { isNullOrUndefined } = require('util');
 
 // ** ===================  CREATE PRODUCT  ===================
 const createProduct = async (req, res) => {
@@ -101,11 +100,19 @@ const createProduct = async (req, res) => {
 
 // ** ===================  GET ALL PRODUCTS  ===================
 const getAllProducts = async (req, res) => {
+    const productQuery = req.query;
     try {
-        const products = await Product.find().populate({ path: 'category', select: 'name' }).populate({ path: 'shop', select: 'name' });
+        let products = await Product.find()
+            .populate({ path: 'shop', select: 'name' })
+            .populate({ path: 'category', select: 'name' });
 
         if (products.length === 0) {
             return res.status(StatusCodes.NOT_FOUND).json({ status: 'error', data: { message: 'Không có sản phẩm nào.' } });
+        }
+
+        if (productQuery.shopId) {
+            const filteredProducts = products.filter((product) => product.shop.equals(productQuery.shopId));
+            products = [...filteredProducts];
         }
 
         Promise.all(
@@ -157,7 +164,7 @@ const getSingleProduct = async (req, res) => {
     const { id: productId } = req.params;
 
     try {
-        const product = await Product.findOne({ _id: productId })
+        const product = await Product.findById(productId)
             .populate({ path: 'category', select: 'name' })
             .populate({ path: 'classify', select: 'name' })
             .populate({ path: 'shop', select: 'name' });
@@ -181,42 +188,65 @@ const updateProduct = async (req, res) => {
     const updatedData = req.body;
     const images = req.files;
 
+    // return res.status(StatusCodes.NOT_ACCEPTABLE).json({
+    //     status: 'error',
+    //     data: { message: updatedData },
+    // });
+
     try {
         const product = await Product.findById(productId);
 
         if (!product) {
-            return res.status(404).json({
+            return res.status(StatusCodes.NOT_ACCEPTABLE).json({
                 status: 'error',
-                data: { message: 'Không tìm thấy sản phẩm' },
+                data: { message: 'No product found' },
+            });
+        }
+
+        const user = await User.findById(req.user.userId);
+        if (!user) {
+            return res.status(StatusCodes.NOT_ACCEPTABLE).json({
+                status: 'error',
+                data: { message: 'No user found' },
+            });
+        }
+
+        const shop = await Shop.findOne({ vendor: user._id });
+        if (!shop) {
+            return res.status(StatusCodes.NOT_ACCEPTABLE).json({
+                status: 'error',
+                data: { message: 'No shop found' },
+            });
+        }
+
+        if (!product.shop.equals(shop._id)) {
+            return res.status(StatusCodes.NOT_ACCEPTABLE).json({
+                status: 'error',
+                data: { message: `Shop dont own this product ${product.shop} , ${shop._id}` },
             });
         }
 
         // Kiểm tra nếu có hình ảnh mới được tải lên
         if (images && images.length > 0) {
             // Xóa tất cả hình ảnh cũ bằng cách gỡ bỏ tệp hình ảnh cục bộ
-            const uploadDirectory = './public/uploads';
-            // Xóa hình ảnh cục bộ
-            product.images.forEach((image) => {
-                const imagePath = path.join(uploadDirectory, path.basename(image.url));
-
-                if (fs.existsSync(imagePath)) {
-                    try {
-                        fs.unlinkSync(imagePath);
-                    } catch (error) {
-                        console.error(`Lỗi khi xóa tệp ${imagePath}: ${error.message}`);
-                    }
-                }
-            });
 
             // Lưu hình ảnh mới vào thư mục cục bộ và cập nhật đường dẫn
-            const imageData = images.map((image) => {
+            const newImageData = images.map((image) => {
                 return {
                     url: `http://localhost:4000/public/uploads/${path.basename(image.path)}`, // Tạo URL cục bộ cho hình ảnh dựa trên đường dẫn tạm thời
                 };
             });
 
             // Cập nhật mảng ảnh của sản phẩm với các đối tượng hình ảnh mới
-            product.images = imageData;
+            const imgLeft = [...JSON.parse(updatedData.imgLeft)];
+            const currentImg = [...product.images];
+            function removeCommonElements(arrayA, arrayB) {
+                // Lọc các phần tử của mảng A không có trong mảng B
+                const newArray = arrayA.filter((element) => arrayB.includes(element.url));
+                return newArray;
+            }
+            const updatedImgArr = removeCommonElements(currentImg, imgLeft);
+            product.images = [...updatedImgArr, ...newImageData];
         }
         if (updatedData.name) {
             const normalizedName = updatedData.name.trim().toLowerCase();
@@ -230,41 +260,58 @@ const updateProduct = async (req, res) => {
             });
 
             if (matchingProduct) {
-                return res.status(400).json({
+                return res.status(StatusCodes.NOT_ACCEPTABLE).json({
                     status: 'error',
                     data: { message: 'Tên sản phẩm đã tồn tại.' },
                 });
             }
         }
-
-        if (product.ordersCount > 0) {
-            // Cho phép chỉ cập nhật thuộc tính 'stock', các thuộc tính khác có thể cập nhật
-            if (updatedData.stock !== undefined || updatedData.price !== undefined) {
-                // Cập nhật thuộc tính 'stock'
-                if (updatedData.stock !== undefined) {
-                    // Cập nhật thuộc tính 'stock'
-                    product.stock = updatedData.stock;
-                }
-                if (updatedData.price !== undefined) {
-                    // Cập nhật thuộc tính 'price'
-                    product.price = updatedData.price;
-                }
-            } else {
-                // Nếu không cập nhật 'stock', trả về lỗi
-                return res.status(400).json({
+        if (updatedData.stock) {
+            product.stock = updatedData.stock;
+        }
+        if (updatedData.price) {
+            product.price = updatedData.price;
+        }
+        if (updatedData.discountPrice) {
+            product.discountPrice = updatedData.discountPrice;
+        }
+        if (updatedData.description) {
+            product.description = updatedData.description;
+        }
+        if (updatedData.tags) {
+            product.tag = updatedData.tags;
+        }
+        if (updatedData.categoryId) {
+            const cate = await Category.findById(updatedData.categoryId);
+            if (!cate) {
+                return res.status(StatusCodes.NOT_ACCEPTABLE).json({
                     status: 'error',
-                    data: { message: 'Không thể cập nhật thuộc tính khác khi đã có đơn hàng.' },
+                    data: { message: 'No category provide' },
                 });
             }
-        } else {
-            // Cập nhật thông tin khác của sản phẩm từ req.body
-            Object.assign(product, updatedData);
+            product.category = cate._id;
         }
+
+        const classify = await Classify.findById(updatedData.classifyId);
+        product.classify = classify?._id ? classify._id : null;
+
+        const newVDetail = updatedData.variantDetail
+            ? JSON.parse(updatedData.variantDetail).length > 0
+                ? JSON.parse(updatedData.variantDetail)
+                : null
+            : null;
+        const newVData = updatedData.variantData
+            ? JSON.parse(updatedData.variantData).length > 0
+                ? JSON.parse(updatedData.variantData)
+                : null
+            : null;
+        product.variantData = newVData;
+        product.variantDetail = newVDetail;
 
         // Lưu sản phẩm đã cập nhật vào cơ sở dữ liệu
         await product.save();
 
-        res.json({ status: 'success', data: product });
+        res.json({ status: 'success', data: { message: 'Product updated', product: product } });
     } catch (error) {
         console.error(error.stack);
         res.status(500).json({ status: 'error', data: { message: 'Lỗi server' } });

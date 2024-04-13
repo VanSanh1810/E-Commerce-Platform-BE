@@ -77,10 +77,16 @@ shopSchema.pre('save', function (next) {
 });
 
 shopSchema.pre('save', function (next) {
-    if (this.name && this.avatar && this.addresses && this.email) {
-        this.status = 'active';
-    } else {
-        this.status = 'pending';
+    if (!this.isModified('status')) {
+        if (this.name && this.avatar && this.addresses && this.email) {
+            if (this.status === 'pending') {
+                this.status = 'active';
+            }
+        } else {
+            if (this.status === 'active') {
+                this.status = 'pending';
+            }
+        }
     }
     next();
 });

@@ -6,11 +6,13 @@ const CustomError = require('../errors');
 const { format } = require('date-fns');
 const { StatusCodes } = require('http-status-codes');
 const Product = require('../models/product.model');
+const fs = require('fs');
+const path = require('path');
 
 // ** ===================  GET ALL SHOP  ===================
 const getAllShops = async (req, res) => {
     try {
-        const listShop = await Shop.find().populate('addresses');
+        const listShop = await Shop.find().populate('addresses').populate('vendor', 'name');
         res.status(StatusCodes.OK).json({ status: 'success', data: { shops: listShop } });
     } catch (error) {
         console.error(error.stack);
@@ -25,7 +27,7 @@ const getSingleShops = async (req, res) => {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'No shopId provide' } });
     }
     try {
-        const shop = await Shop.findById(id).populate('addresses');
+        const shop = await Shop.findById(id).populate('addresses').populate('vendor', 'name');
         // console.log('ID: ', shop);
         if (!shop) {
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'No shop found' } });
@@ -40,6 +42,7 @@ const getSingleShops = async (req, res) => {
 const updateSingleShop = async (req, res) => {
     const { userId } = req.user;
     const { name, email, description, addressData } = req.body;
+    const images = req.file;
     try {
         const user = await User.findById(userId);
         if (!user) {
@@ -58,6 +61,23 @@ const updateSingleShop = async (req, res) => {
         if (description) {
             shop.description = description;
         }
+        if (images) {
+            if (shop.avatar) {
+                const updloadDir = './public/uploads';
+                const array = shop.avatar.url.split('/');
+                const imgName = array[array.length - 1];
+                const imgPath = path.join(updloadDir, imgName);
+                if (fs.existsSync(imgPath)) {
+                    fs.unlinkSync(imgPath);
+                    console.log('shop img deleted');
+                } else {
+                    console.log('no img deleted');
+                }
+            }
+            shop.avatar = {
+                url: `http://localhost:4000/public/uploads/${path.basename(images.path)}`,
+            };
+        }
         if (addressData) {
             if (shop.addresses) {
                 const address = await Address.findById(shop.addresses);
@@ -66,12 +86,12 @@ const updateSingleShop = async (req, res) => {
                         .status(StatusCodes.INTERNAL_SERVER_ERROR)
                         .json({ status: 'error', data: { message: 'No address found' } });
                 }
-                address.address = addressData;
+                address.address = JSON.parse(addressData);
                 await address.save();
             } else {
                 const newAddress = await Address.create({
                     name: null,
-                    address: addressData,
+                    address: JSON.parse(addressData),
                     phone: '0',
                     isHome: false,
                     isWork: false,
@@ -85,8 +105,32 @@ const updateSingleShop = async (req, res) => {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'success', data: { message: err } });
     }
 };
+
+// ** ===================  CHANGE SHOP STATUS  ===================
+const changeShopStatus = async (req, res) => {
+    const status = req.query.status;
+    const { id } = req.params;
+    try {
+        if (!id) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'No id provide' } });
+        }
+        const shop = await Shop.findById(id);
+        if (!shop) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'No shop found' } });
+        }
+        if (!status || (status !== 'active' && status !== 'banned')) {
+            return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: { message: 'status provide invalid' } });
+        }
+        shop.status = status;
+        await shop.save();
+        return res.status(StatusCodes.OK).json({ status: 'error', data: { message: 'Shop status updated' } });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { err: err } });
+    }
+};
 module.exports = {
     getAllShops,
     getSingleShops,
     updateSingleShop,
+    changeShopStatus,
 };
