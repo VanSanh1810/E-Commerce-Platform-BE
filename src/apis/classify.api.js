@@ -1,6 +1,7 @@
 const { StatusCodes } = require('http-status-codes');
 const Classify = require('../models/classify.model');
 const Shop = require('../models/shop.model');
+const Product = require('../models/product.model');
 
 const getShopClassify = async (req, res) => {
     const { shopId } = req.params;
@@ -126,19 +127,20 @@ const deleteClassify = async (req, res) => {
         if (!userShop) {
             res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: { message: 'Người dùng không sở hữu shop !' } });
         }
-        const currentClassify = await Classify.findOne({ _id: classifyId, shop: userShop.id });
+        const currentClassify = await Classify.findOne({ _id: classifyId, shop: userShop._id });
         if (!currentClassify) {
             res.status(StatusCodes.CONFLICT).json({ status: 'error', data: { message: 'Classify not found' } });
-        }
-        if (currentClassify.product.length > 0) {
-            res.status(StatusCodes.CONFLICT).json({ status: 'error', data: { message: 'Classify still have some product' } });
         }
         const classifyRefToRemove = userShop.classify.indexOf(currentClassify._id);
         if (classifyRefToRemove !== -1) {
             userShop.classify.splice(classifyRefToRemove, 1);
-        } else {
-            throw new Error('Không tìm thấy phần tử cần loại bỏ trong mảng tham chiếu');
         }
+        const productList = Product.find({ classify: currentClassify._id, shop: userShop._id });
+        await productList.updateMany(
+            { classify: currentClassify._id, shop: userShop.id },
+            { $set: { classify: null } },
+            { multi: true },
+        );
         await userShop.save();
         await currentClassify.delete();
         return res.status(StatusCodes.OK).json({

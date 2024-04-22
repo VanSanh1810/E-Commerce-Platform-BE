@@ -20,6 +20,23 @@ const authenticateUser = async (req, res, next) => {
     }
 };
 
+const authenticateUser2 = async (req, res, next) => {
+    const token = req.signedCookies.token;
+    if (!token) {
+        // throw new CustomError.UnauthenticatedError('Authentication invalid');
+        return next();
+    }
+
+    try {
+        const { name, userId, role, shop } = await isTokenValid({ token });
+        req.user = { name, userId, role, shop };
+        console.log(req.user);
+        next();
+    } catch (error) {
+        next();
+    }
+};
+
 const authorizePermissions = (...roles) => {
     return (req, res, next) => {
         if (!roles.includes(req.user.role)) {
@@ -32,4 +49,4 @@ const authorizePermissions = (...roles) => {
     };
 };
 
-module.exports = { authenticateUser, authorizePermissions };
+module.exports = { authenticateUser, authorizePermissions, authenticateUser2 };

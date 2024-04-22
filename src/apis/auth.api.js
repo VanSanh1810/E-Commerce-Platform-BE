@@ -97,9 +97,12 @@ const login = async (req, res) => {
         const tokenUser = createUserToken(user);
         const token = attachCookiesToResponse({ res, user: tokenUser });
 
+        const cart = await Cart.findOne({ user: user._id });
+
         const jsonResponse = {
             status: 'success',
             token,
+            cart: cart,
             data: {
                 email,
                 role: user.role,

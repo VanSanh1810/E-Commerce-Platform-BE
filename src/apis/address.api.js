@@ -63,7 +63,16 @@ const getShopAddress = async (req, res) => {
     const { role, userId } = req.user;
     const { id } = req.params;
     if (role === 'user') {
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: '!!!' });
+        try {
+            const shop = await Shop.findById(id);
+            if (!shop) {
+                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
+            }
+            const listAddress = await Address.findById(shop.addresses);
+            res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
+        } catch (err) {
+            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
+        }
     }
     if (role === 'admin') {
         try {

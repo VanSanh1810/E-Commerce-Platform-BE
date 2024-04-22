@@ -70,13 +70,6 @@ const shopSchema = new mongoose.Schema(
 );
 
 shopSchema.pre('save', function (next) {
-    const currentDate = new Date().getTime();
-    this.createDate = this.createDate || currentDate;
-    this.modifyDate = currentDate;
-    next();
-});
-
-shopSchema.pre('save', function (next) {
     if (!this.isModified('status')) {
         if (this.name && this.avatar && this.addresses && this.email) {
             if (this.status === 'pending') {
@@ -88,6 +81,9 @@ shopSchema.pre('save', function (next) {
             }
         }
     }
+    const currentDate = new Date().getTime();
+    this.createDate = this.createDate || currentDate;
+    this.modifyDate = currentDate;
     next();
 });
 

@@ -7,6 +7,7 @@ const classifyRoute = require('./classify.route');
 const shopRoute = require('./shop.route');
 const addressRoute = require('./address.route');
 const cartRoute = require('./cart.route');
+const orderRoute = require('./order.route');
 
 function route(app) {
     app.use('/api/auth', authRouter);
@@ -18,6 +19,7 @@ function route(app) {
     app.use('/api/shop', shopRoute);
     app.use('/api/address', addressRoute);
     app.use('/api/cart', cartRoute);
+    app.use('/api/order', orderRoute);
 }
 
 module.exports = route;

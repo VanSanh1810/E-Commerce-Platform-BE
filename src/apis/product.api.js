@@ -15,7 +15,8 @@ const { isNullOrUndefined } = require('util');
 const createProduct = async (req, res) => {
     // Set the user ID in the request body
     const { userId } = req.user;
-    const { name, description, classifyId, categoryId, tags, price, discountPrice, stock, variantData, variantDetail } = req.body;
+    const { name, description, classifyId, categoryId, tags, price, discountPrice, stock, variantData, variantDetail, isDraft } =
+        req.body;
     const images = req.files;
     // console.log(req.files);
     try {
@@ -68,7 +69,7 @@ const createProduct = async (req, res) => {
             variantData: newVData,
             variantDetail: newVDetail,
             review: [],
-            status: 'active',
+            status: isDraft ? 'draft' : 'active',
             order: [],
             //user: userId
             // Include other properties from req.body
@@ -93,7 +94,7 @@ const createProduct = async (req, res) => {
 
         res.status(StatusCodes.CREATED).json({ status: 'success', data: { message: 'Product created' } });
     } catch (error) {
-        console.error(error.stack);
+        console.error(error);
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Lỗi server' } });
     }
 };
@@ -110,10 +111,116 @@ const getAllProducts = async (req, res) => {
             return res.status(StatusCodes.NOT_FOUND).json({ status: 'error', data: { message: 'Không có sản phẩm nào.' } });
         }
 
-        if (productQuery.shopId) {
+        if (productQuery?.shopId) {
             const filteredProducts = products.filter((product) => product.shop.equals(productQuery.shopId));
             products = [...filteredProducts];
+            if (productQuery?.classify) {
+                const filteredProducts1 = filteredProducts.filter((product) => product.classify.equals(productQuery.classify));
+                products = [...filteredProducts1];
+            }
         }
+
+        // if (productQuery?.sortType) {
+        //     switch (productQuery.sortType) {
+        //         case '':
+        //             break;
+        //         case 'featured':
+        //             break;
+        //         case 'trending':
+        //             break;
+        //         default:
+        //             break;
+        //     }
+        //     const filteredProducts = products.filter((product) => product.shop.equals(productQuery.shopId));
+        //     products = [...filteredProducts];
+        // }
+
+        if (productQuery?.sortPrice) {
+            switch (productQuery.sortPrice) {
+                case 'lowToHigh':
+                    let tempArr1 = [];
+                    for (var i = 0; i < products.length; i++) {
+                        if (products[i].variantData) {
+                            const totalPrice = await products[i].routePath.reduce((accumulator, currentValue) => {
+                                if (parseFloat(currentValue.detail.disPrice) && parseFloat(currentValue.detail.disPrice) > 0) {
+                                    return accumulator + parseFloat(currentValue.detail.disPrice);
+                                }
+                                return accumulator + parseFloat(currentValue.detail.disPrice);
+                            }, 0);
+
+                            tempArr1.push({
+                                p: products[i],
+                                value: totalPrice / products[i].routePath.length,
+                            });
+                        } else {
+                            tempArr1.push({
+                                p: products[i],
+                                value:
+                                    products[i].discountPrice && products[i].discountPrice > 0
+                                        ? products[i].discountPrice
+                                        : products[i].price,
+                            });
+                        }
+                    }
+
+                    const filteredProducts1 = tempArr1.sort((product1, product2) => {
+                        return product1.value - product2.value;
+                    });
+                    const final1 = filteredProducts1.map((data) => {
+                        return data.p;
+                    });
+                    products = [...final1];
+                    break;
+                case 'highToLow':
+                    let tempArr = [];
+                    for (var i = 0; i < products.length; i++) {
+                        if (products[i].variantData) {
+                            const totalPrice = await products[i].routePath.reduce((accumulator, currentValue) => {
+                                if (parseFloat(currentValue.detail.disPrice) && parseFloat(currentValue.detail.disPrice) > 0) {
+                                    return accumulator + parseFloat(currentValue.detail.disPrice);
+                                }
+                                return accumulator + parseFloat(currentValue.detail.disPrice);
+                            }, 0);
+
+                            tempArr.push({
+                                p: products[i],
+                                value: totalPrice / products[i].routePath.length,
+                            });
+                        } else {
+                            tempArr.push({
+                                p: products[i],
+                                value:
+                                    products[i].discountPrice && products[i].discountPrice > 0
+                                        ? products[i].discountPrice
+                                        : products[i].price,
+                            });
+                        }
+                    }
+
+                    const filteredProducts2 = tempArr.sort((product1, product2) => {
+                        return product2.value - product1.value;
+                    });
+                    const final2 = filteredProducts2.map((data) => {
+                        return data.p;
+                    });
+                    products = [...final2];
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        const total = products.length;
+
+        // if (productQuery?.currentPage) {
+        //     const filteredProducts = products.filter((product) => product.shop.equals(productQuery.shopId));
+        //     products = [...filteredProducts];
+        // }
+
+        // if (productQuery?.limit) {
+        //     const filteredProducts = products.filter((product) => product.shop.equals(productQuery.shopId));
+        //     products = [...filteredProducts];
+        // }
 
         Promise.all(
             products.map(async (product) => {
@@ -136,7 +243,7 @@ const getAllProducts = async (req, res) => {
                     // Trả về kết quả
 
                     productObj.totalReviews = totalReviews;
-                    productObj.averageRating = totalReviews;
+                    productObj.averageRating = averageRating;
                     return productObj;
                     // return { totalReviews, averageRating };
                 } else {
@@ -148,14 +255,14 @@ const getAllProducts = async (req, res) => {
             }),
         )
             .then((result) => {
-                res.status(StatusCodes.OK).json({ status: 'success', data: result });
+                res.status(StatusCodes.OK).json({ status: 'success', data: result, pages: result.length });
             })
             .catch((err) => {
                 res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'err', message: err });
             });
     } catch (error) {
         console.error(error.stack);
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Lỗi server' } });
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: error } });
     }
 };
 
@@ -170,12 +277,40 @@ const getSingleProduct = async (req, res) => {
             .populate({ path: 'shop', select: 'name' });
 
         if (!product) {
-            res.status(StatusCodes.NOT_FOUND).json({
+            return res.status(StatusCodes.NOT_FOUND).json({
                 status: 'error',
                 data: { message: `No product with the id ${productId}` },
             });
         } else {
-            res.status(StatusCodes.OK).json({ status: 'success', data: product });
+            const result = await Review.aggregate([
+                { $match: { product: product.id } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
+                {
+                    $group: {
+                        _id: null, // Gộp tất cả các đánh giá thành một nhóm duy nhất
+                        totalReviews: { $sum: 1 }, // Tính tổng số lượng đánh giá
+                        averageRating: { $avg: '$rating' }, // Tính điểm trung bình
+                    },
+                },
+            ]);
+
+            const productObj = product.toObject();
+
+            if (result.length > 0) {
+                const totalReviews = result[0].totalReviews;
+                const averageRating = result[0].averageRating;
+                // Trả về kết quả
+
+                productObj.totalReviews = totalReviews;
+                productObj.averageRating = averageRating;
+                return productObj;
+                // return { totalReviews, averageRating };
+            } else {
+                // Trả về giá trị mặc định nếu không có đánh giá nào
+                productObj.totalReviews = 0;
+                productObj.averageRating = 0;
+                // return productObj;
+            }
+            res.status(StatusCodes.OK).json({ status: 'success', data: productObj });
         }
     } catch (error) {
         console.error(error.stack);
@@ -265,6 +400,7 @@ const updateProduct = async (req, res) => {
                     data: { message: 'Tên sản phẩm đã tồn tại.' },
                 });
             }
+            product.name = updatedData.name;
         }
         if (updatedData.stock) {
             product.stock = updatedData.stock;
@@ -292,16 +428,19 @@ const updateProduct = async (req, res) => {
             product.category = cate._id;
         }
 
+        if (product.status !== 'disabled') {
+            product.status = updatedData.isDraft ? 'draft' : 'active';
+        }
         const classify = await Classify.findById(updatedData.classifyId);
         product.classify = classify?._id ? classify._id : null;
 
         const newVDetail = updatedData.variantDetail
-            ? JSON.parse(updatedData.variantDetail).length > 0
+            ? JSON.parse(updatedData.variantDetail)?.length > 0
                 ? JSON.parse(updatedData.variantDetail)
                 : null
             : null;
         const newVData = updatedData.variantData
-            ? JSON.parse(updatedData.variantData).length > 0
+            ? JSON.parse(updatedData.variantData)?.length > 0
                 ? JSON.parse(updatedData.variantData)
                 : null
             : null;
@@ -314,83 +453,87 @@ const updateProduct = async (req, res) => {
         res.json({ status: 'success', data: { message: 'Product updated', product: product } });
     } catch (error) {
         console.error(error.stack);
-        res.status(500).json({ status: 'error', data: { message: 'Lỗi server' } });
+        res.status(500).json({ status: 'error', data: { message: error } });
     }
 };
 
 // ** ===================  DELETE PRODUCT  ===================
 const deleteProduct = async (req, res) => {
     const productId = req.params.id; // Extract the productId from the request body
+    const { userId, role } = req.user;
 
     if (!productId) {
         return res.status(400).json({
             status: 'error',
-            data: { message: 'Missing productId in request body' },
+            data: { message: 'Missing productId in request param' },
         });
     }
+    if (role === 'admin') {
+        try {
+            const product = await Product.findById(productId);
 
-    try {
-        const product = await Product.findById(productId);
-
-        if (!product) {
-            return res.status(404).json({
-                status: 'error',
-                data: { message: 'Không tìm thấy sản phẩm' },
-            });
-        }
-
-        // Kiểm tra nếu ordersCount bằng 0 mới thực hiện xóa sản phẩm
-        if (product.ordersCount === 0) {
-            // Xóa toàn bộ màu sắc và biến thể liên quan đến sản phẩm
-            await Color.deleteMany({ _id: { $in: product.colors } });
-            await Variation.deleteMany({ color: { $in: product.colors } });
-
-            const categoryId = product.category;
-            const brandId = product.brand;
-
-            // Xóa sản phẩm khỏi danh sách sản phẩm (products) của danh mục và thương hiệu
-            const [category, brand] = await Promise.all([Category.findById(categoryId), Brand.findById(brandId)]);
-
-            if (category) {
-                category.products.pull(productId);
-                await category.save();
+            if (!product) {
+                return res.status(StatusCodes.NOT_ACCEPTABLE).json({
+                    status: 'error',
+                    data: { message: 'Không tìm thấy sản phẩm' },
+                });
             }
+            // const productReviewList = await Review.find({ product: product.id });
+            // productReviewList.forEach(async (review) => {
+            //     await review.delete();
+            // });
 
-            if (brand) {
-                brand.products.pull(productId);
-                await brand.save();
-            }
-
-            const uploadDirectory = './public/uploads';
-            // Xóa hình ảnh cục bộ
-            product.images.forEach((image) => {
-                const imagePath = path.join(uploadDirectory, path.basename(image.url));
-
-                if (fs.existsSync(imagePath)) {
-                    try {
-                        fs.unlinkSync(imagePath);
-                    } catch (error) {
-                        console.error(`Lỗi khi xóa tệp ${imagePath}: ${error.message}`);
-                    }
-                }
-            });
-
-            // Thực hiện xóa sản phẩm
             await Product.findByIdAndDelete(productId);
 
             return res.json({
                 status: 'success',
                 data: { message: 'Sản phẩm đã được xóa' },
             });
-        } else {
-            return res.status(400).json({
-                status: 'error',
-                data: { message: 'Sản phẩm có đơn đặt hàng, không thể xóa' },
-            });
+        } catch (error) {
+            console.error(error.stack);
+            return res.status(500).json({ status: 'error', data: { message: error } });
         }
-    } catch (error) {
-        console.error(error.stack);
-        res.status(500).json({ status: 'error', data: { message: 'Lỗi server' } });
+    } else {
+        try {
+            const product = await Product.findById(productId);
+
+            if (!product) {
+                return res.status(StatusCodes.NOT_ACCEPTABLE).json({
+                    status: 'error',
+                    data: { message: 'Không tìm thấy sản phẩm' },
+                });
+            }
+
+            const shop = await Shop.findOne({ vendor: userId });
+            if (!product) {
+                return res.status(StatusCodes.NOT_ACCEPTABLE).json({
+                    status: 'error',
+                    data: { message: 'You dont own this product' },
+                });
+            }
+
+            if (!product.shop.equals(shop._id)) {
+                return res.status(StatusCodes.NOT_ACCEPTABLE).json({
+                    status: 'error',
+                    data: { message: 'You dont own this product' },
+                });
+            }
+
+            // const productReviewList = await Review.find({ product: product.id });
+            // productReviewList.forEach(async (review) => {
+            //     await review.delete();
+            // });
+
+            await Product.findByIdAndDelete(productId);
+
+            return res.json({
+                status: 'success',
+                data: { message: 'Sản phẩm đã được xóa' },
+            });
+        } catch (e) {
+            console.error(error.stack);
+            return res.status(500).json({ status: 'error', data: { message: error } });
+        }
     }
 };
 

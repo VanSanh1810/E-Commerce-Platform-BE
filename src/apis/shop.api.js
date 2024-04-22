@@ -2,6 +2,7 @@ const Category = require('../models/category.model');
 const Shop = require('../models/shop.model');
 const User = require('../models/user.model');
 const Address = require('../models/address.model');
+const Review = require('../models/review.model');
 const CustomError = require('../errors');
 const { format } = require('date-fns');
 const { StatusCodes } = require('http-status-codes');
@@ -27,12 +28,41 @@ const getSingleShops = async (req, res) => {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'No shopId provide' } });
     }
     try {
-        const shop = await Shop.findById(id).populate('addresses').populate('vendor', 'name');
-        // console.log('ID: ', shop);
+        const shop = await Shop.findById(id).populate('addresses').populate('vendor', 'name').populate('classify', 'name');
+        console.log('ID: ', shop._id);
         if (!shop) {
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'No shop found' } });
         }
-        return res.status(StatusCodes.OK).json({ status: 'success', data: { shop: shop } });
+
+        const shopProducts = await Product.find({ shop: shop._id });
+
+        let totalRating = 0;
+        let totalReviews = 0;
+        shopProducts.forEach(async (product) => {
+            const reviewList = await Review.find({ product: product._id });
+            totalReviews += reviewList.length;
+            totalRating += reviewList.reduce((sum, review) => sum + review.rating, 0);
+        });
+        const averageShopReview = totalReviews === 0 ? 0 : totalRating / totalReviews;
+
+        const followers = await User.find({ follow: shop._id });
+        let totalFollowers = 0;
+        if (followers && followers.length > 0) {
+            totalFollowers = followers.length;
+        }
+
+        const totalProduct = shopProducts.length;
+        return res
+            .status(StatusCodes.OK)
+            .json({
+                status: 'success',
+                data: {
+                    shop: shop,
+                    averageShopReview: averageShopReview,
+                    totalProduct: totalProduct,
+                    totalFollowers: totalFollowers,
+                },
+            });
     } catch (e) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: e } });
     }
@@ -110,6 +140,7 @@ const updateSingleShop = async (req, res) => {
 const changeShopStatus = async (req, res) => {
     const status = req.query.status;
     const { id } = req.params;
+    const { role } = req.user;
     try {
         if (!id) {
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'No id provide' } });
@@ -118,8 +149,16 @@ const changeShopStatus = async (req, res) => {
         if (!shop) {
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'No shop found' } });
         }
-        if (!status || (status !== 'active' && status !== 'banned')) {
+        if (!status || (status !== 'active' && status !== 'banned' && status !== 'stop')) {
             return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: { message: 'status provide invalid' } });
+        }
+
+        if (shop.status === 'banned') {
+            if (role !== 'admin') {
+                return res
+                    .status(StatusCodes.UNAUTHORIZED)
+                    .json({ status: 'error', data: { message: 'Your shop is curently banned' } });
+            }
         }
         shop.status = status;
         await shop.save();
@@ -128,6 +167,7 @@ const changeShopStatus = async (req, res) => {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { err: err } });
     }
 };
+
 module.exports = {
     getAllShops,
     getSingleShops,

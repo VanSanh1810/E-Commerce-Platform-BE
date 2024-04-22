@@ -5,6 +5,8 @@ const cors = require('cors'); //https://en.wikipedia.org/wiki/Cross-origin_resou
 const app = express();
 const route = require('./routes');
 const morgan = require('morgan'); //HTTP request logger middleware
+const ngrok = require('@ngrok/ngrok');
+const handlebars = require('express-handlebars');
 
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -28,6 +30,9 @@ app.use(cookieParser(process.env.JWT_SECRET));
 //Read form data so web can access req.body contents
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.engine('handlebars', handlebars.engine());
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'resources/views'));
 
 // if (process.env.NODE_ENV === 'production') {
 //     app.use(csrfMiddleware);
@@ -44,6 +49,9 @@ app.use(express.json());
 // }
 
 //Routes init
+app.get('/', (req, res) => {
+    res.render('home');
+});
 route(app);
 
 // app.use(express.static('public'));
@@ -74,6 +82,10 @@ const start = async () => {
         await connectDB(process.env.MONGO_URL);
         genData();
         app.listen(port, () => console.log(`🚀 Server is listening on port ${port}... ${__dirname}`));
+        // Get your endpoint online
+        ngrok
+            .connect({ addr: port, authtoken_from_env: true })
+            .then((listener) => console.log(`Ingress established at: ${listener.url()}`));
     } catch (error) {
         console.log(error);
     }
