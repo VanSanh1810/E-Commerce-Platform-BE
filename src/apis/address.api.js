@@ -69,9 +69,9 @@ const getShopAddress = async (req, res) => {
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
             }
             const listAddress = await Address.findById(shop.addresses);
-            res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
+            return res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
         } catch (err) {
-            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
         }
     }
     if (role === 'admin') {
@@ -81,9 +81,9 @@ const getShopAddress = async (req, res) => {
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
             }
             const listAddress = await Address.findById(shop.addresses);
-            res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
+            return res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
         } catch (err) {
-            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
         }
     } else {
         try {
@@ -96,9 +96,9 @@ const getShopAddress = async (req, res) => {
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
             }
             const listAddress = await Address.findById(shop.addresses);
-            res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
+            return res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
         } catch (err) {
-            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
         }
     }
 };
@@ -127,7 +127,7 @@ const addAddress = async (req, res) => {
             });
             shop.addresses = newAddress._id;
             await shop.save();
-            return res.status(StatusCodes.OK).json({ status: 'err', data: { msg: 'Address create' } });
+            return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Address create' } });
         } else {
             const { name, addressData, isHome, isWork, phone } = req.body;
             const newAddress = await Address.create({
@@ -139,7 +139,7 @@ const addAddress = async (req, res) => {
             });
             user.addresses.push(newAddress._id);
             await user.save();
-            return res.status(StatusCodes.OK).json({ status: 'err', data: { msg: 'Address create' } });
+            return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Address create' } });
         }
     } catch (err) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });

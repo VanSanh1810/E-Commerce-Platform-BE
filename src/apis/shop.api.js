@@ -52,17 +52,15 @@ const getSingleShops = async (req, res) => {
         }
 
         const totalProduct = shopProducts.length;
-        return res
-            .status(StatusCodes.OK)
-            .json({
-                status: 'success',
-                data: {
-                    shop: shop,
-                    averageShopReview: averageShopReview,
-                    totalProduct: totalProduct,
-                    totalFollowers: totalFollowers,
-                },
-            });
+        return res.status(StatusCodes.OK).json({
+            status: 'success',
+            data: {
+                shop: shop,
+                averageShopReview: averageShopReview,
+                totalProduct: totalProduct,
+                totalFollowers: totalFollowers,
+            },
+        });
     } catch (e) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: e } });
     }
@@ -96,12 +94,12 @@ const updateSingleShop = async (req, res) => {
                 const updloadDir = './public/uploads';
                 const array = shop.avatar.url.split('/');
                 const imgName = array[array.length - 1];
-                const imgPath = path.join(updloadDir, imgName);
+                const imgPath = path.join(__dirname, '..', updloadDir, imgName);
                 if (fs.existsSync(imgPath)) {
                     fs.unlinkSync(imgPath);
-                    console.log('shop img deleted');
+                    console.log(imgPath, '+ shop img deleted');
                 } else {
-                    console.log('no img deleted');
+                    console.log(imgPath, '+ no img deleted');
                 }
             }
             shop.avatar = {

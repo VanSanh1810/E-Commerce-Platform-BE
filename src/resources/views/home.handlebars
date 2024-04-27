@@ -1,1 +1,99 @@
-<h1>HOME</h1>
+<div id='element-to-print' class='mc-card my-1 mx-5 p-md-5 border border-dark border-5'>
+    <div class='mc-invoice-head light_mode'>
+        <img src='{{orderData.qrCode}}' alt='qr' />
+        <h2>
+            invoice #{{orderData.code}}
+        </h2>
+    </div>
+    <div class='mc-invoice-group light_mode'>
+        <div class='mc-invoice-recieved light_mode'>
+            <h6>From :</h6>
+            <p>
+                {{orderData.shop.name}}
+                <br />
+                {{orderData.shop.address}}
+                <br />
+                {{orderData.shop.email}}
+                <br />
+            </p>
+        </div>
+        <div class='mc-invoice-shipment light_mode'>
+            <h6>
+                To :
+                {{orderData.locationType}}
+            </h6>
+            <p>
+                {{orderData.user.name}}
+                <br />
+                {{orderData.user.phoneNumber}}
+                <br />
+                {{orderData.user.address}}
+                <br />
+                {{orderData.user.email}}
+            </p>
+        </div>
+    </div>
+    <div class='mc-table-responsive light_mode'>
+        <table class='mc-table light_mode'>
+            <thead class='mc-table-head light_mode'>
+                <tr>
+                    <th>Product</th>
+                    <th>Variant</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody class='mc-table-body light_mode'>
+                {{#each items}}
+                    <tr>
+                        <td>
+                            <div class='mc-table-product sm d-flex align-items-center light_mode'>
+                                <img src={{this.image}} alt='img' />
+                                <div>{{this.name}}</div>
+                            </div>
+                        </td>
+                        <td>
+                            {{this.variant}}
+                        </td>
+                        <td>{{this.price}}$</td>
+                        <td>{{this.quantity}}</td>
+                        <td>{{this.amount}}$</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class='mc-invoice-list-group light_mode'>
+        <ul class='mc-invoice-list light_mode'>
+            <li>
+                <span class='title'>Subtotal</span>
+                <span class='clone'>:</span>
+                <span class='digit'>{{orderData.total}}$</span>
+            </li>
+            <li>
+                <span class='title'>Shipping</span>
+                <span class='clone'>:</span>
+                <span class='digit'>{{orderData.shippingCost}}$</span>
+            </li>
+            <li>
+                <span class='title'>Status</span>
+                <span class='clone'>:</span>
+                <span class='status purple'>{{orderData.status}}</span>
+            </li>
+            {{#if orderData.onlPayStatus}}
+                <li>
+                    <span class='title'>Payment</span>
+                    <span class='clone'>:</span>
+                    <span class='status purple'>{{orderData.onlPayStatus}}</span>
+                </li>
+            {{/if}}
+            <li>
+                <span class='title'>Total</span>
+                <span class='clone'>:</span>
+                <span class='digit'>{{orderData.finalTotal}}$</span>
+            </li>
+        </ul>
+    </div>
+    <p>Create at: {{orderData.createAt}}</p>
+</div>

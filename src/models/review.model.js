@@ -22,6 +22,10 @@ const ReviewSchema = new mongoose.Schema({
         ref: 'User',
         required: true,
     },
+    name: {
+        type: String,
+        required: true,
+    },
     product: {
         type: mongoose.Types.ObjectId,
         ref: 'Product',
@@ -33,10 +37,16 @@ const ReviewSchema = new mongoose.Schema({
         },
     ],
     images: [imageSchema],
+    createDate: {
+        type: String,
+    },
+    modifyDate: {
+        type: String,
+    },
 });
 
 // User can leave only one review for a product
-ReviewSchema.index({ product: 1, variant: 1, user: 1 }, { unique: true });
+// ReviewSchema.index({ product: 1, variant: 1, user: 1 }, { unique: true });
 
 // Average rating
 ReviewSchema.statics.calculateAverageRating = async function (productId) {
@@ -70,6 +80,13 @@ ReviewSchema.post('save', async function () {
 });
 ReviewSchema.post('remove', async function () {
     await this.constructor.calculateAverageRating(this.product);
+});
+
+ReviewSchema.pre('save', async function (next) {
+    const currentDate = new Date().getTime();
+    this.createDate = this.createDate || currentDate;
+    this.modifyDate = currentDate;
+    next();
 });
 
 module.exports = mongoose.model('Review', ReviewSchema);

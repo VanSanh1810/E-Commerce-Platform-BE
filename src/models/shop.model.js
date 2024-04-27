@@ -51,7 +51,6 @@ const shopSchema = new mongoose.Schema(
         },
         email: {
             type: String,
-            unique: true,
             // Custom Validators package
             validate: {
                 // validator package

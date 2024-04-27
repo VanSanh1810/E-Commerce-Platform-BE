@@ -39,7 +39,7 @@ const createCategory = async (req, res) => {
         // Tạo category trong cơ sở dữ liệu
         await category.save();
 
-        if (root !== null) {
+        if (root) {
             const rootCategory = await Category.findById(root);
             rootCategory.child.push(category._id);
             rootCategory.save();
@@ -48,7 +48,7 @@ const createCategory = async (req, res) => {
         res.status(StatusCodes.CREATED).json({ status: 'success', data: category });
     } catch (error) {
         console.error(error.stack);
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Lỗi server' } });
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: error } });
     }
 };
 

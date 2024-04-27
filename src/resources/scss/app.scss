@@ -1,0 +1,216 @@
+@import './color';
+@import './table';
+
+$mobile-device: 575px;
+$tablet-device: 767px;
+$laptop-device: 991px;
+$desktop-device: 1199px;
+
+@mixin custom-breakpoint($minwidth, $maxwidth) {
+    @media (min-width: #{$minwidth}) and (max-width: #{$maxwidth}) {
+        @content;
+    }
+}
+
+@mixin mobile-breakpoint {
+    @media (max-width: #{$mobile-device}) {
+        @content;
+    }
+}
+
+@mixin tablet-breakpoint {
+    @media (max-width: #{$tablet-device}) {
+        @content;
+    }
+}
+
+@mixin laptop-breakpoint {
+    @media (max-width: #{$laptop-device}) {
+        @content;
+    }
+}
+
+@mixin desktop-breakpoint {
+    @media (max-width: #{$desktop-device}) {
+        @content;
+    }
+}
+
+@mixin flex-dimension($alignItems, $justifyContent, $gap) {
+    display: flex;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+    gap: $gap;
+}
+
+@mixin text-font($fontSize, $fontWeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+.mc-invoice-head {
+    @include flex-dimension(center, center, 10px);
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    @include mobile-breakpoint {
+        align-items: flex-start;
+    }
+
+    img {
+        height: 60px;
+    }
+
+    h2 {
+        @include text-font(22px, 800);
+        text-transform: uppercase;
+    }
+}
+
+.mc-invoice-group {
+    @include flex-dimension(center, space-between, 20px);
+    margin-bottom: 30px;
+
+    @include mobile-breakpoint {
+        flex-wrap: wrap;
+    }
+}
+
+.mc-invoice-recieved,
+.mc-invoice-shipment {
+    max-width: 250px;
+
+    @include mobile-breakpoint {
+        max-width: 100%;
+    }
+
+    h6 {
+        font-weight: 600;
+        margin-bottom: 8px;
+        text-transform: capitalize;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+[dir='ltr'] {
+    .mc-invoice-shipment {
+        text-align: right;
+
+        @include mobile-breakpoint {
+            text-align: right;
+        }
+    }
+}
+
+[dir='rtl'] {
+    .mc-invoice-shipment {
+        text-align: left;
+
+        @include mobile-breakpoint {
+            text-align: left;
+        }
+    }
+}
+
+.mc-invoice-list-group {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 0px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--lightBorder);
+}
+
+.mc-invoice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li {
+        display: flex;
+
+        &:last-child {
+            padding-top: 15px;
+            border-top: 1px solid var(--lightBorder);
+        }
+
+        span {
+            font-size: 15px;
+        }
+
+        .title {
+            width: 100px;
+            text-transform: capitalize;
+        }
+
+        .clone {
+            font-weight: 700;
+        }
+
+        .digit {
+            font-weight: 500;
+            color: var(--heading);
+        }
+
+        .total {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .status {
+            padding: 3px 8px;
+            border-radius: 6px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            @include text-font(12px, 700);
+
+            &.purple {
+                color: $purple-700;
+                background-color: $purple-200;
+            }
+
+            &.green {
+                color: $green-700;
+                background-color: $green-200;
+            }
+
+            &.red {
+                color: $red-700;
+                background-color: $red-200;
+            }
+        }
+    }
+}
+
+[dir='ltr'] {
+    .mc-invoice-list {
+        .clone {
+            margin-right: 30px;
+        }
+    }
+}
+
+[dir='rtl'] {
+    .mc-invoice-list {
+        .clone {
+            margin-left: 30px;
+        }
+    }
+}
+
+.mc-invoice-note {
+    font-size: 13px;
+    margin-bottom: 50px;
+}
+
+.mc-invoice-btns {
+    @include flex-dimension(center, center, 15px);
+    flex-wrap: wrap;
+
+    .btn {
+        width: fit-content;
+        @include flex-dimension(center, center, 8px);
+    }
+}

@@ -83,8 +83,12 @@ const createProduct = async (req, res) => {
         }
 
         if (classifyId) {
-            const classify = await Classify.findById(classifyId);
-            product.classify = classify;
+            try {
+                const classify = await Classify.findById(classifyId);
+                product.classify = classify;
+            } catch (e) {
+                product.classify = null;
+            }
         } else {
             product.classify = null;
         }
@@ -103,6 +107,7 @@ const createProduct = async (req, res) => {
 const getAllProducts = async (req, res) => {
     const productQuery = req.query;
     try {
+        console.log(productQuery);
         let products = await Product.find()
             .populate({ path: 'shop', select: 'name' })
             .populate({ path: 'category', select: 'name' });
@@ -119,6 +124,8 @@ const getAllProducts = async (req, res) => {
                 products = [...filteredProducts1];
             }
         }
+
+        const total = products.length;
 
         // if (productQuery?.sortType) {
         //     switch (productQuery.sortType) {
@@ -210,12 +217,12 @@ const getAllProducts = async (req, res) => {
             }
         }
 
-        const total = products.length;
-
-        // if (productQuery?.currentPage) {
-        //     const filteredProducts = products.filter((product) => product.shop.equals(productQuery.shopId));
-        //     products = [...filteredProducts];
-        // }
+        if (productQuery?.currentPage) {
+            const startIndex = (parseInt(productQuery.currentPage) - 1) * parseInt(productQuery.limit);
+            const endIndex = startIndex + parseInt(productQuery.limit);
+            const filteredProducts = products.slice(startIndex, endIndex);
+            products = [...filteredProducts];
+        }
 
         // if (productQuery?.limit) {
         //     const filteredProducts = products.filter((product) => product.shop.equals(productQuery.shopId));
@@ -255,7 +262,7 @@ const getAllProducts = async (req, res) => {
             }),
         )
             .then((result) => {
-                res.status(StatusCodes.OK).json({ status: 'success', data: result, pages: result.length });
+                res.status(StatusCodes.OK).json({ status: 'success', data: result, pages: total });
             })
             .catch((err) => {
                 res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'err', message: err });

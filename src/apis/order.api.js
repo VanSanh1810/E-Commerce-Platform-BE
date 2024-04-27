@@ -13,6 +13,7 @@ const fs = require('fs');
 const { format } = require('date-fns');
 const { createTokenUser, attachCookiesToResponse, checkPermissions } = require('../utils');
 const { sortObject, generateVNPayUrl } = require('../services/vnPay.service');
+const { sendEmail } = require('../services/sendMail.service');
 let config = require('config');
 let querystring = require('qs');
 let crypto = require('crypto');
@@ -39,7 +40,7 @@ const updateProductStockWhenPlacedOrder = async (id, variant, quantity) => {
                     }
                 }
             };
-            const dbProductVariant = [...product.variantDetail];
+            const dbProductVariant = JSON.parse(JSON.stringify(product.variantDetail));
             for (let i = 0; i < dbProductVariant.length; i++) {
                 if (dbProductVariant[i]._id === variant[0]) {
                     await changeVariantDetailStock(dbProductVariant[i], 0, variant);
@@ -59,8 +60,8 @@ const updateProductStockWhenPlacedOrder = async (id, variant, quantity) => {
 };
 
 const genarateOrderCode = (payment, userType, id) => {
-    const lastFiveChars = id.slice(-5);
-    return `NP-${payment ? '0' : '1'}${userType ? '1' : '0'}-${lastFiveChars}`;
+    const lastFiveChars = id.toString().slice(-5);
+    return `NP-${payment ? '0' : '1'}${userType ? '1' : '0'}-${lastFiveChars.toUpperCase()}`;
 };
 
 //** ======================== PLACE ORDER ========================
@@ -204,6 +205,8 @@ const placeOrder = async (req, res, next) => {
                 order.code = genarateOrderCode(bodyData.paymentMethod, true, order._id);
                 paymentDataToProcess.push({ orderId: order._id, price: totalPrice });
                 await order.save();
+                //send mail
+                sendEmail('sanhnguyen734@gmail.com', order._id);
                 // payment
                 if (!bodyData.paymentMethod) {
                     let date = new Date();
@@ -526,9 +529,51 @@ const getSingleOrder = async (req, res) => {
     }
 };
 
+const updateOrderStatus = async (req, res) => {
+    const { status } = req.body;
+    const { orderId } = req.params;
+    try {
+        if (status !== 'Done') {
+            //vendor action
+            if (req.user?.userId && req.user?.role === 'vendor') {
+                const order = await Order.findById(orderId);
+                if (!order) {
+                    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: 'No order found' });
+                }
+                if (order.onlPayStatus !== 'Confirmed' && order.onlPayStatus !== 'None') {
+                    return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', message: 'Action invalid' });
+                }
+                if (order.status === 'Done') {
+                    return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', message: 'Action invalid' });
+                }
+                order.status = status;
+                await order.save();
+                return res.status(StatusCodes.OK).json({ status: 'success', message: 'Order status updated' });
+            } else {
+                return res
+                    .status(StatusCodes.UNAUTHORIZED)
+                    .json({ status: 'error', message: 'You dont have permission to do this' });
+            }
+        } else {
+            const order = await Order.findById(orderId);
+            if (!order) {
+                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: 'No order found' });
+            }
+            if ((order.onlPayStatus === 'Confirmed' || order.onlPayStatus === 'None') && order.status === 'Delivered') {
+                order.status = status;
+                return res.status(StatusCodes.OK).json({ status: 'success', message: 'Order status updated' });
+            }
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: 'Action invalid' });
+        }
+    } catch (e) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: e });
+    }
+};
+
 module.exports = {
     placeOrder,
     vnpINP,
     getAllOrder,
     getSingleOrder,
+    updateOrderStatus,
 };

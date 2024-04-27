@@ -34,6 +34,8 @@ app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources/views'));
 
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
 // if (process.env.NODE_ENV === 'production') {
 //     app.use(csrfMiddleware);
 
@@ -49,9 +51,6 @@ app.set('views', path.join(__dirname, 'resources/views'));
 // }
 
 //Routes init
-app.get('/', (req, res) => {
-    res.render('home');
-});
 route(app);
 
 // app.use(express.static('public'));
@@ -68,8 +67,6 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-app.use('/public', express.static(path.join(__dirname, 'public')));
-
 // Invoke Middleware
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
@@ -83,9 +80,9 @@ const start = async () => {
         genData();
         app.listen(port, () => console.log(`🚀 Server is listening on port ${port}... ${__dirname}`));
         // Get your endpoint online
-        ngrok
-            .connect({ addr: port, authtoken_from_env: true })
-            .then((listener) => console.log(`Ingress established at: ${listener.url()}`));
+        // ngrok
+        //     .connect({ addr: port, authtoken_from_env: true })
+        //     .then((listener) => console.log(`Ingress established at: ${listener.url()}`));
     } catch (error) {
         console.log(error);
     }

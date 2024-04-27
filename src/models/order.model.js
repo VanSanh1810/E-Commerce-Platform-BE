@@ -12,6 +12,7 @@ const orderSchema = new mongoose.Schema({
             variant: { type: Object },
             quantity: { type: Number, required: true },
             price: { type: Number, required: true },
+            review: { type: mongoose.Schema.Types.ObjectId, ref: 'Review', default: null, required: false },
         },
     ],
     name: { type: String, required: true },

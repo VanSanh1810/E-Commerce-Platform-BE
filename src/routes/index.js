@@ -8,6 +8,7 @@ const shopRoute = require('./shop.route');
 const addressRoute = require('./address.route');
 const cartRoute = require('./cart.route');
 const orderRoute = require('./order.route');
+const { trackingOrder } = require('../controllers/order.controller');
 
 function route(app) {
     app.use('/api/auth', authRouter);
@@ -20,6 +21,7 @@ function route(app) {
     app.use('/api/address', addressRoute);
     app.use('/api/cart', cartRoute);
     app.use('/api/order', orderRoute);
+    app.get('/orderTracking/:orderCode', trackingOrder);
 }
 
 module.exports = route;
