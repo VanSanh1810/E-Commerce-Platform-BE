@@ -6,7 +6,6 @@ const reportSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
         },
-
         target: {
             id: {
                 type: mongoose.Schema.Types.ObjectId,
@@ -18,7 +17,6 @@ const reportSchema = new mongoose.Schema(
                 required: true,
                 default: 'Product',
             },
-            variant: [{ type: String }],
         },
         reason: {
             type: String,

@@ -1,29 +1,55 @@
 const Review = require('../models/review.model');
+const User = require('../models/user.model');
 const Product = require('../models/product.model');
 const CustomError = require('../errors');
 const { StatusCodes } = require('http-status-codes');
 const { checkPermissions } = require('../utils');
+const path = require('path');
+const Order = require('../models/order.model');
 
 // ** ===================  CREATE REVIEW  ===================
 const createReview = async (req, res) => {
-    const { product: productId } = req.body;
+    const { rating, comment, orderId, productId, variant, productIndex } = req.body;
+    const images = req.files;
 
-    // check if product is valid or not
-    const isValidProduct = await Product.findOne({ _id: productId });
-    if (!isValidProduct) {
-        throw new CustomError.NotFoundError(`No product with id: ${productId}`);
+    try {
+        const review = new Review();
+        review.rating = parseInt(rating);
+        review.comment = comment;
+        const imageData = images.map((image) => {
+            return {
+                url: `http://localhost:4000/public/uploads/${path.basename(image.path)}`, // Tạo URL cục bộ cho hình ảnh dựa trên đường dẫn tạm thời
+            };
+        });
+        review.images = [...imageData];
+        const user = await User.findById(req.user.userId);
+        if (!user) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: 'No user found' });
+        }
+        review.user = user._id;
+        review.name = user.name;
+        review.product = productId;
+        if (variant) {
+            review.variant = [...JSON.parse(variant)];
+        } else {
+            review.variant = [];
+        }
+
+        const order = await Order.findById(orderId);
+        if (!order) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: 'No order found' });
+        }
+        const listItemsInOrder = [...order.items];
+        listItemsInOrder[productIndex].review = review._id;
+        order.items = [...listItemsInOrder];
+        //
+        await review.save();
+        await order.save();
+
+        return res.status(StatusCodes.OK).json({ review });
+    } catch (e) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: e });
     }
-    // check if user is already submitted the review for this product or not
-    const alreadySubmittedReview = await Review.findOne({
-        product: productId,
-        user: req.user.userId,
-    });
-    if (alreadySubmittedReview) {
-        throw new CustomError.BadRequestError('Already submitted review for this product');
-    }
-    req.body.user = req.user.userId;
-    const review = await Review.create(req.body);
-    res.status(StatusCodes.CREATED).json({ review });
 };
 
 // ** ===================  GET ALL REVIEWS  ===================
@@ -80,9 +106,13 @@ const deleteReview = async (req, res) => {
 const getSingleProductReviews = async (req, res) => {
     const { productId } = req.params;
 
-    console.log(productId);
-    const reviews = await Review.find({ product: productId });
-    res.status(StatusCodes.OK).json({ total_reviews: reviews.length, reviews });
+    try {
+        console.log(productId);
+        const reviews = await Review.find({ product: productId });
+        res.status(StatusCodes.OK).json({ total_reviews: reviews.length, reviews });
+    } catch (err) {
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: err });
+    }
 };
 
 module.exports = {

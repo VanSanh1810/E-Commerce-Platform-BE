@@ -20,7 +20,6 @@ const ReviewSchema = new mongoose.Schema({
     user: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
-        required: true,
     },
     name: {
         type: String,
@@ -33,7 +32,7 @@ const ReviewSchema = new mongoose.Schema({
     },
     variant: [
         {
-            type: String,
+            type: Object,
         },
     ],
     images: [imageSchema],

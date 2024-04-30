@@ -4,15 +4,15 @@ const uploadI = require('../utils/upload');
 
 const { authenticateUser, authorizePermissions } = require('../middlewares/authentication');
 
-const reviewApi = require('../apis/review.api');
+const reportApi = require('../apis/report.api');
 
 // route.get('/:id', reviewApi.getSingleReview);
 // route.patch('/:id', reviewApi.updateReview);
 // route.delete('/:id', reviewApi.deleteReview);
 
-route.get('/product/:productId', reviewApi.getSingleProductReviews);
+// route.get('/product/:productId', reviewApi.getSingleProductReviews);
 
-route.post('/', authenticateUser, uploadI.array('images'), reviewApi.createReview);
-route.get('/', reviewApi.getAllReviews);
+route.post('/', authenticateUser, reportApi.pushReport);
+route.get('/', authenticateUser, authorizePermissions('admin'), reportApi.getAllReports);
 
 module.exports = route;

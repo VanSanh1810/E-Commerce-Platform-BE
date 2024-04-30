@@ -561,6 +561,7 @@ const updateOrderStatus = async (req, res) => {
             }
             if ((order.onlPayStatus === 'Confirmed' || order.onlPayStatus === 'None') && order.status === 'Delivered') {
                 order.status = status;
+                await order.save();
                 return res.status(StatusCodes.OK).json({ status: 'success', message: 'Order status updated' });
             }
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: 'Action invalid' });

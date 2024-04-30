@@ -10,6 +10,7 @@ const { StatusCodes } = require('http-status-codes');
 const fs = require('fs');
 const path = require('path');
 const { isNullOrUndefined } = require('util');
+const { isObjectIdOrHexString } = require('mongoose');
 
 // ** ===================  CREATE PRODUCT  ===================
 const createProduct = async (req, res) => {
@@ -108,12 +109,31 @@ const getAllProducts = async (req, res) => {
     const productQuery = req.query;
     try {
         console.log(productQuery);
-        let products = await Product.find()
+
+        let query = {};
+
+        if (productQuery?.searchText?.trim() !== '') {
+            if (isObjectIdOrHexString(new RegExp(productQuery.searchText, 'i'))) {
+                query = {
+                    $or: [
+                        { _id: { $regex: productQuery.searchText, $options: 'i' } },
+                        { name: { $regex: productQuery.searchText, $options: 'i' } },
+                        { tag: { $regex: productQuery.searchText, $options: 'i' } },
+                    ],
+                };
+            } else {
+                query = {
+                    $or: [{ name: new RegExp(productQuery.searchText, 'i') }, { tag: new RegExp(productQuery.searchText, 'i') }],
+                };
+            }
+        }
+
+        let products = await Product.find(query)
             .populate({ path: 'shop', select: 'name' })
             .populate({ path: 'category', select: 'name' });
 
         if (products.length === 0) {
-            return res.status(StatusCodes.NOT_FOUND).json({ status: 'error', data: { message: 'Không có sản phẩm nào.' } });
+            return res.status(StatusCodes.OK).json({ status: 'success', data: [], pages: 0 });
         }
 
         if (productQuery?.shopId) {
@@ -290,7 +310,7 @@ const getSingleProduct = async (req, res) => {
             });
         } else {
             const result = await Review.aggregate([
-                { $match: { product: product.id } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
+                { $match: { product: product._id } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
                 {
                     $group: {
                         _id: null, // Gộp tất cả các đánh giá thành một nhóm duy nhất
@@ -309,7 +329,7 @@ const getSingleProduct = async (req, res) => {
 
                 productObj.totalReviews = totalReviews;
                 productObj.averageRating = averageRating;
-                return productObj;
+                // return productObj;
                 // return { totalReviews, averageRating };
             } else {
                 // Trả về giá trị mặc định nếu không có đánh giá nào
