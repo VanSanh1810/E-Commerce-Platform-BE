@@ -478,7 +478,48 @@ const vnpINP = async (req, res, next) => {
 const getAllOrder = async (req, res) => {
     const { target } = req.query;
     const { userId, role } = req.user;
+    const orderQuery = req.query;
     try {
+        console.log(orderQuery);
+        let query = {};
+
+        if (orderQuery?.searchText?.trim() !== '') {
+            // code / name/ email
+            if (isObjectIdOrHexString(new RegExp(orderQuery.searchText, 'i'))) {
+                query = {
+                    $or: [
+                        { _id: { $regex: orderQuery.searchText, $options: 'i' } },
+                        { code: orderQuery.searchText },
+                        { name: { $regex: orderQuery.searchText, $options: 'i' } },
+                        { email: { $regex: orderQuery.searchText, $options: 'i' } },
+                    ],
+                };
+            } else {
+                query = {
+                    $or: [
+                        { code: orderQuery.searchText },
+                        { name: { $regex: orderQuery.searchText, $options: 'i' } },
+                        { email: { $regex: orderQuery.searchText, $options: 'i' } },
+                    ],
+                };
+            }
+        }
+
+        const inDay = (date, _date) => {
+            const a = new Date(parseInt(date));
+            const b = new Date(parseInt(_date));
+            if (a.getFullYear() !== b.getFullYear()) {
+                return false;
+            }
+            if (a.getMonth() !== b.getMonth()) {
+                return false;
+            }
+            if (a.getDate() !== b.getDate()) {
+                return false;
+            }
+            return true;
+        };
+
         switch (target) {
             case 'adminPage':
                 if (!['admin', 'vendor'].includes(role)) {
@@ -488,13 +529,21 @@ const getAllOrder = async (req, res) => {
                 if (!shop) {
                     return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', message: 'No shop found' });
                 }
-                const orderListAd = await Order.find({ shop: shop._id })
+                let orderListAd = await Order.find({ $and: [{ shop: shop._id }, query] })
                     .populate({
                         path: 'items',
                         populate: { path: 'idToSnapshot' }, // 'productSnapshot' là tên trường ref trong items
                     })
                     .populate('shop', ['name', 'email']);
-                return res.status(StatusCodes.OK).json({ status: 'success', orders: [...orderListAd] });
+
+                //orderQuery.date
+                if (orderQuery.date) {
+                    const newArr = orderListAd.filter((ord) => inDay(ord.createDate, orderQuery.date));
+                    return res.status(StatusCodes.OK).json({ status: 'success', orders: [...newArr], pages: newArr.length });
+                }
+                return res
+                    .status(StatusCodes.OK)
+                    .json({ status: 'success', orders: [...orderListAd], pages: orderListAd.length });
             case 'userPage':
                 const orderListUs = await Order.find({ user: userId })
                     .populate({

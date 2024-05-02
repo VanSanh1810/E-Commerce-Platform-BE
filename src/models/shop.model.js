@@ -58,6 +58,10 @@ const shopSchema = new mongoose.Schema(
                 message: 'Please provide valid email',
             },
         },
+        balance: {
+            type: Number,
+            default: 0,
+        },
         createDate: {
             type: Number,
         },

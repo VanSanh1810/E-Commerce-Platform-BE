@@ -6,6 +6,7 @@ const path = require('path');
 const fs = require('fs');
 const { format } = require('date-fns');
 const { createTokenUser, attachCookiesToResponse, checkPermissions } = require('../utils');
+const { isObjectIdOrHexString } = require('mongoose');
 
 //** ======================== Update user password ========================
 const updateUserPassword = async (req, res) => {
@@ -84,9 +85,42 @@ const getUser = async (req, res) => {
 };
 
 const getAllUsers = async (req, res) => {
+    const userQuery = req.query;
     try {
-        const users = await User.find().select({ password: 0 });
-        res.status(StatusCodes.OK).json({ status: 'success', data: users });
+        console.log(userQuery);
+        let query = {};
+
+        if (userQuery?.searchText?.trim() !== '') {
+            if (isObjectIdOrHexString(userQuery.searchText)) {
+                query = {
+                    $or: [
+                        { _id: { $regex: userQuery.searchText, $options: 'i' } },
+                        { name: { $regex: userQuery.searchText, $options: 'i' } },
+                        { email: { $regex: userQuery.searchText, $options: 'i' } },
+                    ],
+                };
+            } else {
+                query = {
+                    $or: [{ name: new RegExp(userQuery.searchText, 'i') }, { email: new RegExp(userQuery.searchText, 'i') }],
+                };
+            }
+        }
+
+        let users = await User.find(query).select({ password: 0 });
+
+        if (users.length === 0) {
+            return res.status(StatusCodes.OK).json({ status: 'success', data: [], pages: 0 });
+        }
+
+        const total = users.length;
+
+        if (userQuery?.currentPage) {
+            const startIndex = (parseInt(userQuery.currentPage) - 1) * parseInt(userQuery.limit);
+            const endIndex = startIndex + parseInt(userQuery.limit);
+            const filteredUsers = users.slice(startIndex, endIndex);
+            users = [...filteredUsers];
+        }
+        res.status(StatusCodes.OK).json({ status: 'success', data: users, pages: total });
     } catch (err) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: err });
     }

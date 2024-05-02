@@ -9,12 +9,44 @@ const { StatusCodes } = require('http-status-codes');
 const Product = require('../models/product.model');
 const fs = require('fs');
 const path = require('path');
+const { isObjectIdOrHexString } = require('mongoose');
 
 // ** ===================  GET ALL SHOP  ===================
 const getAllShops = async (req, res) => {
+    const shopQuery = req.query;
     try {
-        const listShop = await Shop.find().populate('addresses').populate('vendor', 'name');
-        res.status(StatusCodes.OK).json({ status: 'success', data: { shops: listShop } });
+        let query = {};
+
+        if (shopQuery?.searchText?.trim() !== '') {
+            if (isObjectIdOrHexString(shopQuery.searchText, 'i')) {
+                query = {
+                    $or: [
+                        { _id: { $regex: shopQuery.searchText, $options: 'i' } },
+                        { name: { $regex: shopQuery.searchText, $options: 'i' } },
+                        { email: { $regex: shopQuery.searchText, $options: 'i' } },
+                    ],
+                };
+            } else {
+                query = {
+                    $or: [{ name: new RegExp(shopQuery.searchText, 'i') }, { email: new RegExp(shopQuery.searchText, 'i') }],
+                };
+            }
+        }
+        let listShop = await Shop.find(query).populate('addresses').populate('vendor', 'name');
+
+        if (listShop.length === 0) {
+            return res.status(StatusCodes.OK).json({ status: 'success', data: { shops: [] }, pages: 0 });
+        }
+
+        const total = listShop.length;
+
+        if (shopQuery?.currentPage) {
+            const startIndex = (parseInt(shopQuery.currentPage) - 1) * parseInt(shopQuery.limit);
+            const endIndex = startIndex + parseInt(shopQuery.limit);
+            const filteredProducts = listShop.slice(startIndex, endIndex);
+            listShop = [...filteredProducts];
+        }
+        res.status(StatusCodes.OK).json({ status: 'success', data: { shops: listShop }, pages: total });
     } catch (error) {
         console.error(error.stack);
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Lỗi server' } });
@@ -38,11 +70,11 @@ const getSingleShops = async (req, res) => {
 
         let totalRating = 0;
         let totalReviews = 0;
-        shopProducts.forEach(async (product) => {
-            const reviewList = await Review.find({ product: product._id });
+        for (let i = 0; i < shopProducts.length; i++) {
+            const reviewList = await Review.find({ product: shopProducts[i]._id });
             totalReviews += reviewList.length;
             totalRating += reviewList.reduce((sum, review) => sum + review.rating, 0);
-        });
+        }
         const averageShopReview = totalReviews === 0 ? 0 : totalRating / totalReviews;
 
         const followers = await User.find({ follow: shop._id });

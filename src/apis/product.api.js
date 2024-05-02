@@ -252,7 +252,7 @@ const getAllProducts = async (req, res) => {
         Promise.all(
             products.map(async (product) => {
                 const result = await Review.aggregate([
-                    { $match: { product: product.id } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
+                    { $match: { product: product._id } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
                     {
                         $group: {
                             _id: null, // Gộp tất cả các đánh giá thành một nhóm duy nhất

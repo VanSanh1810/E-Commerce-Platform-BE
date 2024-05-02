@@ -30,7 +30,11 @@ const orderSchema = new mongoose.Schema({
         type: String,
     },
     paymentMethod: { type: Boolean, default: true },
-    status: { type: String, enum: ['Pending', 'Fail', 'Confirmed', 'Shipped', 'Delivered', 'Done'], default: 'Pending' }, // You can have various status like 'Pending', 'Shipped', 'Delivered', etc.
+    status: {
+        type: String,
+        enum: ['Pending', 'Fail', 'Confirmed', 'Shipped', 'Delivered', 'Done', 'Cancel'],
+        default: 'Pending',
+    }, // You can have various status like 'Pending', 'Shipped', 'Delivered', etc.
     onlPayStatus: { type: String, enum: ['Pending', 'Fail', 'Confirmed', 'None'], default: 'None' },
     paymentUrl: { type: String, default: '' },
     createDate: {

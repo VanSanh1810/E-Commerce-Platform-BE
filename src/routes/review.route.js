@@ -10,6 +10,7 @@ const reviewApi = require('../apis/review.api');
 // route.patch('/:id', reviewApi.updateReview);
 // route.delete('/:id', reviewApi.deleteReview);
 
+route.get('/:id', reviewApi.getSingleReview);
 route.get('/product/:productId', reviewApi.getSingleProductReviews);
 
 route.post('/', authenticateUser, uploadI.array('images'), reviewApi.createReview);
