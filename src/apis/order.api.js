@@ -19,6 +19,9 @@ let querystring = require('qs');
 let crypto = require('crypto');
 const moment = require('moment'); // Thêm moment nếu bạn cần xử lý ngày giờ
 const httpProxy = require('http-proxy');
+const { isObjectIdOrHexString } = require('mongoose');
+const Category = require('../models/category.model');
+const Banner = require('../models/banner.model');
 const proxy = httpProxy.createProxyServer();
 
 const updateProductStockWhenPlacedOrder = async (id, variant, quantity) => {
@@ -121,12 +124,28 @@ const placeOrder = async (req, res, next) => {
                 const orderItems = [];
                 let totalPrice = 0;
                 for (let j = 0; j < shopItems.length; j++) {
+                    //
+                    const realProductVariant = shopItems[j].variant;
+                    //
+                    let productPrice;
+                    const realProduct = await Product.findById(shopItems[j].product).select(
+                        'images name price discountPrice stock variantData variantDetail',
+                    );
+                    //
+                    const voucherData = await vouchersChecker(shopItems[j].product);
+                    //
                     const accessVariantDetail = async (node, depth, route) => {
                         if (node.detail) {
-                            const price =
-                                parseFloat(node.detail.disPrice) && parseFloat(node.detail.disPrice) > 0
+                            const price = !voucherData.discount
+                                ? parseFloat(node.detail.disPrice) && parseFloat(node.detail.disPrice) > 0
                                     ? parseFloat(node.detail.disPrice)
-                                    : parseFloat(node.detail.price);
+                                    : parseFloat(node.detail.price)
+                                : calculateVoucherPrice(
+                                      parseFloat(node.detail.disPrice) && parseFloat(node.detail.disPrice) > 0
+                                          ? parseFloat(node.detail.disPrice)
+                                          : parseFloat(node.detail.price),
+                                      voucherData,
+                                  );
                             return price;
                         } else {
                             for (let i = 0; i < node.child.length; i++) {
@@ -136,13 +155,6 @@ const placeOrder = async (req, res, next) => {
                             }
                         }
                     };
-                    //
-                    const realProductVariant = shopItems[j].variant;
-                    //
-                    let productPrice;
-                    const realProduct = await Product.findById(shopItems[j].product).select(
-                        'images name price discountPrice stock variantData variantDetail',
-                    );
                     // get product price
                     if (realProductVariant && realProductVariant.length > 0) {
                         for (let k = 0; k < realProduct.variantDetail.length; k++) {
@@ -154,10 +166,18 @@ const placeOrder = async (req, res, next) => {
                             }
                         }
                     } else {
-                        productPrice =
-                            realProduct.discountPrice && realProduct.discountPrice > 0
+                        productPrice = !voucherData.discount
+                            ? realProduct.discountPrice && realProduct.discountPrice > 0
                                 ? realProduct.discountPrice
-                                : realProduct.price;
+                                : realProduct.price
+                            : calculateVoucherPrice(
+                                  parseFloat(
+                                      realProduct.discountPrice && realProduct.discountPrice > 0
+                                          ? realProduct.discountPrice
+                                          : realProduct.price,
+                                  ),
+                                  voucherData,
+                              );
                     }
                     //update stock
                     updateProductStockWhenPlacedOrder(shopItems[j].product, shopItems[j].variant, shopItems[j].quantity);
@@ -206,7 +226,7 @@ const placeOrder = async (req, res, next) => {
                 paymentDataToProcess.push({ orderId: order._id, price: totalPrice });
                 await order.save();
                 //send mail
-                sendEmail('sanhnguyen734@gmail.com', order._id);
+                sendEmail(order.email, order._id);
                 // payment
                 if (!bodyData.paymentMethod) {
                     let date = new Date();
@@ -290,12 +310,27 @@ const placeOrder = async (req, res, next) => {
                 const orderItems = [];
                 let totalPrice = 0;
                 for (let j = 0; j < shopItems.length; j++) {
+                    //
+                    const realProductVariant = shopItems[j].variant;
+                    //
+                    let productPrice;
+                    const realProduct = await Product.findById(shopItems[j].product).select(
+                        'images name price discountPrice stock variantData variantDetail',
+                    );
+                    //
+                    const voucherData = await vouchersChecker(shopItems[j].product);
                     const accessVariantDetail = async (node, depth, route) => {
                         if (node.detail) {
-                            const price =
-                                parseFloat(node.detail.disPrice) && parseFloat(node.detail.disPrice) > 0
+                            const price = !voucherData.discount
+                                ? parseFloat(node.detail.disPrice) && parseFloat(node.detail.disPrice) > 0
                                     ? parseFloat(node.detail.disPrice)
-                                    : parseFloat(node.detail.price);
+                                    : parseFloat(node.detail.price)
+                                : calculateVoucherPrice(
+                                      parseFloat(node.detail.disPrice) && parseFloat(node.detail.disPrice) > 0
+                                          ? parseFloat(node.detail.disPrice)
+                                          : parseFloat(node.detail.price),
+                                      voucherData,
+                                  );
                             return price;
                         } else {
                             for (let i = 0; i < node.child.length; i++) {
@@ -305,13 +340,6 @@ const placeOrder = async (req, res, next) => {
                             }
                         }
                     };
-                    //
-                    const realProductVariant = shopItems[j].variant;
-                    //
-                    let productPrice;
-                    const realProduct = await Product.findById(shopItems[j].product).select(
-                        'images name price discountPrice stock variantData variantDetail',
-                    );
                     // get product price
                     if (realProductVariant && realProductVariant.length > 0) {
                         for (let k = 0; k < realProduct.variantDetail.length; k++) {
@@ -323,10 +351,18 @@ const placeOrder = async (req, res, next) => {
                             }
                         }
                     } else {
-                        productPrice =
-                            realProduct.discountPrice && realProduct.discountPrice > 0
+                        productPrice = !voucherData.discount
+                            ? realProduct.discountPrice && realProduct.discountPrice > 0
                                 ? realProduct.discountPrice
-                                : realProduct.price;
+                                : realProduct.price
+                            : calculateVoucherPrice(
+                                  parseFloat(
+                                      realProduct.discountPrice && realProduct.discountPrice > 0
+                                          ? realProduct.discountPrice
+                                          : realProduct.price,
+                                  ),
+                                  voucherData,
+                              );
                     }
                     updateProductStockWhenPlacedOrder(shopItems[j].product, shopItems[j].variant, shopItems[j].quantity);
                     const realProductObj = realProduct.toObject();
@@ -371,6 +407,8 @@ const placeOrder = async (req, res, next) => {
                 order.code = genarateOrderCode(bodyData.paymentMethod, false, order._id);
                 order.phoneNumber = orderAddressData.phone;
                 await order.save();
+                //send mail
+                sendEmail(order.email, order._id);
                 // payment
                 if (!bodyData.paymentMethod) {
                     let date = new Date();
@@ -451,6 +489,13 @@ const vnpINP = async (req, res, next) => {
                     const order = await Order.findById(ordersHaveProcess[i].orderId);
                     if (order) {
                         order.onlPayStatus = 'Confirmed';
+                        const shop = await Shop.findById(order.shop);
+                        if (shop.balance) {
+                            shop.balance = order.total + shop.balance;
+                        } else {
+                            shop.balance = order.total;
+                        }
+                        await shop.save();
                     }
                     await order.save();
                 }
@@ -505,6 +550,12 @@ const getAllOrder = async (req, res) => {
             }
         }
 
+        let query2 = {};
+
+        if (orderQuery.orderStatus) {
+            query2 = { status: orderQuery.orderStatus };
+        }
+
         const inDay = (date, _date) => {
             const a = new Date(parseInt(date));
             const b = new Date(parseInt(_date));
@@ -529,7 +580,7 @@ const getAllOrder = async (req, res) => {
                 if (!shop) {
                     return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', message: 'No shop found' });
                 }
-                let orderListAd = await Order.find({ $and: [{ shop: shop._id }, query] })
+                let orderListAd = await Order.find({ $and: [{ shop: shop._id }, query, query2] })
                     .populate({
                         path: 'items',
                         populate: { path: 'idToSnapshot' }, // 'productSnapshot' là tên trường ref trong items
@@ -556,6 +607,7 @@ const getAllOrder = async (req, res) => {
                 return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error' });
         }
     } catch (error) {
+        console.error(error);
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: error });
     }
 };
@@ -582,7 +634,7 @@ const updateOrderStatus = async (req, res) => {
     const { status } = req.body;
     const { orderId } = req.params;
     try {
-        if (status !== 'Done') {
+        if (status !== 'Done' && status !== 'Cancel') {
             //vendor action
             if (req.user?.userId && req.user?.role === 'vendor') {
                 const order = await Order.findById(orderId);
@@ -608,15 +660,76 @@ const updateOrderStatus = async (req, res) => {
             if (!order) {
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: 'No order found' });
             }
-            if ((order.onlPayStatus === 'Confirmed' || order.onlPayStatus === 'None') && order.status === 'Delivered') {
-                order.status = status;
-                await order.save();
-                return res.status(StatusCodes.OK).json({ status: 'success', message: 'Order status updated' });
+            if (status === 'Done') {
+                if ((order.onlPayStatus === 'Confirmed' || order.onlPayStatus === 'None') && order.status === 'Delivered') {
+                    order.status = status;
+                    await order.save();
+                    return res.status(StatusCodes.OK).json({ status: 'success', message: 'Order status updated' });
+                }
+            } else {
+                if ((order.onlPayStatus === 'Pending' || order.onlPayStatus === 'None') && order.status === 'Pending') {
+                    order.status = status;
+                    await order.save();
+                    return res.status(StatusCodes.OK).json({ status: 'success', message: 'Order status updated' });
+                }
             }
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: 'Action invalid' });
         }
     } catch (e) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: e });
+    }
+};
+
+////////////////////////////////////////////////////////////////
+const vouchersChecker = async (product) => {
+    const _product = await Product.findById(product);
+    if (!_product) {
+        return { discount: null, maxValue: null };
+    }
+    const category = await Category.findById(_product.category);
+    if (!category) {
+        return { discount: null, maxValue: null };
+    }
+    //
+    const getAllRelatedCategory = async (rootCate) => {
+        let listRelatedCategory = [];
+        const recursiveAction = async (cateId) => {
+            const cate = await Category.findById(cateId);
+            if (!cate) return;
+            listRelatedCategory.push(cate.id);
+            if (cate && cate.child.length > 0) {
+                for (let i = 0; i < cate.child.length; i++) {
+                    await recursiveAction(cate.child[i]);
+                }
+            }
+        };
+        await recursiveAction(rootCate);
+        return listRelatedCategory;
+    };
+    //
+    const listBanner = await Banner.find();
+    let discount;
+    let maxValue;
+    for (let i = 0; i < listBanner.length; i++) {
+        const cateChild = await getAllRelatedCategory(listBanner[i].category);
+        if (cateChild.includes(category.id)) {
+            discount = listBanner[i].discount;
+            maxValue = listBanner[i].maxValue;
+            break;
+        }
+    }
+    return { discount: discount, maxValue: maxValue };
+};
+
+const calculateVoucherPrice = (price, voucherData) => {
+    // console.log(typeof price);
+    if (typeof price === 'number') {
+        const discountAmount = (parseFloat(price) / 100) * parseFloat(voucherData.discount);
+        if (discountAmount <= parseFloat(voucherData.maxValue)) {
+            return parseFloat(price) - discountAmount;
+        } else {
+            return parseFloat(price) - parseFloat(voucherData.maxValue);
+        }
     }
 };
 

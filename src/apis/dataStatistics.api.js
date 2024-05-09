@@ -9,6 +9,7 @@ const path = require('path');
 const Order = require('../models/order.model');
 const Shop = require('../models/shop.model');
 const Category = require('../models/category.model');
+const Banner = require('../models/banner.model');
 
 // ** ===================  USER STAT  ===================
 const userStat = async (req, res) => {
@@ -826,6 +827,101 @@ const orderTypeCount = async (req, res) => {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err });
     }
 };
+
+// ** ===================  REPORT TYPE COUNT  ===================
+const reportTypeCount = async (req, res) => {
+    try {
+        let pendingReport = 0;
+        let doneReport = 0;
+
+        const reports = await Report.find({}, { markAtRead: 1 });
+
+        for (let i = 0; i < reports.length; i++) {
+            if (reports[i].markAtRead) {
+                doneReport++;
+            } else {
+                pendingReport++;
+            }
+        }
+
+        return res.status(StatusCodes.OK).json({ pendingReport, doneReport });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err });
+    }
+};
+
+// ** ===================  SINGLE SHOP STAT  ===========================
+const singleShopStat = async (req, res) => {
+    const { shopId } = req.params;
+    try {
+        let totalOrder = 0;
+        let totalProduct = 0;
+
+        const shop = await Shop.findById(shopId, { createDate: 1 });
+        if (!shop) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: 'No shop match' });
+        }
+
+        const products = await Product.find({ shop: shop._id }, { createDate: 1 });
+        const orders = await Order.find({ shop: shop._id }, { createDate: 1 });
+
+        totalOrder = orders.length;
+        totalProduct = products.length;
+
+        return res.status(StatusCodes.OK).json({ totalProduct, totalOrder });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err });
+    }
+};
+
+// ** ===================  SINGLE USER STAT  ===========================
+const singleUserStat = async (req, res) => {
+    const { userId } = req.params;
+    try {
+        let totalOrder = 0;
+        let totalReview = 0;
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: 'No user match' });
+        }
+        const orders = await Order.find({ user: user._id }, { createDate: 1 });
+        const reviews = await Review.find({ user: user._id }, { createDate: 1 });
+
+        totalReview = reviews.length;
+        totalOrder = orders.length;
+
+        return res.status(StatusCodes.OK).json({ totalOrder, totalReview });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err });
+    }
+};
+
+// ** ===================  BANNER STAT  ===========================
+const bannerStat = async (req, res) => {
+    try {
+        let activeBanner = 0;
+        let pendingBanner = 0;
+        let stopBanner = 0;
+
+        const banner = await Banner.find(null, { startDate: 1, endDate: 1 });
+        const now = new Date().getTime();
+        for (let i = 0; i < banner.length; i++) {
+            if (banner[i].startDate > now) {
+                pendingBanner++;
+            }
+            if (banner[i].endDate < now) {
+                stopBanner++;
+            }
+            if (banner[i].startDate <= now && banner[i].endDate >= now) {
+                activeBanner++;
+            }
+        }
+
+        return res.status(StatusCodes.OK).json({ stopBanner, pendingBanner, activeBanner });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err });
+    }
+};
 module.exports = {
     userStat,
     productStat,
@@ -838,4 +934,8 @@ module.exports = {
     userAprBlk,
     shopStat,
     orderTypeCount,
+    reportTypeCount,
+    singleShopStat,
+    singleUserStat,
+    bannerStat,
 };

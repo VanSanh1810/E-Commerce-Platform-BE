@@ -31,13 +31,13 @@ const updateUserData = async (req, res) => {
     if (role === 'admin') {
         const result = await User.findByIdAndUpdate(id, dataToUpdate, { runValidators: true });
         if (!result) {
-            return res.status(StatusCodes.OK).json({ msg: 'No user found' });
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No user found' });
         }
         return res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Account updated' } });
     } else {
         const user = await User.findById(userId);
         if (!user) {
-            return res.status(StatusCodes.OK).json({ msg: 'No user found' });
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No user found' });
         }
         user.email = req.body.email;
         user.name = req.body.name;

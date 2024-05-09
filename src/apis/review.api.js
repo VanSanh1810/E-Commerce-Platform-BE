@@ -54,7 +54,7 @@ const createReview = async (req, res) => {
 
 // ** ===================  GET ALL REVIEWS  ===================
 const getAllReviews = async (req, res) => {
-    const review = await Review.find({}).populate({
+    const review = await Review.find({ hidden: false }).populate({
         path: 'product',
         select: 'name company, price',
     });
@@ -67,7 +67,7 @@ const getSingleReview = async (req, res) => {
     try {
         const review = await Review.findById(id);
         if (!review) {
-            throw new CustomError.NotFoundError(`No review with the the id ${reviewId}`);
+            throw new CustomError.NotFoundError(`No review with the the id ${id}`);
         }
         res.status(StatusCodes.OK).json({ review });
     } catch (err) {
@@ -97,13 +97,19 @@ const updateReview = async (req, res) => {
 // ** ===================  DELETE REVIEW  ===================
 const deleteReview = async (req, res) => {
     const { id: reviewId } = req.params;
-    const review = await Review.findOne({ _id: reviewId });
-    if (!review) {
-        throw new CustomError.NotFoundError(`No review with the the id ${reviewId}`);
+    const { isHidden } = req.body;
+    try {
+        const review = await Review.findOne({ _id: reviewId });
+        if (!review) {
+            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json(`No review with the the id ${reviewId}`);
+        }
+        // checkPermissions(req.user, review.user);
+        review.hidden = !!isHidden;
+        await review.save();
+        res.status(StatusCodes.OK).json({ msg: 'Success! Review has been deleted' });
+    } catch (e) {
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: e });
     }
-    checkPermissions(req.user, review.user);
-    await review.remove();
-    res.status(StatusCodes.OK).json({ msg: 'Success! Review has been deleted' });
 };
 
 // ** =================== GET SINGLE PRODUCT REVIEW  ===================

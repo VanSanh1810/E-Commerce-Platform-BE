@@ -1,9 +1,12 @@
 const User = require('../models/user.model');
 const Cart = require('../models/cart.model');
 const Shop = require('../models/shop.model');
+const jwt = require('jsonwebtoken');
 const { StatusCodes } = require('http-status-codes');
 const CustomError = require('../errors');
 const { createUserToken, attachCookiesToResponse, isTokenValid } = require('../utils');
+const nodemailer = require('nodemailer');
+const nodeMailHbs = require('nodemailer-express-handlebars');
 const { format } = require('date-fns');
 const { use } = require('express/lib/router');
 // Register User
@@ -107,6 +110,7 @@ const login = async (req, res) => {
                 email,
                 role: user.role,
                 shop: shopId,
+                userId: user._id,
                 // Avoid sending the password in the response
             },
         };
@@ -154,9 +158,64 @@ const validateToken = async (req, res) => {
     }
 };
 
+const forgotPassword = async (req, res) => {
+    const { email } = req.body;
+    try {
+        const user = await User.findOne({ email: email });
+        if (!user) {
+            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+                status: 'error',
+                data: { message: 'No user found' },
+            });
+        }
+        const createJWT = ({ payload }) => {
+            const token = jwt.sign(payload, process.env.JWT_SECRET, {
+                expiresIn: '5m',
+            });
+            return token;
+        };
+        //
+        const token = createJWT({ payload: { email: email, userId: user.id } });
+        const url = `http://localhost:4000/resetPassword?token=${token}`;
+        //
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            host: 'smtp.gmail.com',
+            port: 587,
+            secure: false, // true for 465, false for other ports
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASSWORD,
+            },
+        });
+        //
+        const mailConfig = {
+            from: {
+                name: 'Newpee',
+                address: process.env.SMTP_USER,
+            },
+            to: [email],
+            subject: 'Reset Password',
+            text: 'Van sanh',
+            html: `<p>Reset password link</p><a href='${url}'>Click here to reset password</a>`,
+        };
+        await transporter.sendMail(mailConfig);
+        res.status(StatusCodes.OK).json({
+            status: 'success',
+            data: { message: 'Mail sended' },
+        });
+    } catch (e) {
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+            status: 'error',
+            data: { message: e },
+        });
+    }
+};
+
 module.exports = {
     register,
     login,
     logout,
     validateToken,
+    forgotPassword,
 };

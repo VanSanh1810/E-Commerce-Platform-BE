@@ -12,7 +12,7 @@ const authenticateUser = async (req, res, next) => {
     try {
         const { name, userId, role, shop } = await isTokenValid({ token });
         req.user = { name, userId, role, shop };
-        console.log(req.user);
+        // console.log(req.user);
         next();
     } catch (error) {
         // throw new CustomError.UnauthenticatedError('Authentication Invalid');
@@ -30,7 +30,7 @@ const authenticateUser2 = async (req, res, next) => {
     try {
         const { name, userId, role, shop } = await isTokenValid({ token });
         req.user = { name, userId, role, shop };
-        console.log(req.user);
+        // console.log(req.user);
         next();
     } catch (error) {
         next();

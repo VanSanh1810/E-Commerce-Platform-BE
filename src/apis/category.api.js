@@ -159,7 +159,8 @@ const deleteCategory = async (req, res) => {
             //
             await findAllCateInTreeFromAsignNode(categoryId);
             await Product.updateMany({ category: { $in: allCateInTree } }, { category: root });
-            await currentCate.delete();
+            await Category.deleteMany({ _id: { $in: allCateInTree } });
+            // await currentCate.delete();
             // Nếu có sản phẩm trong danh mục, trả về lỗi và thông báo
             return res
                 .status(StatusCodes.OK)
@@ -180,10 +181,20 @@ const deleteCategory = async (req, res) => {
     }
 };
 
+//** ===================  POPOLAR CATEGORY  ===================
+const popularCategory = async (req, res) => {
+    try {
+        
+    } catch (e) {
+        res.status(500).json({ status: 'error', data: { message: e } });
+    }
+};
+
 module.exports = {
     createCategory,
     getAllCategories,
     getSingleCategory,
     updateCategory,
     deleteCategory,
+    popularCategory,
 };

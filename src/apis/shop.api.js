@@ -77,10 +77,14 @@ const getSingleShops = async (req, res) => {
         }
         const averageShopReview = totalReviews === 0 ? 0 : totalRating / totalReviews;
 
-        const followers = await User.find({ follow: shop._id });
+        const followers = await User.find({ follow: shop._id }, { _id: 1 });
         let totalFollowers = 0;
+        let isFollow = false;
         if (followers && followers.length > 0) {
             totalFollowers = followers.length;
+            if (req.user?.userId && followers.findIndex((u) => u._id === req.user?.userId)) {
+                isFollow = true;
+            }
         }
 
         const totalProduct = shopProducts.length;
@@ -92,6 +96,7 @@ const getSingleShops = async (req, res) => {
                 totalProduct: totalProduct,
                 totalFollowers: totalFollowers,
             },
+            isFollow: isFollow,
         });
     } catch (e) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: e } });
@@ -162,7 +167,7 @@ const updateSingleShop = async (req, res) => {
         await shop.save();
         return res.status(StatusCodes.OK).json({ status: 'success', data: { message: 'Shop updated' } });
     } catch (err) {
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'success', data: { message: err } });
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: err } });
     }
 };
 
@@ -198,9 +203,39 @@ const changeShopStatus = async (req, res) => {
     }
 };
 
+// ** ===================  FOLLOW SHOP ===================
+const followShop = async (req, res) => {
+    const { userId } = req.user;
+    const { id } = req.params;
+    try {
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { err: 'No user found' } });
+        }
+
+        const shop = await Shop.findById(id);
+        if (!shop) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { err: 'No shop found' } });
+        }
+        const index = user.follow.findIndex((itm) => shop._id.equals(itm));
+        if (index !== -1) {
+            // user.follow.splice(shop._id);
+            const newArr = user.follow.filter((item, i) => i !== index);
+            user.follow = [...newArr];
+        } else {
+            user.follow.push(shop._id);
+        }
+        await user.save();
+        return res.status(StatusCodes.OK).json({ status: 'success' });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { err } });
+    }
+};
+
 module.exports = {
     getAllShops,
     getSingleShops,
     updateSingleShop,
     changeShopStatus,
+    followShop,
 };

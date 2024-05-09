@@ -57,6 +57,8 @@ const createProduct = async (req, res) => {
         const newVDetail = variantDetail ? JSON.parse(variantDetail) : null;
         const newVData = variantData ? JSON.parse(variantData) : null;
 
+        console.log('Draft: ', isDraft);
+
         const product = new Product({
             name: name,
             description: description,
@@ -107,13 +109,14 @@ const createProduct = async (req, res) => {
 // ** ===================  GET ALL PRODUCTS  ===================
 const getAllProducts = async (req, res) => {
     const productQuery = req.query;
+    const role = req.user?.role ? req.user.role : null;
     try {
         console.log(productQuery);
 
         let query = {};
 
         if (productQuery?.searchText?.trim() !== '') {
-            if (isObjectIdOrHexString(new RegExp(productQuery.searchText, 'i'))) {
+            if (isObjectIdOrHexString(productQuery.searchText)) {
                 query = {
                     $or: [
                         { _id: { $regex: productQuery.searchText, $options: 'i' } },
@@ -128,7 +131,26 @@ const getAllProducts = async (req, res) => {
             }
         }
 
-        let products = await Product.find(query)
+        let query2 = {};
+        const sourcePort = req.headers.origin.split(':')[2]; // Lấy phần tử thứ 2 sau dấu ':'
+
+        // In ra số cổng nguồn
+        if (sourcePort === '3006') {
+            // Nếu role là 'vendor', query rỗng
+            if (role === 'vendor') {
+                query2 = {};
+            } else {
+                query2.status = 'active';
+            }
+        } else {
+            // Nếu role khác 'vendor', chỉ lấy sản phẩm có status là 'active'
+            query2.status = 'active';
+        }
+
+        console.log(query);
+        console.log(query2);
+
+        let products = await Product.find({ $and: [query, query2] })
             .populate({ path: 'shop', select: 'name' })
             .populate({ path: 'category', select: 'name' });
 
@@ -143,6 +165,31 @@ const getAllProducts = async (req, res) => {
                 const filteredProducts1 = filteredProducts.filter((product) => product.classify.equals(productQuery.classify));
                 products = [...filteredProducts1];
             }
+        }
+        ///
+        const getAllRelatedCategory = async (rootCate) => {
+            let listRelatedCategory = [];
+            const recursiveAtion = async (cateId) => {
+                const cate = await Category.findById(cateId);
+                if (!cate) return;
+                listRelatedCategory.push(cate.id);
+                if (cate && cate.child.length > 0) {
+                    for (let i = 0; i < cate.child.length; i++) {
+                        await recursiveAtion(cate.child[i]);
+                    }
+                }
+            };
+            await recursiveAtion(rootCate);
+            return listRelatedCategory;
+        };
+        ///
+
+        if (productQuery?.category) {
+            const relateCate = await getAllRelatedCategory(productQuery.category);
+            // console.log(relateCate);
+            const filteredProducts = products.filter((product) => relateCate.includes(product.category.id));
+            // console.log(filteredProducts);
+            products = [...filteredProducts];
         }
 
         const total = products.length;
@@ -302,7 +349,8 @@ const getSingleProduct = async (req, res) => {
             .populate({ path: 'category', select: 'name' })
             .populate({ path: 'classify', select: 'name' })
             .populate({ path: 'shop', select: 'name' });
-
+        
+        // product.images.find()
         if (!product) {
             return res.status(StatusCodes.NOT_FOUND).json({
                 status: 'error',
@@ -344,6 +392,7 @@ const getSingleProduct = async (req, res) => {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Lỗi server' } });
     }
 };
+
 // ** ===================  UPDATE PRODUCT  ===================
 const updateProduct = async (req, res) => {
     const productId = req.params.id;
@@ -456,7 +505,8 @@ const updateProduct = async (req, res) => {
         }
 
         if (product.status !== 'disabled') {
-            product.status = updatedData.isDraft ? 'draft' : 'active';
+            product.status = updatedData.isDraft === 'true' ? 'draft' : 'active';
+            console.log('Draft: ' + updatedData.isDraft);
         }
         const classify = await Classify.findById(updatedData.classifyId);
         product.classify = classify?._id ? classify._id : null;
@@ -551,7 +601,7 @@ const deleteProduct = async (req, res) => {
             //     await review.delete();
             // });
 
-            await Product.findByIdAndDelete(productId);
+            await product.delete();
 
             return res.json({
                 status: 'success',
@@ -561,6 +611,27 @@ const deleteProduct = async (req, res) => {
             console.error(error.stack);
             return res.status(500).json({ status: 'error', data: { message: error } });
         }
+    }
+};
+
+// ** ===================  DISABLE PRODUCT  ===================
+const disableProduct = async (req, res) => {
+    const { id } = req.params;
+    const { isHidden } = req.body;
+    try {
+        const product = await Product.findById(id);
+        if (!product) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+                message: 'Không tìm thấy sản phẩm',
+            });
+        }
+        product.status = !!isHidden ? 'disabled' : 'draft';
+        await product.save();
+        return res.status(StatusCodes.OK).json({
+            message: `Đã ${isHidden ? 'vô hiệu hóa' : 'tái kích hoạt'} sản phẩm`,
+        });
+    } catch (err) {
+        console.error(err);
     }
 };
 
@@ -589,4 +660,5 @@ module.exports = {
     updateProduct,
     deleteProduct,
     uploadImage,
+    disableProduct,
 };

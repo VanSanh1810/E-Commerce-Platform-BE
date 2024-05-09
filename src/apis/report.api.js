@@ -8,7 +8,7 @@ const { checkPermissions } = require('../utils');
 const path = require('path');
 const Order = require('../models/order.model');
 
-// ** ===================  CREATE REVIEW  ===================
+// ** ===================  CREATE REPORT  ===================
 const pushReport = async (req, res) => {
     const { reason, target, type } = req.body;
 
@@ -42,13 +42,59 @@ const pushReport = async (req, res) => {
     }
 };
 
-// ** ===================  GET ALL REVIEWS  ===================
+// ** ===================  GET ALL REPORT  ===================
 const getAllReports = async (req, res) => {
-    const reports = await Report.find().populate('sender', 'name');
-    res.status(StatusCodes.OK).json({ total_report: reports.length, reports });
+    const reportQuery = req.query;
+    try {
+        let query = {};
+
+        if (reportQuery?.reportType?.trim() !== '') {
+            if (reportQuery?.reportType === 'pending') {
+                query = {
+                    markAsRead: false,
+                };
+            } else {
+                query = {
+                    markAsRead: true,
+                };
+            }
+        }
+        let reports = await Report.find(query).populate('sender', 'name');
+
+        if (reportQuery?.currentPage) {
+            const startIndex = (parseInt(reportQuery.currentPage) - 1) * parseInt(reportQuery.limit);
+            const endIndex = startIndex + parseInt(reportQuery.limit);
+            const filteredProducts = reports.slice(startIndex, endIndex);
+            reports = [...filteredProducts];
+        }
+
+        res.status(StatusCodes.OK).json({ pages: reports.length, reports });
+    } catch (e) {
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ e });
+    }
 };
+
+
+const markAtReadReport = async (req, res) => {
+    const { reason, target, type } = req.body;
+    const { reportId } = req.params;
+    try {
+        const report = await Report.findById(reportId);
+        if (!report) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: 'No report' });
+        }
+        report.markAtRead = !report.markAtRead;
+        await report.save();
+        return res.status(StatusCodes.OK).json({ msg: 'OK' });
+    } catch (e) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: e });
+    }
+};
+
+
 
 module.exports = {
     pushReport,
     getAllReports,
+    markAtReadReport,
 };

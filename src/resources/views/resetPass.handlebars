@@ -1,0 +1,44 @@
+{{#if expried}}
+    <p class='server-page-error-text'>This link is expried</p>
+{{else}}
+    {{#if success}}
+        <p>{{success}}</p>
+    {{else}}
+        <div class='container'>
+            <div class='row justify-content-center align-items-center' style='height:100vh'>
+                <div class='col-4'>
+                    <div class='card'>
+                        <div class='card-body'>
+                            <form method='post' autocomplete='off'>
+                                <div class='form-group'>
+                                    <input type='text' class='form-control' name='pass' placeholder='Enter new password' />
+                                </div>
+                                <div class='form-group mt-2'>
+                                    <input type='text' class='form-control' name='repass' placeholder='Re-Enter new password' />
+                                </div>
+                                <div class='form-group mt-2'>
+                                    <input
+                                        hidden='true'
+                                        type='text'
+                                        class='form-control'
+                                        name='token'
+                                        readonly='true'
+                                        placeholder='Re-Enter new password'
+                                        value={{token}}
+                                    />
+                                </div>
+                                <div class='form-group'>
+                                    <button type='submit' class='btn btn-primary mt-3'>Reset Password</button>
+                                </div>
+                                {{#if err}}
+                                    <p class='server-page-error-text'>{{err}}</p>
+                                {{/if}}
+                                {{! <p class='server-page-error-text'>Password not the same</p> }}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{/if}}

@@ -8,6 +8,19 @@ const morgan = require('morgan'); //HTTP request logger middleware
 const ngrok = require('@ngrok/ngrok');
 const handlebars = require('express-handlebars');
 
+//soket
+const http = require('http');
+const server = http.createServer(app);
+const io = require('socket.io')(server, {
+    cors: {
+        origin: ['http://localhost:3000', 'http://localhost:3006'],
+    },
+});
+const ChatSocketServices = require('./services/socket.service');
+
+//Declare __io for socket.io services
+global.__io = io;
+
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 // Require Database
@@ -24,7 +37,7 @@ app.use(
     }),
 );
 
-app.use(morgan());
+// app.use(morgan());
 app.use(bodyParser.json());
 app.use(cookieParser(process.env.JWT_SECRET));
 //Read form data so web can access req.body contents
@@ -77,8 +90,11 @@ const start = async () => {
     try {
         // Connect database
         await connectDB(process.env.MONGO_URL);
+        //Set socket connection when first connect to server
+        global.__io.on('connection', ChatSocketServices.connection);
         genData();
-        app.listen(port, () => console.log(`🚀 Server is listening on port ${port}... ${__dirname}`));
+        // app.listen(port, () => console.log(`🚀 Server is listening on port ${port}... ${__dirname}`));
+        server.listen(port, () => console.log(`🚀 Server is listening on port ${port}... ${__dirname}`));
         // Get your endpoint online
         // ngrok
         //     .connect({ addr: port, authtoken_from_env: true })

@@ -11,7 +11,7 @@ const reportApi = require('../apis/report.api');
 // route.delete('/:id', reviewApi.deleteReview);
 
 // route.get('/product/:productId', reviewApi.getSingleProductReviews);
-
+route.post('/:reportId', authenticateUser, authorizePermissions('admin'), reportApi.markAtReadReport);
 route.post('/', authenticateUser, reportApi.pushReport);
 route.get('/', authenticateUser, authorizePermissions('admin'), reportApi.getAllReports);
 

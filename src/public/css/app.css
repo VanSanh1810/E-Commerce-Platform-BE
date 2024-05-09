@@ -738,3 +738,7 @@
     justify-content: center;
     gap: 8px;
 }
+
+.server-page-error-text {
+    color: #ff1010;
+}

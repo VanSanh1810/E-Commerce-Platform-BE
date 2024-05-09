@@ -10,6 +10,8 @@ const cartRoute = require('./cart.route');
 const orderRoute = require('./order.route');
 const reportRoute = require('./report.route');
 const statRoute = require('./dataStatistics.route');
+const bannerRoute = require('./banner.route');
+const resetPassRoute = require('./resetPass.route');
 const { trackingOrder } = require('../controllers/order.controller');
 
 function route(app) {
@@ -24,8 +26,10 @@ function route(app) {
     app.use('/api/cart', cartRoute);
     app.use('/api/order', orderRoute);
     app.use('/api/report', reportRoute);
+    app.use('/api/banner', bannerRoute);
     app.use('/api/stat', statRoute);
     app.get('/orderTracking/:orderCode', trackingOrder);
+    app.use('/resetPassword', resetPassRoute);
 }
 
 module.exports = route;

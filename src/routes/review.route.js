@@ -5,13 +5,11 @@ const uploadI = require('../utils/upload');
 const { authenticateUser, authorizePermissions } = require('../middlewares/authentication');
 
 const reviewApi = require('../apis/review.api');
-
-// route.get('/:id', reviewApi.getSingleReview);
 // route.patch('/:id', reviewApi.updateReview);
-// route.delete('/:id', reviewApi.deleteReview);
 
-route.get('/:id', reviewApi.getSingleReview);
 route.get('/product/:productId', reviewApi.getSingleProductReviews);
+route.post('/:id', authenticateUser, authorizePermissions('admin'), reviewApi.deleteReview);
+route.get('/:id', reviewApi.getSingleReview);
 
 route.post('/', authenticateUser, uploadI.array('images'), reviewApi.createReview);
 route.get('/', reviewApi.getAllReviews);

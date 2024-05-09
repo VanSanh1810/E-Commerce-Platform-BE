@@ -87,6 +87,15 @@ const sendEmail = async (to, orderId) => {
 
         const formattedDate = `${year}-${month}-${date}`; // Định dạng ngày tháng
 
+        // QR Code
+        var QRCode = require('qrcode');
+        const qrData = await QRCode.toDataURL(`http://localhost:4000/orderTracking/${order.id}`);
+        listAttachment.push({
+            content: qrData,
+            // path: imagePath,
+            cid: `unique@${order.id}`,
+        });
+        //
         const mailConfig = {
             from: {
                 name: 'Newpee',
@@ -100,6 +109,8 @@ const sendEmail = async (to, orderId) => {
             context: {
                 items: [...listItems],
                 orderData: {
+                    orderQRCode: `cid:unique@${order.id}`,
+                    orderURL: `http://localhost:4000/orderTracking/${order.id}`,
                     orderCode: order.code,
                     orderDate: formattedDate,
                     shopAddress: '',

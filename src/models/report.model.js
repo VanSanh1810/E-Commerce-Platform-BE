@@ -21,6 +21,10 @@ const reportSchema = new mongoose.Schema(
         reason: {
             type: String,
         },
+        markAtRead: {
+            type: Boolean,
+            default: false,
+        },
         createDate: {
             type: String,
         },
