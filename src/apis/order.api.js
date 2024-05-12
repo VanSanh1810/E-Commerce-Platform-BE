@@ -223,8 +223,25 @@ const placeOrder = async (req, res, next) => {
                 };
                 order.phoneNumber = orderAddressData.phone;
                 order.code = genarateOrderCode(bodyData.paymentMethod, true, order._id);
-                paymentDataToProcess.push({ orderId: order._id, price: totalPrice });
+
+                // shipping cost
+                const thisOrderShop = await Shop.findById(shopObj._id);
+                const shopAddress = await Address.findById(thisOrderShop.addresses);
+                if (shopAddress.address.province === parseInt(orderAddressData.province)) {
+                    order.shippingCost = 1.5;
+                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + 1.1 });
+                } else {
+                    order.shippingCost = 1.1;
+                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + 1.5 });
+                }
+                //
                 await order.save();
+                //notification
+                const vendor = await User.findOne({ shop: order.shop });
+                await saveNotifyToDb([vendor._id], {
+                    title: `<p>You have new order: Code ${order.code}</p>`,
+                    target: { id: order._id, type: 'Order' },
+                });
                 //send mail
                 sendEmail(order.email, order._id);
                 // payment
@@ -233,7 +250,7 @@ const placeOrder = async (req, res, next) => {
                     let createDate = moment(date).format('YYYYMMDDHHmmss'); // Sử dụng thư viện date-fns hoặc tương tự để định dạng ngày
                     const paymentData = {
                         amount: totalPrice, // Tổng số tiền của đơn hàng
-                        orderId: JSON.stringify([{ orderId: order._id, price: totalPrice }]), // ID của đơn hàng mới tạo
+                        orderId: JSON.stringify([{ orderId: order._id, price: totalPrice + order.shippingCost }]), // ID của đơn hàng mới tạo
                         description: 'Thanh toan cho ma GD:' + order._id, // Mô tả đơn hàng
                         ipAddress: req.ip, // IP của khách hàng đặt hàng
                         createDate: createDate, // Ngày giờ tạo đơn hàng theo định dạng VNPay
@@ -406,7 +423,24 @@ const placeOrder = async (req, res, next) => {
                 };
                 order.code = genarateOrderCode(bodyData.paymentMethod, false, order._id);
                 order.phoneNumber = orderAddressData.phone;
+                // shipping cost
+                const thisOrderShop = await Shop.findById(shopObj._id);
+                const shopAddress = await Address.findById(thisOrderShop.addresses);
+                if (shopAddress.address.province === parseInt(orderAddressData.province)) {
+                    order.shippingCost = 1.5;
+                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + 1.1 });
+                } else {
+                    order.shippingCost = 1.1;
+                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + 1.5 });
+                }
+                //
                 await order.save();
+                //notification
+                const vendor = await User.findOne({ shop: order.shop });
+                await saveNotifyToDb([vendor._id], {
+                    title: `<p>You have new order: Code ${order.code}</p>`,
+                    target: { id: order._id, type: 'Order' },
+                });
                 //send mail
                 sendEmail(order.email, order._id);
                 // payment
@@ -415,7 +449,7 @@ const placeOrder = async (req, res, next) => {
                     let createDate = moment(date).format('YYYYMMDDHHmmss'); // Sử dụng thư viện date-fns hoặc tương tự để định dạng ngày
                     const paymentData = {
                         amount: totalPrice, // Tổng số tiền của đơn hàng
-                        orderId: JSON.stringify([{ orderId: order._id, price: totalPrice }]), // ID của đơn hàng mới tạo
+                        orderId: JSON.stringify([{ orderId: order._id, price: totalPrice + order.shippingCost }]), // ID của đơn hàng mới tạo
                         description: 'Thanh toan cho ma GD:' + order._id, // Mô tả đơn hàng
                         ipAddress: req.ip, // IP của khách hàng đặt hàng
                         createDate: createDate, // Ngày giờ tạo đơn hàng theo định dạng VNPay
@@ -489,13 +523,6 @@ const vnpINP = async (req, res, next) => {
                     const order = await Order.findById(ordersHaveProcess[i].orderId);
                     if (order) {
                         order.onlPayStatus = 'Confirmed';
-                        const shop = await Shop.findById(order.shop);
-                        if (shop.balance) {
-                            shop.balance = order.total + shop.balance;
-                        } else {
-                            shop.balance = order.total;
-                        }
-                        await shop.save();
                     }
                     await order.save();
                 }
@@ -664,12 +691,32 @@ const updateOrderStatus = async (req, res) => {
                 if ((order.onlPayStatus === 'Confirmed' || order.onlPayStatus === 'None') && order.status === 'Delivered') {
                     order.status = status;
                     await order.save();
+                    //
+                    const shop = await Shop.findById(order.shop);
+                    if (shop.balance) {
+                        shop.balance = order.total + shop.balance;
+                    } else {
+                        shop.balance = order.total;
+                    }
+                    await shop.save();
+                    //notification
+                    const vendor = await User.findOne({ shop: order.shop });
+                    await saveNotifyToDb([vendor._id], {
+                        title: `<p><b>Order success</b>, you have recieve <b>${order.total}$</b></p>`,
+                        target: { id: order._id, type: 'Order' },
+                    });
                     return res.status(StatusCodes.OK).json({ status: 'success', message: 'Order status updated' });
                 }
             } else {
                 if ((order.onlPayStatus === 'Pending' || order.onlPayStatus === 'None') && order.status === 'Pending') {
                     order.status = status;
                     await order.save();
+                    //notification
+                    const vendor = await User.findOne({ shop: order.shop });
+                    await saveNotifyToDb([vendor._id], {
+                        title: `<p><b>Order canceled</b</p>`,
+                        target: { id: order._id, type: 'Order' },
+                    });
                     return res.status(StatusCodes.OK).json({ status: 'success', message: 'Order status updated' });
                 }
             }

@@ -11,11 +11,15 @@ const orderRoute = require('./order.route');
 const reportRoute = require('./report.route');
 const statRoute = require('./dataStatistics.route');
 const bannerRoute = require('./banner.route');
+const notifyRoute = require('./notification.route');
 const resetPassRoute = require('./resetPass.route');
 const { trackingOrder } = require('../controllers/order.controller');
+const socketService = require('../services/socket.service');
+const { saveNotifyToDb } = require('../utils/notification.util');
 
 function route(app) {
     app.use('/api/auth', authRouter);
+    app.use('/api/notify', notifyRoute);
     app.use('/api/category', categoryRoute);
     app.use('/api/product', productRoute);
     app.use('/api/user', userRoute);
@@ -30,6 +34,13 @@ function route(app) {
     app.use('/api/stat', statRoute);
     app.get('/orderTracking/:orderCode', trackingOrder);
     app.use('/resetPassword', resetPassRoute);
+    app.get('/test', async (req, res) => {
+        await saveNotifyToDb(['6600d0d240368b9bb27ebb14'], {
+            title: `<p>You have new review with 5 star</p>`,
+            target: { id: null, type: 'None' },
+        });
+        res.status(200).json({ msg: 'ok' });
+    });
 }
 
 module.exports = route;

@@ -54,8 +54,19 @@ const createCategory = async (req, res) => {
 
 // ** ===================  GET ALL CATEGORY  ===================
 const getAllCategories = async (req, res) => {
+    const cateQuery = req.query;
     try {
         const categories = await Category.find().populate('root', '_id');
+        if (cateQuery?.cateType) {
+            switch (cateQuery.cateType) {
+                case '':
+                    break;
+                case 'popular':
+                    break;
+                default:
+                    break;
+            }
+        }
         res.status(StatusCodes.OK).json({ status: 'success', data: categories });
     } catch (error) {
         console.error(error.stack);
@@ -132,49 +143,32 @@ const deleteCategory = async (req, res) => {
 
     try {
         // Kiểm tra xem có sản phẩm nào liên quan đến danh mục này không
-        const productsInCategory = await Product.find({ category: categoryId });
-
-        // const currentCate = await Category.findById(categoryId);
-
-        if (productsInCategory.length > 0) {
-            const currentCate = await Category.findById(categoryId);
-            const root = currentCate.root ? currentCate.root : null;
-            let allCateInTree = [];
-            //
-            const findAllCateInTreeFromAsignNode = async (id) => {
-                const cate = await Category.findById(id);
-                if (cate) {
-                    allCateInTree.push(cate._id);
-                    if (cate.child.length > 0) {
-                        for (let i = 0; i < cate.child.length; i++) {
-                            await findAllCateInTreeFromAsignNode(cate.child[i]);
-                        }
-                    } else {
-                        return;
+        const currentCate = await Category.findById(categoryId);
+        const root = currentCate.root ? currentCate.root : null;
+        let allCateInTree = [];
+        //
+        const findAllCateInTreeFromAsignNode = async (id) => {
+            const cate = await Category.findById(id);
+            if (cate) {
+                allCateInTree.push(cate._id);
+                if (cate.child.length > 0) {
+                    for (let i = 0; i < cate.child.length; i++) {
+                        await findAllCateInTreeFromAsignNode(cate.child[i]);
                     }
                 } else {
-                    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Vô lý' } });
+                    return;
                 }
-            };
-            //
-            await findAllCateInTreeFromAsignNode(categoryId);
-            await Product.updateMany({ category: { $in: allCateInTree } }, { category: root });
-            await Category.deleteMany({ _id: { $in: allCateInTree } });
-            // await currentCate.delete();
-            // Nếu có sản phẩm trong danh mục, trả về lỗi và thông báo
-            return res
-                .status(StatusCodes.OK)
-                .json({ status: 'sucess', data: { message: 'Category deleted and updated product !' } });
-        } else {
-            // Nếu không có sản phẩm trong danh mục, thì xóa danh mục
-            const category = await Category.findByIdAndRemove(categoryId);
-
-            if (!category) {
-                return res.status(404).json({ status: 'error', data: { message: 'Không tìm thấy danh mục' } });
+            } else {
+                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Vô lý' } });
             }
-
-            res.json({ status: 'success', data: { message: 'Danh mục đã bị xóa' } });
-        }
+        };
+        //
+        await findAllCateInTreeFromAsignNode(categoryId);
+        await Product.updateMany({ category: { $in: allCateInTree } }, { category: root });
+        await Category.deleteMany({ _id: { $in: allCateInTree } });
+        // await currentCate.delete();
+        // Nếu có sản phẩm trong danh mục, trả về lỗi và thông báo
+        return res.status(StatusCodes.OK).json({ status: 'sucess', data: { message: 'Category deleted and updated product !' } });
     } catch (error) {
         console.error(error.stack);
         res.status(500).json({ status: 'error', data: { message: 'Lỗi server' } });
@@ -184,7 +178,6 @@ const deleteCategory = async (req, res) => {
 //** ===================  POPOLAR CATEGORY  ===================
 const popularCategory = async (req, res) => {
     try {
-        
     } catch (e) {
         res.status(500).json({ status: 'error', data: { message: e } });
     }

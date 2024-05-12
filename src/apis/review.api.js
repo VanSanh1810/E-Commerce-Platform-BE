@@ -6,6 +6,7 @@ const { StatusCodes } = require('http-status-codes');
 const { checkPermissions } = require('../utils');
 const path = require('path');
 const Order = require('../models/order.model');
+const { saveNotifyToDb } = require('../utils/notification.util');
 
 // ** ===================  CREATE REVIEW  ===================
 const createReview = async (req, res) => {
@@ -45,7 +46,13 @@ const createReview = async (req, res) => {
         //
         await review.save();
         await order.save();
-
+        //notification
+        const vendor = await User.findOne({ shop: order.shop });
+        await saveNotifyToDb([vendor._id], {
+            title: `<p>You have new review with ${rating} star</p>`,
+            target: { id: review._id, type: 'Review' },
+        });
+        //
         return res.status(StatusCodes.OK).json({ review });
     } catch (e) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: e });

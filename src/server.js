@@ -17,6 +17,7 @@ const io = require('socket.io')(server, {
     },
 });
 const ChatSocketServices = require('./services/socket.service');
+// import singletonSocketService  from './services/socket.service'
 
 //Declare __io for socket.io services
 global.__io = io;
@@ -91,6 +92,7 @@ const start = async () => {
         // Connect database
         await connectDB(process.env.MONGO_URL);
         //Set socket connection when first connect to server
+
         global.__io.on('connection', ChatSocketServices.connection);
         genData();
         // app.listen(port, () => console.log(`🚀 Server is listening on port ${port}... ${__dirname}`));

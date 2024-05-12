@@ -11,16 +11,20 @@ const notifySchema = new mongoose.Schema(
             default: false,
         },
         target: {
-            type: { type: String, enum: ['Review', 'Order', 'Report', 'None'], default: 'None', required: true },
+            type: { type: String, enum: ['Review', 'Order', 'Report', 'Product', 'None'], default: 'None', required: true },
             id: {
                 type: mongoose.Schema.Types.ObjectId,
                 refPath: 'target.type',
+            },
+            icon: {
+                name: { type: String },
+                color: { type: String },
             },
         },
         to: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
-            default: null,
+            required: true,
         },
         createDate: {
             type: Number,

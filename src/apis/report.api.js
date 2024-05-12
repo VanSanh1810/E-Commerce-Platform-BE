@@ -7,6 +7,7 @@ const { StatusCodes } = require('http-status-codes');
 const { checkPermissions } = require('../utils');
 const path = require('path');
 const Order = require('../models/order.model');
+const { saveNotifyToDb } = require('../utils/notification.util');
 
 // ** ===================  CREATE REPORT  ===================
 const pushReport = async (req, res) => {
@@ -36,6 +37,16 @@ const pushReport = async (req, res) => {
         }
         report.reason = reason;
         await report.save();
+        //notify
+        const userAdmin = await User.find({ role: 'admin' });
+        const listTarget = [];
+        for (let i = 0; i < userAdmin.length; i++) {
+            listTarget.push(userAdmin[i]._id);
+        }
+        await saveNotifyToDb([...listTarget], {
+            title: `<p>You have new ${type} report</p>`,
+            target: { id: report._id, type: type },
+        });
         return res.status(StatusCodes.OK).json({ msg: 'OK' });
     } catch (e) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: e });
@@ -74,7 +85,6 @@ const getAllReports = async (req, res) => {
     }
 };
 
-
 const markAtReadReport = async (req, res) => {
     const { reason, target, type } = req.body;
     const { reportId } = req.params;
@@ -90,8 +100,6 @@ const markAtReadReport = async (req, res) => {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: e });
     }
 };
-
-
 
 module.exports = {
     pushReport,

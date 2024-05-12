@@ -11,6 +11,8 @@ const fs = require('fs');
 const path = require('path');
 const { isNullOrUndefined } = require('util');
 const { isObjectIdOrHexString } = require('mongoose');
+const Order = require('../models/order.model');
+const moment = require('moment');
 
 // ** ===================  CREATE PRODUCT  ===================
 const createProduct = async (req, res) => {
@@ -134,7 +136,6 @@ const getAllProducts = async (req, res) => {
         let query2 = {};
         const sourcePort = req.headers.origin.split(':')[2]; // Lấy phần tử thứ 2 sau dấu ':'
 
-        // In ra số cổng nguồn
         if (sourcePort === '3006') {
             // Nếu role là 'vendor', query rỗng
             if (role === 'vendor') {
@@ -192,22 +193,85 @@ const getAllProducts = async (req, res) => {
             products = [...filteredProducts];
         }
 
-        const total = products.length;
+        if (productQuery?.sortType) {
+            let filteredProducts;
+            switch (productQuery.sortType) {
+                case '': //get all products
+                    break;
+                case 'new': // new add in last week
+                    function isWithinOneWeek(timeInSeconds) {
+                        const oneWeekInSeconds = 7 * 24 * 60 * 60; // Số giây trong một tuần
+                        const currentTimeInSeconds = Math.floor(Date.now() / 1000); // Chuyển thời gian hiện tại sang giây
 
-        // if (productQuery?.sortType) {
-        //     switch (productQuery.sortType) {
-        //         case '':
-        //             break;
-        //         case 'featured':
-        //             break;
-        //         case 'trending':
-        //             break;
-        //         default:
-        //             break;
-        //     }
-        //     const filteredProducts = products.filter((product) => product.shop.equals(productQuery.shopId));
-        //     products = [...filteredProducts];
-        // }
+                        return currentTimeInSeconds - timeInSeconds <= oneWeekInSeconds;
+                    }
+                    filteredProducts = products.filter((product) => isWithinOneWeek(parseInt(product.createDate)));
+                    products = [...filteredProducts];
+                    break;
+                case 'trending': // most selling in last week
+                    // Lấy thời gian hiện tại
+                    const currentDate = moment();
+                    // Tạo khoảng thời gian 1 tuần trước
+                    const oneWeekAgo = currentDate.subtract(7, 'days').valueOf();
+                    const ordersWithinOneWeek = await Order.find({
+                        createDate: {
+                            $gte: oneWeekAgo,
+                        },
+                    })
+                        .select('_id items')
+                        .populate({
+                            path: 'items',
+                            populate: { path: 'idToSnapshot' }, // 'productSnapshot' là tên trường ref trong items
+                        });
+                    const listProductMatch = [];
+                    for (let i = 0; i < ordersWithinOneWeek.length; i++) {
+                        const items = [...ordersWithinOneWeek[i].items];
+                        for (let j = 0; j < items.length; j++) {
+                            items[j].idToSnapshot.productId;
+                            const index = listProductMatch.findIndex((p) => p.id === items[j].idToSnapshot.productId);
+                            if (index !== -1) {
+                                listProductMatch[index].total += items[j].quantity;
+                            } else {
+                                listProductMatch.push({ id: items[j].idToSnapshot.productId, total: items[j].quantity });
+                            }
+                        }
+                    }
+                    filteredProducts = products.filter(
+                        (product) => listProductMatch.findIndex((p) => product._id.equals(p.id)) !== -1,
+                    );
+                    products = [...filteredProducts];
+                    break;
+                case 'popular': // most selling in all times
+                    const orders = await Order.find()
+                        .select('_id items')
+                        .populate({
+                            path: 'items',
+                            populate: { path: 'idToSnapshot' }, // 'productSnapshot' là tên trường ref trong items
+                        });
+                    const listProductMatch1 = [];
+                    for (let i = 0; i < orders.length; i++) {
+                        const items = [...orders[i].items];
+                        for (let j = 0; j < items.length; j++) {
+                            items[j].idToSnapshot.productId;
+                            const index = listProductMatch1.findIndex((p) => p.id === items[j].idToSnapshot.productId);
+                            if (index !== -1) {
+                                listProductMatch1[index].total += items[j].quantity;
+                            } else {
+                                listProductMatch1.push({ id: items[j].idToSnapshot.productId, total: items[j].quantity });
+                            }
+                        }
+                    }
+                    filteredProducts = products.filter(
+                        (product) => listProductMatch1.findIndex((p) => product._id.equals(p.id)) !== -1,
+                    );
+                    products = [...filteredProducts];
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        const total = products.length;
 
         if (productQuery?.sortPrice) {
             switch (productQuery.sortPrice) {
@@ -291,11 +355,6 @@ const getAllProducts = async (req, res) => {
             products = [...filteredProducts];
         }
 
-        // if (productQuery?.limit) {
-        //     const filteredProducts = products.filter((product) => product.shop.equals(productQuery.shopId));
-        //     products = [...filteredProducts];
-        // }
-
         Promise.all(
             products.map(async (product) => {
                 const result = await Review.aggregate([
@@ -349,7 +408,7 @@ const getSingleProduct = async (req, res) => {
             .populate({ path: 'category', select: 'name' })
             .populate({ path: 'classify', select: 'name' })
             .populate({ path: 'shop', select: 'name' });
-        
+
         // product.images.find()
         if (!product) {
             return res.status(StatusCodes.NOT_FOUND).json({
@@ -627,11 +686,125 @@ const disableProduct = async (req, res) => {
         }
         product.status = !!isHidden ? 'disabled' : 'draft';
         await product.save();
+        //notify
+        const vendor = await User.findOne({ shop: product.shop });
+        await saveNotifyToDb([vendor._id], {
+            title: isHidden
+                ? `<p>Your product has been <b>disable</b> by adminstrator. Please contact us for a soluton</p>`
+                : `<p>Your product has been <b>activated</b></p>`,
+            target: { id: product._id, type: 'Product' },
+        });
         return res.status(StatusCodes.OK).json({
             message: `Đã ${isHidden ? 'vô hiệu hóa' : 'tái kích hoạt'} sản phẩm`,
         });
     } catch (err) {
         console.error(err);
+    }
+};
+
+// ** ===================  RELATED PRODUCT  ===================
+const relatedProducts = async (req, res) => {
+    const { productId } = req.params;
+    async function findProducts(allCateInTree, tags) {
+        try {
+            const products = await Product.find({
+                $or: [
+                    { category: { $in: allCateInTree } }, // Tìm các sản phẩm có category thuộc allCateInTree
+                    { tag: { $regex: tags.join('|') } }, // Tìm các sản phẩm có tag tương tự với list tags
+                ],
+            });
+            return products;
+        } catch (error) {
+            console.error('Error finding products:', error);
+            throw error;
+        }
+    }
+    try {
+        const product = await Product.findById(productId);
+        if (!product) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+                message: 'No product found',
+            });
+        }
+        //relate is sub child or same category, relate with tags
+        const allCateInTree = [];
+        const _tag = [...product.tag.split(',').map((tag) => tag.trim())];
+        //
+        const findAllCateInTreeFromAsignNode = async (id) => {
+            const cate = await Category.findById(id);
+            if (cate) {
+                allCateInTree.push(cate._id);
+                if (cate.child.length > 0) {
+                    for (let i = 0; i < cate.child.length; i++) {
+                        await findAllCateInTreeFromAsignNode(cate.child[i]);
+                    }
+                } else {
+                    return;
+                }
+            } else {
+                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Vô lý' } });
+            }
+        };
+        //
+        await findAllCateInTreeFromAsignNode(product.category);
+        ////////////////////////////////
+        let matchedProducts = await findProducts(allCateInTree, _tag);
+        matchedProducts = matchedProducts.filter((product) => !product._id.equals(productId));
+        function countOccurrences(list, bigString) {
+            // Tạo một biểu thức chính quy từ danh sách chuỗi
+            const regex = new RegExp(list.join('|'), 'g');
+
+            // Sử dụng match() để tìm tất cả các chuỗi phù hợp
+            const matches = bigString.match(regex);
+
+            // Trả về số lượng phần tử phù hợp được tìm thấy
+            return matches ? matches.length : 0;
+        }
+        Promise.all(
+            matchedProducts.map(async (product) => {
+                const result = await Review.aggregate([
+                    { $match: { product: product._id } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
+                    {
+                        $group: {
+                            _id: null, // Gộp tất cả các đánh giá thành một nhóm duy nhất
+                            totalReviews: { $sum: 1 }, // Tính tổng số lượng đánh giá
+                            averageRating: { $avg: '$rating' }, // Tính điểm trung bình
+                        },
+                    },
+                ]);
+
+                const productObj = product.toObject();
+                const inCate = allCateInTree.includes(productObj.category);
+                const relatedTag = countOccurrences([..._tag], productObj.tag);
+                productObj.relatedRank = relatedTag + inCate ? 1 : 0;
+
+                if (result.length > 0) {
+                    const totalReviews = result[0].totalReviews;
+                    const averageRating = result[0].averageRating;
+                    // Trả về kết quả
+
+                    productObj.totalReviews = totalReviews;
+                    productObj.averageRating = averageRating;
+                    return productObj;
+                    // return { totalReviews, averageRating };
+                } else {
+                    // Trả về giá trị mặc định nếu không có đánh giá nào
+                    productObj.totalReviews = 0;
+                    productObj.averageRating = 0;
+                    return productObj;
+                }
+            }),
+        )
+            .then((result) => {
+                res.status(StatusCodes.OK).json({ status: 'success', data: result, pages: result.length });
+            })
+            .catch((err) => {
+                res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'err', message: err });
+            });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+            message: err,
+        });
     }
 };
 
@@ -661,4 +834,5 @@ module.exports = {
     deleteProduct,
     uploadImage,
     disableProduct,
+    relatedProducts,
 };
