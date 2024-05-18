@@ -85,7 +85,15 @@ const login = async (req, res) => {
             });
         }
         let shopId = user.shop;
-        if (isAdminPage && user.role !== 'admin') {
+        let _isAdminPage;
+        const sourcePort = req.headers.origin.split(':')[2]; // Lấy phần tử thứ 2 sau dấu ':'
+        if (sourcePort === '3006') {
+            _isAdminPage = true;
+        } else {
+            // Nếu role khác 'vendor', chỉ lấy sản phẩm có status là 'active'
+            _isAdminPage === false;
+        }
+        if (_isAdminPage && user.role !== 'admin') {
             // create shop went FIRST login to admin page
             if (!user.shop) {
                 const shop = new Shop({ vendor: user.id, status: 'pending', avatar: null });

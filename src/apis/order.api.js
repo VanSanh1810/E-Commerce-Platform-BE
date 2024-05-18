@@ -6,12 +6,13 @@ const Add = require('../models/cart.model');
 const Address = require('../models/address.model');
 const Product = require('../models/product.model');
 const ProductSnapshot = require('../models/productSnapShot.model');
+const ShipCost = require('../models/shipCost.model');
 const { StatusCodes } = require('http-status-codes');
 const CustomError = require('../errors');
 const path = require('path');
 const fs = require('fs');
 const { format } = require('date-fns');
-const { createTokenUser, attachCookiesToResponse, checkPermissions } = require('../utils');
+const { createTokenUser, attachCookiesToResponse, checkPermissions, addTagHistory } = require('../utils');
 const { sortObject, generateVNPayUrl } = require('../services/vnPay.service');
 const { sendEmail } = require('../services/sendMail.service');
 let config = require('config');
@@ -22,6 +23,7 @@ const httpProxy = require('http-proxy');
 const { isObjectIdOrHexString } = require('mongoose');
 const Category = require('../models/category.model');
 const Banner = require('../models/banner.model');
+const { saveNotifyToDb } = require('../utils/notification.util');
 const proxy = httpProxy.createProxyServer();
 
 const updateProductStockWhenPlacedOrder = async (id, variant, quantity) => {
@@ -72,8 +74,6 @@ const placeOrder = async (req, res, next) => {
     const bodyData = req.body;
     if (req.user?.userId) {
         // buy with logging in
-        // const session = await mongoose.startSession();
-        // session.startTransaction();
         try {
             let orderAddressData = {};
             if (bodyData.address.type) {
@@ -131,6 +131,8 @@ const placeOrder = async (req, res, next) => {
                     const realProduct = await Product.findById(shopItems[j].product).select(
                         'images name price discountPrice stock variantData variantDetail',
                     );
+                    //productHistory
+                    await addTagHistory(realProduct.tag, 20, req.user?.userId);
                     //
                     const voucherData = await vouchersChecker(shopItems[j].product);
                     //
@@ -227,12 +229,13 @@ const placeOrder = async (req, res, next) => {
                 // shipping cost
                 const thisOrderShop = await Shop.findById(shopObj._id);
                 const shopAddress = await Address.findById(thisOrderShop.addresses);
+                const sCost = await ShipCost.find();
                 if (shopAddress.address.province === parseInt(orderAddressData.province)) {
-                    order.shippingCost = 1.5;
-                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + 1.1 });
+                    order.shippingCost = sCost[0].inShipCost;
+                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + sCost[0].inShipCost });
                 } else {
-                    order.shippingCost = 1.1;
-                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + 1.5 });
+                    order.shippingCost = sCost[0].outShipCost;
+                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + sCost[0].outShipCost });
                 }
                 //
                 await order.save();
@@ -283,15 +286,8 @@ const placeOrder = async (req, res, next) => {
                 const redirectUrl = generateVNPayUrl(paymentData);
                 return res.status(StatusCodes.OK).json({ status: 'success', url: redirectUrl });
             }
-            // Lưu các thay đổi vào cơ sở dữ liệu
-            // await session.commitTransaction();
-            // console.log('Transaction committed');
             return res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Order created' } });
         } catch (err) {
-            // await session.abortTransaction();
-            // console.error('Transaction aborted:', err);
-            // // Kết thúc session
-            // session.endSession();
             console.log(err);
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'success', data: { err: err } });
         }
@@ -303,7 +299,7 @@ const placeOrder = async (req, res, next) => {
                 // user address
                 // new address
                 const newAddressData = { ...bodyData.address.data };
-                orderAddressData.email = bodyData.address.email;
+                orderAddressData.email = newAddressData.email;
                 orderAddressData.phone = newAddressData.phone;
                 orderAddressData.province = newAddressData.province;
                 orderAddressData.district = newAddressData.district;
@@ -405,7 +401,7 @@ const placeOrder = async (req, res, next) => {
                     totalPrice += shopItems[j].quantity * productPrice;
                 }
                 // create order
-                order.user = req.user.userId;
+                order.user = null;
                 order.shop = shopObj._id;
                 order.note = bodyData.itemData[i].note;
                 order.items = [...orderItems];
@@ -423,15 +419,17 @@ const placeOrder = async (req, res, next) => {
                 };
                 order.code = genarateOrderCode(bodyData.paymentMethod, false, order._id);
                 order.phoneNumber = orderAddressData.phone;
+
                 // shipping cost
                 const thisOrderShop = await Shop.findById(shopObj._id);
                 const shopAddress = await Address.findById(thisOrderShop.addresses);
+                const sCost = await ShipCost.find();
                 if (shopAddress.address.province === parseInt(orderAddressData.province)) {
-                    order.shippingCost = 1.5;
-                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + 1.1 });
+                    order.shippingCost = sCost[0].inShipCost;
+                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + sCost[0].inShipCost });
                 } else {
-                    order.shippingCost = 1.1;
-                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + 1.5 });
+                    order.shippingCost = sCost[0].outShipCost;
+                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + sCost[0].outShipCost });
                 }
                 //
                 await order.save();
@@ -461,9 +459,6 @@ const placeOrder = async (req, res, next) => {
                     order.save();
                 }
             }
-            // Lưu các thay đổi vào cơ sở dữ liệu
-            // await session.commitTransaction();
-            // console.log('Transaction committed');
             if (!bodyData.paymentMethod) {
                 const allOrderPrice = await paymentDataToProcess.reduce(
                     (accumulator, currentValue) => accumulator + currentValue.price,
@@ -487,10 +482,6 @@ const placeOrder = async (req, res, next) => {
             }
             return res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Order created' } });
         } catch (err) {
-            // await session.abortTransaction();
-            // console.error('Transaction aborted:', err);
-            // // Kết thúc session
-            // session.endSession();
             console.log(err);
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'success', data: { err: err } });
         }

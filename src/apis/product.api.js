@@ -13,6 +13,7 @@ const { isNullOrUndefined } = require('util');
 const { isObjectIdOrHexString } = require('mongoose');
 const Order = require('../models/order.model');
 const moment = require('moment');
+const { addTagHistory } = require('../utils');
 
 // ** ===================  CREATE PRODUCT  ===================
 const createProduct = async (req, res) => {
@@ -416,6 +417,18 @@ const getSingleProduct = async (req, res) => {
                 data: { message: `No product with the id ${productId}` },
             });
         } else {
+            try {
+                const { historyAction } = req.query;
+                if (req.user?.userId && historyAction) {
+                    const user = await User.findById(req.user.userId);
+                    if (user) {
+                        await addTagHistory(product.tag, 2, user.id);
+                    }
+                }
+            } catch (e) {
+                console.error(e);
+            }
+
             const result = await Review.aggregate([
                 { $match: { product: product._id } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
                 {
@@ -808,6 +821,167 @@ const relatedProducts = async (req, res) => {
     }
 };
 
+// ** ===================  RECOMMEND PRODUCT  ===================
+const recomendProduct = async (req, res) => {
+    try {
+        async function findProducts(tags) {
+            // Duyệt qua danh sách và trích xuất tất cả các name
+            const namesArray = tags.map((obj) => obj.name);
+            try {
+                const products = await Product.find({
+                    $or: [
+                        { tag: { $regex: namesArray.join('|') } }, // Tìm các sản phẩm có tag tương tự với list tags
+                    ],
+                });
+                return products;
+            } catch (error) {
+                console.error('Error finding products:', error);
+                throw error;
+            }
+        }
+        const { userId } = req.user;
+        if (userId) {
+            const user = await User.findById(userId);
+            if (!user) {
+                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'err', message: 'No  user found' });
+            }
+            const productHisList = user.productHistory && user.productHistory.length > 0 ? [...user.productHistory] : [];
+            const matchedProducts = await findProducts(productHisList);
+            //
+            function countOccurrences(list, bigString) {
+                const namesArray = list.map((obj) => obj.name);
+                // Tạo một biểu thức chính quy từ danh sách chuỗi
+                const regex = new RegExp(namesArray.join('|'), 'g');
+
+                // Sử dụng match() để tìm tất cả các chuỗi phù hợp
+                const matches = bigString.match(regex);
+
+                let totalScore = 0;
+                if (matches) {
+                    matches.forEach((match) => {
+                        const matchedObject = list.find((obj) => obj.name === match);
+                        if (matchedObject) {
+                            totalScore += matchedObject.score;
+                        }
+                    });
+                }
+
+                // Trả về số lượng phần tử phù hợp được tìm thấy
+                return totalScore;
+            }
+            //
+            Promise.all(
+                matchedProducts.map(async (product) => {
+                    const result = await Review.aggregate([
+                        { $match: { product: product._id } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
+                        {
+                            $group: {
+                                _id: null, // Gộp tất cả các đánh giá thành một nhóm duy nhất
+                                totalReviews: { $sum: 1 }, // Tính tổng số lượng đánh giá
+                                averageRating: { $avg: '$rating' }, // Tính điểm trung bình
+                            },
+                        },
+                    ]);
+
+                    const productObj = product.toObject();
+                    const relatedTag = countOccurrences([...productHisList], productObj.tag);
+                    productObj.recommendRank = relatedTag;
+
+                    if (result.length > 0) {
+                        const totalReviews = result[0].totalReviews;
+                        const averageRating = result[0].averageRating;
+                        // Trả về kết quả
+
+                        productObj.totalReviews = totalReviews;
+                        productObj.averageRating = averageRating;
+                        return productObj;
+                        // return { totalReviews, averageRating };
+                    } else {
+                        // Trả về giá trị mặc định nếu không có đánh giá nào
+                        productObj.totalReviews = 0;
+                        productObj.averageRating = 0;
+                        return productObj;
+                    }
+                }),
+            )
+                .then((result) => {
+                    res.status(StatusCodes.OK).json({ status: 'success', data: result, pages: result.length });
+                })
+                .catch((err) => {
+                    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'err', message: err });
+                });
+        } else {
+            const { hisList } = req.body;
+            const matchedProducts = await findProducts(hisList);
+            //
+            function countOccurrences(list, bigString) {
+                const namesArray = list.map((obj) => obj.name);
+                // Tạo một biểu thức chính quy từ danh sách chuỗi
+                const regex = new RegExp(namesArray.join('|'), 'g');
+
+                // Sử dụng match() để tìm tất cả các chuỗi phù hợp
+                const matches = bigString.match(regex);
+
+                let totalScore = 0;
+                if (matches) {
+                    matches.forEach((match) => {
+                        const matchedObject = list.find((obj) => obj.name === match);
+                        if (matchedObject) {
+                            totalScore += matchedObject.score;
+                        }
+                    });
+                }
+
+                // Trả về số lượng phần tử phù hợp được tìm thấy
+                return totalScore;
+            }
+            //
+            Promise.all(
+                matchedProducts.map(async (product) => {
+                    const result = await Review.aggregate([
+                        { $match: { product: product._id } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
+                        {
+                            $group: {
+                                _id: null, // Gộp tất cả các đánh giá thành một nhóm duy nhất
+                                totalReviews: { $sum: 1 }, // Tính tổng số lượng đánh giá
+                                averageRating: { $avg: '$rating' }, // Tính điểm trung bình
+                            },
+                        },
+                    ]);
+
+                    const productObj = product.toObject();
+                    const relatedTag = countOccurrences([...hisList], productObj.tag);
+                    productObj.recommendRank = relatedTag;
+
+                    if (result.length > 0) {
+                        const totalReviews = result[0].totalReviews;
+                        const averageRating = result[0].averageRating;
+                        // Trả về kết quả
+
+                        productObj.totalReviews = totalReviews;
+                        productObj.averageRating = averageRating;
+                        return productObj;
+                        // return { totalReviews, averageRating };
+                    } else {
+                        // Trả về giá trị mặc định nếu không có đánh giá nào
+                        productObj.totalReviews = 0;
+                        productObj.averageRating = 0;
+                        return productObj;
+                    }
+                }),
+            )
+                .then((result) => {
+                    res.status(StatusCodes.OK).json({ status: 'success', data: result, pages: result.length });
+                })
+                .catch((err) => {
+                    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'err', message: err });
+                });
+        }
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'err', message: err });
+    }
+};
+
 // ** ===================  UPLOAD IMAGE PRODUCT  ===================
 const uploadImage = async (req, res) => {
     if (!req.files) {
@@ -835,4 +1009,5 @@ module.exports = {
     uploadImage,
     disableProduct,
     relatedProducts,
+    recomendProduct,
 };

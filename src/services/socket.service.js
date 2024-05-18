@@ -1,4 +1,6 @@
 require('dotenv').config();
+const Conversation = require('../models/conversation.model');
+const Message = require('../models/message.model');
 
 const users = {};
 const userSocket = {};
@@ -24,39 +26,19 @@ class SocketServices {
         });
 
         //chat messages
-        socket.on('send-dm-message', async (messageObj, roomId, curentUserUid, targetUserId) => {
-            // if (roomId) {
-            //     global.__io.to(roomId).emit('resive-dm-message', messageObj, roomId, curentUserUid);
-            //     // console.log(`send-dm-message from ${roomId} by ${curentUserUid}`);
-            //     const chatGroupRef = admin.db.collection('chatLists').doc(roomId);
-            //     const data = await chatGroupRef.get();
-            //     const users = await data.data().users;
-            //     if (users.includes(curentUserUid)) {
-            //         chatGroupRef
-            //             .collection('messages')
-            //             .doc(messageObj.id)
-            //             .set({
-            //                 message: messageObj.messData,
-            //                 mediaData: messageObj.mediaData,
-            //                 sendAt: messageObj.sendAt,
-            //                 sendBy: curentUserUid,
-            //                 type: messageObj.type ? messageObj.type : null,
-            //                 isSeen: false,
-            //             });
-            //         chatGroupRef.update({
-            //             isSeen: [curentUserUid],
-            //             lastModified: Date.now(),
-            //         });
-            //         if (messageObj.mediaData) {
-            //             messageObj.mediaData.forEach((item) => {
-            //                 chatGroupRef.collection('media').add({
-            //                     media: item,
-            //                     sendAt: Date.now(),
-            //                 });
-            //             });
-            //         }
-            //     }
-            // }
+        socket.on('send-message', async (messageObj, targetUserId, role, conversationId) => {
+            console.log('send-message', messageObj, targetUserId, role, conversationId);
+            const message = new Message();
+            message.conversation = conversationId;
+            message.sender = messageObj.sender;
+            message.content = messageObj.content;
+            message.isSeen = false;
+            await message.save();
+            const conver = await Conversation.findById(conversationId);
+            await conver.save();
+            if (targetUserId && userSocket[targetUserId] && userSocket[targetUserId].role === role) {
+                userSocket[targetUserId].socketInstance.emit('receive-message', messageObj, targetUserId, role, conversationId);
+            }
         });
 
         socket.on('join-room', (roomId) => {

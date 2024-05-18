@@ -3,7 +3,7 @@ const User = require('../models/user.model');
 const Product = require('../models/product.model');
 const CustomError = require('../errors');
 const { StatusCodes } = require('http-status-codes');
-const { checkPermissions } = require('../utils');
+const { checkPermissions, addTagHistory } = require('../utils');
 const path = require('path');
 const Order = require('../models/order.model');
 const { saveNotifyToDb } = require('../utils/notification.util');
@@ -46,6 +46,32 @@ const createReview = async (req, res) => {
         //
         await review.save();
         await order.save();
+        //
+        //
+        let ratingScore;
+        switch (review.rating) {
+            case 1:
+                ratingScore = -50;
+                break;
+            case 2:
+                ratingScore = -20;
+                break;
+            case 3:
+                ratingScore = 0;
+                break;
+            case 4:
+                ratingScore = 20;
+                break;
+            case 5:
+                ratingScore = 50;
+                break;
+            default:
+                ratingScore = 0;
+                break;
+        }
+        const thisProduct = await Product.findById(review.product);
+        await addTagHistory(thisProduct.tag, ratingScore, user.id);
+        //
         //notification
         const vendor = await User.findOne({ shop: order.shop });
         await saveNotifyToDb([vendor._id], {

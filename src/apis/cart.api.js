@@ -1,7 +1,8 @@
 const User = require('../models/user.model');
 const Cart = require('../models/cart.model');
+const Product = require('../models/product.model');
 const { StatusCodes } = require('http-status-codes');
-const { arraysAreEqual } = require('../utils/index');
+const { arraysAreEqual, addTagHistory } = require('../utils/index');
 
 const addProductToCart = async (req, res, next) => {
     const { userId } = req.user;
@@ -30,6 +31,10 @@ const addProductToCart = async (req, res, next) => {
         } else {
             cart.items = [...cart.items, { product, variant: variant ? variant : [], quantity: quantity ? quantity : 1 }];
         }
+        //
+        const thisProduct = await Product.findById(product);
+        await addTagHistory(thisProduct.tag, 10, user.id);
+        //
         await cart.save();
         return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Cart updated' } });
     } catch (err) {
@@ -57,6 +62,10 @@ const deleteProductFromCart = async (req, res, next) => {
             (cproduct) => cproduct.product.toString() !== product || !arraysAreEqual(cproduct.variant, variant),
         );
         cart.items = newCartItems ? [...newCartItems] : [];
+        //
+        const thisProduct = await Product.findById(product);
+        await addTagHistory(thisProduct.tag, -10, user.id);
+        //
         await cart.save();
         return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Cart updated' } });
     } catch (err) {

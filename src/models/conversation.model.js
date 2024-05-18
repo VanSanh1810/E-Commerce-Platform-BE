@@ -1,23 +1,15 @@
 const mongoose = require('mongoose');
 
-const messageSchema = new mongoose.Schema({
-    sender: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-    },
-    content: { type: String, required: true },
-    isSeen: { type: Boolean, required: true },
-});
+
 
 const conversationSchema = new mongoose.Schema(
     {
         user: [
             {
-                type: { type: String, enum: ['active', 'disabled', 'draft'] },
+                type: { type: String, enum: ['admin', 'vendor', 'user'] },
                 _id: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
             },
         ],
-        messages: [messageSchema],
         createDate: {
             type: Number,
         },

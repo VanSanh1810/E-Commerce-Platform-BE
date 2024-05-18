@@ -13,6 +13,8 @@ const statRoute = require('./dataStatistics.route');
 const bannerRoute = require('./banner.route');
 const notifyRoute = require('./notification.route');
 const resetPassRoute = require('./resetPass.route');
+const conversationRoute = require('./conversation.route');
+const shipCostRoute = require('./shipCost.route');
 const { trackingOrder } = require('../controllers/order.controller');
 const socketService = require('../services/socket.service');
 const { saveNotifyToDb } = require('../utils/notification.util');
@@ -34,11 +36,23 @@ function route(app) {
     app.use('/api/stat', statRoute);
     app.get('/orderTracking/:orderCode', trackingOrder);
     app.use('/resetPassword', resetPassRoute);
+    app.use('/api/conversation', conversationRoute);
+    app.use('/api/shipCost', shipCostRoute);
+    //
     app.get('/test', async (req, res) => {
         await saveNotifyToDb(['6600d0d240368b9bb27ebb14'], {
             title: `<p>You have new review with 5 star</p>`,
             target: { id: null, type: 'None' },
         });
+        res.status(200).json({ msg: 'ok' });
+    });
+    app.get('/test2', async (req, res) => {
+        const socketObj = socketService.getUserSocket();
+        if (socketObj['662b762db1d24b962c71a12d']?.userId) {
+            socketObj['662b762db1d24b962c71a12d'].socketInstance.emit('receive-message', {
+                createDate: new Date().getTime(),
+            });
+        }
         res.status(200).json({ msg: 'ok' });
     });
 }

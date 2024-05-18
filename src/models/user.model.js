@@ -65,6 +65,12 @@ const UserSchema = new mongoose.Schema({
         ref: 'Shop',
         default: null,
     },
+    productHistory: [
+        {
+            name: { type: String, required: true },
+            score: { type: Number, required: true, default: 0 },
+        },
+    ],
     createDate: {
         type: Number,
     },
