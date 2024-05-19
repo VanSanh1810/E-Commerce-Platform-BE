@@ -839,9 +839,8 @@ const recomendProduct = async (req, res) => {
                 throw error;
             }
         }
-        const { userId } = req.user;
-        if (userId) {
-            const user = await User.findById(userId);
+        if (req.user?.userId) {
+            const user = await User.findById(req.user?.userId);
             if (!user) {
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'err', message: 'No  user found' });
             }
@@ -974,10 +973,12 @@ const recomendProduct = async (req, res) => {
                     res.status(StatusCodes.OK).json({ status: 'success', data: result, pages: result.length });
                 })
                 .catch((err) => {
+                    console.error(err);
                     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'err', message: err });
                 });
         }
     } catch (err) {
+        console.error(err);
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'err', message: err });
     }
 };
