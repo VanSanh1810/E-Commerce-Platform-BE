@@ -6,7 +6,7 @@ const { arraysAreEqual, addTagHistory } = require('../utils/index');
 
 const addProductToCart = async (req, res, next) => {
     const { userId } = req.user;
-    const { product, variant, quantity } = req.body;
+    const { product, variant, quantity, stockLeft } = req.body;
     try {
         if (!product) {
             return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: { msg: 'No user found' } });
@@ -28,8 +28,24 @@ const addProductToCart = async (req, res, next) => {
         if (index !== -1) {
             // found a product
             cart.items[index].quantity = cart.items[index].quantity + (quantity ? quantity : 1);
+            if (stockLeft && cart.items[index].quantity > stockLeft) {
+                cart.items[index].quantity = stockLeft;
+            }
         } else {
-            cart.items = [...cart.items, { product, variant: variant ? variant : [], quantity: quantity ? quantity : 1 }];
+            cart.items = [
+                ...cart.items,
+                {
+                    product,
+                    variant: variant ? variant : [],
+                    quantity: quantity
+                        ? stockLeft && quantity > stockLeft
+                            ? stockLeft
+                            : quantity
+                        : stockLeft
+                        ? stockLeft
+                        : quantity,
+                },
+            ];
         }
         //
         const thisProduct = await Product.findById(product);
@@ -75,7 +91,7 @@ const deleteProductFromCart = async (req, res, next) => {
 
 const updateProductQuantity = async (req, res, next) => {
     const { userId } = req.user;
-    const { product, variant, gap } = req.body;
+    const { product, variant, gap, stockLeft } = req.body;
     try {
         if (!product) {
             return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: { msg: 'No user found' } });
@@ -102,6 +118,9 @@ const updateProductQuantity = async (req, res, next) => {
                 cart.items[index].quantity = q;
             } else {
                 cart.items[index].quantity = 1;
+            }
+            if (stockLeft && cart.items[index] > stockLeft) {
+                cart.items[index].quantity = stockLeft;
             }
         } else {
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'Item not found' } });

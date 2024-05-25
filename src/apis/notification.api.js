@@ -9,7 +9,7 @@ const getAllNotify = async (req, res) => {
         if (!user) {
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No user found' } });
         }
-        const listNotify = await Notify.find({ to: user._id });
+        const listNotify = await Notify.find({ to: user._id }).sort({ createDate: -1 });
         return res.status(StatusCodes.OK).json({ status: 'success', listNotify: listNotify });
     } catch (err) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: err } });
@@ -41,7 +41,7 @@ const markAtReadNotify = async (req, res) => {
         // notify.isSeen = true;
         // await notify.save();
 
-        const newListNotify = await Notify.find({ to: user._id });
+        const newListNotify = await Notify.find({ to: user._id }).sort({ createDate: -1 });
         return res.status(StatusCodes.OK).json({ status: 'success', newListNotify: newListNotify });
     } catch (err) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: err } });
@@ -64,7 +64,7 @@ const deleteNotify = async (req, res) => {
         }
         await notify.delete();
         //
-        const newListNotify = await Notify.find({ to: user._id });
+        const newListNotify = await Notify.find({ to: user._id }).sort({ createDate: -1 });
         return res.status(StatusCodes.OK).json({ status: 'success', newListNotify: newListNotify });
     } catch (err) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: err } });

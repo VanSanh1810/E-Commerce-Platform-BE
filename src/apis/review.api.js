@@ -76,7 +76,7 @@ const createReview = async (req, res) => {
         const vendor = await User.findOne({ shop: order.shop });
         await saveNotifyToDb([vendor._id], {
             title: `<p>You have new review with ${rating} star</p>`,
-            target: { id: review._id, type: 'Review' },
+            target: { id: review._id, type: 'Review', secondId: thisProduct._id },
         });
         //
         return res.status(StatusCodes.OK).json({ review });

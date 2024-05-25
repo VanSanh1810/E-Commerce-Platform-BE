@@ -60,38 +60,52 @@ const getAddress = async (req, res) => {
 };
 //** ======================== GET SHOP ADDRESS ========================
 const getShopAddress = async (req, res) => {
-    const { role, userId } = req.user;
-    const { id } = req.params;
-    if (role === 'user') {
+    try {
+        const { role, userId } = req.user;
+        const { id } = req.params;
+        if (role === 'user') {
+            try {
+                const shop = await Shop.findById(id);
+                if (!shop) {
+                    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
+                }
+                const listAddress = await Address.findById(shop.addresses);
+                return res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
+            } catch (err) {
+                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
+            }
+        }
+        if (role === 'admin') {
+            try {
+                const shop = await Shop.findById(id);
+                if (!shop) {
+                    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
+                }
+                const listAddress = await Address.findById(shop.addresses);
+                return res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
+            } catch (err) {
+                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
+            }
+        } else {
+            try {
+                const user = await User.findById(userId);
+                if (!user) {
+                    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No user found' });
+                }
+                const shop = await Shop.findById(user.shop);
+                if (!shop) {
+                    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
+                }
+                const listAddress = await Address.findById(shop.addresses);
+                return res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
+            } catch (err) {
+                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
+            }
+        }
+    } catch (error) {
+        const { id } = req.params;
         try {
             const shop = await Shop.findById(id);
-            if (!shop) {
-                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
-            }
-            const listAddress = await Address.findById(shop.addresses);
-            return res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
-        } catch (err) {
-            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
-        }
-    }
-    if (role === 'admin') {
-        try {
-            const shop = await Shop.findById(id);
-            if (!shop) {
-                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
-            }
-            const listAddress = await Address.findById(shop.addresses);
-            return res.status(StatusCodes.OK).json({ status: 'success', data: { addresses: listAddress } });
-        } catch (err) {
-            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { error: err } });
-        }
-    } else {
-        try {
-            const user = await User.findById(userId);
-            if (!user) {
-                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No user found' });
-            }
-            const shop = await Shop.findById(user.shop);
             if (!shop) {
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No shop found' });
             }

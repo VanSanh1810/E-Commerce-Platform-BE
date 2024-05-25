@@ -36,7 +36,7 @@ const calculateShipCost = async (req, res) => {
     try {
         const shop = await Shop.findById(shopId);
         if (!shop) {
-            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: 'No sho found' });
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: 'No shop found' });
         }
         const shopAddress = await Address.findById(shop.addresses);
         if (!shopAddress) {

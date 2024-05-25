@@ -20,6 +20,7 @@ const notifySchema = new mongoose.Schema(
                 name: { type: String },
                 color: { type: String },
             },
+            secondId: { type: String, default: null },
         },
         to: {
             type: mongoose.Schema.Types.ObjectId,

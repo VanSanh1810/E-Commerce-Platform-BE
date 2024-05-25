@@ -15,7 +15,7 @@ const Banner = require('../models/banner.model');
 const userStat = async (req, res) => {
     const { type } = req.query;
     try {
-        const users = await User.find({}, { createDate: 1 });
+        const users = await User.find({}, { createDate: 1, role: 1 });
 
         const usr = await User.aggregate([
             {
@@ -88,6 +88,7 @@ const userStat = async (req, res) => {
                     users: {
                         $push: {
                             _id: '$_id',
+                            role: '$role',
                             createDate: {
                                 $toDate: {
                                     $convert: { input: '$createDate', to: 'long' }, // Chuyển đổi mili giây thành giây
@@ -108,8 +109,8 @@ const userStat = async (req, res) => {
                 },
             },
         ]);
-
-        return res.status(StatusCodes.OK).json({ user: usr, total: users.length });
+        const vendors = users.filter((item) => item.role === 'vendor');
+        return res.status(StatusCodes.OK).json({ user: usr, total: users.length, totalVendor: vendors.length });
     } catch (e) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: e });
     }

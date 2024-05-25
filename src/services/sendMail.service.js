@@ -2,9 +2,22 @@ const nodemailer = require('nodemailer');
 const nodeMailHbs = require('nodemailer-express-handlebars');
 require('dotenv').config();
 const Order = require('../models/order.model');
+const Address = require('../models/address.model');
 const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
+
+//
+const AddressStaticData = require('../utils/dataprovince');
+const Shop = require('../models/shop.model');
+
+const getAddressString = (_province, _district, _ward, _detail) => {
+    const province = AddressStaticData.treeDataProvince[_province].label;
+    const district = AddressStaticData.treeDataProvince[_province].district[_district].label;
+    const ward = AddressStaticData.treeDataProvince[_province].district[_district].ward[_ward].label;
+    const detail = _detail;
+    return `${detail}, ${ward}, ${district}, ${province}`;
+};
 //
 const hbsOptions = {
     viewEngine: {
@@ -37,6 +50,9 @@ const sendEmail = async (to, orderId) => {
         if (!order) {
             throw new Error('No order found');
         }
+        // shop addresses
+        const shop = await Shop.findById(order.shop);
+        const shopAddress = await Address.findById(shop.addresses);
         //
         let htmlData = '';
         let listAttachment = [];
@@ -113,12 +129,22 @@ const sendEmail = async (to, orderId) => {
                     orderURL: `http://localhost:4000/orderTracking/${order.id}`,
                     orderCode: order.code,
                     orderDate: formattedDate,
-                    shopAddress: '',
-                    userAddress: '',
+                    shopAddress: getAddressString(
+                        shopAddress.address.province,
+                        shopAddress.address.district,
+                        shopAddress.address.ward,
+                        shopAddress.address.detail,
+                    ),
+                    userAddress: getAddressString(
+                        order.address.province,
+                        order.address.district,
+                        order.address.ward,
+                        order.address.detail,
+                    ),
                     subTotal: order.total,
                     discount: 0,
                     shippingCost: order.shippingCost,
-                    total: order.total + order.shippingCost,
+                    total: (order.total + order.shippingCost).toFixed(2),
                 },
             },
             // html: `<ul>${htmlData}</ul>`,

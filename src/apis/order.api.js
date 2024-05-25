@@ -24,6 +24,7 @@ const { isObjectIdOrHexString } = require('mongoose');
 const Category = require('../models/category.model');
 const Banner = require('../models/banner.model');
 const { saveNotifyToDb } = require('../utils/notification.util');
+const Cart = require('../models/cart.model');
 const proxy = httpProxy.createProxyServer();
 
 const updateProductStockWhenPlacedOrder = async (id, variant, quantity) => {
@@ -67,6 +68,29 @@ const updateProductStockWhenPlacedOrder = async (id, variant, quantity) => {
 const genarateOrderCode = (payment, userType, id) => {
     const lastFiveChars = id.toString().slice(-5);
     return `NP-${payment ? '0' : '1'}${userType ? '1' : '0'}-${lastFiveChars.toUpperCase()}`;
+};
+
+const removeFromCartAfterPlaceOrder = async (orderItem, uid) => {
+    try {
+        const cart = await Cart.findOne({ user: uid });
+        if (!cart) {
+            return new Error('Cart not found');
+        }
+        let cartItems = [...cart.items];
+        for (let i = 0; i < orderItem.length; i++) {
+            for (let j = 0; j < orderItem[i].items.length; j++) {
+                cartItems = cartItems.filter(
+                    (cproduct) =>
+                        cproduct.product.toString() !== orderItem[i].items[j].product ||
+                        !arraysAreEqual(cproduct.variant, orderItem[i].items[j].variant),
+                );
+            }
+        }
+        cart.items = [...cartItems];
+        await cart.save();
+    } catch (e) {
+        return new Error(e);
+    }
 };
 
 //** ======================== PLACE ORDER ========================
@@ -252,7 +276,7 @@ const placeOrder = async (req, res, next) => {
                     let date = new Date();
                     let createDate = moment(date).format('YYYYMMDDHHmmss'); // Sử dụng thư viện date-fns hoặc tương tự để định dạng ngày
                     const paymentData = {
-                        amount: totalPrice, // Tổng số tiền của đơn hàng
+                        amount: totalPrice + order.shippingCost, // Tổng số tiền của đơn hàng
                         orderId: JSON.stringify([{ orderId: order._id, price: totalPrice + order.shippingCost }]), // ID của đơn hàng mới tạo
                         description: 'Thanh toan cho ma GD:' + order._id, // Mô tả đơn hàng
                         ipAddress: req.ip, // IP của khách hàng đặt hàng
@@ -286,6 +310,9 @@ const placeOrder = async (req, res, next) => {
                 const redirectUrl = generateVNPayUrl(paymentData);
                 return res.status(StatusCodes.OK).json({ status: 'success', url: redirectUrl });
             }
+            ////////////////////////////////
+            removeFromCartAfterPlaceOrder(bodyData.itemData, req.user?.userId);
+            //
             return res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Order created' } });
         } catch (err) {
             console.log(err);
@@ -606,21 +633,48 @@ const getAllOrder = async (req, res) => {
                     .populate('shop', ['name', 'email']);
 
                 //orderQuery.date
-                if (orderQuery.date) {
-                    const newArr = orderListAd.filter((ord) => inDay(ord.createDate, orderQuery.date));
-                    return res.status(StatusCodes.OK).json({ status: 'success', orders: [...newArr], pages: newArr.length });
+                if (orderQuery?.date) {
+                    orderListAd = orderListAd.filter((ord) => inDay(ord.createDate, orderQuery.date));
+                    // return res.status(StatusCodes.OK).json({ status: 'success', orders: [...newArr], pages: newArr.length });
                 }
-                return res
-                    .status(StatusCodes.OK)
-                    .json({ status: 'success', orders: [...orderListAd], pages: orderListAd.length });
+
+                const total = orderListAd.length;
+
+                await orderListAd.sort(function (a, b) {
+                    return parseInt(b.createDate) - parseInt(a.createDate);
+                });
+
+                if (orderQuery?.currentPage) {
+                    const startIndex = (parseInt(orderQuery.currentPage) - 1) * parseInt(orderQuery.limit);
+                    const endIndex = startIndex + parseInt(orderQuery.limit);
+                    const filteredOrders = orderListAd.slice(startIndex, endIndex);
+                    orderListAd = [...filteredOrders];
+                }
+
+                return res.status(StatusCodes.OK).json({ status: 'success', orders: [...orderListAd], pages: total });
             case 'userPage':
-                const orderListUs = await Order.find({ user: userId })
+                //
+                let orderListUs = await Order.find({ user: userId })
                     .populate({
                         path: 'items',
                         populate: { path: 'idToSnapshot' }, // 'productSnapshot' là tên trường ref trong items
                     })
                     .populate('shop', ['name', 'email']);
-                return res.status(StatusCodes.OK).json({ status: 'success', orders: [...orderListUs] });
+                //
+
+                const total2 = orderListUs.length;
+
+                await orderListUs.sort(function (a, b) {
+                    return parseInt(b.createDate) - parseInt(a.createDate);
+                });
+                //
+                if (orderQuery?.currentPage) {
+                    const startIndex = (parseInt(orderQuery.currentPage) - 1) * parseInt(orderQuery.limit);
+                    const endIndex = startIndex + parseInt(orderQuery.limit);
+                    const filteredOrders = orderListUs.slice(startIndex, endIndex);
+                    orderListUs = [...filteredOrders];
+                }
+                return res.status(StatusCodes.OK).json({ status: 'success', orders: [...orderListUs], pages: total2 });
             default:
                 return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error' });
         }
@@ -652,6 +706,10 @@ const updateOrderStatus = async (req, res) => {
     const { status } = req.body;
     const { orderId } = req.params;
     try {
+        const _od = await Order.findById(orderId);
+        if (_od.status === 'Done' || _od.status === 'Cancel') {
+            return res.status(StatusCodes.OK).json({ status: 'error', message: 'No action' });
+        }
         if (status !== 'Done' && status !== 'Cancel') {
             //vendor action
             if (req.user?.userId && req.user?.role === 'vendor') {
@@ -702,6 +760,14 @@ const updateOrderStatus = async (req, res) => {
                 if ((order.onlPayStatus === 'Pending' || order.onlPayStatus === 'None') && order.status === 'Pending') {
                     order.status = status;
                     await order.save();
+                    //return stock
+                    for (let i = 0; i < order.items; i++) {
+                        await updateProductStockWhenPlacedOrder(
+                            order.items[i]._id,
+                            order.items[i].variant,
+                            -order.items[i].quantity,
+                        );
+                    }
                     //notification
                     const vendor = await User.findOne({ shop: order.shop });
                     await saveNotifyToDb([vendor._id], {
@@ -715,6 +781,24 @@ const updateOrderStatus = async (req, res) => {
         }
     } catch (e) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: e });
+    }
+};
+
+const trackingOrder = async (req, res) => {
+    try {
+        const { code, email, phone } = req.body;
+        const order = await Order.findOne({ code: code, email: email, phoneNumber: phone })
+            .populate({
+                path: 'items',
+                populate: { path: 'idToSnapshot' }, // 'productSnapshot' là tên trường ref trong items
+            })
+            .populate('shop', ['name', 'email']);
+        if (!order) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: 'No order found' });
+        }
+        return res.status(StatusCodes.OK).json({ order: order });
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', message: err });
     }
 };
 
@@ -777,4 +861,5 @@ module.exports = {
     getAllOrder,
     getSingleOrder,
     updateOrderStatus,
+    trackingOrder,
 };

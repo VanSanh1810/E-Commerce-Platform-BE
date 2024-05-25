@@ -71,7 +71,7 @@ const trackingOrder = async (req, res) => {
             shippingCost: order.shippingCost,
             status: order.status,
             onlPayStatus: order.onlPayStatus,
-            finalTotal: order.shippingCost + order.total,
+            finalTotal: (order.shippingCost + order.total).toFixed(2),
             createAt: Date(order.createDate),
         };
 

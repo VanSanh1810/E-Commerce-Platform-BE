@@ -142,7 +142,9 @@ const getAllProducts = async (req, res) => {
             if (role === 'vendor') {
                 query2 = {};
             } else {
-                query2.status = 'active';
+                query2 = {
+                    $or: [{ status: 'active' }, { status: 'disabled' }],
+                };
             }
         } else {
             // Nếu role khác 'vendor', chỉ lấy sản phẩm có status là 'active'
@@ -465,6 +467,58 @@ const getSingleProduct = async (req, res) => {
     }
 };
 
+// ** ===================  GET SINGLE PRODUCT STOCK  ===================
+const getProductStock = async (req, res) => {
+    try {
+        const { id, variant } = req.body; //variant can be an array or empty array or null
+        const product = await Product.findById(id);
+        if (!product) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'No product found' } });
+        }
+        const totalVariantOfProduct = product.variantData ? product.variantData.length : 0;
+        const totalVariantOfProductReq = variant ? (variant.length > 0 ? variant.length : 0) : 0;
+        if (totalVariantOfProduct === totalVariantOfProductReq) {
+            if (totalVariantOfProduct === 0) {
+                return res.status(StatusCodes.OK).json({
+                    stock: product.stock,
+                });
+            } else {
+                const getVariantDetailStock = async (node, depth, route) => {
+                    if (node.detail) {
+                        return node.detail.stock;
+                    } else {
+                        for (let i = 0; i < node.child.length; i++) {
+                            if (node.child[i]._id === route[depth + 1]) {
+                                const stock = await getVariantDetailStock(node.child[i], depth + 1, route);
+                                return stock;
+                            }
+                        }
+                    }
+                };
+                const dbProductVariant = JSON.parse(JSON.stringify(product.variantDetail));
+                let _stock;
+                for (let i = 0; i < dbProductVariant.length; i++) {
+                    if (dbProductVariant[i]._id === variant[0]) {
+                        _stock = await getVariantDetailStock(dbProductVariant[i], 0, variant);
+                        break;
+                    }
+                }
+                return res.status(StatusCodes.OK).json({
+                    stock: parseInt(_stock),
+                });
+            }
+        } else {
+            return res.status(StatusCodes.NOT_ACCEPTABLE).json({
+                status: 'error',
+                data: { message: 'Your req variant doesnt match server variant' },
+            });
+        }
+    } catch (error) {
+        console.error(error.stack);
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: error } });
+    }
+};
+
 // ** ===================  UPDATE PRODUCT  ===================
 const updateProduct = async (req, res) => {
     const productId = req.params.id;
@@ -755,7 +809,8 @@ const relatedProducts = async (req, res) => {
                     return;
                 }
             } else {
-                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Vô lý' } });
+                return;
+                // return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { message: 'Vô lý:' + id } });
             }
         };
         //
@@ -1005,6 +1060,7 @@ module.exports = {
     createProduct,
     getAllProducts,
     getSingleProduct,
+    getProductStock,
     updateProduct,
     deleteProduct,
     uploadImage,

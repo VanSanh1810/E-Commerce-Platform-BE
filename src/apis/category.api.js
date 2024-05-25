@@ -151,7 +151,7 @@ const deleteCategory = async (req, res) => {
             const cate = await Category.findById(id);
             if (cate) {
                 allCateInTree.push(cate._id);
-                if (cate.child.length > 0) {
+                if (!cate.child || cate.child.length > 0) {
                     for (let i = 0; i < cate.child.length; i++) {
                         await findAllCateInTreeFromAsignNode(cate.child[i]);
                     }

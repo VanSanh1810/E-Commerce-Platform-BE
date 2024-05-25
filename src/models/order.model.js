@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
     code: { type: String, default: '' },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'Account', require: false }, // Reference to the User model or User ID
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', require: false }, // Reference to the User model or User ID
     shop: { type: mongoose.Schema.Types.ObjectId, ref: 'Shop', require: true },
     items: [
         {

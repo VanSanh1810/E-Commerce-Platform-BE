@@ -9,21 +9,23 @@ const nodemailer = require('nodemailer');
 const nodeMailHbs = require('nodemailer-express-handlebars');
 const { format } = require('date-fns');
 const { use } = require('express/lib/router');
+const resetPassTokenModel = require('../models/resetPassToken.model');
 // Register User
 const register = async (req, res) => {
     const { name, email, password } = req.body;
     console.log(name, email, password);
 
+    const _email = email.toLowerCase();
     // Kiểm tra định dạng email
     const emailSuffix = '@gmail.com';
-    if (!email.endsWith(emailSuffix)) {
+    if (!_email.endsWith(emailSuffix)) {
         return res.status(StatusCodes.BAD_REQUEST).json({
             status: 'error',
             data: 'Invalid email format. Only @gmail.com addresses are allowed.',
         });
     }
 
-    const emailAlreadyExists = await User.findOne({ email });
+    const emailAlreadyExists = await User.findOne({ _email });
     if (emailAlreadyExists) {
         return res.status(StatusCodes.BAD_REQUEST).json({
             status: 'error',
@@ -35,7 +37,7 @@ const register = async (req, res) => {
     const isFirstAccount = (await User.countDocuments({})) === 0;
     const role = isFirstAccount ? 'admin' : 'user';
 
-    const user = await User.create({ name, email, password, role, createDate: currentDate, modifyDate: currentDate });
+    const user = await User.create({ name, email: _email, password, role, createDate: currentDate, modifyDate: currentDate });
     const cart = await Cart.create({ user: user.id, items: [] });
     user.cart = cart._id;
     user.save();
@@ -171,7 +173,7 @@ const forgotPassword = async (req, res) => {
     try {
         const user = await User.findOne({ email: email });
         if (!user) {
-            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
                 status: 'error',
                 data: { message: 'No user found' },
             });
@@ -184,6 +186,13 @@ const forgotPassword = async (req, res) => {
         };
         //
         const token = createJWT({ payload: { email: email, userId: user.id } });
+        //
+        const existTokens = await resetPassTokenModel.find({ user: user._id });
+        for (let i = 0; i < existTokens.length; i++) {
+            existTokens[i].isUsed = true;
+            existTokens[i].save();
+        }
+        await resetPassTokenModel.create({ user: user._id, token: token, isUsed: false });
         const url = `http://localhost:4000/resetPassword?token=${token}`;
         //
         const transporter = nodemailer.createTransport({

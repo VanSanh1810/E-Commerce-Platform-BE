@@ -12,6 +12,7 @@ const reportApi = require('../apis/report.api');
 
 // route.get('/product/:productId', reviewApi.getSingleProductReviews);
 route.post('/:reportId', authenticateUser, authorizePermissions('admin'), reportApi.markAtReadReport);
+route.get('/:reportId', authenticateUser, authorizePermissions('admin'), reportApi.getSingleReport);
 route.post('/', authenticateUser, reportApi.pushReport);
 route.get('/', authenticateUser, authorizePermissions('admin'), reportApi.getAllReports);
 

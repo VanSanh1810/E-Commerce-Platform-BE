@@ -10,10 +10,17 @@ const addTagHistory = async (tagList, _score, userId) => {
         const historyList = Array.isArray(user.productHistory) ? [...user.productHistory] : [];
         const addToList = (tag, score) => {
             const index = historyList.findIndex((item) => item.name === tag);
+            const now = new Date().getTime();
+            if (historyList[index].lastUpdated && now - historyList[index].lastUpdated < 60 * 1000) {
+                // must be 1 minute gap to push history
+                return;
+            }
+            //
             if (index !== -1) {
                 historyList[index].score += score;
+                historyList[index].lastUpdated = now;
             } else {
-                historyList.push({ name: tag, score: score });
+                historyList.push({ name: tag, score: score, lastUpdated: now });
             }
         };
         for (let i = 0; i < pTagList.length; i++) {
@@ -26,4 +33,4 @@ const addTagHistory = async (tagList, _score, userId) => {
     }
 };
 
-module.exports = addTagHistory
+module.exports = addTagHistory;

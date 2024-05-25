@@ -13,6 +13,7 @@ const productApi = require('../apis/product.api');
 // route.get('/', cateApi.getAllCategories);
 // route.post('/', authenticateUser, authorizePermissions('admin'), cateApi.createCategory);
 route.post('/recomend', authenticateUser2, productApi.recomendProduct);
+route.post('/stock', productApi.getProductStock);
 route.get('/related/:productId', productApi.relatedProducts);
 route.post('/disable/:id', authenticateUser, authorizePermissions('admin'), productApi.disableProduct);
 route.get('/:id', authenticateUser2, productApi.getSingleProduct);

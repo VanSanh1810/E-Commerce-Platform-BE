@@ -58,6 +58,11 @@ const saveNotifyToDb = async (target, notifyData) => {
                 type: notifyData.target.type,
                 icon: { ..._icon },
             };
+            if (notifyData.target.secondId) {
+                notify.target.secondId = notifyData.target.secondId;
+            } else {
+                notify.target.secondId = null;
+            }
             notify.isSeen = false;
             await notify.save();
             emitNotify(target[i], notify);

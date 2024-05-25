@@ -18,6 +18,8 @@ const shipCostRoute = require('./shipCost.route');
 const { trackingOrder } = require('../controllers/order.controller');
 const socketService = require('../services/socket.service');
 const { saveNotifyToDb } = require('../utils/notification.util');
+const Product = require('../models/product.model');
+const Category = require('../models/category.model');
 
 function route(app) {
     app.use('/api/auth', authRouter);
@@ -54,6 +56,18 @@ function route(app) {
             });
         }
         res.status(200).json({ msg: 'ok' });
+    });
+    app.get('/fixData', async (req, res) => {
+        const products = await Product.find();
+        for (let i = 0; i < products.length; i++) {
+            const cate = await Category.findById(products[i].category);
+            if (!cate) {
+                const tempCate = await Category.findById('6627c72657be892f7f3683ce');
+                products[i].category = tempCate._id;
+                await products[i].save();
+            }
+        }
+        return res.status(200).json({ message: 'ok' });
     });
 }
 

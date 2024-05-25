@@ -72,6 +72,11 @@ const getAllReports = async (req, res) => {
         }
         let reports = await Report.find(query).populate('sender', 'name');
 
+        const total = reports.length;
+        await reports.sort(function (a, b) {
+            return parseInt(b.createDate) - parseInt(a.createDate);
+        });
+
         if (reportQuery?.currentPage) {
             const startIndex = (parseInt(reportQuery.currentPage) - 1) * parseInt(reportQuery.limit);
             const endIndex = startIndex + parseInt(reportQuery.limit);
@@ -79,9 +84,22 @@ const getAllReports = async (req, res) => {
             reports = [...filteredProducts];
         }
 
-        res.status(StatusCodes.OK).json({ pages: reports.length, reports });
+        res.status(StatusCodes.OK).json({ pages: total, reports });
     } catch (e) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ e });
+    }
+};
+
+const getSingleReport = async (req, res) => {
+    try {
+        const { reportId } = req.params;
+        const rp = await Report.findById(reportId);
+        if (!rp) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: 'Report not found' });
+        }
+        return res.status(StatusCodes.OK).json({ report: rp });
+    } catch (e) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: e });
     }
 };
 
@@ -105,4 +123,5 @@ module.exports = {
     pushReport,
     getAllReports,
     markAtReadReport,
+    getSingleReport,
 };

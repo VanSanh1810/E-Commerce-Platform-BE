@@ -69,6 +69,7 @@ const UserSchema = new mongoose.Schema({
         {
             name: { type: String, required: true },
             score: { type: Number, required: true, default: 0 },
+            lastUpdated: { type: Number, required: true },
         },
     ],
     createDate: {
