@@ -204,7 +204,11 @@ const getBannerDetail = async (req, res) => {
         let maxValue;
         for (let i = 0; i < listBanner.length; i++) {
             const cateChild = await getAllRelatedCategory(listBanner[i].category);
-            if (cateChild.includes(category.id)) {
+            if (
+                cateChild.includes(category.id) &&
+                listBanner[i].endDate >= new Date().getTime() &&
+                listBanner[i].createDate <= new Date().getTime()
+            ) {
                 discount = listBanner[i].discount;
                 maxValue = listBanner[i].maxValue;
                 break;
