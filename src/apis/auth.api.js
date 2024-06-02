@@ -25,7 +25,7 @@ const register = async (req, res) => {
         });
     }
 
-    const emailAlreadyExists = await User.findOne({ _email });
+    const emailAlreadyExists = await User.findOne({ email: _email });
     if (emailAlreadyExists) {
         return res.status(StatusCodes.BAD_REQUEST).json({
             status: 'error',
