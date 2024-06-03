@@ -414,13 +414,15 @@ const getSingleProduct = async (req, res) => {
 
         // product.images.find()
         if (!product) {
-            return res.status(StatusCodes.NOT_FOUND).json({
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
                 status: 'error',
                 data: { message: `No product with the id ${productId}` },
             });
         } else {
             try {
                 const { historyAction } = req.query;
+                console.log('action: ', typeof historyAction);
+                console.log('ok: ', req.user?.userId && historyAction);
                 if (req.user?.userId && historyAction) {
                     const user = await User.findById(req.user.userId);
                     if (user) {
