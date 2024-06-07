@@ -14,6 +14,7 @@ const { isObjectIdOrHexString } = require('mongoose');
 const Order = require('../models/order.model');
 const moment = require('moment');
 const { addTagHistory } = require('../utils');
+const { saveNotifyToDb } = require('../utils/notification.util');
 
 // ** ===================  CREATE PRODUCT  ===================
 const createProduct = async (req, res) => {
@@ -99,6 +100,10 @@ const createProduct = async (req, res) => {
             product.classify = null;
         }
         product.shop = userShop;
+
+        if (userShop.status !== 'active') {
+            product.status = 'draft';
+        }
 
         await product.save();
 
@@ -652,6 +657,10 @@ const updateProduct = async (req, res) => {
         product.variantData = newVData;
         product.variantDetail = newVDetail;
 
+        if (shop.status !== 'active') {
+            product.status = 'draft';
+        }
+
         // Lưu sản phẩm đã cập nhật vào cơ sở dữ liệu
         await product.save();
 
@@ -759,7 +768,7 @@ const disableProduct = async (req, res) => {
         const vendor = await User.findOne({ shop: product.shop });
         await saveNotifyToDb([vendor._id], {
             title: isHidden
-                ? `<p>Your product has been <b>disable</b> by adminstrator. Please contact us for a soluton</p>`
+                ? `<p>Your product has been <b>disable</b> by adminstrator. Please contact us for a solution</p>`
                 : `<p>Your product has been <b>activated</b></p>`,
             target: { id: product._id, type: 'Product' },
         });

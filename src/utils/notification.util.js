@@ -38,7 +38,7 @@ const saveNotifyToDb = async (target, notifyData) => {
             _icon.color = 'red';
             break;
         case 'Product':
-            _icon.name = 'package_2';
+            _icon.name = 'inventory_2';
             _icon.color = 'purple';
             break;
         case 'None':
@@ -65,6 +65,7 @@ const saveNotifyToDb = async (target, notifyData) => {
             }
             notify.isSeen = false;
             await notify.save();
+            console.log('send notification: ', target[i]);
             emitNotify(target[i], notify);
         }
     } catch (e) {

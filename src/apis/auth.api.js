@@ -88,6 +88,7 @@ const login = async (req, res) => {
         }
         let shopId = user.shop;
         let _isAdminPage;
+        let _shopStatus;
         const sourcePort = req.headers.origin.split(':')[2]; // Lấy phần tử thứ 2 sau dấu ':'
         if (sourcePort === '3006') {
             _isAdminPage = true;
@@ -104,6 +105,14 @@ const login = async (req, res) => {
                 user.role = 'vendor';
                 await shop.save();
                 await user.save();
+            } else {
+                const shop = await Shop.findOne({ vendor: user.id });
+                if (shop.status === 'banned') {
+                    return res.status(StatusCodes.UNAUTHORIZED).json({
+                        status: 'error',
+                        data: { message: 'Your shop is banned. Contact support for assistance.' },
+                    });
+                }
             }
         }
 
@@ -111,6 +120,7 @@ const login = async (req, res) => {
         const token = attachCookiesToResponse({ res, user: tokenUser });
 
         const cart = await Cart.findOne({ user: user._id });
+        const shop = await Shop.findOne({ vendor: user.id });
 
         const jsonResponse = {
             status: 'success',
@@ -121,6 +131,7 @@ const login = async (req, res) => {
                 role: user.role,
                 shop: shopId,
                 userId: user._id,
+                status: shop.status ? shop.status : false,
                 // Avoid sending the password in the response
             },
         };
