@@ -58,11 +58,13 @@ const register = async (req, res) => {
 // Login User
 const login = async (req, res) => {
     try {
-        const { email, password, isAdminPage } = req.body;
+        let { email, password, isAdminPage } = req.body;
 
         if (!email || !password) {
             throw new CustomError.BadRequestError('Please provide email and password');
         }
+
+        email = email.toLowerCase();
 
         const user = await User.findOne({ email });
 
@@ -131,7 +133,7 @@ const login = async (req, res) => {
                 role: user.role,
                 shop: shopId,
                 userId: user._id,
-                status: shop.status ? shop.status : false,
+                status: shop?.status ? shop?.status : false,
                 // Avoid sending the password in the response
             },
         };

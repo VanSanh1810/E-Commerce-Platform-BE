@@ -641,8 +641,13 @@ const updateProduct = async (req, res) => {
             product.status = updatedData.isDraft === 'true' ? 'draft' : 'active';
             console.log('Draft: ' + updatedData.isDraft);
         }
-        const classify = await Classify.findById(updatedData.classifyId);
-        product.classify = classify?._id ? classify._id : null;
+
+        try {
+            const classify = await Classify.findById(updatedData.classifyId);
+            product.classify = classify?._id ? classify._id : null;
+        } catch (e) {
+            product.classify = null;
+        }
 
         const newVDetail = updatedData.variantDetail
             ? JSON.parse(updatedData.variantDetail)?.length > 0
