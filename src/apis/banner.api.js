@@ -117,9 +117,6 @@ const deleteBanner = async (req, res) => {
                 console.log(imgPath, '+ no img deleted');
             }
         }
-        // banner.image = {
-        //     url: `http://localhost:4000/public/uploads/${path.basename(images.path)}`,
-        // };
 
         await banner.delete();
         return res.status(StatusCodes.OK).json({ status: 'success', data: { message: 'Banner delete' } });
