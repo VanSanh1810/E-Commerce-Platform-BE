@@ -206,7 +206,7 @@ const forgotPassword = async (req, res) => {
             existTokens[i].save();
         }
         await resetPassTokenModel.create({ user: user._id, token: token, isUsed: false });
-        const url = `http://localhost:4000/resetPassword?token=${token}`;
+        const url = `${process.env.BASE_URL}/resetPassword?token=${token}`;
         //
         const transporter = nodemailer.createTransport({
             service: 'gmail',

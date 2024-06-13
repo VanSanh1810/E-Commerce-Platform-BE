@@ -53,7 +53,7 @@ const createProduct = async (req, res) => {
         }
         const imageData = images.map((image) => {
             return {
-                url: `http://localhost:4000/public/uploads/${path.basename(image.path)}`, // Tạo URL cục bộ cho hình ảnh dựa trên đường dẫn tạm thời
+                url: `${process.env.BASE_URL}/public/uploads/${path.basename(image.path)}`, // Tạo URL cục bộ cho hình ảnh dựa trên đường dẫn tạm thời
             };
         });
         // Create the product object and set the image property
@@ -577,7 +577,7 @@ const updateProduct = async (req, res) => {
             // Lưu hình ảnh mới vào thư mục cục bộ và cập nhật đường dẫn
             const newImageData = images.map((image) => {
                 return {
-                    url: `http://localhost:4000/public/uploads/${path.basename(image.path)}`, // Tạo URL cục bộ cho hình ảnh dựa trên đường dẫn tạm thời
+                    url: `${process.env.BASE_URL}/public/uploads/${path.basename(image.path)}`, // Tạo URL cục bộ cho hình ảnh dựa trên đường dẫn tạm thời
                 };
             });
 

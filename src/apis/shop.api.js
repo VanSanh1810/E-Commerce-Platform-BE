@@ -140,7 +140,7 @@ const updateSingleShop = async (req, res) => {
                 }
             }
             shop.avatar = {
-                url: `http://localhost:4000/public/uploads/${path.basename(images.path)}`,
+                url: `${process.env.BASE_URL}/public/uploads/${path.basename(images.path)}`,
             };
         }
         if (addressData) {

@@ -13,7 +13,7 @@ const http = require('http');
 const server = http.createServer(app);
 const io = require('socket.io')(server, {
     cors: {
-        origin: ['http://localhost:3000', 'http://localhost:3006'],
+        origin: [process.env.USER_URL, process.env.ADMIN_URL],
     },
 });
 const ChatSocketServices = require('./services/socket.service');
@@ -33,7 +33,7 @@ const genData = require('./mock/genData');
 
 app.use(
     cors({
-        origin: ['http://localhost:3000', 'http://localhost:3006'], // Thay thế bằng tên miền hoặc nguồn gốc của trang web bạn muốn cho phép truy cập
+        origin: [process.env.USER_URL, process.env.ADMIN_URL], // Thay thế bằng tên miền hoặc nguồn gốc của trang web bạn muốn cho phép truy cập
         credentials: true, // Bật cho phép gửi cookie và thông tin xác thực
     }),
 );

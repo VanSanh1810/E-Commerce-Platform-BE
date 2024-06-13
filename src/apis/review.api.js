@@ -19,7 +19,7 @@ const createReview = async (req, res) => {
         review.comment = comment;
         const imageData = images.map((image) => {
             return {
-                url: `http://localhost:4000/public/uploads/${path.basename(image.path)}`, // Tạo URL cục bộ cho hình ảnh dựa trên đường dẫn tạm thời
+                url: `${process.env.BASE_URL}/public/uploads/${path.basename(image.path)}`, // Tạo URL cục bộ cho hình ảnh dựa trên đường dẫn tạm thời
             };
         });
         review.images = [...imageData];

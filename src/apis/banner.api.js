@@ -29,7 +29,7 @@ const createBanner = async (req, res) => {
         banner.startDate = parseInt(startDate);
         banner.endDate = parseInt(endDate);
         banner.image = {
-            url: `http://localhost:4000/public/uploads/${path.basename(images.path)}`,
+            url: `${process.env.BASE_URL}/public/uploads/${path.basename(images.path)}`,
         };
         await banner.save();
         return res.status(StatusCodes.OK).json({ status: 'success', data: { message: 'Banner create' } });
@@ -70,7 +70,7 @@ const updateBanner = async (req, res) => {
                 }
             }
             banner.image = {
-                url: `http://localhost:4000/public/uploads/${path.basename(images.path)}`,
+                url: `${process.env.BASE_URL}/public/uploads/${path.basename(images.path)}`,
             };
         }
         if (bannerData.title) {

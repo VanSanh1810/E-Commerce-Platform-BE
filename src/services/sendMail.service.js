@@ -106,7 +106,7 @@ const sendEmail = async (to, orderId) => {
         // QR Code
         var QRCode = require('qrcode');
         const qrData = await QRCode.toDataURL(
-            `http://localhost:3000/tracking-order-page?code=${order.code}&email=${order.email}&phone=${order.phoneNumber}}`,
+            `${process.env.USER_URL}/tracking-order-page?code=${order.code}&email=${order.email}&phone=${order.phoneNumber}}`,
         );
         console.log(qrData);
         listAttachment.push({
@@ -130,7 +130,7 @@ const sendEmail = async (to, orderId) => {
                 orderData: {
                     orderQRCode: `cid:unique@${order.id}`,
                     // orderQRCode: qrData,
-                    orderURL: `http://localhost:4000/orderTracking/${order.id}`,
+                    orderURL: `${process.env.BASE_URL}/orderTracking/${order.id}`,
                     orderCode: order.code,
                     orderDate: formattedDate,
                     shopAddress: getAddressString(

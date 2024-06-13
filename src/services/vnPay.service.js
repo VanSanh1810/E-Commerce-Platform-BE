@@ -4,7 +4,7 @@ const moment = require('moment'); // Thêm moment nếu bạn cần xử lý ng�
 const config = require('config');
 const VNPayConfig = {
     vnp_Url: config.get('vnp_Url'),
-    vnp_ReturnUrl: config.get('vnp_ReturnUrl'), // Đổi thành URL thực tế của bạn
+    vnp_ReturnUrl: `${process.env.USER_URL}`, //config.get('vnp_ReturnUrl'), // Đổi thành URL thực tế của bạn
     vnp_TmnCode: config.get('vnp_TmnCode'),
     vnp_HashSecret: config.get('vnp_HashSecret'),
     vnp_Version: '2.1.0',

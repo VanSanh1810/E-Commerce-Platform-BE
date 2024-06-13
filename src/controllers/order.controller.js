@@ -41,7 +41,7 @@ const trackingOrder = async (req, res) => {
         if (!shopAddress) {
             return res.send('Shop address not found');
         }
-        const url = await QRCode.toDataURL(`http://localhost:${process.env.PORT}/orderTracking/${order.code}`);
+        const url = await QRCode.toDataURL(`${process.env.BASE_URL}/orderTracking/${order.code}`);
         const orderData = {
             code: order.code,
             qrCode: url,
