@@ -83,8 +83,48 @@ const deleteProductFromCart = async (req, res, next) => {
         await addTagHistory(thisProduct.tag, -10, user.id);
         //
         await cart.save();
+        console.log('Cart updated');
         return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Cart updated' } });
     } catch (err) {
+        console.log(err);
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: err } });
+    }
+};
+
+const deleteMultipleProductFromCart = async (req, res, next) => {
+    const { userId } = req.user;
+    const { products, variants } = req.body;
+    try {
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No user found' } });
+        }
+        const cart = await Cart.findById(user.cart);
+        if (!cart) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: 'No cart found' } });
+        }
+        //
+
+        const _products = [...JSON.parse(products)];
+        const _variants = [...JSON.parse(variants)];
+
+        let tempCart = [...cart.items];
+        for (let i = 0; i < _products.length; i++) {
+            if (!_products[i]) {
+                return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'error', data: { msg: 'No product found' } });
+            }
+            tempCart = tempCart.filter(
+                (cproduct) => cproduct.product.toString() !== _products[i] || !arraysAreEqual(cproduct.variant, _variants[i]),
+            );
+        }
+
+        cart.items = tempCart ? [...tempCart] : [];
+        //
+        await cart.save();
+        console.log('Cart updated');
+        return res.status(StatusCodes.OK).json({ status: 'sucess', data: { msg: 'Cart updated' } });
+    } catch (err) {
+        console.log(err);
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: { msg: err } });
     }
 };
@@ -155,6 +195,7 @@ const clearCart = async (req, res, next) => {
 module.exports = {
     addProductToCart,
     deleteProductFromCart,
+    deleteMultipleProductFromCart,
     updateProductQuantity,
     clearCart,
 };

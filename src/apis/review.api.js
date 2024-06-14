@@ -7,6 +7,7 @@ const { checkPermissions, addTagHistory } = require('../utils');
 const path = require('path');
 const Order = require('../models/order.model');
 const { saveNotifyToDb } = require('../utils/notification.util');
+const fs = require('fs');
 
 // ** ===================  CREATE REVIEW  ===================
 const createReview = async (req, res) => {
@@ -30,7 +31,7 @@ const createReview = async (req, res) => {
         review.user = user._id;
         review.name = user.name;
         review.product = productId;
-        if (variant) {
+        if (JSON.parse(variant)) {
             review.variant = [...JSON.parse(variant)];
         } else {
             review.variant = [];
@@ -81,6 +82,7 @@ const createReview = async (req, res) => {
         //
         return res.status(StatusCodes.OK).json({ review });
     } catch (e) {
+        console.error(e);
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err: e });
     }
 };
@@ -110,18 +112,61 @@ const getSingleReview = async (req, res) => {
 
 // ** ===================  UPDATE REVIEW  ===================
 const updateReview = async (req, res) => {
-    const { id: reviewId } = req.params;
-    const { rating, title, comment } = req.body;
+    const { id } = req.params;
+    const { rating, comment, imgLeft } = req.body;
+    const images = req.files;
     // Check if review exists or not
-    const review = await Review.findOne({ _id: reviewId });
+    const review = await Review.findById(id);
     if (!review) {
-        throw new CustomError.NotFoundError(`No review with the the id ${reviewId}`);
+        res.status(StatusCodes.NOT_ACCEPTABLE).json({ msg: 'No review found' });
     }
-    checkPermissions(req.user, review.user);
+    if (!review.user.equals(req.user.userId)) {
+        res.status(StatusCodes.UNAUTHORIZED).json({ msg: 'You dont have permission to update this review' });
+    }
 
-    review.rating = rating;
-    review.title = title;
-    review.comment = comment;
+    if (rating) {
+        review.rating = parseInt(rating);
+    }
+    if (comment) {
+        review.comment = comment;
+    }
+
+    // Kiểm tra nếu có hình ảnh mới được tải lên hoặc ảnh cũ bị xóa
+    if ((images && images.length > 0) || [...JSON.parse(imgLeft)] < review.images.length) {
+        const updloadDir = './public/uploads';
+        // old images
+        const _imgLeft = [...JSON.parse(imgLeft)];
+        for (let i = 0; i < review.images.length; i++) {
+            if (!_imgLeft.includes(review.images[i].url)) {
+                // not in old images will be removed
+                const array = review.images[i].url.split('/');
+                const imgName = array[array.length - 1];
+                const imgPath = path.join(__dirname, '..', updloadDir, imgName);
+                if (fs.existsSync(imgPath)) {
+                    fs.unlinkSync(imgPath);
+                    console.log(imgPath, '+ shop img deleted');
+                } else {
+                    console.log(imgPath, '+ no img deleted');
+                }
+            }
+        }
+        // Cập nhật mảng ảnh của sản phẩm với các đối tượng hình ảnh mới
+        const currentImg = [...review.images];
+        function removeCommonElements(arrayA, arrayB) {
+            // Lọc các phần tử của mảng A không có trong mảng B
+            const newArray = arrayA.filter((element) => arrayB.includes(element.url));
+            return newArray;
+        }
+        const updatedImgArr = removeCommonElements(currentImg, _imgLeft);
+
+        //new image
+        const imageData = images.map((image) => {
+            return {
+                url: `http://localhost:4000/public/uploads/${path.basename(image.path)}`, // Tạo URL cục bộ cho hình ảnh dựa trên đường dẫn tạm thời
+            };
+        });
+        review.images = [...updatedImgArr, ...imageData];
+    }
 
     await review.save();
     res.status(StatusCodes.OK).json({ msg: 'Success! Review has been updated' });

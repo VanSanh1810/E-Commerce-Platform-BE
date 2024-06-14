@@ -5,6 +5,7 @@ const cartApi = require('../apis/cart.api');
 
 const { authenticateUser, authorizePermissions } = require('../middlewares/authentication');
 
+route.put('/multiple', authenticateUser, authorizePermissions('user', 'vendor'), cartApi.deleteMultipleProductFromCart);
 route.delete('/', authenticateUser, authorizePermissions('user', 'vendor'), cartApi.clearCart);
 route.post('/', authenticateUser, authorizePermissions('user', 'vendor'), cartApi.addProductToCart);
 route.put('/', authenticateUser, authorizePermissions('user', 'vendor'), cartApi.deleteProductFromCart);

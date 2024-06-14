@@ -171,7 +171,7 @@ const getAllProducts = async (req, res) => {
             const filteredProducts = products.filter((product) => product.shop.equals(productQuery.shopId));
             products = [...filteredProducts];
             if (productQuery?.classify) {
-                const filteredProducts1 = filteredProducts.filter((product) => product.classify.equals(productQuery.classify));
+                const filteredProducts1 = filteredProducts.filter((product) => product.classify?.equals(productQuery.classify));
                 products = [...filteredProducts1];
             }
         }
@@ -439,7 +439,7 @@ const getSingleProduct = async (req, res) => {
             }
 
             const result = await Review.aggregate([
-                { $match: { product: product._id } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
+                { $match: { product: product._id, hidden: false } }, // Chỉ lấy đánh giá của sản phẩm cụ thể
                 {
                     $group: {
                         _id: null, // Gộp tất cả các đánh giá thành một nhóm duy nhất
@@ -570,8 +570,8 @@ const updateProduct = async (req, res) => {
             });
         }
 
-        // Kiểm tra nếu có hình ảnh mới được tải lên
-        if (images && images.length > 0) {
+        // Kiểm tra nếu có hình ảnh mới được tải lên hoặc ảnh cũ bị xóa
+        if ((images && images.length > 0) || [...JSON.parse(updatedData.imgLeft)] < product.images.length) {
             // Xóa tất cả hình ảnh cũ bằng cách gỡ bỏ tệp hình ảnh cục bộ
 
             // Lưu hình ảnh mới vào thư mục cục bộ và cập nhật đường dẫn

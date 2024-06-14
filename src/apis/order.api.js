@@ -311,7 +311,7 @@ const placeOrder = async (req, res, next) => {
                 return res.status(StatusCodes.OK).json({ status: 'success', url: redirectUrl });
             }
             ////////////////////////////////
-            removeFromCartAfterPlaceOrder(bodyData.itemData, req.user?.userId);
+            // removeFromCartAfterPlaceOrder(bodyData.itemData, req.user?.userId);
             //
             return res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Order created' } });
         } catch (err) {
