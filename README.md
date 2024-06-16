@@ -40,11 +40,12 @@ To run this project, you will need to add the following environment variables to
 To run tests, run the following command
 
 - Repare image data
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Download folder `uploads` from this [url](https://drive.google.com/file/d/1jZ0BfGoaYJP5RoTTrqXWErT7JmBwXdYA/view?usp=sharing)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Extract and put it in `/src/public`
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Download folder `uploads` from this [url](https://drive.google.com/file/d/1jZ0BfGoaYJP5RoTTrqXWErT7JmBwXdYA/view?usp=sharing)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Final structure should be like this
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Extract and put it in `/src/public`
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Final structure should be like this
 ```
 src
 └───public
