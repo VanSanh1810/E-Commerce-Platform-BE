@@ -1,0 +1,508 @@
+[{
+  "_id": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "name": "Man's Fashion",
+  "root": null,
+  "child": [
+    {
+      "$oid": "6627c76e57be892f7f3683da"
+    },
+    {
+      "$oid": "6627ca0057be892f7f368408"
+    },
+    {
+      "$oid": "6627ca0557be892f7f36840f"
+    },
+    {
+      "$oid": "6627ca2157be892f7f368416"
+    },
+    {
+      "$oid": "6627ca2757be892f7f36841d"
+    },
+    {
+      "$oid": "6627ca4f57be892f7f368424"
+    },
+    {
+      "$oid": "6627ca6c57be892f7f36842b"
+    },
+    {
+      "$oid": "6627ca8a57be892f7f368432"
+    }
+  ],
+  "createDate": "1713882918642",
+  "modifyDate": "1713883786720",
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "6627c7d157be892f7f3683f0"
+  },
+  "name": "Woman's Fashion",
+  "root": null,
+  "child": [
+    {
+      "$oid": "6627cb0057be892f7f368447"
+    },
+    {
+      "$oid": "6627cb5057be892f7f368451"
+    },
+    {
+      "$oid": "6627cb6457be892f7f368458"
+    }
+  ],
+  "createDate": "1713883089222",
+  "modifyDate": "1713884004434",
+  "__v": 3
+},
+{
+  "_id": {
+    "$oid": "6627c84f57be892f7f3683f4"
+  },
+  "name": "Health",
+  "root": null,
+  "child": [
+    {
+      "$oid": "6627cb9a57be892f7f36845f"
+    },
+    {
+      "$oid": "6627cbaf57be892f7f368466"
+    }
+  ],
+  "createDate": "1713883215735",
+  "modifyDate": "1713884079956",
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "name": "Gaming & Console",
+  "root": null,
+  "child": [
+    {
+      "$oid": "6627cbd257be892f7f36846d"
+    },
+    {
+      "$oid": "6627cbff57be892f7f368474"
+    }
+  ],
+  "createDate": "1713883441616",
+  "modifyDate": "1713884159126",
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "6627c95857be892f7f3683fc"
+  },
+  "name": "Camera & Flycam",
+  "root": null,
+  "child": [
+    {
+      "$oid": "6627cc4e57be892f7f36849e"
+    },
+    {
+      "$oid": "6627cc5457be892f7f3684a5"
+    },
+    {
+      "$oid": "6627cc5d57be892f7f3684ac"
+    },
+    {
+      "$oid": "6627cc6757be892f7f3684b3"
+    },
+    {
+      "$oid": "6627cc7357be892f7f3684ba"
+    },
+    {
+      "$oid": "6627cc9b57be892f7f3684c6"
+    }
+  ],
+  "createDate": "1713883480675",
+  "modifyDate": "1713884315328",
+  "__v": 6
+},
+{
+  "_id": {
+    "$oid": "6627c98c57be892f7f368400"
+  },
+  "name": "Book",
+  "root": null,
+  "child": [],
+  "createDate": "1713883532699",
+  "modifyDate": "1713883532699",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627ca0057be892f7f368408"
+  },
+  "name": "Jacket",
+  "root": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "child": [],
+  "createDate": "1713883648281",
+  "modifyDate": "1713883648281",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627ca0557be892f7f36840f"
+  },
+  "name": "Jeans",
+  "root": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "child": [],
+  "createDate": "1713883653622",
+  "modifyDate": "1713883653622",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627ca2157be892f7f368416"
+  },
+  "name": "Hoodie",
+  "root": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "child": [],
+  "createDate": "1713883681732",
+  "modifyDate": "1713883681732",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627ca2757be892f7f36841d"
+  },
+  "name": "Suits",
+  "root": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "child": [],
+  "createDate": "1713883687209",
+  "modifyDate": "1713883687209",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627ca4f57be892f7f368424"
+  },
+  "name": "Sock",
+  "root": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "child": [],
+  "createDate": "1713883727958",
+  "modifyDate": "1713883727958",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627ca6c57be892f7f36842b"
+  },
+  "name": "Underwear",
+  "root": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "child": [],
+  "createDate": "1713883756697",
+  "modifyDate": "1713883756697",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627ca8a57be892f7f368432"
+  },
+  "name": "Shirt",
+  "root": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "child": [
+    {
+      "$oid": "6627ca9e57be892f7f368439"
+    },
+    {
+      "$oid": "6627cac257be892f7f368440"
+    }
+  ],
+  "createDate": "1713883786717",
+  "modifyDate": "1713883842417",
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "6627ca9e57be892f7f368439"
+  },
+  "name": "Polo",
+  "root": {
+    "$oid": "6627ca8a57be892f7f368432"
+  },
+  "child": [],
+  "createDate": "1713883806703",
+  "modifyDate": "1713883806703",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cac257be892f7f368440"
+  },
+  "name": "T-Shirt",
+  "root": {
+    "$oid": "6627ca8a57be892f7f368432"
+  },
+  "child": [],
+  "createDate": "1713883842407",
+  "modifyDate": "1713883842407",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cb0057be892f7f368447"
+  },
+  "name": "Dress",
+  "root": {
+    "$oid": "6627c7d157be892f7f3683f0"
+  },
+  "child": [],
+  "createDate": "1713883904899",
+  "modifyDate": "1713883904899",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cb5057be892f7f368451"
+  },
+  "name": "Bra",
+  "root": {
+    "$oid": "6627c7d157be892f7f3683f0"
+  },
+  "child": [],
+  "createDate": "1713883984898",
+  "modifyDate": "1713883984898",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cb6457be892f7f368458"
+  },
+  "name": "Woman's Underwear",
+  "root": {
+    "$oid": "6627c7d157be892f7f3683f0"
+  },
+  "child": [],
+  "createDate": "1713884004431",
+  "modifyDate": "1713884004431",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cb9a57be892f7f36845f"
+  },
+  "name": "Medical Supplies",
+  "root": {
+    "$oid": "6627c84f57be892f7f3683f4"
+  },
+  "child": [],
+  "createDate": "1713884058406",
+  "modifyDate": "1713884058406",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cbaf57be892f7f368466"
+  },
+  "name": "Personal care",
+  "root": {
+    "$oid": "6627c84f57be892f7f3683f4"
+  },
+  "child": [],
+  "createDate": "1713884079951",
+  "modifyDate": "1713884079951",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cbd257be892f7f36846d"
+  },
+  "name": "Game console",
+  "root": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "child": [
+    {
+      "$oid": "6627cc1757be892f7f36847b"
+    },
+    {
+      "$oid": "6627cc1b57be892f7f368482"
+    },
+    {
+      "$oid": "6627cc2057be892f7f368489"
+    },
+    {
+      "$oid": "6627cc2f57be892f7f368490"
+    },
+    {
+      "$oid": "6627cc3457be892f7f368497"
+    }
+  ],
+  "createDate": "1713884114600",
+  "modifyDate": "1713884212729",
+  "__v": 5
+},
+{
+  "_id": {
+    "$oid": "6627cbff57be892f7f368474"
+  },
+  "name": "Console accessories",
+  "root": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "child": [],
+  "createDate": "1713884159122",
+  "modifyDate": "1713884159122",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc1757be892f7f36847b"
+  },
+  "name": "Playstation",
+  "root": {
+    "$oid": "6627cbd257be892f7f36846d"
+  },
+  "child": [],
+  "createDate": "1713884183649",
+  "modifyDate": "1713884183649",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc1b57be892f7f368482"
+  },
+  "name": "XBox",
+  "root": {
+    "$oid": "6627cbd257be892f7f36846d"
+  },
+  "child": [],
+  "createDate": "1713884187624",
+  "modifyDate": "1713884187624",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc2057be892f7f368489"
+  },
+  "name": "Nitendo",
+  "root": {
+    "$oid": "6627cbd257be892f7f36846d"
+  },
+  "child": [],
+  "createDate": "1713884192697",
+  "modifyDate": "1713884192697",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc2f57be892f7f368490"
+  },
+  "name": "Game Boy",
+  "root": {
+    "$oid": "6627cbd257be892f7f36846d"
+  },
+  "child": [],
+  "createDate": "1713884207785",
+  "modifyDate": "1713884207785",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc3457be892f7f368497"
+  },
+  "name": "Switch",
+  "root": {
+    "$oid": "6627cbd257be892f7f36846d"
+  },
+  "child": [],
+  "createDate": "1713884212724",
+  "modifyDate": "1713884212724",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc4e57be892f7f36849e"
+  },
+  "name": "Camera",
+  "root": {
+    "$oid": "6627c95857be892f7f3683fc"
+  },
+  "child": [],
+  "createDate": "1713884238290",
+  "modifyDate": "1713884238290",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc5457be892f7f3684a5"
+  },
+  "name": "Flycam",
+  "root": {
+    "$oid": "6627c95857be892f7f3683fc"
+  },
+  "child": [],
+  "createDate": "1713884244422",
+  "modifyDate": "1713884244422",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc5d57be892f7f3684ac"
+  },
+  "name": "Lens",
+  "root": {
+    "$oid": "6627c95857be892f7f3683fc"
+  },
+  "child": [],
+  "createDate": "1713884253937",
+  "modifyDate": "1713884253937",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc6757be892f7f3684b3"
+  },
+  "name": "Lens accessories",
+  "root": {
+    "$oid": "6627c95857be892f7f3683fc"
+  },
+  "child": [],
+  "createDate": "1713884263746",
+  "modifyDate": "1713884263746",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc7357be892f7f3684ba"
+  },
+  "name": "Flycam accessories",
+  "root": {
+    "$oid": "6627c95857be892f7f3683fc"
+  },
+  "child": [],
+  "createDate": "1713884275122",
+  "modifyDate": "1713884287936",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cc9b57be892f7f3684c6"
+  },
+  "name": "Camera accessories",
+  "root": {
+    "$oid": "6627c95857be892f7f3683fc"
+  },
+  "child": [],
+  "createDate": "1713884315323",
+  "modifyDate": "1713884315323",
+  "__v": 0
+}]

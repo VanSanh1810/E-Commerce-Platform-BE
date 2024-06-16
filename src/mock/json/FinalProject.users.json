@@ -1,0 +1,405 @@
+[{
+  "_id": {
+    "$oid": "6600d0d240368b9bb27ebb14"
+  },
+  "name": "ADMIN",
+  "email": "admin@gmail.com",
+  "avatar": null,
+  "password": "$2a$10$Bb27fMADv4Lnek6UgUOWt.tA6cF2ZZNRhuw5AE3VpVAcajushHeri",
+  "role": "admin",
+  "cart": null,
+  "orders": null,
+  "addresses": null,
+  "status": "active",
+  "shop": null,
+  "createDate": {
+    "$numberLong": "1711329490327"
+  },
+  "modifyDate": {
+    "$numberLong": "1711329490327"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627cd9a57be892f7f3684ee"
+  },
+  "name": "shopCloth",
+  "email": "shopcloth@gmail.com",
+  "password": "$2a$10$w7.nWrc9Eq6esk2abOcFvOrxJOWsphbkdv0rX2KTXnMUN9NXp.ztW",
+  "role": "vendor",
+  "follow": [],
+  "orders": [],
+  "addresses": [],
+  "status": "active",
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "createDate": {
+    "$numberLong": "1713884570586"
+  },
+  "modifyDate": {
+    "$numberLong": "1713884804912"
+  },
+  "__v": 0,
+  "cart": {
+    "$oid": "6627cd9a57be892f7f3684f0"
+  }
+},
+{
+  "_id": {
+    "$oid": "6627cf2157be892f7f36851d"
+  },
+  "name": "shopGame",
+  "email": "shopgame@gmail.com",
+  "password": "$2a$10$28q.7wBlx90pDxpfK4DFN.Ebm0QDjvvba5dlJQSn8dUMEkBWhskCO",
+  "role": "vendor",
+  "follow": [],
+  "orders": [],
+  "addresses": [],
+  "status": "active",
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "createDate": {
+    "$numberLong": "1713884961398"
+  },
+  "modifyDate": {
+    "$numberLong": "1713885121652"
+  },
+  "__v": 0,
+  "cart": {
+    "$oid": "6627cf2157be892f7f36851f"
+  }
+},
+{
+  "_id": {
+    "$oid": "662a54ab3b9a273aa89f8317"
+  },
+  "name": "thaicong",
+  "email": "shopthaicong@gmail.com",
+  "password": "$2a$10$05j74/a7gsPTmS.EDxlAnu74yw4.v77NViBhujBxci3BK01OPfjd.",
+  "role": "vendor",
+  "follow": [],
+  "orders": [],
+  "addresses": [],
+  "status": "active",
+  "shop": {
+    "$oid": "662a54be3b9a273aa89f831d"
+  },
+  "createDate": {
+    "$numberLong": "1714050219725"
+  },
+  "modifyDate": {
+    "$numberLong": "1714050238932"
+  },
+  "__v": 0,
+  "cart": {
+    "$oid": "662a54ab3b9a273aa89f8319"
+  }
+},
+{
+  "_id": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "name": "sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "password": "$2a$10$GT3U4uWJLP5xPncoPBMebO6/qTUtyWFUvWRe0oDtuLTgH1QNCwBOy",
+  "role": "user",
+  "follow": [],
+  "orders": [],
+  "addresses": [
+    {
+      "$oid": "662b8f4cb1d24b962c71ad86"
+    },
+    {
+      "$oid": "664e69c65afe33bf2d36c2b3"
+    }
+  ],
+  "status": "active",
+  "shop": null,
+  "createDate": {
+    "$numberLong": "1714124333285"
+  },
+  "modifyDate": {
+    "$numberLong": "1718403653542"
+  },
+  "__v": 13,
+  "cart": {
+    "$oid": "662b762db1d24b962c71a12f"
+  },
+  "productHistory": [
+    {
+      "name": "shirt",
+      "score": 120,
+      "_id": {
+        "$oid": "66475eaecc8a8acdce96943f"
+      },
+      "lastUpdated": {
+        "$numberLong": "1718403621952"
+      }
+    },
+    {
+      "name": "t-shirt",
+      "score": 60,
+      "_id": {
+        "$oid": "66475eaecc8a8acdce969440"
+      },
+      "lastUpdated": {
+        "$numberLong": "1717069744923"
+      }
+    },
+    {
+      "name": "figure",
+      "score": 2,
+      "lastUpdated": {
+        "$numberLong": "1717428636292"
+      },
+      "_id": {
+        "$oid": "665de19c34a79570237636e6"
+      }
+    },
+    {
+      "name": "fallout",
+      "score": 2,
+      "lastUpdated": {
+        "$numberLong": "1717428636293"
+      },
+      "_id": {
+        "$oid": "665de19c34a79570237636e7"
+      }
+    },
+    {
+      "name": "statue",
+      "score": 2,
+      "lastUpdated": {
+        "$numberLong": "1717428636293"
+      },
+      "_id": {
+        "$oid": "665de19c34a79570237636e8"
+      }
+    },
+    {
+      "name": "the ghoul",
+      "score": 2,
+      "lastUpdated": {
+        "$numberLong": "1717428636294"
+      },
+      "_id": {
+        "$oid": "665de19c34a79570237636e9"
+      }
+    },
+    {
+      "name": "black",
+      "score": 58,
+      "lastUpdated": {
+        "$numberLong": "1718403621954"
+      },
+      "_id": {
+        "$oid": "666cb0aa36107ca237cd8e49"
+      }
+    },
+    {
+      "name": "stussy",
+      "score": 46,
+      "lastUpdated": {
+        "$numberLong": "1718402996889"
+      },
+      "_id": {
+        "$oid": "666cb0aa36107ca237cd8e4a"
+      }
+    },
+    {
+      "name": "bouquet",
+      "score": 46,
+      "lastUpdated": {
+        "$numberLong": "1718402996890"
+      },
+      "_id": {
+        "$oid": "666cb0aa36107ca237cd8e4b"
+      }
+    },
+    {
+      "name": "pant",
+      "score": 14,
+      "lastUpdated": {
+        "$numberLong": "1718400744953"
+      },
+      "_id": {
+        "$oid": "666cb0b436107ca237cd908d"
+      }
+    },
+    {
+      "name": "baggy",
+      "score": 24,
+      "lastUpdated": {
+        "$numberLong": "1718400590711"
+      },
+      "_id": {
+        "$oid": "666cb0b436107ca237cd908e"
+      }
+    },
+    {
+      "name": "simple",
+      "score": 14,
+      "lastUpdated": {
+        "$numberLong": "1718400744957"
+      },
+      "_id": {
+        "$oid": "666cb0b436107ca237cd908f"
+      }
+    },
+    {
+      "name": "hoodie",
+      "score": -10,
+      "lastUpdated": {
+        "$numberLong": "1718400287791"
+      },
+      "_id": {
+        "$oid": "666cb51f8f4d06a5df3cd7b8"
+      }
+    },
+    {
+      "name": "biggod",
+      "score": 4,
+      "lastUpdated": {
+        "$numberLong": "1718403653536"
+      },
+      "_id": {
+        "$oid": "666cb63f8f4d06a5df3ceab1"
+      }
+    },
+    {
+      "name": "backpack",
+      "score": 4,
+      "lastUpdated": {
+        "$numberLong": "1718403653537"
+      },
+      "_id": {
+        "$oid": "666cb63f8f4d06a5df3ceab2"
+      }
+    },
+    {
+      "name": "laptop",
+      "score": 4,
+      "lastUpdated": {
+        "$numberLong": "1718403653538"
+      },
+      "_id": {
+        "$oid": "666cb63f8f4d06a5df3ceab3"
+      }
+    },
+    {
+      "name": "tshirt",
+      "score": 18,
+      "lastUpdated": {
+        "$numberLong": "1718403621953"
+      },
+      "_id": {
+        "$oid": "666cb66b8f4d06a5df3cf303"
+      }
+    },
+    {
+      "name": "tee",
+      "score": 16,
+      "lastUpdated": {
+        "$numberLong": "1718403621955"
+      },
+      "_id": {
+        "$oid": "666cb66b8f4d06a5df3cf304"
+      }
+    },
+    {
+      "name": "unisex",
+      "score": 16,
+      "lastUpdated": {
+        "$numberLong": "1718403621955"
+      },
+      "_id": {
+        "$oid": "666cb66b8f4d06a5df3cf305"
+      }
+    },
+    {
+      "name": "kaki",
+      "score": -8,
+      "lastUpdated": {
+        "$numberLong": "1718400744952"
+      },
+      "_id": {
+        "$oid": "666cb6868f4d06a5df3cf837"
+      }
+    },
+    {
+      "name": "supreme",
+      "score": 2,
+      "lastUpdated": {
+        "$numberLong": "1718402829220"
+      },
+      "_id": {
+        "$oid": "666cbf0d1fa442a618b40581"
+      }
+    },
+    {
+      "name": "bandana",
+      "score": 2,
+      "lastUpdated": {
+        "$numberLong": "1718402829221"
+      },
+      "_id": {
+        "$oid": "666cbf0d1fa442a618b40582"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "665bd6416d5093fba9ae5ab4"
+  },
+  "name": "tanphat2002@gmail.com",
+  "email": "tanphat2002@gmail.com",
+  "password": "$2a$10$p/PRn4YGb0jxc8NgRIyb/Oy1H2lMH4FMD3mvJ8RCHvubSU6iCruoy",
+  "role": "user",
+  "follow": [],
+  "orders": [],
+  "addresses": [],
+  "status": "active",
+  "shop": null,
+  "createDate": {
+    "$numberLong": "1717294657993"
+  },
+  "modifyDate": {
+    "$numberLong": "1717294658119"
+  },
+  "productHistory": [],
+  "__v": 0,
+  "cart": {
+    "$oid": "665bd6426d5093fba9ae5ab6"
+  }
+},
+{
+  "_id": {
+    "$oid": "6667137303c9ed1b2f51ad14"
+  },
+  "name": "shopCam",
+  "email": "shopcam@gmail.com",
+  "password": "$2a$10$lO/70k4WpDHjP.4lzAiIqeY2XEr3bitejwvSE.Cmnc/RSPeNl9VFK",
+  "role": "vendor",
+  "follow": [],
+  "orders": [],
+  "addresses": [],
+  "status": "active",
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "createDate": {
+    "$numberLong": "1718031219084"
+  },
+  "modifyDate": {
+    "$numberLong": "1718031331982"
+  },
+  "productHistory": [],
+  "__v": 0,
+  "cart": {
+    "$oid": "6667137303c9ed1b2f51ad16"
+  }
+}]

@@ -1,0 +1,158 @@
+[{
+  "_id": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Shop Cloth",
+  "avatar": {
+    "url": "http://localhost:4000/public/uploads/11bf6442-c42c-45d4-9049-d7e442acfdfa.png",
+    "_id": {
+      "$oid": "66288402e578a74099259e39"
+    }
+  },
+  "description": "We selling cloth",
+  "vendor": {
+    "$oid": "6627cd9a57be892f7f3684ee"
+  },
+  "classify": [
+    {
+      "$oid": "662a289b3b9a273aa89f6e8f"
+    },
+    {
+      "$oid": "662a28a33b9a273aa89f6e96"
+    },
+    {
+      "$oid": "662a28a83b9a273aa89f6e9d"
+    },
+    {
+      "$oid": "662a28b33b9a273aa89f6ea6"
+    }
+  ],
+  "voucher": [],
+  "status": "active",
+  "addresses": {
+    "$oid": "66288402e578a74099259e3a"
+  },
+  "createDate": {
+    "$numberLong": "1713884804908"
+  },
+  "modifyDate": {
+    "$numberLong": "1718403608554"
+  },
+  "__v": 4,
+  "email": "shopCloth@gmail.com",
+  "balance": 115
+},
+{
+  "_id": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "Shop Game",
+  "avatar": {
+    "url": "http://localhost:4000/public/uploads/f702bd28-0034-4a3c-b425-79012404f6fa.png",
+    "_id": {
+      "$oid": "6628520ce6b10a48999d1a66"
+    }
+  },
+  "description": "We selling every awesome games !!",
+  "vendor": {
+    "$oid": "6627cf2157be892f7f36851d"
+  },
+  "classify": [
+    {
+      "$oid": "662a08cf3b9a273aa89f6654"
+    },
+    {
+      "$oid": "662a099b3b9a273aa89f6685"
+    },
+    {
+      "$oid": "662a09d63b9a273aa89f669c"
+    }
+  ],
+  "voucher": [],
+  "status": "active",
+  "addresses": {
+    "$oid": "6627d17da8b9da25e1f35bb9"
+  },
+  "createDate": {
+    "$numberLong": "1713885121648"
+  },
+  "modifyDate": {
+    "$numberLong": "1714031062304"
+  },
+  "__v": 3,
+  "email": "shopGame@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "662a54be3b9a273aa89f831d"
+  },
+  "name": "Thái Công",
+  "avatar": {
+    "url": "http://localhost:4000/public/uploads/07b3bc57-0e49-4d30-8471-d6e5ddab1f0c.jpg",
+    "_id": {
+      "$oid": "662a562b3b9a273aa89f8577"
+    }
+  },
+  "description": "Furniture product shop",
+  "vendor": {
+    "$oid": "662a54ab3b9a273aa89f8317"
+  },
+  "classify": [],
+  "voucher": [],
+  "status": "active",
+  "addresses": {
+    "$oid": "662a562b3b9a273aa89f8578"
+  },
+  "createDate": {
+    "$numberLong": "1714050238930"
+  },
+  "modifyDate": {
+    "$numberLong": "1714050603746"
+  },
+  "__v": 0,
+  "email": "shopThaiCong@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "name": "Shop Camera",
+  "avatar": {
+    "url": "http://localhost:4000/public/uploads/6ed55efe-b2cf-462f-ae1f-da390720a251.jpg",
+    "_id": {
+      "$oid": "666714db03c9ed1b2f51af40"
+    }
+  },
+  "description": "We selling camera and digital devices.",
+  "vendor": {
+    "$oid": "6667137303c9ed1b2f51ad14"
+  },
+  "classify": [
+    {
+      "$oid": "6667152503c9ed1b2f51b054"
+    },
+    {
+      "$oid": "6667152c03c9ed1b2f51b05b"
+    },
+    {
+      "$oid": "6667153403c9ed1b2f51b062"
+    },
+    {
+      "$oid": "6667154103c9ed1b2f51b069"
+    }
+  ],
+  "voucher": [],
+  "status": "active",
+  "addresses": {
+    "$oid": "666714db03c9ed1b2f51af41"
+  },
+  "balance": 0,
+  "createDate": {
+    "$numberLong": "1718031331980"
+  },
+  "modifyDate": {
+    "$numberLong": "1718031681323"
+  },
+  "__v": 4,
+  "email": "shopcam@gmail.com"
+}]

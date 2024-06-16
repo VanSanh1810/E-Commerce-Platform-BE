@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "6643f156546b7e3dd4c541d7"
+  },
+  "user": [
+    {
+      "type": "vendor",
+      "_id": {
+        "$oid": "6627cd9a57be892f7f3684ee"
+      }
+    },
+    {
+      "type": "user",
+      "_id": {
+        "$oid": "662b762db1d24b962c71a12d"
+      }
+    }
+  ],
+  "createDate": {
+    "$numberLong": "1715728726191"
+  },
+  "modifyDate": {
+    "$numberLong": "1716175012820"
+  },
+  "__v": 0
+}]

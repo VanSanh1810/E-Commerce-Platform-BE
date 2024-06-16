@@ -1,0 +1,1912 @@
+[{
+  "_id": {
+    "$oid": "662c669d8e272b85061cd18d"
+  },
+  "code": "NP-01-cd18d",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 0,
+  "paymentMethod": true,
+  "status": "Done",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": {
+        "$oid": "664e67855afe33bf2d36c11f"
+      },
+      "_id": {
+        "$oid": "662c669d8e272b85061cd194"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 77,
+    "district": 747,
+    "ward": 26521,
+    "detail": "95 Lê  Lợi",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1714185885939",
+  "modifyDate": "1716414341033",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662c67ae82fe012cefa6b46f"
+  },
+  "code": "NP-01-6B46F",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 0,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "662c67ae82fe012cefa6b476"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 77,
+    "district": 747,
+    "ward": 26521,
+    "detail": "95 Lê  Lợi",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1714186158650",
+  "modifyDate": "1714186158650",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662c67cb8b13dc21e8dbdc12"
+  },
+  "code": "NP-01-BDC12",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 0,
+  "paymentMethod": true,
+  "status": "Done",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": {
+        "$oid": "662ee7a7db1919477c3930eb"
+      },
+      "_id": {
+        "$oid": "662c67cb8b13dc21e8dbdc19"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 77,
+    "district": 747,
+    "ward": 26521,
+    "detail": "95 Lê  Lợi",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1714186187655",
+  "modifyDate": "1714349991486",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662c68077fb8175bb30ddf14"
+  },
+  "code": "NP-01-DDF14",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 0,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "662c68077fb8175bb30ddf1b"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 77,
+    "district": 747,
+    "ward": 26521,
+    "detail": "95 Lê  Lợi",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1714186247257",
+  "modifyDate": "1714186247257",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662c697aec0e9d13b127bf05"
+  },
+  "code": "NP-01-7BF05",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 0,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "662c697aec0e9d13b127bf0c"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 77,
+    "district": 747,
+    "ward": 26521,
+    "detail": "95 Lê  Lợi",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1714186618374",
+  "modifyDate": "1714186618374",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663a5c0a3d5d8e2428e52e52"
+  },
+  "code": "NP-01-52E52",
+  "note": "tesst",
+  "total": 96,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 0,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "663a5c0a22fb96296558070a"
+      },
+      "image": "http://localhost:4000/public/uploads/59cd698e-b7f8-486e-84b8-10489397172f.webp",
+      "name": "POP UP PARADE KRATOS - GOD OF WAR",
+      "variant": [],
+      "quantity": 2,
+      "price": 48,
+      "review": null,
+      "_id": {
+        "$oid": "663a5c0a3d5d8e2428e52e5f"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1715100682286",
+  "modifyDate": "1715100682286",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663adfb0bd1b867bb80bc300"
+  },
+  "code": "NP-01-BC300",
+  "note": "",
+  "total": 43.2,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 0,
+  "paymentMethod": true,
+  "status": "Cancel",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "663a5c0a22fb96296558070a"
+      },
+      "image": "http://localhost:4000/public/uploads/59cd698e-b7f8-486e-84b8-10489397172f.webp",
+      "name": "POP UP PARADE KRATOS - GOD OF WAR",
+      "variant": [],
+      "quantity": 1,
+      "price": 43.2,
+      "review": null,
+      "_id": {
+        "$oid": "663adfb0bd1b867bb80bc31c"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1715134384195",
+  "modifyDate": "1715135218399",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6646cb6e31dbfc0cbf4244dc"
+  },
+  "code": "NP-00-244DC",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "6646cb6e31dbfc0cbf4244ef"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "address": {
+    "province": 1,
+    "district": 1,
+    "ward": 1,
+    "detail": "5 Đường số 6 Linh Chiểu , Thủ Đức, Ho Chi Minh City, VietNam",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1715915630297",
+  "modifyDate": "1715915630297",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6646cb930955a56c54b4884a"
+  },
+  "code": "NP-00-4884A",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "6646cb930955a56c54b4885d"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "address": {
+    "province": 1,
+    "district": 1,
+    "ward": 1,
+    "detail": "5 Đường số 6 Linh Chiểu , Thủ Đức, Ho Chi Minh City, VietNam",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1715915667326",
+  "modifyDate": "1715915667326",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6646cb930955a56c54b48865"
+  },
+  "code": "NP-00-48865",
+  "note": "",
+  "total": 53.991,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c3bd6e8ad1d381cd5c660"
+      },
+      "image": "http://localhost:4000/public/uploads/4b0fcf6c-d952-4ebb-80ee-dcff2e525934.webp",
+      "name": "Fallout - The Ghoul - Statue",
+      "variant": [],
+      "quantity": 1,
+      "price": 53.991,
+      "review": null,
+      "_id": {
+        "$oid": "6646cb930955a56c54b4888e"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "Nguyen Van Sanh",
+  "address": {
+    "province": 1,
+    "district": 1,
+    "ward": 1,
+    "detail": "5 Đường số 6 Linh Chiểu , Thủ Đức, Ho Chi Minh City, VietNam",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1715915667469",
+  "modifyDate": "1715915667469",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6646ccdfa553240070b48e63"
+  },
+  "code": "NP-00-48E63",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Done",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "6646ccdfa553240070b48e76"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 1,
+    "district": 1,
+    "ward": 1,
+    "detail": "5 Đường số 6 Linh Chiểu , Thủ Đức, Ho Chi Minh City, VietNam",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1715915999653",
+  "modifyDate": "1716515190834",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6646ccdfa553240070b48e7e"
+  },
+  "code": "NP-00-48E7E",
+  "note": "",
+  "total": 53.991,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c3bd6e8ad1d381cd5c660"
+      },
+      "image": "http://localhost:4000/public/uploads/4b0fcf6c-d952-4ebb-80ee-dcff2e525934.webp",
+      "name": "Fallout - The Ghoul - Statue",
+      "variant": [],
+      "quantity": 1,
+      "price": 53.991,
+      "review": null,
+      "_id": {
+        "$oid": "6646ccdfa553240070b48ea7"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 1,
+    "district": 1,
+    "ward": 1,
+    "detail": "5 Đường số 6 Linh Chiểu , Thủ Đức, Ho Chi Minh City, VietNam",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1715915999752",
+  "modifyDate": "1715915999752",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6646cce9a553240070b48eb3"
+  },
+  "code": "NP-00-48EB3",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "6646cce9a553240070b48ec6"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 1,
+    "district": 1,
+    "ward": 1,
+    "detail": "5 Đường số 6 Linh Chiểu , Thủ Đức, Ho Chi Minh City, VietNam",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1715916009862",
+  "modifyDate": "1715916009862",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6646cce9a553240070b48ece"
+  },
+  "code": "NP-00-48ECE",
+  "note": "",
+  "total": 53.991,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c3bd6e8ad1d381cd5c660"
+      },
+      "image": "http://localhost:4000/public/uploads/4b0fcf6c-d952-4ebb-80ee-dcff2e525934.webp",
+      "name": "Fallout - The Ghoul - Statue",
+      "variant": [],
+      "quantity": 1,
+      "price": 53.991,
+      "review": null,
+      "_id": {
+        "$oid": "6646cce9a553240070b48ef7"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 1,
+    "district": 1,
+    "ward": 1,
+    "detail": "5 Đường số 6 Linh Chiểu , Thủ Đức, Ho Chi Minh City, VietNam",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1715916009906",
+  "modifyDate": "1715916009906",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664ab66ea75e1e0b91841865"
+  },
+  "code": "NP-01-41865",
+  "note": "",
+  "total": 238.89,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "664ab66e7d421f5b041cf65b"
+      },
+      "image": "http://localhost:4000/public/uploads/24da706c-65dd-4b00-bf23-2f678610f367.webp",
+      "name": "Assassin's Creed III 11 Play Arts Kait Action Figure Connor Kenway",
+      "variant": [],
+      "quantity": 1,
+      "price": 238.89,
+      "review": null,
+      "_id": {
+        "$oid": "664ab66ea75e1e0b9184187b"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1716172398612",
+  "modifyDate": "1716172398612",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664ab66ea75e1e0b91841883"
+  },
+  "code": "NP-01-41883",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "4cab2e0d-15a3-4b91-866a-27b686d80810"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "664ab66ea75e1e0b9184189d"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1716172398715",
+  "modifyDate": "1716172398715",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664ab6e5a75e1e0b918418cd"
+  },
+  "code": "NP-01-418CD",
+  "note": "ec3rv",
+  "total": 238.89,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Cancel",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "664ab66e7d421f5b041cf65b"
+      },
+      "image": "http://localhost:4000/public/uploads/24da706c-65dd-4b00-bf23-2f678610f367.webp",
+      "name": "Assassin's Creed III 11 Play Arts Kait Action Figure Connor Kenway",
+      "variant": [],
+      "quantity": 1,
+      "price": 238.89,
+      "review": null,
+      "_id": {
+        "$oid": "664ab6e5a75e1e0b918418e3"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1716172517665",
+  "modifyDate": "1716172643343",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664ab6e5a75e1e0b918418eb"
+  },
+  "code": "NP-01-418EB",
+  "note": "11111",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Done",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "4cab2e0d-15a3-4b91-866a-27b686d80810"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "664ab6e5a75e1e0b91841905"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1716172517714",
+  "modifyDate": "1716414620296",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664ab87fa75e1e0b91841a38"
+  },
+  "code": "NP-00-41A38",
+  "note": "",
+  "total": 238.89,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "664ab66e7d421f5b041cf65b"
+      },
+      "image": "http://localhost:4000/public/uploads/24da706c-65dd-4b00-bf23-2f678610f367.webp",
+      "name": "Assassin's Creed III 11 Play Arts Kait Action Figure Connor Kenway",
+      "variant": [],
+      "quantity": 1,
+      "price": 238.89,
+      "review": null,
+      "_id": {
+        "$oid": "664ab87fa75e1e0b91841a4b"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 8,
+    "district": 70,
+    "ward": 2200,
+    "detail": "123 ABC",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "012345677",
+  "createDate": "1716172927699",
+  "modifyDate": "1716172927699",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664ab87fa75e1e0b91841a53"
+  },
+  "code": "NP-00-41A53",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "4cab2e0d-15a3-4b91-866a-27b686d80810"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "664ab87fa75e1e0b91841a6a"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 8,
+    "district": 70,
+    "ward": 2200,
+    "detail": "123 ABC",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "012345677",
+  "createDate": "1716172927763",
+  "modifyDate": "1716172927763",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664d2d2457063d404b679d03"
+  },
+  "code": "NP-01-79D03",
+  "note": "",
+  "total": 53.991,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c3bd6e8ad1d381cd5c660"
+      },
+      "image": "http://localhost:4000/public/uploads/4b0fcf6c-d952-4ebb-80ee-dcff2e525934.webp",
+      "name": "Fallout - The Ghoul - Statue",
+      "variant": [],
+      "quantity": 1,
+      "price": 53.991,
+      "review": null,
+      "_id": {
+        "$oid": "664d2d2457063d404b679d2b"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1716333860835",
+  "modifyDate": "1716333860835",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664d36563cc133202dc229a5"
+  },
+  "code": "NP-01-229A5",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Done",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": {
+        "$oid": "664e62c05afe33bf2d36c0b9"
+      },
+      "_id": {
+        "$oid": "664d36563cc133202dc229bb"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1716336214871",
+  "modifyDate": "1716413120944",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6651116291e9032726bef80b"
+  },
+  "code": "NP-01-EF80B",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "6651116291e9032726bef821"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1716588898246",
+  "modifyDate": "1716588898246",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665866ecc066e7573d56d8dc"
+  },
+  "code": "NP-01-6D8DC",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "665866ecc066e7573d56d8f2"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1717069548999",
+  "modifyDate": "1717069548999",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665867cde01b7d8a64e30238"
+  },
+  "code": "NP-01-30238",
+  "note": "",
+  "total": 15,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c5e0ee8ad1d381cd5d958"
+      },
+      "image": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+      "variant": [
+        "a85438dc-73c8-4630-af9c-d3dfbf49b8f6"
+      ],
+      "quantity": 1,
+      "price": 15,
+      "review": null,
+      "_id": {
+        "$oid": "665867cde01b7d8a64e3024e"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1717069773795",
+  "modifyDate": "1717069773795",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665d2fa6cff109bd6b77fce4"
+  },
+  "code": "NP-01-7FCE4",
+  "note": "",
+  "total": 53.991,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Cancel",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c3bd6e8ad1d381cd5c660"
+      },
+      "image": "http://localhost:4000/public/uploads/4b0fcf6c-d952-4ebb-80ee-dcff2e525934.webp",
+      "name": "Fallout - The Ghoul - Statue",
+      "variant": [],
+      "quantity": 1,
+      "price": 53.991,
+      "review": null,
+      "_id": {
+        "$oid": "665d2fa7cff109bd6b77fd0c"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1717383079024",
+  "modifyDate": "1717383123990",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665d300acff109bd6b77fe81"
+  },
+  "code": "NP-01-7FE81",
+  "note": "",
+  "total": 17,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Done",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c3bd6e8ad1d381cd5c652"
+      },
+      "image": "http://localhost:4000/public/uploads/ba82ea8e-6111-4ed3-a04e-ba59ba3afc02.jpeg",
+      "name": "Adidas Adilette Ayoon Bliss Sandal",
+      "variant": [
+        "c9ec6fbf-dc8b-44f3-badd-d4f28f2b275b"
+      ],
+      "quantity": 1,
+      "price": 17,
+      "review": {
+        "$oid": "665d306dcff109bd6b780006"
+      },
+      "_id": {
+        "$oid": "665d300bcff109bd6b77fea0"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1717383179012",
+  "modifyDate": "1717383277393",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665d30eacff109bd6b7800ba"
+  },
+  "code": "NP-00-800BA",
+  "note": "",
+  "total": 235,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Cancel",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c3bd6e8ad1d381cd5c665"
+      },
+      "image": "http://localhost:4000/public/uploads/dfa684f6-071b-421f-bc7b-c7b38d60971e.jpg",
+      "name": "Nintendo Switch OLED Neon",
+      "variant": [],
+      "quantity": 1,
+      "price": 235,
+      "review": null,
+      "_id": {
+        "$oid": "665d30eacff109bd6b7800d3"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "name": "sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 17,
+    "district": 150,
+    "ward": 4834,
+    "detail": "123 ABC",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0947782733",
+  "createDate": "1717383402084",
+  "modifyDate": "1717383748119",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6668f3eae93d89ca8c3b85b3"
+  },
+  "code": "NP-10-B85B3",
+  "note": "",
+  "total": 16,
+  "totalItem": 1,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "Confirmed",
+  "paymentUrl": "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=40000000&vnp_Command=pay&vnp_CreateDate=20240612080338&vnp_CurrCode=VND&vnp_IpAddr=%3A%3A1&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+cho+ma+GD%3A6668f3eae93d89ca8c3b85b3&vnp_OrderType=others&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A3000&vnp_TmnCode=XI1GIBGH&vnp_TxnRef=%5B%7B%22orderId%22%3A%226668f3eae93d89ca8c3b85b3%22%2C%22price%22%3A17.7%7D%5D&vnp_Version=2.1.0&vnp_SecureHash=4182d937cdeebe32fcd71d5e1ded4e0034717702649f42ed0fb2e5bdf895407a0d4a59744fc153fe235aa44c4af75966dcfa637845f928b09c8b55a3749c5368",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "6668f3ea0e7af515066bf1ba"
+      },
+      "image": "http://localhost:4000/public/uploads/9f7e0814-e20f-4e0b-bb8a-3dc69e90b51f.jpg",
+      "name": "Stussy Bouquet Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Form Rộng Cao Cấp Màu Trắng",
+      "variant": [
+        "2f42d31e-282f-476c-8047-d4a918b372a1"
+      ],
+      "quantity": 2,
+      "price": 8,
+      "review": null,
+      "_id": {
+        "$oid": "6668f3eae93d89ca8c3b85c9"
+      }
+    }
+  ],
+  "user": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 1,
+    "district": 2,
+    "ward": 85,
+    "detail": "123 ABC",
+    "isWork": false,
+    "isHome": true
+  },
+  "phoneNumber": "0947782733",
+  "createDate": "1718154218733",
+  "modifyDate": "1718154294369",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cb0ee36107ca237cd92b3"
+  },
+  "code": "NP-01-D92B3",
+  "note": "",
+  "total": 18,
+  "totalItem": 2,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Done",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "666cb0ee0e7af515066c363b"
+      },
+      "image": "http://localhost:4000/public/uploads/c805cef1-3ff6-403e-b354-285ed69b9ada.jpg",
+      "name": "Quần Baggy Pant Tối Giản Nam Màu Đen",
+      "variant": [],
+      "quantity": 1,
+      "price": 10,
+      "review": {
+        "$oid": "666cb3b58f4d06a5df3cd579"
+      },
+      "_id": {
+        "$oid": "666cb0ee36107ca237cd92fb"
+      }
+    },
+    {
+      "idToSnapshot": {
+        "$oid": "6668f3ea0e7af515066bf1ba"
+      },
+      "image": "http://localhost:4000/public/uploads/9f7e0814-e20f-4e0b-bb8a-3dc69e90b51f.jpg",
+      "name": "Stussy Bouquet Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Form Rộng Cao Cấp Màu Trắng",
+      "variant": [
+        "2f42d31e-282f-476c-8047-d4a918b372a1"
+      ],
+      "quantity": 1,
+      "price": 8,
+      "review": {
+        "$oid": "666cb4af8f4d06a5df3cd5dd"
+      },
+      "_id": {
+        "$oid": "666cb0ee36107ca237cd92fc"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1718399214679",
+  "modifyDate": "1718400175858",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cb51f8f4d06a5df3cd70d"
+  },
+  "code": "NP-01-CD70D",
+  "note": "",
+  "total": 46,
+  "totalItem": 2,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "6668f3ea0e7af515066bf1ba"
+      },
+      "image": "http://localhost:4000/public/uploads/9f7e0814-e20f-4e0b-bb8a-3dc69e90b51f.jpg",
+      "name": "Stussy Bouquet Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Form Rộng Cao Cấp Màu Trắng",
+      "variant": [
+        "2f42d31e-282f-476c-8047-d4a918b372a1"
+      ],
+      "quantity": 1,
+      "price": 8,
+      "review": null,
+      "_id": {
+        "$oid": "666cb51f8f4d06a5df3cd75b"
+      }
+    },
+    {
+      "idToSnapshot": {
+        "$oid": "662c3bd6e8ad1d381cd5c657"
+      },
+      "image": "http://localhost:4000/public/uploads/35933af8-ac54-4335-aaed-00c8f59f3bfc.jpeg",
+      "name": "Hoodie Vans Black Logo",
+      "variant": [
+        "666170ee-4e8e-4bba-bfe9-603225575bd3"
+      ],
+      "quantity": 2,
+      "price": 19,
+      "review": null,
+      "_id": {
+        "$oid": "666cb51f8f4d06a5df3cd75c"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1718400287613",
+  "modifyDate": "1718400287613",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cb6e81a5f2e4179e9d0d9"
+  },
+  "code": "NP-01-9D0D9",
+  "note": "",
+  "total": 20,
+  "totalItem": 2,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "666cb6e80e7af515066c4516"
+      },
+      "image": "http://localhost:4000/public/uploads/8eb2e191-d947-4ee2-a439-abbbcb42ced1.jpg",
+      "name": "Quần Baggy Pant Tối Giản Nam Màu Kaki",
+      "variant": [],
+      "quantity": 1,
+      "price": 12,
+      "review": null,
+      "_id": {
+        "$oid": "666cb6e81a5f2e4179e9d13a"
+      }
+    },
+    {
+      "idToSnapshot": {
+        "$oid": "666cb6e80e7af515066c4527"
+      },
+      "image": "http://localhost:4000/public/uploads/b7867e21-e00b-4d0f-9f4f-5a84427307ac.jpg",
+      "name": "Palm Angels Kill The Bear Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Cao Cấp Màu Trắng",
+      "variant": [
+        "409a6876-2cd0-4639-af31-cd52600d3c08"
+      ],
+      "quantity": 1,
+      "price": 8,
+      "review": null,
+      "_id": {
+        "$oid": "666cb6e81a5f2e4179e9d13b"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1718400744830",
+  "modifyDate": "1718400744830",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cb7ff36dda19e3b24afea"
+  },
+  "code": "NP-01-4AFEA",
+  "note": "",
+  "total": 50,
+  "totalItem": 2,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "666cb6e80e7af515066c4516"
+      },
+      "image": "http://localhost:4000/public/uploads/8eb2e191-d947-4ee2-a439-abbbcb42ced1.jpg",
+      "name": "Quần Baggy Pant Tối Giản Nam Màu Kaki",
+      "variant": [],
+      "quantity": 1,
+      "price": 12,
+      "review": null,
+      "_id": {
+        "$oid": "666cb7ff36dda19e3b24b04e"
+      }
+    },
+    {
+      "idToSnapshot": {
+        "$oid": "662c3bd6e8ad1d381cd5c657"
+      },
+      "image": "http://localhost:4000/public/uploads/35933af8-ac54-4335-aaed-00c8f59f3bfc.jpeg",
+      "name": "Hoodie Vans Black Logo",
+      "variant": [
+        "666170ee-4e8e-4bba-bfe9-603225575bd3"
+      ],
+      "quantity": 2,
+      "price": 19,
+      "review": null,
+      "_id": {
+        "$oid": "666cb7ff36dda19e3b24b04f"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1718401023965",
+  "modifyDate": "1718401023965",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cbf221fa442a618b406c3"
+  },
+  "code": "NP-01-406C3",
+  "note": "",
+  "total": 48,
+  "totalItem": 2,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Pending",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "662c3bd6e8ad1d381cd5c657"
+      },
+      "image": "http://localhost:4000/public/uploads/35933af8-ac54-4335-aaed-00c8f59f3bfc.jpeg",
+      "name": "Hoodie Vans Black Logo",
+      "variant": [
+        "666170ee-4e8e-4bba-bfe9-603225575bd3"
+      ],
+      "quantity": 2,
+      "price": 19,
+      "review": null,
+      "_id": {
+        "$oid": "666cbf221fa442a618b40725"
+      }
+    },
+    {
+      "idToSnapshot": {
+        "$oid": "666cbf220e7af515066c533e"
+      },
+      "image": "http://localhost:4000/public/uploads/199dc254-269c-4fd9-b02c-80a5d9cced1c.jpeg",
+      "name": "Supreme Bandana Box Logo Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Form Rộng Cao Cấp Màu Đen",
+      "variant": [
+        "2f583960-d72e-4b4d-89a4-2e84c6cab995"
+      ],
+      "quantity": 1,
+      "price": 10,
+      "review": null,
+      "_id": {
+        "$oid": "666cbf221fa442a618b40726"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1718402850371",
+  "modifyDate": "1718402850371",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cbfd81fa442a618b4197d"
+  },
+  "code": "NP-01-4197D",
+  "note": "",
+  "total": 20,
+  "totalItem": 2,
+  "voucher": null,
+  "shippingCost": 1.7,
+  "paymentMethod": true,
+  "status": "Done",
+  "onlPayStatus": "None",
+  "paymentUrl": "",
+  "items": [
+    {
+      "idToSnapshot": {
+        "$oid": "666cb6e80e7af515066c4527"
+      },
+      "image": "http://localhost:4000/public/uploads/b7867e21-e00b-4d0f-9f4f-5a84427307ac.jpg",
+      "name": "Palm Angels Kill The Bear Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Cao Cấp Màu Trắng",
+      "variant": [
+        "2de36d1c-e145-4b95-bc7c-e9101a870b87"
+      ],
+      "quantity": 1,
+      "price": 10,
+      "review": {
+        "$oid": "666cc2251fa442a618b44a98"
+      },
+      "_id": {
+        "$oid": "666cbfd81fa442a618b419e2"
+      }
+    },
+    {
+      "idToSnapshot": {
+        "$oid": "666cbfd80e7af515066c59d2"
+      },
+      "image": "http://localhost:4000/public/uploads/b8b32d46-526f-4add-806a-3784da72a70b.jpg",
+      "name": "Biggod – Balo (Backpack) Local Brand Nam Nữ, Balo Đi Học, Balo Du Lịch, Balo Đựng Laptop – Trắng Kem",
+      "variant": [],
+      "quantity": 1,
+      "price": 10,
+      "review": {
+        "$oid": "666cc2451fa442a618b44afc"
+      },
+      "_id": {
+        "$oid": "666cbfd81fa442a618b419e3"
+      }
+    }
+  ],
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "name": "Nguyen Van Sanh",
+  "email": "sanhnguyen734@gmail.com",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi",
+    "isWork": true,
+    "isHome": false
+  },
+  "phoneNumber": "0838464006",
+  "createDate": "1718403032349",
+  "modifyDate": "1718403653531",
+  "__v": 0
+}]

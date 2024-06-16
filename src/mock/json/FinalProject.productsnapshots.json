@@ -1,0 +1,130 @@
+[{
+  "_id": {
+    "$oid": "662c3bd6e8ad1d381cd5c652"
+  },
+  "productJson": "{\"_id\":\"662a31213b9a273aa89f7425\",\"name\":\"Adidas Adilette Ayoon Bliss Sandal\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/ba82ea8e-6111-4ed3-a04e-ba59ba3afc02.jpeg\",\"_id\":\"662a31213b9a273aa89f7426\"},{\"url\":\"http://localhost:4000/public/uploads/fd9a2ea7-afd4-4906-bdea-610910e14394.jpeg\",\"_id\":\"662a31213b9a273aa89f7427\"},{\"url\":\"http://localhost:4000/public/uploads/07ab6e64-4600-43af-95d7-10db6c18389a.jpeg\",\"_id\":\"662a31213b9a273aa89f7428\"},{\"url\":\"http://localhost:4000/public/uploads/82c8a615-962f-409a-86be-1a8684914e28.jpeg\",\"_id\":\"662a31213b9a273aa89f7429\"}],\"variantData\":[{\"_id\":\"61ca9742-cbae-476c-83ba-43421fb6457b\",\"name\":\"Size\",\"data\":[{\"_id\":\"a5b08fe4-0cb9-44ee-b13e-9c01617eb5f1\",\"name\":\"44.5\"},{\"_id\":\"a513398f-c185-4b41-b893-6e45e8205515\",\"name\":\"43\"},{\"_id\":\"b630c405-be60-446d-9857-361f9f3b00c7\",\"name\":\"42\"},{\"_id\":\"c9ec6fbf-dc8b-44f3-badd-d4f28f2b275b\",\"name\":\"40.5\"},{\"_id\":\"c5374d56-df31-4a85-a158-2e4741fe1532\",\"name\":\"39\"},{\"_id\":\"13eb1b25-ddce-467e-be58-f4c43f0a8370\",\"name\":\"38\"},{\"_id\":\"a17daeac-fe4f-4295-9af9-4aead840c3b9\",\"name\":\"37\"}]}],\"id\":\"662a31213b9a273aa89f7425\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "662a31213b9a273aa89f7425"
+  }
+},
+{
+  "_id": {
+    "$oid": "662c3bd6e8ad1d381cd5c657"
+  },
+  "productJson": "{\"_id\":\"662a343c3b9a273aa89f7d47\",\"name\":\"Hoodie Vans Black Logo\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/35933af8-ac54-4335-aaed-00c8f59f3bfc.jpeg\",\"_id\":\"662a343c3b9a273aa89f7d48\"},{\"url\":\"http://localhost:4000/public/uploads/978b5ead-b103-409e-98b0-8d4337683e34.jpeg\",\"_id\":\"662a343c3b9a273aa89f7d49\"},{\"url\":\"http://localhost:4000/public/uploads/07f0d727-79a9-4366-a5d7-59df00491ee9.jpeg\",\"_id\":\"662a343c3b9a273aa89f7d4a\"},{\"url\":\"http://localhost:4000/public/uploads/db879704-341b-497e-9f1e-a589a26296dc.jpeg\",\"_id\":\"662a343c3b9a273aa89f7d4b\"},{\"url\":\"http://localhost:4000/public/uploads/6d15499b-a478-490a-95c7-2d06c38ace67.jpeg\",\"_id\":\"662a343c3b9a273aa89f7d4c\"}],\"variantData\":[{\"_id\":\"c9483dc7-d5e4-4805-8738-8c149a38deec\",\"name\":\"Size\",\"data\":[{\"_id\":\"89ba8159-d34c-4042-bd2d-18b0228b98a4\",\"name\":\"L\"},{\"_id\":\"666170ee-4e8e-4bba-bfe9-603225575bd3\",\"name\":\"M\"}]}],\"id\":\"662a343c3b9a273aa89f7d47\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "662a343c3b9a273aa89f7d47"
+  }
+},
+{
+  "_id": {
+    "$oid": "662c3bd6e8ad1d381cd5c660"
+  },
+  "productJson": "{\"_id\":\"662a13b93b9a273aa89f680d\",\"name\":\"Fallout - The Ghoul - Statue\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/4b0fcf6c-d952-4ebb-80ee-dcff2e525934.webp\",\"_id\":\"662a13b93b9a273aa89f680e\"},{\"url\":\"http://localhost:4000/public/uploads/80178a71-4264-4e0f-a90c-6f4f380bf931.webp\",\"_id\":\"662a13b93b9a273aa89f680f\"},{\"url\":\"http://localhost:4000/public/uploads/a16b2624-bdb6-45c1-ad1b-da2e6442c766.webp\",\"_id\":\"662a13b93b9a273aa89f6810\"},{\"url\":\"http://localhost:4000/public/uploads/aaa26b08-535a-42d7-bb76-359eef562d61.webp\",\"_id\":\"662a13b93b9a273aa89f6811\"},{\"url\":\"http://localhost:4000/public/uploads/78331d0a-36c9-47a3-8762-d4898fc40697.webp\",\"_id\":\"662a13b93b9a273aa89f6812\"},{\"url\":\"http://localhost:4000/public/uploads/e55a4a59-240b-40fb-98e0-d47659762a18.webp\",\"_id\":\"662a13b93b9a273aa89f6813\"},{\"url\":\"http://localhost:4000/public/uploads/f249ce53-1f10-45d7-8635-f44b621934e2.webp\",\"_id\":\"662a13b93b9a273aa89f6814\"}],\"variantData\":null,\"id\":\"662a13b93b9a273aa89f680d\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "662a13b93b9a273aa89f680d"
+  }
+},
+{
+  "_id": {
+    "$oid": "662c3bd6e8ad1d381cd5c665"
+  },
+  "productJson": "{\"_id\":\"662a1a1f3b9a273aa89f6a4b\",\"name\":\"Nintendo Switch OLED Neon\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/dfa684f6-071b-421f-bc7b-c7b38d60971e.jpg\",\"_id\":\"662a1a1f3b9a273aa89f6a4c\"},{\"url\":\"http://localhost:4000/public/uploads/e852fd4b-d185-48ae-872c-a1cbb02a8f68.jpg\",\"_id\":\"662a1a1f3b9a273aa89f6a4d\"},{\"url\":\"http://localhost:4000/public/uploads/03cb801c-78fd-41bb-82a1-777d4f2ad01f.jpg\",\"_id\":\"662a1a1f3b9a273aa89f6a4e\"}],\"variantData\":null,\"id\":\"662a1a1f3b9a273aa89f6a4b\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "662a1a1f3b9a273aa89f6a4b"
+  }
+},
+{
+  "_id": {
+    "$oid": "662c5e0ee8ad1d381cd5d958"
+  },
+  "productJson": "{\"_id\":\"662a2cc63b9a273aa89f6f2d\",\"name\":\"T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp\",\"_id\":\"662a2cc63b9a273aa89f6f2e\"}],\"variantData\":[{\"_id\":\"570087a4-7f76-4d13-9b2f-c72626bc7c34\",\"name\":\"Size\",\"data\":[{\"_id\":\"4cab2e0d-15a3-4b91-866a-27b686d80810\",\"name\":\"S\"},{\"_id\":\"6436ab6b-43e7-4ed1-b1c1-7c5e652ac5da\",\"name\":\"M\"},{\"_id\":\"a85438dc-73c8-4630-af9c-d3dfbf49b8f6\",\"name\":\"L\"},{\"_id\":\"ca351100-73df-4acc-8474-25b43f45d430\",\"name\":\"XL\"}]}],\"id\":\"662a2cc63b9a273aa89f6f2d\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "662a2cc63b9a273aa89f6f2d"
+  }
+},
+{
+  "_id": {
+    "$oid": "663a5c0a22fb96296558070a"
+  },
+  "productJson": "{\"_id\":\"662a1bb23b9a273aa89f6b17\",\"name\":\"POP UP PARADE KRATOS - GOD OF WAR\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/59cd698e-b7f8-486e-84b8-10489397172f.webp\",\"_id\":\"662a1bb23b9a273aa89f6b18\"},{\"url\":\"http://localhost:4000/public/uploads/426a4fff-7ddc-4f62-8e74-173bc2e292b7.webp\",\"_id\":\"662a1bb23b9a273aa89f6b19\"},{\"url\":\"http://localhost:4000/public/uploads/9a133c3e-6ede-44dc-a2aa-50b66331e734.webp\",\"_id\":\"662a1bb23b9a273aa89f6b1a\"},{\"url\":\"http://localhost:4000/public/uploads/18871c1c-f558-4e02-aea3-754ade402b23.webp\",\"_id\":\"662a1bb23b9a273aa89f6b1b\"}],\"variantData\":null,\"id\":\"662a1bb23b9a273aa89f6b17\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "662a1bb23b9a273aa89f6b17"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ab66e7d421f5b041cf65b"
+  },
+  "productJson": "{\"_id\":\"662a0ca63b9a273aa89f66a3\",\"name\":\"Assassin's Creed III 11 Play Arts Kait Action Figure Connor Kenway\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/24da706c-65dd-4b00-bf23-2f678610f367.webp\",\"_id\":\"662a0ca63b9a273aa89f66a4\"}],\"variantData\":null,\"id\":\"662a0ca63b9a273aa89f66a3\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "662a0ca63b9a273aa89f66a3"
+  }
+},
+{
+  "_id": {
+    "$oid": "6668f3ea0e7af515066bf1ba"
+  },
+  "productJson": "{\"_id\":\"6666eacc03c9ed1b2f50bd78\",\"name\":\"Stussy Bouquet Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Form Rộng Cao Cấp Màu Trắng\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/9f7e0814-e20f-4e0b-bb8a-3dc69e90b51f.jpg\",\"_id\":\"6666eacc03c9ed1b2f50bd79\"},{\"url\":\"http://localhost:4000/public/uploads/99d30222-ff45-4d41-b87f-9fa18d27c5c8.jpg\",\"_id\":\"6666eacc03c9ed1b2f50bd7a\"}],\"variantData\":[{\"_id\":\"7d57725d-d712-4e52-83d1-e7a7fc4fa7c3\",\"name\":\"Size\",\"data\":[{\"_id\":\"2f42d31e-282f-476c-8047-d4a918b372a1\",\"name\":\"XL\"},{\"_id\":\"f44d0ca0-ca5b-46e2-a0e7-ec6dda3fb717\",\"name\":\"XXL\"}]}],\"id\":\"6666eacc03c9ed1b2f50bd78\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "6666eacc03c9ed1b2f50bd78"
+  }
+},
+{
+  "_id": {
+    "$oid": "666cb0ee0e7af515066c363b"
+  },
+  "productJson": "{\"_id\":\"6666e4df03c9ed1b2f508122\",\"name\":\"Quần Baggy Pant Tối Giản Nam Màu Đen\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/c805cef1-3ff6-403e-b354-285ed69b9ada.jpg\",\"_id\":\"6666e4df03c9ed1b2f508123\"},{\"url\":\"http://localhost:4000/public/uploads/5a55d04c-4f39-457f-84a9-a6108c560637.jpg\",\"_id\":\"6666e4df03c9ed1b2f508124\"},{\"url\":\"http://localhost:4000/public/uploads/42efe3fd-1a32-4adb-8392-b7801e6ddeb6.jpg\",\"_id\":\"6666e4df03c9ed1b2f508125\"}],\"variantData\":null,\"id\":\"6666e4df03c9ed1b2f508122\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "6666e4df03c9ed1b2f508122"
+  }
+},
+{
+  "_id": {
+    "$oid": "666cb6e80e7af515066c4516"
+  },
+  "productJson": "{\"_id\":\"6666e52603c9ed1b2f5085b0\",\"name\":\"Quần Baggy Pant Tối Giản Nam Màu Kaki\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/8eb2e191-d947-4ee2-a439-abbbcb42ced1.jpg\",\"_id\":\"6666e52603c9ed1b2f5085b1\"},{\"url\":\"http://localhost:4000/public/uploads/4a0f867a-fb6a-4759-a4c4-dc82786527d6.jpg\",\"_id\":\"6666e52603c9ed1b2f5085b2\"},{\"url\":\"http://localhost:4000/public/uploads/b3f9e499-af53-4650-a6c2-7880857963ab.jpg\",\"_id\":\"6666e52603c9ed1b2f5085b3\"},{\"url\":\"http://localhost:4000/public/uploads/ab902c93-2418-4d55-b650-b0b2abe64de4.jpg\",\"_id\":\"6666e52603c9ed1b2f5085b4\"}],\"variantData\":null,\"id\":\"6666e52603c9ed1b2f5085b0\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "6666e52603c9ed1b2f5085b0"
+  }
+},
+{
+  "_id": {
+    "$oid": "666cb6e80e7af515066c4527"
+  },
+  "productJson": "{\"_id\":\"6666ea6903c9ed1b2f50b76c\",\"name\":\"Palm Angels Kill The Bear Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Cao Cấp Màu Trắng\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/b7867e21-e00b-4d0f-9f4f-5a84427307ac.jpg\",\"_id\":\"6666ea6903c9ed1b2f50b76d\"},{\"url\":\"http://localhost:4000/public/uploads/9ba6307f-f436-429b-b0ee-8dab96a61e93.jpg\",\"_id\":\"6666ea6903c9ed1b2f50b76e\"},{\"url\":\"http://localhost:4000/public/uploads/f46f79fa-05d3-45f6-91c3-e3e3f1273567.jpg\",\"_id\":\"6666ea6903c9ed1b2f50b76f\"},{\"url\":\"http://localhost:4000/public/uploads/da448faa-7f23-47ce-bb88-bcb5b8c956d3.jpg\",\"_id\":\"6666ea6903c9ed1b2f50b770\"}],\"variantData\":[{\"_id\":\"4bb6532f-dad6-482c-9ea1-719cb43fb666\",\"name\":\"Size\",\"data\":[{\"_id\":\"409a6876-2cd0-4639-af31-cd52600d3c08\",\"name\":\"M\"},{\"_id\":\"84c47e08-7c0a-4ec2-873e-75b756a831e1\",\"name\":\"L\"},{\"_id\":\"2de36d1c-e145-4b95-bc7c-e9101a870b87\",\"name\":\"XL\"}]}],\"id\":\"6666ea6903c9ed1b2f50b76c\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "6666ea6903c9ed1b2f50b76c"
+  }
+},
+{
+  "_id": {
+    "$oid": "666cbf220e7af515066c533e"
+  },
+  "productJson": "{\"_id\":\"6666eb2c03c9ed1b2f50c080\",\"name\":\"Supreme Bandana Box Logo Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Form Rộng Cao Cấp Màu Đen\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/199dc254-269c-4fd9-b02c-80a5d9cced1c.jpeg\",\"_id\":\"6666eb2c03c9ed1b2f50c081\"},{\"url\":\"http://localhost:4000/public/uploads/1298d28c-7de2-44a6-b779-7f8cbdf5d6e3.jpg\",\"_id\":\"6666eb2c03c9ed1b2f50c082\"}],\"variantData\":[{\"_id\":\"b3c5cfdc-b522-4993-bd64-1d339a88a3fe\",\"name\":\"Size\",\"data\":[{\"_id\":\"2f583960-d72e-4b4d-89a4-2e84c6cab995\",\"name\":\"M\"},{\"_id\":\"e4ce14d5-ae64-4cbd-8b33-2e2131bda23f\",\"name\":\"L\"},{\"_id\":\"ef253ba6-be2c-4228-b97a-18effb05318b\",\"name\":\"XL\"},{\"_id\":\"5cb03568-49fc-4228-a10e-bc646656f3e1\",\"name\":\"XXL\"}]}],\"id\":\"6666eb2c03c9ed1b2f50c080\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "6666eb2c03c9ed1b2f50c080"
+  }
+},
+{
+  "_id": {
+    "$oid": "666cbfd80e7af515066c59d2"
+  },
+  "productJson": "{\"_id\":\"6666d72fca0357ee08b1dd17\",\"name\":\"Biggod – Balo (Backpack) Local Brand Nam Nữ, Balo Đi Học, Balo Du Lịch, Balo Đựng Laptop – Trắng Kem\",\"images\":[{\"url\":\"http://localhost:4000/public/uploads/b8b32d46-526f-4add-806a-3784da72a70b.jpg\",\"_id\":\"6666d72fca0357ee08b1dd18\"},{\"url\":\"http://localhost:4000/public/uploads/27bae966-baca-449d-a518-12d253286c7f.jpg\",\"_id\":\"6666d72fca0357ee08b1dd19\"},{\"url\":\"http://localhost:4000/public/uploads/96f8cc10-f310-4fe4-8952-92e955b6cb3a.jpg\",\"_id\":\"6666d72fca0357ee08b1dd1a\"},{\"url\":\"http://localhost:4000/public/uploads/13ba20a0-ba68-44a9-bd65-ae70432357e7.jpg\",\"_id\":\"6666d72fca0357ee08b1dd1b\"}],\"variantData\":null,\"id\":\"6666d72fca0357ee08b1dd17\"}",
+  "__v": 0,
+  "productId": {
+    "$oid": "6666d72fca0357ee08b1dd17"
+  }
+}]

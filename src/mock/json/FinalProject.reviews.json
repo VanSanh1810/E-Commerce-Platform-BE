@@ -1,0 +1,217 @@
+[{
+  "_id": {
+    "$oid": "662ee7a7db1919477c3930eb"
+  },
+  "variant": [
+    {
+      "_id": "ca351100-73df-4acc-8474-25b43f45d430",
+      "name": "XL"
+    }
+  ],
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/e247f188-718e-4f5e-883d-7ca951e819b3.jpg",
+      "_id": {
+        "$oid": "662ee7a7db1919477c3930ec"
+      }
+    }
+  ],
+  "rating": 4,
+  "comment": "good",
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "name": "sanh",
+  "product": {
+    "$oid": "662a2cc63b9a273aa89f6f2d"
+  },
+  "createDate": "1714349991442",
+  "modifyDate": "1718376127720",
+  "__v": 0,
+  "hidden": false
+},
+{
+  "_id": {
+    "$oid": "664e62c05afe33bf2d36c0b9"
+  },
+  "variant": [
+    {
+      "_id": "ca351100-73df-4acc-8474-25b43f45d430",
+      "name": "XL"
+    }
+  ],
+  "hidden": false,
+  "images": [],
+  "rating": 5,
+  "comment": "Good",
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "name": "sanh",
+  "product": {
+    "$oid": "662a2cc63b9a273aa89f6f2d"
+  },
+  "createDate": "1716413120934",
+  "modifyDate": "1716413120934",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664e67855afe33bf2d36c11f"
+  },
+  "variant": [
+    {
+      "_id": "ca351100-73df-4acc-8474-25b43f45d430",
+      "name": "XL"
+    }
+  ],
+  "hidden": false,
+  "images": [],
+  "rating": 3,
+  "comment": "OK",
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "name": "sanh",
+  "product": {
+    "$oid": "662a2cc63b9a273aa89f6f2d"
+  },
+  "createDate": "1716414341016",
+  "modifyDate": "1716414341016",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665d306dcff109bd6b780006"
+  },
+  "variant": [
+    {
+      "_id": "c9ec6fbf-dc8b-44f3-badd-d4f28f2b275b",
+      "name": "40.5"
+    }
+  ],
+  "hidden": false,
+  "images": [],
+  "rating": 4,
+  "comment": "oke",
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "name": "sanh",
+  "product": {
+    "$oid": "662a31213b9a273aa89f7425"
+  },
+  "createDate": "1717383277382",
+  "modifyDate": "1718399033348",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cb3a28f4d06a5df3cd535"
+  },
+  "variant": [],
+  "hidden": false,
+  "images": [],
+  "rating": 4,
+  "comment": "normal",
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "name": "sanh",
+  "product": {
+    "$oid": "6666e4df03c9ed1b2f508122"
+  },
+  "createDate": "1718399906236",
+  "modifyDate": "1718399906236",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cb3b58f4d06a5df3cd579"
+  },
+  "variant": [],
+  "hidden": false,
+  "images": [],
+  "rating": 4,
+  "comment": "normal",
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "name": "sanh",
+  "product": {
+    "$oid": "6666e4df03c9ed1b2f508122"
+  },
+  "createDate": "1718399925592",
+  "modifyDate": "1718399925592",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cb4af8f4d06a5df3cd5dd"
+  },
+  "variant": [
+    {
+      "_id": "2f42d31e-282f-476c-8047-d4a918b372a1",
+      "name": "XL"
+    }
+  ],
+  "hidden": false,
+  "images": [],
+  "rating": 5,
+  "comment": "very goodd",
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "name": "sanh",
+  "product": {
+    "$oid": "6666eacc03c9ed1b2f50bd78"
+  },
+  "createDate": "1718400175853",
+  "modifyDate": "1718400227615",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cc2251fa442a618b44a98"
+  },
+  "variant": [
+    {
+      "_id": "2de36d1c-e145-4b95-bc7c-e9101a870b87",
+      "name": "XL"
+    }
+  ],
+  "hidden": false,
+  "images": [],
+  "rating": 4,
+  "comment": "Awesome",
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "name": "sanh",
+  "product": {
+    "$oid": "6666ea6903c9ed1b2f50b76c"
+  },
+  "createDate": "1718403621938",
+  "modifyDate": "1718403621938",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666cc2451fa442a618b44afc"
+  },
+  "variant": [],
+  "hidden": false,
+  "images": [],
+  "rating": 3,
+  "comment": "Not good",
+  "user": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "name": "sanh",
+  "product": {
+    "$oid": "6666d72fca0357ee08b1dd17"
+  },
+  "createDate": "1718403653524",
+  "modifyDate": "1718403653524",
+  "__v": 0
+}]

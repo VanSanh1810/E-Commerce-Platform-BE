@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "6639d46b8732dc4ccc01eb5b"
+  },
+  "title": "Game Sale",
+  "description": "Gamming Day",
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "discount": 10,
+  "maxValue": 15,
+  "startDate": {
+    "$numberLong": "1715040000000"
+  },
+  "endDate": {
+    "$numberLong": "1721952000000"
+  },
+  "image": {
+    "url": "http://localhost:4000/public/uploads/8d57d3f2-56fa-43f5-9e93-243157ebafd3.png",
+    "_id": {
+      "$oid": "6639dc8e36a5790f31af2fd0"
+    }
+  },
+  "createDate": "1715065963968",
+  "modifyDate": "1718161198129",
+  "__v": 0
+}]

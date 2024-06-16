@@ -1,0 +1,7019 @@
+[{
+  "_id": {
+    "$oid": "662a0ca63b9a273aa89f66a3"
+  },
+  "name": "Assassin's Creed III 11 Play Arts Kait Action Figure Connor Kenway",
+  "tag": "figure, assassin's creed, game",
+  "stock": 7,
+  "price": 253.89,
+  "discountPrice": 253.89,
+  "description": "<p><strong>Brand: </strong>Assasin's Creed</p><p><strong>Character: Connor Kenway</strong></p><p><strong>Dimensions: &nbsp;11.75 x 4.00 x 10.75 Inches</strong></p><p><strong>Width: &nbsp;</strong>4 in</p><p><strong>Color: </strong>Multicolor</p><p>&nbsp;</p><p><strong>This Play Arts Kai action figure fully captures the presence of Native American hero Connor Kenway from the hit video game Assassin's Creed III. The 11 inch tall figure is fully articulated, including the tails of his jacket, allowing for amazing posing possibilities. The set also includes many exciting accessories, including some of the many and varied weapons that Connor uses in the game, such as the famous assassin's blades as well as a tomahawk, bow and arrows and pistols. Officially licensed. Brand new in manufacturer display box packaging.</strong></p><ol><li>This Play Arts Kai action figure fully captures the presence of Native American hero Connor Kenway from the hit video game Assassin's Creed III.</li><li>Figure stands 11 inches tall.</li><li>Figure is fully articulated, including the tails of his jacket, allowing for amazing posing possibilities.</li><li>Set also includes many exciting accessories, including some of the many and varied weapons that Connor uses in the game, such as the famous assassin's blades as well as a tomahawk, bow and arrows and pistols.</li><li>Officially licensed. Brand new in manufacturer display box packaging.</li></ol>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/24da706c-65dd-4b00-bf23-2f678610f367.webp",
+      "_id": {
+        "$oid": "662a0ca63b9a273aa89f66a4"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1714031782272",
+  "modifyDate": "1718442599172",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a11df3b9a273aa89f67c4"
+  },
+  "name": "Call of Duty Infinite Warfare (PlayStation 4)",
+  "tag": "game disk, COD, infinite warefare",
+  "stock": 5,
+  "price": 25.49,
+  "discountPrice": 25.49,
+  "description": "<p>Platform: <strong>PS4</strong></p><p>Release: <strong>11/4/2016</strong></p><p>Publisher: <strong>Activision</strong></p><p>Genres: <strong>Shooter, Shooter</strong></p><p>&nbsp;</p><p>When playing on PS5, this game may exhibit errors or unexpected behavior and some features available on PS4 may be absent. To play this game on PS5, your system may need to be updated to the latest system software. See PlayStation.com/bc for more details.<br><br>Online features require an account and are subject to terms of service and applicable privacy policy</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/1110ba75-f770-4cd6-83d1-8f95efa8d79d.jpg",
+      "_id": {
+        "$oid": "662a11df3b9a273aa89f67c5"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cbff57be892f7f368474"
+  },
+  "classify": {
+    "$oid": "662a09d63b9a273aa89f669c"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1714033119950",
+  "modifyDate": "1718442587897",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a13b93b9a273aa89f680d"
+  },
+  "name": "Fallout - The Ghoul - Statue",
+  "tag": "figure, fallout, statue, the ghoul",
+  "stock": 4,
+  "price": 59.99,
+  "discountPrice": 59.99,
+  "description": "<p><strong>The Ghoul Figure</strong><br>The Ghoul is as pragmatic as he is ruthless, which is reflected in his ghoulish appearance. Once an average Joe, he became the nightmarish Bounty Hunter he is now by being exposed to radiation from the nuclear fallout. Standing at 8” tall with a 5” wide base, The Ghoul is ready to look for his next payday, but there might be more to him than meets the eye.</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/4b0fcf6c-d952-4ebb-80ee-dcff2e525934.webp",
+      "_id": {
+        "$oid": "662a13b93b9a273aa89f680e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/80178a71-4264-4e0f-a90c-6f4f380bf931.webp",
+      "_id": {
+        "$oid": "662a13b93b9a273aa89f680f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/a16b2624-bdb6-45c1-ad1b-da2e6442c766.webp",
+      "_id": {
+        "$oid": "662a13b93b9a273aa89f6810"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/aaa26b08-535a-42d7-bb76-359eef562d61.webp",
+      "_id": {
+        "$oid": "662a13b93b9a273aa89f6811"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/78331d0a-36c9-47a3-8762-d4898fc40697.webp",
+      "_id": {
+        "$oid": "662a13b93b9a273aa89f6812"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e55a4a59-240b-40fb-98e0-d47659762a18.webp",
+      "_id": {
+        "$oid": "662a13b93b9a273aa89f6813"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f249ce53-1f10-45d7-8635-f44b621934e2.webp",
+      "_id": {
+        "$oid": "662a13b93b9a273aa89f6814"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1714033593035",
+  "modifyDate": "1717383079012",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a14dc3b9a273aa89f688f"
+  },
+  "name": "Figuarts mini Elden Ring ELDEN RING Michaela's Blade, Marenia approx. 105mm PVC&ABS painted movable figure",
+  "tag": "figure, chibi, elder ring, Michaela's Blade",
+  "stock": 43,
+  "price": 43,
+  "discountPrice": 43,
+  "description": "<p>(C) Bandai Namco Entertainment Inc. / 2024 FromSoftware, Inc.<br>Painted movable figure<br>Please handle with care as it is made with precision. Color may transfer or scratches may occur.<br>There may be slight variations in appearance. note that.<br>From the action RPG \"ELDEN RING\", a figure of \"Marenia, Michaela's Blade\", one of the strongest bosses, is now available in the Figuarts mini series! [Set contents] Main body, replacement right arm parts, special pedestal set<br><strong>Dimension:</strong> ‎7.11 x 6.1 x 10.41 cm</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/50fa8e78-0e51-467b-8b89-c45bed01c0a3.webp",
+      "_id": {
+        "$oid": "662a14dc3b9a273aa89f6890"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/3542d1b7-d03b-45cf-b665-23405a18a121.webp",
+      "_id": {
+        "$oid": "662a14dc3b9a273aa89f6891"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f78bdcdc-1306-4757-a5bb-2c41680799ca.webp",
+      "_id": {
+        "$oid": "662a14dc3b9a273aa89f6892"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/dff56077-489c-40f5-9ec1-c7667fea02a6.webp",
+      "_id": {
+        "$oid": "662a14dc3b9a273aa89f6893"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1714033884600",
+  "modifyDate": "1714033884600",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a16313b9a273aa89f68dc"
+  },
+  "name": "Grand Theft Auto V",
+  "tag": "GTA, game disk, GTA V, GTA 5",
+  "stock": 100,
+  "price": 27.99,
+  "discountPrice": 27.99,
+  "description": "<ul><li>The biggest, most dynamic and most diverse open world ever created and now packed with layers of new detail</li><li>Grand Theft Auto V blends storytelling and gameplay in new ways as players repeatedly jump in and out of the lives of the game's three lead characters, playing all sides of the game's interwoven story</li><li>Grand Theft Auto V also comes with Grand Theft Auto Online, the Dynamic and ever evolving Grand Theft Auto universe for multiple players</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/3ea8a8e3-9457-4c1b-9a70-9f92248dbdf5.jpg",
+      "_id": {
+        "$oid": "662a16313b9a273aa89f68dd"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cbff57be892f7f368474"
+  },
+  "classify": {
+    "$oid": "662a08cf3b9a273aa89f6654"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1714034225527",
+  "modifyDate": "1714034225527",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a16fc3b9a273aa89f692b"
+  },
+  "name": "McFarlane Toys Game of Thrones Jon Snow Action Figure",
+  "tag": "figure,  game of thrones",
+  "stock": 100,
+  "price": 79,
+  "discountPrice": 79,
+  "description": "<p>McFarlane Toys partners with HBO hit television series game of Thrones to bring you Highly detailed figures of iconic characters, Each coming with screen accurate accessories, and featured in classic outfits from the latest season! The initial line features Jon Snow, Daenerys targeted, the night King, and Arya Stark! Jon Snow, born aegon Targaryen, is the son of lyanna Stark and rhaegar targeted, the late Prince of Dragon St one. A decorated individual Jon has been chosen Lord commander of the night's Watch, and helped lead a successful raid in overtaking Winterfell from house Bolton restoring house Stark's reign Over the North, in which Jon was proclaimed “King of the North.”</p><p>&nbsp;</p><figure class=\"table\"><table><tbody><tr><td>Product Dimensions</td><td>3 x 2 x 6 inches</td></tr><tr><td>Item Weight</td><td>5.6 ounces</td></tr><tr><td>ASIN</td><td>B07HSG5DDD</td></tr><tr><td>Item model number</td><td>10651</td></tr><tr><td>Manufacturer recommended age</td><td>14 years and up</td></tr><tr><td>Best Sellers Rank</td><td>#175,284 in Toys &amp; Games (See Top 100 in Toys &amp; Games) #10,655 in Action Figures</td></tr><tr><td>Customer Reviews</td><td>4.5 out of 5 stars 1,611Reviews</td></tr><tr><td>Release date</td><td>April 1, 2019</td></tr><tr><td>Department</td><td>Boys</td></tr><tr><td>Manufacturer</td><td>McFarlane Toys</td></tr></tbody></table></figure>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/e631834f-475e-4a44-8488-392c9302f581.jpg",
+      "_id": {
+        "$oid": "662a16fc3b9a273aa89f692c"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/610a0203-d248-4b24-bcc3-25e9c812dacd.jpg",
+      "_id": {
+        "$oid": "662a16fc3b9a273aa89f692d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/42337469-244d-4b15-9a9f-e1530edbe8c0.jpg",
+      "_id": {
+        "$oid": "662a16fc3b9a273aa89f692e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/053ed7dc-ac66-474d-930a-e95a2359608e.jpg",
+      "_id": {
+        "$oid": "662a16fc3b9a273aa89f692f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/fc356bac-3600-4dad-b5b3-0d54988faf51.jpg",
+      "_id": {
+        "$oid": "662a16fc3b9a273aa89f6930"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/7a66a2c8-0544-4b78-b279-13360be5f63f.jpg",
+      "_id": {
+        "$oid": "662a16fc3b9a273aa89f6931"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1714034428500",
+  "modifyDate": "1714034428500",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a1a1f3b9a273aa89f6a4b"
+  },
+  "name": "Nintendo Switch OLED Neon",
+  "tag": "game console, nitendo",
+  "stock": 98,
+  "price": 250,
+  "discountPrice": 250,
+  "description": "<figure class=\"table\"><table><thead><tr><th colspan=\"2\"><strong>DETAIL</strong></th></tr></thead><tbody><tr><td>&nbsp;CPU</td><td>NVIDIA Tegra X1, 20nm, Cortex A7 4 core</td></tr><tr><td>Flaskdisk</td><td>Maximum 2TB</td></tr><tr><td>GPU</td><td>NVIDIA Custom</td></tr><tr><td>Memory</td><td>64GB</td></tr><tr><td>Sensor</td><td>Acceleration sensor , gyroscope, light sensor</td></tr><tr><td colspan=\"2\"><strong>SCREEN</strong></td></tr><tr><td>Screen</td><td>OLED</td></tr><tr><td>Resolution</td><td>1080p when use HDMI in TV mode , 720p in handheld mode</td></tr><tr><td>Screen size</td><td>7-inch</td></tr><tr><td colspan=\"2\"><strong>CONNECTION</strong></td></tr><tr><td>Wi-Fi</td><td>IEEE 802.11 a/b/g/n/ac, LAN</td></tr><tr><td>Bluetooth</td><td>4.1</td></tr><tr><td>Port</td><td>3.5mm audio jack, game card port, microSD card port - Nintendo Switch Dock: 2 port USB 2.0 ,1 USB port, AC Adapter, HDMI, LAN</td></tr><tr><td colspan=\"2\"><strong>PHYSICAL</strong></td></tr><tr><td>Size</td><td>35.5cm x 24.13cm x 9.5cm</td></tr><tr><td>Weight</td><td>~320 g</td></tr><tr><td>Batery</td><td>4310 mAh, from 4.5 to 9 hours</td></tr></tbody></table></figure>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/dfa684f6-071b-421f-bc7b-c7b38d60971e.jpg",
+      "_id": {
+        "$oid": "662a1a1f3b9a273aa89f6a4c"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e852fd4b-d185-48ae-872c-a1cbb02a8f68.jpg",
+      "_id": {
+        "$oid": "662a1a1f3b9a273aa89f6a4d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/03cb801c-78fd-41bb-82a1-777d4f2ad01f.jpg",
+      "_id": {
+        "$oid": "662a1a1f3b9a273aa89f6a4e"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc2057be892f7f368489"
+  },
+  "classify": {
+    "$oid": "662a09d63b9a273aa89f669c"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1714035231366",
+  "modifyDate": "1717383402077",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a1bb23b9a273aa89f6b17"
+  },
+  "name": "POP UP PARADE KRATOS - GOD OF WAR",
+  "tag": "god of war, gow, kratos",
+  "stock": 7,
+  "price": 48,
+  "discountPrice": 48,
+  "description": "<p><strong>UPC:</strong> 4580416947336</p><p><strong>MPN:</strong> G94733</p><p><strong>Brand:</strong> Good Smile Company</p><p><strong>Type:</strong> Figure</p><p><strong>Character:</strong> Kratos</p><p><strong>Model:</strong> G94733</p><p><strong>Theme:</strong> TV, Movie &amp; Video Games</p><p><strong>Material:</strong> PVC</p><p><strong>Franchise:</strong> God of War</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/59cd698e-b7f8-486e-84b8-10489397172f.webp",
+      "_id": {
+        "$oid": "662a1bb23b9a273aa89f6b18"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/426a4fff-7ddc-4f62-8e74-173bc2e292b7.webp",
+      "_id": {
+        "$oid": "662a1bb23b9a273aa89f6b19"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/9a133c3e-6ede-44dc-a2aa-50b66331e734.webp",
+      "_id": {
+        "$oid": "662a1bb23b9a273aa89f6b1a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/18871c1c-f558-4e02-aea3-754ade402b23.webp",
+      "_id": {
+        "$oid": "662a1bb23b9a273aa89f6b1b"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1714035634303",
+  "modifyDate": "1715134384190",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a1eff3b9a273aa89f6b96"
+  },
+  "name": "REEDIT Halo Infinite Master Chief Mjolnir Mark VI [GEN 3] 112 Figure 1000Toys",
+  "tag": "firgure, halo, mjolnir",
+  "stock": 100,
+  "price": 110,
+  "discountPrice": 110,
+  "description": "<figure class=\"table\"><table><tbody><tr><td><strong>Type</strong></td><td>Action Figure</td><td><strong>MPN:</strong></td><td>39130</td></tr><tr><td><strong>Franchise</strong></td><td>HALO</td><td><strong>Items Included</strong></td><td>Mixed Lot</td></tr><tr><td><strong>Character</strong></td><td>Master Chief</td><td><strong>Color</strong></td><td>Green</td></tr><tr><td><strong>Brand</strong></td><td>1000Toys</td><td><strong>Features</strong></td><td>Boxed</td></tr><tr><td><strong>Year Manufactured</strong></td><td>2021</td><td><strong>Country/Region of Manufacture</strong></td><td>Japan</td></tr><tr><td><strong>Material</strong></td><td>Die-cast, ABS</td><td><strong>Genre</strong></td><td>Science Fiction</td></tr><tr><td><strong>Series</strong></td><td>Halo Infinite</td><td><strong>Item Height</strong></td><td>7 in</td></tr><tr><td><strong>Theme</strong></td><td>TV, Movie &amp; Video Games</td><td><strong>Age Level</strong></td><td>14+</td></tr><tr><td><strong>Scale</strong></td><td>1:12</td><td><strong>Item Weight</strong></td><td>2 lb</td></tr><tr><td><strong>Time Period Manufactured</strong></td><td>2020-Now</td><td><strong>Packaging</strong></td><td>Original (Unopened)</td></tr></tbody></table></figure>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/1873903a-32d5-46ab-a4b5-60df604cb6eb.jpg",
+      "_id": {
+        "$oid": "662a1eff3b9a273aa89f6b97"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/a1a64da4-0c53-43d1-baed-802f8d032fe4.jpg",
+      "_id": {
+        "$oid": "662a1eff3b9a273aa89f6b98"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/26464f53-38db-484a-bd48-0cc50af71992.jpg",
+      "_id": {
+        "$oid": "662a1eff3b9a273aa89f6b99"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/2feb3d1e-08ae-4f69-9398-a76f8462f6ff.jpg",
+      "_id": {
+        "$oid": "662a1eff3b9a273aa89f6b9a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/9c09bd9a-4ad6-4519-b2bb-d28e38400768.jpg",
+      "_id": {
+        "$oid": "662a1eff3b9a273aa89f6b9b"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/6d8c615f-8b01-40dc-b392-e298bb710391.jpg",
+      "_id": {
+        "$oid": "662a1eff3b9a273aa89f6b9c"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1714036479573",
+  "modifyDate": "1714036479573",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a21563b9a273aa89f6ca5"
+  },
+  "name": "Sony PlayStation 5 Slim PS5 Slim Digital Edition",
+  "tag": "ps, playstation, game console",
+  "stock": 100,
+  "price": 400,
+  "discountPrice": 400,
+  "description": "<figure class=\"table\"><table><thead><tr><th colspan=\"2\"><strong>DETAIL</strong></th></tr></thead><tbody><tr><td>Product code</td><td>PS5 Standard Edition</td></tr><tr><td>CPU</td><td>AMD Zen 2 8 core 16 thread, 3.5GHz</td></tr><tr><td>GPU</td><td>AMD RDNA 2 architecture, 10.3 TFLOPS, 2.23GHz, support Ray-Tracing</td></tr><tr><td>RAM</td><td>GDDR6 16GB</td></tr><tr><td>Memory</td><td>1TB SSD - 5,5 GB/s</td></tr><tr><td>New feature</td><td>Ray-Tracing, support 8K 120Hz, 3D surround sound audio, compatible with PS4 games</td></tr><tr><td colspan=\"2\"><strong>CONNECTION</strong></td></tr><tr><td>BD/DVD driver (read-only)</td><td>Ultra HD Blu-ray (up to 100GB/disc) ~Disc Drive port</td></tr><tr><td>Wi-Fi</td><td>802.11 a/b/g/n/ac/ax</td></tr><tr><td>Connection port</td><td>HDMI 2.1, 1 x USB-A, 2 x USB-C</td></tr><tr><td>Output AV</td><td>HDMI 2.1 (4K@120Hz, 8K@60Hz)</td></tr><tr><td>Internet</td><td>Ethernet (10BASE-T, 100BASE-TX, 1000BASE-T)</td></tr><tr><td colspan=\"2\"><strong>PYSICAL</strong></td></tr><tr><td>Color</td><td>White</td></tr><tr><td>Size</td><td>358 × 80 × 216 mm</td></tr><tr><td>Weigth</td><td>3.2kg</td></tr><tr><td>Power</td><td>100-240V, 50/60Hz</td></tr></tbody></table></figure>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/2e071250-3122-41f7-8a73-a3ad55e4caf7.jpg",
+      "_id": {
+        "$oid": "662a21563b9a273aa89f6ca6"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/99a4e715-c16c-4c10-882b-8be6a34b0348.jpg",
+      "_id": {
+        "$oid": "662a21563b9a273aa89f6ca7"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/189da521-febe-4387-a104-0e8338a85baf.jpg",
+      "_id": {
+        "$oid": "662a21563b9a273aa89f6ca8"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc1757be892f7f36847b"
+  },
+  "classify": {
+    "$oid": "662a09d63b9a273aa89f669c"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1714037078485",
+  "modifyDate": "1714037078485",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a2cc63b9a273aa89f6f2d"
+  },
+  "name": "T-Shirt L.L.Bean Carefree Unshrinkable Fade Jade",
+  "tag": "shirt, t-shirt",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/f0a455a8-95ae-4f0a-88c9-286a92598deb.webp",
+      "_id": {
+        "$oid": "662a2cc63b9a273aa89f6f2e"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "570087a4-7f76-4d13-9b2f-c72626bc7c34",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "4cab2e0d-15a3-4b91-866a-27b686d80810",
+          "name": "S"
+        },
+        {
+          "_id": "6436ab6b-43e7-4ed1-b1c1-7c5e652ac5da",
+          "name": "M"
+        },
+        {
+          "_id": "a85438dc-73c8-4630-af9c-d3dfbf49b8f6",
+          "name": "L"
+        },
+        {
+          "_id": "ca351100-73df-4acc-8474-25b43f45d430",
+          "name": "XL"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "4cab2e0d-15a3-4b91-866a-27b686d80810",
+      "detail": {
+        "stock": 97,
+        "price": 15,
+        "disPrice": 15
+      }
+    },
+    {
+      "_id": "6436ab6b-43e7-4ed1-b1c1-7c5e652ac5da",
+      "detail": {
+        "stock": 100,
+        "price": 15,
+        "disPrice": 15
+      }
+    },
+    {
+      "_id": "a85438dc-73c8-4630-af9c-d3dfbf49b8f6",
+      "detail": {
+        "stock": 99,
+        "price": 15,
+        "disPrice": 15
+      }
+    },
+    {
+      "_id": "ca351100-73df-4acc-8474-25b43f45d430",
+      "detail": {
+        "stock": 1,
+        "price": 15,
+        "disPrice": 15
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cac257be892f7f368440"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "4cab2e0d-15a3-4b91-866a-27b686d80810"
+      ],
+      "detail": {
+        "stock": 97,
+        "price": 15,
+        "disPrice": 15
+      }
+    },
+    {
+      "path": [
+        "6436ab6b-43e7-4ed1-b1c1-7c5e652ac5da"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 15,
+        "disPrice": 15
+      }
+    },
+    {
+      "path": [
+        "a85438dc-73c8-4630-af9c-d3dfbf49b8f6"
+      ],
+      "detail": {
+        "stock": 99,
+        "price": 15,
+        "disPrice": 15
+      }
+    },
+    {
+      "path": [
+        "ca351100-73df-4acc-8474-25b43f45d430"
+      ],
+      "detail": {
+        "stock": 1,
+        "price": 15,
+        "disPrice": 15
+      }
+    }
+  ],
+  "createDate": "1714040006730",
+  "modifyDate": "1717069773773",
+  "__v": 31
+},
+{
+  "_id": {
+    "$oid": "662a2dfb3b9a273aa89f708d"
+  },
+  "name": "FILA SPORT Partition Flash ' CREAM NAVY ' Backpack",
+  "tag": "backpack, fila, sport",
+  "stock": 100,
+  "price": 86,
+  "discountPrice": 86,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/dabdd23d-c5db-4866-a0f4-1702fd5678d9.jpeg",
+      "_id": {
+        "$oid": "662a2dfb3b9a273aa89f708e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/5d45b232-4df3-4e8e-8103-843e3e99d8b2.jpeg",
+      "_id": {
+        "$oid": "662a2dfb3b9a273aa89f708f"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714040315548",
+  "modifyDate": "1714040315548",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a2ebb3b9a273aa89f7184"
+  },
+  "name": "Life Work Radoc Daily Black Backpack",
+  "tag": "backpack",
+  "stock": 100,
+  "price": 47,
+  "discountPrice": 40,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/9aac3812-3834-4644-be63-9c1a40031cbc.jpeg",
+      "_id": {
+        "$oid": "662a2ebb3b9a273aa89f7185"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e186b411-3301-4817-adde-72789b75f335.jpeg",
+      "_id": {
+        "$oid": "662a2ebb3b9a273aa89f7186"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/2e59cafc-e67d-4183-9ca3-4ce89b25728f.jpeg",
+      "_id": {
+        "$oid": "662a2ebb3b9a273aa89f7187"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/6ce9aab8-cd71-4bde-84fa-44d01ca7d0d1.jpeg",
+      "_id": {
+        "$oid": "662a2ebb3b9a273aa89f7188"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e6beb234-f5cc-409b-876d-98d0c1b6aa3a.jpeg",
+      "_id": {
+        "$oid": "662a2ebb3b9a273aa89f7189"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714040507321",
+  "modifyDate": "1714040507321",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a2f8c3b9a273aa89f72a2"
+  },
+  "name": "Nike 25 LTRS Black University Red Casual Backpack",
+  "tag": "backpack",
+  "stock": 100,
+  "price": 37,
+  "discountPrice": 35,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/665e9f0b-e401-42c4-9248-c31a828cc236.webp",
+      "_id": {
+        "$oid": "662a2f8c3b9a273aa89f72a3"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/060f506e-a610-4dba-80fc-dce9bc6e2025.jpeg",
+      "_id": {
+        "$oid": "662a2f8c3b9a273aa89f72a4"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/efab2c3a-92e9-4fc0-b1e6-40574c123dd8.jpeg",
+      "_id": {
+        "$oid": "662a2f8c3b9a273aa89f72a5"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/82249725-e34d-4ebb-bea6-ee7b44f16015.jpeg",
+      "_id": {
+        "$oid": "662a2f8c3b9a273aa89f72a6"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/08504819-ec32-4863-8820-dc484e6f42a3.jpeg",
+      "_id": {
+        "$oid": "662a2f8c3b9a273aa89f72a7"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714040716992",
+  "modifyDate": "1714040716992",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a30323b9a273aa89f735e"
+  },
+  "name": "TTWN Bear Monogram Size M Backpack",
+  "tag": "backpack",
+  "stock": 100,
+  "price": 47,
+  "discountPrice": 47,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/52dc0bd6-a793-410a-9076-68fef78145f0.jpeg",
+      "_id": {
+        "$oid": "662a30323b9a273aa89f735f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/80fbe1cb-5ebc-4bb3-afb3-028e58f25ca8.jpeg",
+      "_id": {
+        "$oid": "662a30323b9a273aa89f7360"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/8587acf0-1d94-4707-9b2b-7adaaaeb76b0.jpeg",
+      "_id": {
+        "$oid": "662a30323b9a273aa89f7361"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ef4f03cb-9026-47e3-8293-55ba7baa65d3.jpeg",
+      "_id": {
+        "$oid": "662a30323b9a273aa89f7362"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714040882386",
+  "modifyDate": "1714040882386",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a31213b9a273aa89f7425"
+  },
+  "name": "Adidas Adilette Ayoon Bliss Sandal",
+  "tag": "sandal",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/ba82ea8e-6111-4ed3-a04e-ba59ba3afc02.jpeg",
+      "_id": {
+        "$oid": "662a31213b9a273aa89f7426"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/fd9a2ea7-afd4-4906-bdea-610910e14394.jpeg",
+      "_id": {
+        "$oid": "662a31213b9a273aa89f7427"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/07ab6e64-4600-43af-95d7-10db6c18389a.jpeg",
+      "_id": {
+        "$oid": "662a31213b9a273aa89f7428"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/82c8a615-962f-409a-86be-1a8684914e28.jpeg",
+      "_id": {
+        "$oid": "662a31213b9a273aa89f7429"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "61ca9742-cbae-476c-83ba-43421fb6457b",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "a5b08fe4-0cb9-44ee-b13e-9c01617eb5f1",
+          "name": "44.5"
+        },
+        {
+          "_id": "a513398f-c185-4b41-b893-6e45e8205515",
+          "name": "43"
+        },
+        {
+          "_id": "b630c405-be60-446d-9857-361f9f3b00c7",
+          "name": "42"
+        },
+        {
+          "_id": "c9ec6fbf-dc8b-44f3-badd-d4f28f2b275b",
+          "name": "40.5"
+        },
+        {
+          "_id": "c5374d56-df31-4a85-a158-2e4741fe1532",
+          "name": "39"
+        },
+        {
+          "_id": "13eb1b25-ddce-467e-be58-f4c43f0a8370",
+          "name": "38"
+        },
+        {
+          "_id": "a17daeac-fe4f-4295-9af9-4aead840c3b9",
+          "name": "37"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "a5b08fe4-0cb9-44ee-b13e-9c01617eb5f1",
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 17
+      }
+    },
+    {
+      "_id": "a513398f-c185-4b41-b893-6e45e8205515",
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 17
+      }
+    },
+    {
+      "_id": "b630c405-be60-446d-9857-361f9f3b00c7",
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 17
+      }
+    },
+    {
+      "_id": "c9ec6fbf-dc8b-44f3-badd-d4f28f2b275b",
+      "detail": {
+        "stock": 99,
+        "price": 20,
+        "disPrice": 17
+      }
+    },
+    {
+      "_id": "c5374d56-df31-4a85-a158-2e4741fe1532",
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 17
+      }
+    },
+    {
+      "_id": "13eb1b25-ddce-467e-be58-f4c43f0a8370",
+      "detail": {
+        "stock": 100,
+        "price": 18,
+        "disPrice": 15
+      }
+    },
+    {
+      "_id": "a17daeac-fe4f-4295-9af9-4aead840c3b9",
+      "detail": {
+        "stock": 100,
+        "price": 18,
+        "disPrice": 15
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "a5b08fe4-0cb9-44ee-b13e-9c01617eb5f1"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 17
+      }
+    },
+    {
+      "path": [
+        "a513398f-c185-4b41-b893-6e45e8205515"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 17
+      }
+    },
+    {
+      "path": [
+        "b630c405-be60-446d-9857-361f9f3b00c7"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 17
+      }
+    },
+    {
+      "path": [
+        "c9ec6fbf-dc8b-44f3-badd-d4f28f2b275b"
+      ],
+      "detail": {
+        "stock": 99,
+        "price": 20,
+        "disPrice": 17
+      }
+    },
+    {
+      "path": [
+        "c5374d56-df31-4a85-a158-2e4741fe1532"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 17
+      }
+    },
+    {
+      "path": [
+        "13eb1b25-ddce-467e-be58-f4c43f0a8370"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 18,
+        "disPrice": 15
+      }
+    },
+    {
+      "path": [
+        "a17daeac-fe4f-4295-9af9-4aead840c3b9"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 18,
+        "disPrice": 15
+      }
+    }
+  ],
+  "createDate": "1714041121400",
+  "modifyDate": "1717383179005",
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "662a31903b9a273aa89f759e"
+  },
+  "name": "Casio G-Shock Digital Analog White",
+  "tag": "watch",
+  "stock": 50,
+  "price": 120,
+  "discountPrice": 115,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/973d8bdb-40fa-41e1-81da-cb01f0805754.jpeg",
+      "_id": {
+        "$oid": "662a31903b9a273aa89f759f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/72322171-6b84-433b-b2ae-d1580ac57c97.jpeg",
+      "_id": {
+        "$oid": "662a31903b9a273aa89f75a0"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b90eced6-9794-4018-baba-60a421489972.jpeg",
+      "_id": {
+        "$oid": "662a31903b9a273aa89f75a1"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/0dae5238-a821-4207-b603-9e313725a553.jpeg",
+      "_id": {
+        "$oid": "662a31903b9a273aa89f75a2"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f5738bfa-f55d-44d4-af83-0fcf75d3883f.jpeg",
+      "_id": {
+        "$oid": "662a31903b9a273aa89f75a3"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ac7fafa8-40ce-46cf-b057-0e77c1ecfd30.jpeg",
+      "_id": {
+        "$oid": "662a31903b9a273aa89f75a4"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28b33b9a273aa89f6ea6"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714041232925",
+  "modifyDate": "1714041232925",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a32163b9a273aa89f7689"
+  },
+  "name": "Dickies Outdoor Collection Black Green Watch",
+  "tag": "watch",
+  "stock": 20,
+  "price": 114,
+  "discountPrice": 114,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/1b7d5a68-02ed-4073-a05a-19075c3b7208.jpeg",
+      "_id": {
+        "$oid": "662a32163b9a273aa89f768a"
+      }
+    }
+  ],
+  "review": [],
+  "status": "disabled",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28b33b9a273aa89f6ea6"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714041366060",
+  "modifyDate": "1716174231944",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a327a3b9a273aa89f7774"
+  },
+  "name": "Guess Phoenix Black Silicone Men's Watch",
+  "tag": "watch",
+  "stock": 20,
+  "price": 149,
+  "discountPrice": 140,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/73b2f0a2-989a-4703-bef9-d5d5fe8a3a76.jpeg",
+      "_id": {
+        "$oid": "662a327a3b9a273aa89f7775"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/0c8ff09f-74ff-4ca4-b1b9-bfb63e28c92d.jpeg",
+      "_id": {
+        "$oid": "662a327a3b9a273aa89f7776"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/4fac9b22-7342-4511-96a9-944bf8d50f44.jpeg",
+      "_id": {
+        "$oid": "662a327a3b9a273aa89f7777"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/c25fda3c-332a-47a4-87a4-e178195bf881.jpeg",
+      "_id": {
+        "$oid": "662a327a3b9a273aa89f7778"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/27bf09dd-0c03-495d-89cc-ceb485d887cc.jpeg",
+      "_id": {
+        "$oid": "662a327a3b9a273aa89f7779"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/0fc091d1-377e-4115-a87e-dc621499c6c3.jpeg",
+      "_id": {
+        "$oid": "662a327a3b9a273aa89f777a"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28b33b9a273aa89f6ea6"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714041466845",
+  "modifyDate": "1714041466845",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a32c83b9a273aa89f7878"
+  },
+  "name": "Seiko 5 Sport GMT Metal Black Silver Watch",
+  "tag": "watch",
+  "stock": 10,
+  "price": 500,
+  "discountPrice": 496,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/20040151-dcb8-42d2-b7b7-023bd79878bc.jpeg",
+      "_id": {
+        "$oid": "662a32c83b9a273aa89f7879"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b139edcd-2522-470b-a5fb-14c8e35ed581.jpeg",
+      "_id": {
+        "$oid": "662a32c83b9a273aa89f787a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/d0f79eb6-015d-41d9-8925-fabbae54625d.jpeg",
+      "_id": {
+        "$oid": "662a32c83b9a273aa89f787b"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/c8b78263-7bdc-4f78-8ffc-201bc0a1d680.jpeg",
+      "_id": {
+        "$oid": "662a32c83b9a273aa89f787c"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/cf24c565-d462-41a4-a6fc-2e96195fdeb3.jpeg",
+      "_id": {
+        "$oid": "662a32c83b9a273aa89f787d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/25edce2b-2079-4326-a1f7-5de8c9bbe5dc.jpeg",
+      "_id": {
+        "$oid": "662a32c83b9a273aa89f787e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f4f50597-ebc9-4db6-8fe8-bd24accb427e.jpeg",
+      "_id": {
+        "$oid": "662a32c83b9a273aa89f787f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e5fa824b-30ef-4a3e-898f-673ab22a7a37.jpeg",
+      "_id": {
+        "$oid": "662a32c83b9a273aa89f7880"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28b33b9a273aa89f6ea6"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714041544326",
+  "modifyDate": "1714041544326",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a331c3b9a273aa89f7998"
+  },
+  "name": "Nike Air Force 1 Custom Low By You White Grey Green Sneaker",
+  "tag": "sneaker",
+  "stock": 100,
+  "price": 90,
+  "discountPrice": 85,
+  "description": "<ul><li>-</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/a27406ef-bc15-42c9-9fb0-61f8387b1c04.jpeg",
+      "_id": {
+        "$oid": "662a331c3b9a273aa89f7999"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/54d37a9d-704a-41a6-ad65-126438ebd993.jpeg",
+      "_id": {
+        "$oid": "662a331c3b9a273aa89f799a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/18522d9c-4429-4937-a220-abe53c504cff.jpeg",
+      "_id": {
+        "$oid": "662a331c3b9a273aa89f799b"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e31b69da-d36d-4d15-99b6-cbc68d2d75cd.jpeg",
+      "_id": {
+        "$oid": "662a331c3b9a273aa89f799c"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714041628432",
+  "modifyDate": "1714041628432",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a33783b9a273aa89f7ac2"
+  },
+  "name": "Nike Air Max 720 Spirit Teal Sneaker",
+  "tag": "sneaker",
+  "stock": 50,
+  "price": 120,
+  "discountPrice": 120,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/eca53b43-79cb-4308-b783-c7d495a580a1.jpeg",
+      "_id": {
+        "$oid": "662a33783b9a273aa89f7ac3"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ef1526a0-1602-42c3-89fa-2adc7b80fbda.jpeg",
+      "_id": {
+        "$oid": "662a33783b9a273aa89f7ac4"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/abe5b185-4eb7-4ba6-855b-39252a5d8f2c.jpeg",
+      "_id": {
+        "$oid": "662a33783b9a273aa89f7ac5"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/66e77a17-b291-4bdc-853d-b4e2fe548b36.jpeg",
+      "_id": {
+        "$oid": "662a33783b9a273aa89f7ac6"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/71915ef3-97fa-4790-a800-2994afd74319.jpeg",
+      "_id": {
+        "$oid": "662a33783b9a273aa89f7ac7"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714041720646",
+  "modifyDate": "1714041720646",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a33cc3b9a273aa89f7bfe"
+  },
+  "name": "Nike Jordan 1 Retro High 'Heritage' Sneaker",
+  "tag": "sneaker, jordan",
+  "stock": 8,
+  "price": 180,
+  "discountPrice": 160,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/5b8c6376-f9dc-4a3f-901e-b95e013a630f.webp",
+      "_id": {
+        "$oid": "662a33cc3b9a273aa89f7bff"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/243134dd-f384-45a6-94a0-94f793c11fb7.jpeg",
+      "_id": {
+        "$oid": "662a33cc3b9a273aa89f7c00"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/98ad9a66-ee23-42f2-857e-6f2a7a21ee67.jpeg",
+      "_id": {
+        "$oid": "662a33cc3b9a273aa89f7c01"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/d88cc462-5cf2-4ad6-81f9-f0c95a60e434.jpeg",
+      "_id": {
+        "$oid": "662a33cc3b9a273aa89f7c02"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1714041804541",
+  "modifyDate": "1714041804541",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a343c3b9a273aa89f7d47"
+  },
+  "name": "Hoodie Vans Black Logo",
+  "tag": "hoodie",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/35933af8-ac54-4335-aaed-00c8f59f3bfc.jpeg",
+      "_id": {
+        "$oid": "662a343c3b9a273aa89f7d48"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/978b5ead-b103-409e-98b0-8d4337683e34.jpeg",
+      "_id": {
+        "$oid": "662a343c3b9a273aa89f7d49"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/07f0d727-79a9-4366-a5d7-59df00491ee9.jpeg",
+      "_id": {
+        "$oid": "662a343c3b9a273aa89f7d4a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/db879704-341b-497e-9f1e-a589a26296dc.jpeg",
+      "_id": {
+        "$oid": "662a343c3b9a273aa89f7d4b"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/6d15499b-a478-490a-95c7-2d06c38ace67.jpeg",
+      "_id": {
+        "$oid": "662a343c3b9a273aa89f7d4c"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "c9483dc7-d5e4-4805-8738-8c149a38deec",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "89ba8159-d34c-4042-bd2d-18b0228b98a4",
+          "name": "L"
+        },
+        {
+          "_id": "666170ee-4e8e-4bba-bfe9-603225575bd3",
+          "name": "M"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "89ba8159-d34c-4042-bd2d-18b0228b98a4",
+      "detail": {
+        "stock": 50,
+        "price": 20,
+        "disPrice": 19
+      }
+    },
+    {
+      "_id": "666170ee-4e8e-4bba-bfe9-603225575bd3",
+      "detail": {
+        "stock": 44,
+        "price": 20,
+        "disPrice": 19
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca2157be892f7f368416"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "89ba8159-d34c-4042-bd2d-18b0228b98a4"
+      ],
+      "detail": {
+        "stock": 50,
+        "price": 20,
+        "disPrice": 19
+      }
+    },
+    {
+      "path": [
+        "666170ee-4e8e-4bba-bfe9-603225575bd3"
+      ],
+      "detail": {
+        "stock": 44,
+        "price": 20,
+        "disPrice": 19
+      }
+    }
+  ],
+  "createDate": "1714041916161",
+  "modifyDate": "1718402850348",
+  "__v": 3
+},
+{
+  "_id": {
+    "$oid": "662a353d3b9a273aa89f7ea4"
+  },
+  "name": "Under Armour Navy Grey Pain Short",
+  "tag": "short",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/38afa0c9-4aa0-4cde-b002-bafb6b9ee937.jpeg",
+      "_id": {
+        "$oid": "662a353d3b9a273aa89f7ea5"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/70c016e8-91cd-41ce-8774-d5875a0baf9c.jpeg",
+      "_id": {
+        "$oid": "662a353d3b9a273aa89f7ea6"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/54ecb87a-2e1f-42f6-993f-b3223e0162e8.jpeg",
+      "_id": {
+        "$oid": "662a353d3b9a273aa89f7ea7"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "21508bba-0886-4582-8bf6-67477e4c8cba",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "af31c041-f853-4c8f-9260-c7be56b1d2c4",
+          "name": "M"
+        },
+        {
+          "_id": "61219b91-bbee-4b5e-a533-c21f3ccfd095",
+          "name": "XL"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "af31c041-f853-4c8f-9260-c7be56b1d2c4",
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 20
+      }
+    },
+    {
+      "_id": "61219b91-bbee-4b5e-a533-c21f3ccfd095",
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 20
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c7d157be892f7f3683f0"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "af31c041-f853-4c8f-9260-c7be56b1d2c4"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 20
+      }
+    },
+    {
+      "path": [
+        "61219b91-bbee-4b5e-a533-c21f3ccfd095"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 20
+      }
+    }
+  ],
+  "createDate": "1714042173766",
+  "modifyDate": "1716200845679",
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "662a35a73b9a273aa89f8008"
+  },
+  "name": "Nike Air Monarch IV WhiteNavy V2 Sneaker",
+  "tag": "shoe",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/378cb727-8df5-45de-99ca-e0b0814bfd71.jpeg",
+      "_id": {
+        "$oid": "662a35a73b9a273aa89f8009"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e8b9cd2a-7611-4691-be84-b47074d96830.jpeg",
+      "_id": {
+        "$oid": "662a35a73b9a273aa89f800a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f9eb9f2d-e0dc-427d-a745-d807eff6e67e.jpeg",
+      "_id": {
+        "$oid": "662a35a73b9a273aa89f800b"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/52a15ab4-4516-4837-858f-9999e9655751.jpeg",
+      "_id": {
+        "$oid": "662a35a73b9a273aa89f800c"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/45f59689-fa20-4c08-ac95-16a6f72ccd9b.jpeg",
+      "_id": {
+        "$oid": "662a35a73b9a273aa89f800d"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "1f3e76ff-b570-405d-bf3d-27836870b954",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "9cbe002a-93a4-473a-8880-bd96e2366e68",
+          "name": "43"
+        },
+        {
+          "_id": "c1fc69f8-b7eb-4099-ad03-88bf6ad034e8",
+          "name": "44.5"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "9cbe002a-93a4-473a-8880-bd96e2366e68",
+      "detail": {
+        "stock": 20,
+        "price": 90,
+        "disPrice": 90
+      }
+    },
+    {
+      "_id": "c1fc69f8-b7eb-4099-ad03-88bf6ad034e8",
+      "detail": {
+        "stock": 20,
+        "price": 95,
+        "disPrice": 90
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "9cbe002a-93a4-473a-8880-bd96e2366e68"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 90,
+        "disPrice": 90
+      }
+    },
+    {
+      "path": [
+        "c1fc69f8-b7eb-4099-ad03-88bf6ad034e8"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 95,
+        "disPrice": 90
+      }
+    }
+  ],
+  "createDate": "1714042279367",
+  "modifyDate": "1714042279367",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a39ef3b9a273aa89f817f"
+  },
+  "name": "Adidas Trackpants Zip BlackWhite",
+  "tag": "adidas",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/3a00d32f-ddf6-4d78-9577-9a3c02508cf9.jpeg",
+      "_id": {
+        "$oid": "662a39ef3b9a273aa89f8180"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/bf5ae145-c968-44ce-9afb-9dab91004d37.jpeg",
+      "_id": {
+        "$oid": "662a39ef3b9a273aa89f8181"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/a6d7d67e-fd2e-4acc-81ee-f9ead75fe321.jpeg",
+      "_id": {
+        "$oid": "662a39ef3b9a273aa89f8182"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/29c3fe79-a2bd-491a-9f61-2773016ab94c.jpeg",
+      "_id": {
+        "$oid": "662a39ef3b9a273aa89f8183"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "fa8d3070-320a-40d2-b875-314938d4ecd7",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "17491c18-6395-4643-9591-2c33dc0041de",
+          "name": "L"
+        },
+        {
+          "_id": "352316ec-57d1-49ed-83c2-56616cbc8ed4",
+          "name": "XL"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "17491c18-6395-4643-9591-2c33dc0041de",
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 20
+      }
+    },
+    {
+      "_id": "352316ec-57d1-49ed-83c2-56616cbc8ed4",
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 20
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "17491c18-6395-4643-9591-2c33dc0041de"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 20
+      }
+    },
+    {
+      "path": [
+        "352316ec-57d1-49ed-83c2-56616cbc8ed4"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 20,
+        "disPrice": 20
+      }
+    }
+  ],
+  "createDate": "1714043375926",
+  "modifyDate": "1714043375926",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a55a03b9a273aa89f847b"
+  },
+  "name": "BẬT LỬA",
+  "tag": "lighter",
+  "stock": 5,
+  "price": 669,
+  "discountPrice": 665,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/b4c69e1b-7b10-4cf5-ab3f-d5b569b4ee60.jpg",
+      "_id": {
+        "$oid": "662a55a03b9a273aa89f847c"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "662a54be3b9a273aa89f831d"
+  },
+  "routePath": null,
+  "createDate": "1714050464129",
+  "modifyDate": "1716266078099",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a56ae3b9a273aa89f86da"
+  },
+  "name": "BÌNH HOA TOMMYSSIMO MÀU XANH LÁ",
+  "tag": "bình hoa",
+  "stock": 5,
+  "price": 3975,
+  "discountPrice": 3975,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/e029144c-f872-42da-9aa0-54364c4f2dd5.jpg",
+      "_id": {
+        "$oid": "662a56ae3b9a273aa89f86db"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "662a54be3b9a273aa89f831d"
+  },
+  "routePath": null,
+  "createDate": "1714050734256",
+  "modifyDate": "1716266078112",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a57263b9a273aa89f8842"
+  },
+  "name": "GẠT TÀN THUỐC",
+  "tag": "smoke",
+  "stock": 5,
+  "price": 1928,
+  "discountPrice": 1928,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/9d3933de-33d7-435f-abc8-4c4e084ec1e1.jpg",
+      "_id": {
+        "$oid": "662a57263b9a273aa89f8843"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "662a54be3b9a273aa89f831d"
+  },
+  "routePath": null,
+  "createDate": "1714050854486",
+  "modifyDate": "1716266078121",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a57623b9a273aa89f89af"
+  },
+  "name": "NẾN THƠM HOLIDAY 2022 FIR SIZE M",
+  "tag": "candle",
+  "stock": 3,
+  "price": 385,
+  "discountPrice": 385,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/a884c403-7546-463e-8efd-977d2cc29ecd.jpg",
+      "_id": {
+        "$oid": "662a57623b9a273aa89f89b0"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "662a54be3b9a273aa89f831d"
+  },
+  "routePath": null,
+  "createDate": "1714050914124",
+  "modifyDate": "1716266078128",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a57aa3b9a273aa89f8b23"
+  },
+  "name": "TƯỢNG SÁP VUA NAPOLÉON MÀU XANH",
+  "tag": "statue",
+  "stock": 5,
+  "price": 236,
+  "discountPrice": 236,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/c0a2547a-5423-4fb2-bde0-0d0cb21eebbe.jpg",
+      "_id": {
+        "$oid": "662a57aa3b9a273aa89f8b24"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "662a54be3b9a273aa89f831d"
+  },
+  "routePath": null,
+  "createDate": "1714050986952",
+  "modifyDate": "1716266078136",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a57ed3b9a273aa89f8c9a"
+  },
+  "name": "XÔ CHAMPAGNE MALMAISON",
+  "tag": "bucket",
+  "stock": 3,
+  "price": 2086,
+  "discountPrice": 2086,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/9726305c-5130-4876-96a4-60508d227305.jpg",
+      "_id": {
+        "$oid": "662a57ed3b9a273aa89f8c9b"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "662a54be3b9a273aa89f831d"
+  },
+  "routePath": null,
+  "createDate": "1714051053285",
+  "modifyDate": "1716266078143",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666d471ca0357ee08b1d995"
+  },
+  "name": "Balo Marshmallow 1.0 Backpack – Balo Nam Nữ, Balo Du Lịch, Balo Đi Học, Balo Đựng Laptop – Tím",
+  "tag": "bags, marshmallow, laptop",
+  "stock": 98,
+  "price": 12,
+  "discountPrice": 12,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/93ffd2e2-34d7-4a46-8b83-458cce21bc5a.jpg",
+      "_id": {
+        "$oid": "6666d471ca0357ee08b1d996"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/69ddba3c-af9a-4611-b989-b7628976c10b.jpg",
+      "_id": {
+        "$oid": "6666d471ca0357ee08b1d997"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/c1b0f19a-ed5b-4dfa-a393-0c3ddde3428d.jpg",
+      "_id": {
+        "$oid": "6666d471ca0357ee08b1d998"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/7b0d5c6c-8454-4cc3-b1fd-9bfbfedb21f8.jpg",
+      "_id": {
+        "$oid": "6666d471ca0357ee08b1d999"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718015089527",
+  "modifyDate": "1718015104423",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666d72fca0357ee08b1dd17"
+  },
+  "name": "Biggod – Balo (Backpack) Local Brand Nam Nữ, Balo Đi Học, Balo Du Lịch, Balo Đựng Laptop – Trắng Kem",
+  "tag": "biggod, backpack, laptop",
+  "stock": 98,
+  "price": 10,
+  "discountPrice": 10,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/b8b32d46-526f-4add-806a-3784da72a70b.jpg",
+      "_id": {
+        "$oid": "6666d72fca0357ee08b1dd18"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/27bae966-baca-449d-a518-12d253286c7f.jpg",
+      "_id": {
+        "$oid": "6666d72fca0357ee08b1dd19"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/96f8cc10-f310-4fe4-8952-92e955b6cb3a.jpg",
+      "_id": {
+        "$oid": "6666d72fca0357ee08b1dd1a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/13ba20a0-ba68-44a9-bd65-ae70432357e7.jpg",
+      "_id": {
+        "$oid": "6666d72fca0357ee08b1dd1b"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718015791027",
+  "modifyDate": "1718403032344",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666d9a8ca0357ee08b1e12b"
+  },
+  "name": "Fold – Balo (Backpack) Local Brand Nam Nữ, Balo Đi Học, Balo Du Lịch, Balo Đựng Laptop – Đen",
+  "tag": "fold, backpack, laptop",
+  "stock": 97,
+  "price": 16,
+  "discountPrice": 16,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/2bfe87b8-6b87-4bae-9587-e4258ca461fa.jpg",
+      "_id": {
+        "$oid": "6666d9a8ca0357ee08b1e12c"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/72555261-05bb-4177-b4b3-491bd7bec211.jpg",
+      "_id": {
+        "$oid": "6666d9a8ca0357ee08b1e12d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b7a07c7c-dfc1-49c8-99f1-cfe555d9aeaa.jpg",
+      "_id": {
+        "$oid": "6666d9a8ca0357ee08b1e12e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/cbc4cb4f-72f9-4c77-8b72-5109b7c50898.jpg",
+      "_id": {
+        "$oid": "6666d9a8ca0357ee08b1e12f"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718016424261",
+  "modifyDate": "1718017329323",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666dd6bca0357ee08b1e4f1"
+  },
+  "name": "Multi – Balo (Backpack) Local Brand Nam Nữ, Balo Đi Học, Balo Du Lịch, Balo Đựng Laptop – Đen",
+  "tag": "backpack, multi, laptop",
+  "stock": 100,
+  "price": 12,
+  "discountPrice": 12,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/81b75906-1192-4f2d-a343-067ccdf8affa.jpg",
+      "_id": {
+        "$oid": "6666dd6bca0357ee08b1e4f2"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ff6de715-df9a-44ae-9b08-8ecca09b5102.jpg",
+      "_id": {
+        "$oid": "6666dd6bca0357ee08b1e4f3"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/c297502e-1d51-4e5c-9866-bf04cb42c7c6.jpg",
+      "_id": {
+        "$oid": "6666dd6bca0357ee08b1e4f4"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f5f63ed1-666e-4e9f-9202-8957323232cc.jpg",
+      "_id": {
+        "$oid": "6666dd6bca0357ee08b1e4f5"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718017387368",
+  "modifyDate": "1718017392996",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666ddd2ca0357ee08b1e8d9"
+  },
+  "name": "Túi Bao Tử Đeo Chéo Local Brand Đa Năng Chống Nước Màu Đen – Hymister",
+  "tag": "fanny pack, hymister, pack",
+  "stock": 100,
+  "price": 20,
+  "discountPrice": 17,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/b1981fbb-9d2b-485e-a278-50a65ef1a994.jpg",
+      "_id": {
+        "$oid": "6666ddd2ca0357ee08b1e8da"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/5ae02b19-b5d4-44db-8e10-9908d388dd8f.jpg",
+      "_id": {
+        "$oid": "6666ddd2ca0357ee08b1e8db"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/27e01f66-ade8-4dd5-addc-660be32d878d.jpg",
+      "_id": {
+        "$oid": "6666ddd2ca0357ee08b1e8dc"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718017490352",
+  "modifyDate": "1718017539020",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666df0086961576922c47c0"
+  },
+  "name": "Túi Đeo Chéo Vải Dù Chống Nước Đa Năng Màu Đen",
+  "tag": "fanny, fanny pack",
+  "stock": 99,
+  "price": 17,
+  "discountPrice": 15,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/cc39fc1c-1e47-433f-bf11-0f27ff37390e.jpg",
+      "_id": {
+        "$oid": "6666df0086961576922c47c1"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f252ac17-c934-4442-8a76-f1c10d93de08.jpg",
+      "_id": {
+        "$oid": "6666df0086961576922c47c2"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/aa9846f8-9365-4704-b628-f998823f501e.jpg",
+      "_id": {
+        "$oid": "6666df0086961576922c47c3"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e4dfb961-cbdc-4d98-b602-c63137baef5a.jpg",
+      "_id": {
+        "$oid": "6666df0086961576922c47c4"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718017792533",
+  "modifyDate": "1718017801060",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666df4d86961576922c4be4"
+  },
+  "name": "Túi Vải Canvas Đeo Chéo Mini Màu Trắng – HeyMister",
+  "tag": "bag, heymister",
+  "stock": 99,
+  "price": 14,
+  "discountPrice": 14,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/e63115f3-6bea-40fb-be7d-bef93b321600.jpg",
+      "_id": {
+        "$oid": "6666df4d86961576922c4be5"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/75ec9627-684b-46f8-a545-e4643a7a0b15.jpg",
+      "_id": {
+        "$oid": "6666df4d86961576922c4be6"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f75e3ec3-9d1b-41e8-8f61-b3fe00f1c779.jpg",
+      "_id": {
+        "$oid": "6666df4d86961576922c4be7"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/5c18e59e-c913-4a78-be25-1094f4d42a9f.jpg",
+      "_id": {
+        "$oid": "6666df4d86961576922c4be8"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718017869094",
+  "modifyDate": "1718017875494",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e2d4cc51a743271a8014"
+  },
+  "name": "Quần Baggy Jean Nam Ống Rộng Xanh Dương Nhạt",
+  "tag": "jeans, baggy",
+  "stock": 100,
+  "price": 15,
+  "discountPrice": 15,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/213ce8e4-936e-4384-a7f7-d98753e22ba1.jpg",
+      "_id": {
+        "$oid": "6666e2d4cc51a743271a8015"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/33c939d0-0d08-4241-903b-2780974892bd.jpg",
+      "_id": {
+        "$oid": "6666e2d4cc51a743271a8016"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/3ed09d7f-1b70-4156-96a5-71d253f3893d.jpg",
+      "_id": {
+        "$oid": "6666e2d4cc51a743271a8017"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca0557be892f7f36840f"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718018772378",
+  "modifyDate": "1718019064059",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e48e03c9ed1b2f507b76"
+  },
+  "name": "Quần Baggy Jean Nam Ống Rộng, Quần Jean Nam Form Rộng Màu Đen",
+  "tag": "baggy, jean",
+  "stock": 98,
+  "price": 11,
+  "discountPrice": 11,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/48aba203-69fe-4a85-b41b-836c7592baf2.jpg",
+      "_id": {
+        "$oid": "6666e48e03c9ed1b2f507b77"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/861a2b51-7ec6-4eea-8f35-132ba15da5cb.jpg",
+      "_id": {
+        "$oid": "6666e48e03c9ed1b2f507b78"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f6dace5c-df2c-44a4-aeb7-bef3fd6711b7.jpg",
+      "_id": {
+        "$oid": "6666e48e03c9ed1b2f507b79"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca0557be892f7f36840f"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718019214436",
+  "modifyDate": "1718019223947",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e4df03c9ed1b2f508122"
+  },
+  "name": "Quần Baggy Pant Tối Giản Nam Màu Đen",
+  "tag": "pant, baggy, simple",
+  "stock": 99,
+  "price": 10,
+  "discountPrice": 10,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/c805cef1-3ff6-403e-b354-285ed69b9ada.jpg",
+      "_id": {
+        "$oid": "6666e4df03c9ed1b2f508123"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/5a55d04c-4f39-457f-84a9-a6108c560637.jpg",
+      "_id": {
+        "$oid": "6666e4df03c9ed1b2f508124"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/42efe3fd-1a32-4adb-8392-b7801e6ddeb6.jpg",
+      "_id": {
+        "$oid": "6666e4df03c9ed1b2f508125"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718019295782",
+  "modifyDate": "1718399214656",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e52603c9ed1b2f5085b0"
+  },
+  "name": "Quần Baggy Pant Tối Giản Nam Màu Kaki",
+  "tag": "kaki, pant, simple",
+  "stock": 98,
+  "price": 12,
+  "discountPrice": 12,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/8eb2e191-d947-4ee2-a439-abbbcb42ced1.jpg",
+      "_id": {
+        "$oid": "6666e52603c9ed1b2f5085b1"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/4a0f867a-fb6a-4759-a4c4-dc82786527d6.jpg",
+      "_id": {
+        "$oid": "6666e52603c9ed1b2f5085b2"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b3f9e499-af53-4650-a6c2-7880857963ab.jpg",
+      "_id": {
+        "$oid": "6666e52603c9ed1b2f5085b3"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ab902c93-2418-4d55-b650-b0b2abe64de4.jpg",
+      "_id": {
+        "$oid": "6666e52603c9ed1b2f5085b4"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718019366463",
+  "modifyDate": "1718401023930",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e55b03c9ed1b2f508a63"
+  },
+  "name": "Quần Jogger Đen Nam, Jogger Pants, Quần Jogger Đen",
+  "tag": "jogger, pant",
+  "stock": 100,
+  "price": 15,
+  "discountPrice": 10,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/0d3cdb08-b1c7-4ce5-9247-59b84260e85a.jpg",
+      "_id": {
+        "$oid": "6666e55b03c9ed1b2f508a64"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/92a0ce9f-7ddc-4166-a889-734071519769.jpg",
+      "_id": {
+        "$oid": "6666e55b03c9ed1b2f508a65"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/1891ce96-860a-4c13-ba28-d25e52e064b9.jpg",
+      "_id": {
+        "$oid": "6666e55b03c9ed1b2f508a66"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/a5f5290f-1dbd-43ef-8830-ac959a757593.jpg",
+      "_id": {
+        "$oid": "6666e55b03c9ed1b2f508a67"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718019419390",
+  "modifyDate": "1718019424410",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e58903c9ed1b2f508f38"
+  },
+  "name": "Quần Jogger Túi Hộp Nam Đen",
+  "tag": "jogger, pant",
+  "stock": 98,
+  "price": 14,
+  "discountPrice": 14,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/c0dbb9c8-0150-4b2e-864d-5907dcb7e00d.jpg",
+      "_id": {
+        "$oid": "6666e58903c9ed1b2f508f39"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/d5c069a1-5170-4518-ac22-cde23a058543.jpg",
+      "_id": {
+        "$oid": "6666e58903c9ed1b2f508f3a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/a2837c2b-0bca-4055-88ef-0673be716b05.jpg",
+      "_id": {
+        "$oid": "6666e58903c9ed1b2f508f3b"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/9c40d627-1e78-48e4-b93a-b46404e1fc8b.jpg",
+      "_id": {
+        "$oid": "6666e58903c9ed1b2f508f3c"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718019465407",
+  "modifyDate": "1718019472211",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e76503c9ed1b2f509611"
+  },
+  "name": "Áo Hoodie Basic, Hoodie Form Rộng Trơn Tối Giản Màu Rêu",
+  "tag": "hoodie, big",
+  "stock": 100,
+  "price": 15,
+  "discountPrice": 15,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/d2118b62-e817-4268-ae63-de3259c148f3.jpg",
+      "_id": {
+        "$oid": "6666e76503c9ed1b2f509612"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/cb8c70a6-ccfa-42be-9a30-011d7a1e62f3.jpg",
+      "_id": {
+        "$oid": "6666e76503c9ed1b2f509613"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/503d735c-5993-4c8b-ad52-2dad2c41b552.jpg",
+      "_id": {
+        "$oid": "6666e76503c9ed1b2f509614"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca2157be892f7f368416"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718019941650",
+  "modifyDate": "1718020929476",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e79e03c9ed1b2f509895"
+  },
+  "name": "Áo Khoác Hoodie Form Rộng Tối Giản Màu Xanh Dương",
+  "tag": "hoodie, blue",
+  "stock": 99,
+  "price": 13,
+  "discountPrice": 13,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/79ed4283-5924-433a-a8b3-0894a80ff761.jpg",
+      "_id": {
+        "$oid": "6666e79e03c9ed1b2f509896"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/bbfa496e-46de-4e24-8102-ed98f4b62991.jpg",
+      "_id": {
+        "$oid": "6666e79e03c9ed1b2f509897"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/c30a7aeb-34b6-4f1b-853c-77342dec285d.jpg",
+      "_id": {
+        "$oid": "6666e79e03c9ed1b2f509898"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca2157be892f7f368416"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718019998599",
+  "modifyDate": "1718020957368",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e7d103c9ed1b2f509c88"
+  },
+  "name": "Áo Khoác Hoodie Trơn Có Mũ Form Rộng Tối Giản Màu Đen",
+  "tag": "hoodie",
+  "stock": 97,
+  "price": 30,
+  "discountPrice": 15,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/a361ec52-6dcc-4b5e-9bfb-dcbaada5586d.jpg",
+      "_id": {
+        "$oid": "6666e7d103c9ed1b2f509c89"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/cb7af738-1b69-4832-b87e-6559b5c0fd7b.jpg",
+      "_id": {
+        "$oid": "6666e7d103c9ed1b2f509c8a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/388e92c4-c9c6-4679-9c66-3abc79de4635.jpg",
+      "_id": {
+        "$oid": "6666e7d103c9ed1b2f509c8b"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/27e24064-1010-4603-9b62-ef434326d40b.jpg",
+      "_id": {
+        "$oid": "6666e7d103c9ed1b2f509c8c"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca2157be892f7f368416"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718020049160",
+  "modifyDate": "1718020936270",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e80e03c9ed1b2f509f2b"
+  },
+  "name": "Áo Khoác Jean Nam Nữ Unisex, Áo Khoác Jean Thời Trang Form Rộng Đen, Áo Khoác Nam Đẹp",
+  "tag": "jacket, unisex, jean",
+  "stock": 99,
+  "price": 15,
+  "discountPrice": 13,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/b92a9064-eb68-4684-bc95-4fd183d28a36.jpg",
+      "_id": {
+        "$oid": "6666e80e03c9ed1b2f509f2c"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/2fae61f2-6bd1-4068-8e49-1977aa276253.jpg",
+      "_id": {
+        "$oid": "6666e80e03c9ed1b2f509f2d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e0e04d61-861b-4086-98d9-c22d4edabfa1.jpg",
+      "_id": {
+        "$oid": "6666e80e03c9ed1b2f509f2e"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca0057be892f7f368408"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718020110521",
+  "modifyDate": "1718020964658",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e85303c9ed1b2f50a1da"
+  },
+  "name": "Áo Khoác Jean Nam Nữ Unisex, Áo Khoác Jean Thời Trang Form Rộng Xanh Dương, Áo Khoác Nam Đẹp",
+  "tag": "jacket, jean, blue",
+  "stock": 99,
+  "price": 13,
+  "discountPrice": 13,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/a628ea00-2fc3-4609-9859-2dff980760b0.jpg",
+      "_id": {
+        "$oid": "6666e85303c9ed1b2f50a1db"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/dc631c30-df6a-4788-97ca-85ab02e36dfe.jpg",
+      "_id": {
+        "$oid": "6666e85303c9ed1b2f50a1dc"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ec4d0fe8-1565-45cb-9f9c-f35545a3d29b.jpg",
+      "_id": {
+        "$oid": "6666e85303c9ed1b2f50a1dd"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ad71dac2-e3a8-4133-87ea-4f43315bf870.jpg",
+      "_id": {
+        "$oid": "6666e85303c9ed1b2f50a1de"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca0057be892f7f368408"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718020179735",
+  "modifyDate": "1718020971423",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e8a903c9ed1b2f50a49b"
+  },
+  "name": "Áo Sweater Basic Trơn Màu Trắng",
+  "tag": "sweater, white",
+  "stock": 98,
+  "price": 12,
+  "discountPrice": 12,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/654c3651-ef7a-4bde-8edd-3e5965429b36.jpg",
+      "_id": {
+        "$oid": "6666e8a903c9ed1b2f50a49c"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ad2950a6-4cf8-4a5e-909e-e572f0edcd57.jpg",
+      "_id": {
+        "$oid": "6666e8a903c9ed1b2f50a49d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/3f583ae5-e7a1-47dd-b890-1dcfd50be8e4.jpg",
+      "_id": {
+        "$oid": "6666e8a903c9ed1b2f50a49e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/d4bd86a2-648f-441d-b9c0-5c48845212dc.jpg",
+      "_id": {
+        "$oid": "6666e8a903c9ed1b2f50a49f"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": null,
+  "createDate": "1718020265397",
+  "modifyDate": "1718020950674",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e95703c9ed1b2f50a76d"
+  },
+  "name": "Arts Tee Đen",
+  "tag": "shirt, tshirt, black, tee",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/1bb52f8a-bfab-4b2c-8be1-4c8cf138de38.jpg",
+      "_id": {
+        "$oid": "6666e95703c9ed1b2f50a76e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f0bf091d-c492-49e6-bd84-97aaada146ba.jpg",
+      "_id": {
+        "$oid": "6666e95703c9ed1b2f50a76f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/31ff957e-6022-4755-82e8-22fad9967be8.jpg",
+      "_id": {
+        "$oid": "6666e95703c9ed1b2f50a770"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "d230ec0c-55e0-41e1-8dd2-2ba43184ff79",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "a9c0d488-e004-4cb0-a935-88d1bde3b214",
+          "name": "L"
+        },
+        {
+          "_id": "8b4a7e61-2006-4801-82d7-755f17c4d5bb",
+          "name": "XL"
+        },
+        {
+          "_id": "dce29e28-701f-4fe8-9701-688bacde9741",
+          "name": "XXL"
+        }
+      ]
+    },
+    {
+      "_id": "f56d6e23-d8c2-479d-831a-db1c907f020c",
+      "name": "Color",
+      "data": [
+        {
+          "_id": "649bc1c5-f55c-4aa3-a4d4-d1c9c0259f48",
+          "name": "Black"
+        },
+        {
+          "_id": "8d4d7095-5636-491a-9514-27ea19cd54d1",
+          "name": "White"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "a9c0d488-e004-4cb0-a935-88d1bde3b214",
+      "child": [
+        {
+          "_id": "649bc1c5-f55c-4aa3-a4d4-d1c9c0259f48",
+          "detail": {
+            "stock": 100,
+            "price": 10,
+            "disPrice": 10
+          }
+        },
+        {
+          "_id": "8d4d7095-5636-491a-9514-27ea19cd54d1",
+          "detail": {
+            "stock": 100,
+            "price": 10,
+            "disPrice": 10
+          }
+        }
+      ]
+    },
+    {
+      "_id": "8b4a7e61-2006-4801-82d7-755f17c4d5bb",
+      "child": [
+        {
+          "_id": "649bc1c5-f55c-4aa3-a4d4-d1c9c0259f48",
+          "detail": {
+            "stock": 100,
+            "price": 10,
+            "disPrice": 10
+          }
+        },
+        {
+          "_id": "8d4d7095-5636-491a-9514-27ea19cd54d1",
+          "detail": {
+            "stock": 0,
+            "price": 10,
+            "disPrice": 10
+          }
+        }
+      ]
+    },
+    {
+      "_id": "dce29e28-701f-4fe8-9701-688bacde9741",
+      "child": [
+        {
+          "_id": "649bc1c5-f55c-4aa3-a4d4-d1c9c0259f48",
+          "detail": {
+            "stock": 50,
+            "price": 11,
+            "disPrice": 10
+          }
+        },
+        {
+          "_id": "8d4d7095-5636-491a-9514-27ea19cd54d1",
+          "detail": {
+            "stock": 90,
+            "price": 11,
+            "disPrice": 10
+          }
+        }
+      ]
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cac257be892f7f368440"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "a9c0d488-e004-4cb0-a935-88d1bde3b214",
+        "649bc1c5-f55c-4aa3-a4d4-d1c9c0259f48"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "path": [
+        "a9c0d488-e004-4cb0-a935-88d1bde3b214",
+        "8d4d7095-5636-491a-9514-27ea19cd54d1"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "path": [
+        "8b4a7e61-2006-4801-82d7-755f17c4d5bb",
+        "649bc1c5-f55c-4aa3-a4d4-d1c9c0259f48"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "path": [
+        "8b4a7e61-2006-4801-82d7-755f17c4d5bb",
+        "8d4d7095-5636-491a-9514-27ea19cd54d1"
+      ],
+      "detail": {
+        "stock": 0,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "path": [
+        "dce29e28-701f-4fe8-9701-688bacde9741",
+        "649bc1c5-f55c-4aa3-a4d4-d1c9c0259f48"
+      ],
+      "detail": {
+        "stock": 50,
+        "price": 11,
+        "disPrice": 10
+      }
+    },
+    {
+      "path": [
+        "dce29e28-701f-4fe8-9701-688bacde9741",
+        "8d4d7095-5636-491a-9514-27ea19cd54d1"
+      ],
+      "detail": {
+        "stock": 90,
+        "price": 11,
+        "disPrice": 10
+      }
+    }
+  ],
+  "createDate": "1718020439604",
+  "modifyDate": "1718020452158",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666e9e703c9ed1b2f50af53"
+  },
+  "name": "Contused Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Form Rộng Cao Cấp Màu Đen",
+  "tag": "tee, shirt, tshirt, unisex, black",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/6eb42e24-7a25-4f02-a3d2-d2cad97c5c01.jpg",
+      "_id": {
+        "$oid": "6666e9e703c9ed1b2f50af54"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/3a0b1273-70f0-4c87-b2e6-24c5e558279d.jpg",
+      "_id": {
+        "$oid": "6666e9e703c9ed1b2f50af55"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/7baabd46-22a5-43ab-afad-6e1454d05aca.jpg",
+      "_id": {
+        "$oid": "6666e9e703c9ed1b2f50af56"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e3cf5616-5c33-4bdf-a0ca-01894e1822d5.jpg",
+      "_id": {
+        "$oid": "6666e9e703c9ed1b2f50af57"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "2efe2654-d1c9-412b-8c24-6b0a4da55790",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "6d551bb4-04a4-43b4-b9d6-8262263abbc1",
+          "name": "L"
+        },
+        {
+          "_id": "1e7c3912-62ca-4d4a-8caa-6b12b2e80478",
+          "name": "XL"
+        },
+        {
+          "_id": "8d137786-e098-4937-ab82-11a017616b55",
+          "name": "XXL"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "6d551bb4-04a4-43b4-b9d6-8262263abbc1",
+      "detail": {
+        "stock": 90,
+        "price": 10,
+        "disPrice": 8
+      }
+    },
+    {
+      "_id": "1e7c3912-62ca-4d4a-8caa-6b12b2e80478",
+      "detail": {
+        "stock": 50,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "_id": "8d137786-e098-4937-ab82-11a017616b55",
+      "detail": {
+        "stock": 100,
+        "price": 10,
+        "disPrice": 8
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cac257be892f7f368440"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "6d551bb4-04a4-43b4-b9d6-8262263abbc1"
+      ],
+      "detail": {
+        "stock": 90,
+        "price": 10,
+        "disPrice": 8
+      }
+    },
+    {
+      "path": [
+        "1e7c3912-62ca-4d4a-8caa-6b12b2e80478"
+      ],
+      "detail": {
+        "stock": 50,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "path": [
+        "8d137786-e098-4937-ab82-11a017616b55"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 10,
+        "disPrice": 8
+      }
+    }
+  ],
+  "createDate": "1718020583485",
+  "modifyDate": "1718020600810",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6666ea6903c9ed1b2f50b76c"
+  },
+  "name": "Palm Angels Kill The Bear Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Cao Cấp Màu Trắng",
+  "tag": "shirt, tshirt, black, tee, unisex",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/b7867e21-e00b-4d0f-9f4f-5a84427307ac.jpg",
+      "_id": {
+        "$oid": "6666ea6903c9ed1b2f50b76d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/9ba6307f-f436-429b-b0ee-8dab96a61e93.jpg",
+      "_id": {
+        "$oid": "6666ea6903c9ed1b2f50b76e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f46f79fa-05d3-45f6-91c3-e3e3f1273567.jpg",
+      "_id": {
+        "$oid": "6666ea6903c9ed1b2f50b76f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/da448faa-7f23-47ce-bb88-bcb5b8c956d3.jpg",
+      "_id": {
+        "$oid": "6666ea6903c9ed1b2f50b770"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "4bb6532f-dad6-482c-9ea1-719cb43fb666",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "409a6876-2cd0-4639-af31-cd52600d3c08",
+          "name": "M"
+        },
+        {
+          "_id": "84c47e08-7c0a-4ec2-873e-75b756a831e1",
+          "name": "L"
+        },
+        {
+          "_id": "2de36d1c-e145-4b95-bc7c-e9101a870b87",
+          "name": "XL"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "409a6876-2cd0-4639-af31-cd52600d3c08",
+      "detail": {
+        "stock": 99,
+        "price": 10,
+        "disPrice": 8
+      }
+    },
+    {
+      "_id": "84c47e08-7c0a-4ec2-873e-75b756a831e1",
+      "detail": {
+        "stock": 100,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "_id": "2de36d1c-e145-4b95-bc7c-e9101a870b87",
+      "detail": {
+        "stock": 94,
+        "price": 10,
+        "disPrice": 10
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca8a57be892f7f368432"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "409a6876-2cd0-4639-af31-cd52600d3c08"
+      ],
+      "detail": {
+        "stock": 99,
+        "price": 10,
+        "disPrice": 8
+      }
+    },
+    {
+      "path": [
+        "84c47e08-7c0a-4ec2-873e-75b756a831e1"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "path": [
+        "2de36d1c-e145-4b95-bc7c-e9101a870b87"
+      ],
+      "detail": {
+        "stock": 94,
+        "price": 10,
+        "disPrice": 10
+      }
+    }
+  ],
+  "createDate": "1718020713720",
+  "modifyDate": "1718403032329",
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "6666eacc03c9ed1b2f50bd78"
+  },
+  "name": "Stussy Bouquet Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Form Rộng Cao Cấp Màu Trắng",
+  "tag": "shirt, black, stussy, bouquet",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/9f7e0814-e20f-4e0b-bb8a-3dc69e90b51f.jpg",
+      "_id": {
+        "$oid": "6666eacc03c9ed1b2f50bd79"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/99d30222-ff45-4d41-b87f-9fa18d27c5c8.jpg",
+      "_id": {
+        "$oid": "6666eacc03c9ed1b2f50bd7a"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "7d57725d-d712-4e52-83d1-e7a7fc4fa7c3",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "2f42d31e-282f-476c-8047-d4a918b372a1",
+          "name": "XL"
+        },
+        {
+          "_id": "f44d0ca0-ca5b-46e2-a0e7-ec6dda3fb717",
+          "name": "XXL"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "2f42d31e-282f-476c-8047-d4a918b372a1",
+      "detail": {
+        "stock": 46,
+        "price": 10,
+        "disPrice": 8
+      }
+    },
+    {
+      "_id": "f44d0ca0-ca5b-46e2-a0e7-ec6dda3fb717",
+      "detail": {
+        "stock": 70,
+        "price": 10,
+        "disPrice": 8
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca8a57be892f7f368432"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "2f42d31e-282f-476c-8047-d4a918b372a1"
+      ],
+      "detail": {
+        "stock": 46,
+        "price": 10,
+        "disPrice": 8
+      }
+    },
+    {
+      "path": [
+        "f44d0ca0-ca5b-46e2-a0e7-ec6dda3fb717"
+      ],
+      "detail": {
+        "stock": 70,
+        "price": 10,
+        "disPrice": 8
+      }
+    }
+  ],
+  "createDate": "1718020812821",
+  "modifyDate": "1718400287567",
+  "__v": 3
+},
+{
+  "_id": {
+    "$oid": "6666eb2c03c9ed1b2f50c080"
+  },
+  "name": "Supreme Bandana Box Logo Tee – Áo Thun Nam Nữ Unisex Đẹp Tay Lỡ Form Rộng Cao Cấp Màu Đen",
+  "tag": "shirt, tshirt, supreme, bandana",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/199dc254-269c-4fd9-b02c-80a5d9cced1c.jpeg",
+      "_id": {
+        "$oid": "6666eb2c03c9ed1b2f50c081"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/1298d28c-7de2-44a6-b779-7f8cbdf5d6e3.jpg",
+      "_id": {
+        "$oid": "6666eb2c03c9ed1b2f50c082"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "b3c5cfdc-b522-4993-bd64-1d339a88a3fe",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "2f583960-d72e-4b4d-89a4-2e84c6cab995",
+          "name": "M"
+        },
+        {
+          "_id": "e4ce14d5-ae64-4cbd-8b33-2e2131bda23f",
+          "name": "L"
+        },
+        {
+          "_id": "ef253ba6-be2c-4228-b97a-18effb05318b",
+          "name": "XL"
+        },
+        {
+          "_id": "5cb03568-49fc-4228-a10e-bc646656f3e1",
+          "name": "XXL"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "2f583960-d72e-4b4d-89a4-2e84c6cab995",
+      "detail": {
+        "stock": 99,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "_id": "e4ce14d5-ae64-4cbd-8b33-2e2131bda23f",
+      "detail": {
+        "stock": 90,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "_id": "ef253ba6-be2c-4228-b97a-18effb05318b",
+      "detail": {
+        "stock": 80,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "_id": "5cb03568-49fc-4228-a10e-bc646656f3e1",
+      "detail": {
+        "stock": 100,
+        "price": 11,
+        "disPrice": 11
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627ca8a57be892f7f368432"
+  },
+  "classify": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "2f583960-d72e-4b4d-89a4-2e84c6cab995"
+      ],
+      "detail": {
+        "stock": 99,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "path": [
+        "e4ce14d5-ae64-4cbd-8b33-2e2131bda23f"
+      ],
+      "detail": {
+        "stock": 90,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "path": [
+        "ef253ba6-be2c-4228-b97a-18effb05318b"
+      ],
+      "detail": {
+        "stock": 80,
+        "price": 10,
+        "disPrice": 10
+      }
+    },
+    {
+      "path": [
+        "5cb03568-49fc-4228-a10e-bc646656f3e1"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 11,
+        "disPrice": 11
+      }
+    }
+  ],
+  "createDate": "1718020908431",
+  "modifyDate": "1718402850364",
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "6667081c03c9ed1b2f50f8a8"
+  },
+  "name": "Adidas Alphabounce Beyond Cloud White",
+  "tag": "adidas, shoe",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/30b4479d-c236-4cd7-a238-f3c512ac2c5f.jpg",
+      "_id": {
+        "$oid": "6667081c03c9ed1b2f50f8a9"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/17981a5a-d7af-498a-9d90-030075ac1703.jpg",
+      "_id": {
+        "$oid": "6667081c03c9ed1b2f50f8aa"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/367a7e49-7d9f-47a8-8901-c1793499c28e.jpg",
+      "_id": {
+        "$oid": "6667081c03c9ed1b2f50f8ab"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/59baed3a-20d6-484c-93e6-b0ddbc960617.jpg",
+      "_id": {
+        "$oid": "6667081c03c9ed1b2f50f8ac"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "60eb3b30-afab-46e1-8944-9b59e939e819",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "efe0ed3a-408e-4d95-b32e-5ec1b3904580",
+          "name": "39"
+        },
+        {
+          "_id": "eb424e17-ccff-42db-96b6-a47e2ae29fdc",
+          "name": "40"
+        },
+        {
+          "_id": "f2ff4bc6-b886-43c1-bb6c-da0732e9c8b0",
+          "name": "41"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "efe0ed3a-408e-4d95-b32e-5ec1b3904580",
+      "detail": {
+        "stock": 20,
+        "price": 60,
+        "disPrice": 49
+      }
+    },
+    {
+      "_id": "eb424e17-ccff-42db-96b6-a47e2ae29fdc",
+      "detail": {
+        "stock": 20,
+        "price": 60,
+        "disPrice": 49
+      }
+    },
+    {
+      "_id": "f2ff4bc6-b886-43c1-bb6c-da0732e9c8b0",
+      "detail": {
+        "stock": 20,
+        "price": 60,
+        "disPrice": 49
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "efe0ed3a-408e-4d95-b32e-5ec1b3904580"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 60,
+        "disPrice": 49
+      }
+    },
+    {
+      "path": [
+        "eb424e17-ccff-42db-96b6-a47e2ae29fdc"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 60,
+        "disPrice": 49
+      }
+    },
+    {
+      "path": [
+        "f2ff4bc6-b886-43c1-bb6c-da0732e9c8b0"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 60,
+        "disPrice": 49
+      }
+    }
+  ],
+  "createDate": "1718028316902",
+  "modifyDate": "1718030339137",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667088f03c9ed1b2f50fbcc"
+  },
+  "name": "Adidas Superstar Running White",
+  "tag": "sport, shoe, adidas, white",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/e7858b8a-6837-4972-905c-e21172615c43.jpg",
+      "_id": {
+        "$oid": "6667088f03c9ed1b2f50fbcd"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/489ade3e-3ebb-4d6f-b44a-b1a88cabc232.jpg",
+      "_id": {
+        "$oid": "6667088f03c9ed1b2f50fbce"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/8dbcb4a4-7762-44e5-831f-0945cd8f1fbd.jpg",
+      "_id": {
+        "$oid": "6667088f03c9ed1b2f50fbcf"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b60cb0ef-026a-4fac-9404-a6173c16b3ea.jpg",
+      "_id": {
+        "$oid": "6667088f03c9ed1b2f50fbd0"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "220c2a9f-2792-44aa-a5e4-72dcd6502144",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "9385fdfc-9810-4c66-ba96-4229014b5164",
+          "name": "39"
+        },
+        {
+          "_id": "0bd1ef2d-f24e-4410-b71d-8804830130aa",
+          "name": "40"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "9385fdfc-9810-4c66-ba96-4229014b5164",
+      "detail": {
+        "stock": 100,
+        "price": 30,
+        "disPrice": 30
+      }
+    },
+    {
+      "_id": "0bd1ef2d-f24e-4410-b71d-8804830130aa",
+      "detail": {
+        "stock": 100,
+        "price": 30,
+        "disPrice": 30
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "9385fdfc-9810-4c66-ba96-4229014b5164"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 30,
+        "disPrice": 30
+      }
+    },
+    {
+      "path": [
+        "0bd1ef2d-f24e-4410-b71d-8804830130aa"
+      ],
+      "detail": {
+        "stock": 100,
+        "price": 30,
+        "disPrice": 30
+      }
+    }
+  ],
+  "createDate": "1718028431280",
+  "modifyDate": "1718030322449",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666708fc03c9ed1b2f50ff01"
+  },
+  "name": "Adidas Yeezy Boost 700 Mauve",
+  "tag": "adidas, yeezy, sneaker",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/ca545138-e3f1-411e-9d97-c2a8bd2bbbd4.jpg",
+      "_id": {
+        "$oid": "666708fc03c9ed1b2f50ff02"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/051b48fa-894e-48a0-a762-50224eec9a26.jpg",
+      "_id": {
+        "$oid": "666708fc03c9ed1b2f50ff03"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "7caefb5e-bf28-4cfd-a5a3-a34234bc2e86",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "7c3af7c4-41e6-4483-90f2-6ecb31865673",
+          "name": "40"
+        },
+        {
+          "_id": "3f1a4910-5604-4ce0-b1a4-3843f25fb9e9",
+          "name": "40.5"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "7c3af7c4-41e6-4483-90f2-6ecb31865673",
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 15
+      }
+    },
+    {
+      "_id": "3f1a4910-5604-4ce0-b1a4-3843f25fb9e9",
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 15
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "7c3af7c4-41e6-4483-90f2-6ecb31865673"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 15
+      }
+    },
+    {
+      "path": [
+        "3f1a4910-5604-4ce0-b1a4-3843f25fb9e9"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 15
+      }
+    }
+  ],
+  "createDate": "1718028540200",
+  "modifyDate": "1718030242880",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667096c03c9ed1b2f51023d"
+  },
+  "name": "Alexander McQueen Oversized Sneaker Black",
+  "tag": "alexander, mcqueen, sneaker, black",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/589ebc35-353c-4fd5-b636-574e75cdea03.jpg",
+      "_id": {
+        "$oid": "6667096c03c9ed1b2f51023e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f73ca127-8552-4911-8b44-ea65945c1b94.jpg",
+      "_id": {
+        "$oid": "6667096c03c9ed1b2f51023f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/a47d0635-f1da-499d-a97c-bac522013046.jpg",
+      "_id": {
+        "$oid": "6667096c03c9ed1b2f510240"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/337b4e97-0b44-425f-b1c6-53268272bd70.jpg",
+      "_id": {
+        "$oid": "6667096c03c9ed1b2f510241"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "81168f3a-f4ab-4bfc-a81c-8ae526ba44fb",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "18779276-6f65-47aa-8f5c-8dbc9d96e722",
+          "name": "39"
+        },
+        {
+          "_id": "5a223bfc-2347-426d-b2ca-ed74973cc6f0",
+          "name": "40"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "18779276-6f65-47aa-8f5c-8dbc9d96e722",
+      "detail": {
+        "stock": 20,
+        "price": 21,
+        "disPrice": 20
+      }
+    },
+    {
+      "_id": "5a223bfc-2347-426d-b2ca-ed74973cc6f0",
+      "detail": {
+        "stock": 20,
+        "price": 21,
+        "disPrice": 20
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "18779276-6f65-47aa-8f5c-8dbc9d96e722"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 21,
+        "disPrice": 20
+      }
+    },
+    {
+      "path": [
+        "5a223bfc-2347-426d-b2ca-ed74973cc6f0"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 21,
+        "disPrice": 20
+      }
+    }
+  ],
+  "createDate": "1718028652368",
+  "modifyDate": "1718030261329",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666709d803c9ed1b2f51058c"
+  },
+  "name": "Balenciaga Triple S Clear Sole Orange Grey Black",
+  "tag": "balenciaga , shoe, sneaker",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/9d9c2889-b175-4c63-ab19-b48178ebf73c.jpg",
+      "_id": {
+        "$oid": "666709d803c9ed1b2f51058d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/399b1894-e701-4c45-955e-4afdf174b6c0.jpg",
+      "_id": {
+        "$oid": "666709d803c9ed1b2f51058e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/790c1534-866b-40d8-969f-f02b0c7192c1.jpg",
+      "_id": {
+        "$oid": "666709d803c9ed1b2f51058f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/68ed55a6-9b42-4048-b92d-b3f411dde5a2.jpg",
+      "_id": {
+        "$oid": "666709d803c9ed1b2f510590"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "8a87cba6-b72b-4226-9762-bc0d4054812b",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "7e3494cf-bc9d-4297-8ef4-51e0e18ffd25",
+          "name": "40"
+        },
+        {
+          "_id": "1c9a1088-5cfd-4efd-afde-a49d9b70e778",
+          "name": "41"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "7e3494cf-bc9d-4297-8ef4-51e0e18ffd25",
+      "detail": {
+        "stock": 50,
+        "price": 70,
+        "disPrice": 60
+      }
+    },
+    {
+      "_id": "1c9a1088-5cfd-4efd-afde-a49d9b70e778",
+      "detail": {
+        "stock": 50,
+        "price": 70,
+        "disPrice": 60
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "7e3494cf-bc9d-4297-8ef4-51e0e18ffd25"
+      ],
+      "detail": {
+        "stock": 50,
+        "price": 70,
+        "disPrice": 60
+      }
+    },
+    {
+      "path": [
+        "1c9a1088-5cfd-4efd-afde-a49d9b70e778"
+      ],
+      "detail": {
+        "stock": 50,
+        "price": 70,
+        "disPrice": 60
+      }
+    }
+  ],
+  "createDate": "1718028760074",
+  "modifyDate": "1718030346538",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66670b4003c9ed1b2f5108ec"
+  },
+  "name": "Balenciaga Triple S Clear Sole White",
+  "tag": "balenciaga, shoe, sneaker",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/483b5506-07e3-46dc-9487-0f0beb50eab1.jpg",
+      "_id": {
+        "$oid": "66670b4003c9ed1b2f5108ed"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/4bb5639b-e7e6-499b-8286-f02c8875ab57.jpg",
+      "_id": {
+        "$oid": "66670b4003c9ed1b2f5108ee"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/cb3ea5d1-0d93-432f-9998-909cdcff7afa.jpg",
+      "_id": {
+        "$oid": "66670b4003c9ed1b2f5108ef"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b7c70f03-d22c-40e8-a0b6-a770e2739d02.jpg",
+      "_id": {
+        "$oid": "66670b4003c9ed1b2f5108f0"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "38298834-4b9d-48b7-bf8d-9dc2a5275841",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "59b8857d-5fda-4c1d-a2ff-5d6b58888743",
+          "name": "40"
+        },
+        {
+          "_id": "632a450c-9b24-473b-85ac-b5790b646fdf",
+          "name": "41"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "59b8857d-5fda-4c1d-a2ff-5d6b58888743",
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 40
+      }
+    },
+    {
+      "_id": "632a450c-9b24-473b-85ac-b5790b646fdf",
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 40
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": null,
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "59b8857d-5fda-4c1d-a2ff-5d6b58888743"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 40
+      }
+    },
+    {
+      "path": [
+        "632a450c-9b24-473b-85ac-b5790b646fdf"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 40
+      }
+    }
+  ],
+  "createDate": "1718029120997",
+  "modifyDate": "1718030329816",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66670ba003c9ed1b2f510c5c"
+  },
+  "name": "Converse Chuck 70 High Top Sunflower (1970s)",
+  "tag": "converse, shoe, sunflower",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/41a5b0d7-0986-4c56-8cce-9d3f39ac37e3.jpg",
+      "_id": {
+        "$oid": "66670ba003c9ed1b2f510c5d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/1fd80ab6-0699-4174-a846-d79fe2c0eeab.jpg",
+      "_id": {
+        "$oid": "66670ba003c9ed1b2f510c5e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/16cd7db9-4735-4942-a956-6e778a73c0d1.jpg",
+      "_id": {
+        "$oid": "66670ba003c9ed1b2f510c5f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/866cfea1-4714-43c7-9c43-813565094602.jpg",
+      "_id": {
+        "$oid": "66670ba003c9ed1b2f510c60"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "993bb75b-23d0-45ea-9ed4-7a1e5b60991b",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "ffe8446b-16f1-4741-ac73-b8cd3b78cb3d",
+          "name": "40"
+        },
+        {
+          "_id": "e325114a-a3c9-4cab-8285-875f79adbb78",
+          "name": "41"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "ffe8446b-16f1-4741-ac73-b8cd3b78cb3d",
+      "detail": {
+        "stock": 30,
+        "price": 20,
+        "disPrice": 15
+      }
+    },
+    {
+      "_id": "e325114a-a3c9-4cab-8285-875f79adbb78",
+      "detail": {
+        "stock": 30,
+        "price": 20,
+        "disPrice": 15
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "ffe8446b-16f1-4741-ac73-b8cd3b78cb3d"
+      ],
+      "detail": {
+        "stock": 30,
+        "price": 20,
+        "disPrice": 15
+      }
+    },
+    {
+      "path": [
+        "e325114a-a3c9-4cab-8285-875f79adbb78"
+      ],
+      "detail": {
+        "stock": 30,
+        "price": 20,
+        "disPrice": 15
+      }
+    }
+  ],
+  "createDate": "1718029216726",
+  "modifyDate": "1718030250596",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66670c4203c9ed1b2f510fde"
+  },
+  "name": "Converse Chuck 70 Low Top Black (1970s)",
+  "tag": "converse, low top, black, shoe",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/3250b0cb-277d-45cc-8ca7-c8adb2cd528b.jpg",
+      "_id": {
+        "$oid": "66670c4203c9ed1b2f510fdf"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/6f602e8a-12dd-4bcc-a0e3-1179ff6d9528.jpg",
+      "_id": {
+        "$oid": "66670c4203c9ed1b2f510fe0"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/634ccca3-01f0-40d3-bc86-811f1509b9fb.jpg",
+      "_id": {
+        "$oid": "66670c4203c9ed1b2f510fe1"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/38224760-2867-4f47-83e8-079a1440c002.jpg",
+      "_id": {
+        "$oid": "66670c4203c9ed1b2f510fe2"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "5e7f1599-8711-433d-93cf-83d80454ed1b",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "0299ac24-45f5-40e0-8788-c23e42492c6f",
+          "name": "40"
+        },
+        {
+          "_id": "fa094dc1-43bc-4ea2-adba-b0659ee30818",
+          "name": "41"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "0299ac24-45f5-40e0-8788-c23e42492c6f",
+      "detail": {
+        "stock": 30,
+        "price": 45,
+        "disPrice": 20
+      }
+    },
+    {
+      "_id": "fa094dc1-43bc-4ea2-adba-b0659ee30818",
+      "detail": {
+        "stock": 30,
+        "price": 45,
+        "disPrice": 20
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "0299ac24-45f5-40e0-8788-c23e42492c6f"
+      ],
+      "detail": {
+        "stock": 30,
+        "price": 45,
+        "disPrice": 20
+      }
+    },
+    {
+      "path": [
+        "fa094dc1-43bc-4ea2-adba-b0659ee30818"
+      ],
+      "detail": {
+        "stock": 30,
+        "price": 45,
+        "disPrice": 20
+      }
+    }
+  ],
+  "createDate": "1718029378124",
+  "modifyDate": "1718030270603",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66670cfd03c9ed1b2f511371"
+  },
+  "name": "Converse Chuck Taylor All Star High Top Optical White (Classic)",
+  "tag": "converse, chuck, taylor, high top, white",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/ac6d075a-ddcc-423c-9432-a7c7409d800f.jpg",
+      "_id": {
+        "$oid": "66670cfd03c9ed1b2f511372"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/d261aeaf-db53-4bbb-b952-83aa72040943.jpg",
+      "_id": {
+        "$oid": "66670cfd03c9ed1b2f511373"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b25c226a-5ab4-4c79-bb31-0f730594cc0c.jpg",
+      "_id": {
+        "$oid": "66670cfd03c9ed1b2f511374"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "ce9c070d-b3a0-43f5-b098-f25b78598d51",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "fef7ccaa-ce46-4124-82ed-be5972aad8d9",
+          "name": "39"
+        },
+        {
+          "_id": "0a1d6371-b33b-4e58-86bb-bf6f3195654f",
+          "name": "40"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "fef7ccaa-ce46-4124-82ed-be5972aad8d9",
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 20
+      }
+    },
+    {
+      "_id": "0a1d6371-b33b-4e58-86bb-bf6f3195654f",
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 20
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "fef7ccaa-ce46-4124-82ed-be5972aad8d9"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 20
+      }
+    },
+    {
+      "path": [
+        "0a1d6371-b33b-4e58-86bb-bf6f3195654f"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 20
+      }
+    }
+  ],
+  "createDate": "1718029565331",
+  "modifyDate": "1718030281286",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66670d7c03c9ed1b2f511710"
+  },
+  "name": "Converse Chuck Taylor All-Star 70s Hi Comme Des Garcons PLAY Black (1970s CDG)",
+  "tag": "converse, 70s, taylor, black, 1970",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/51ad686c-7c06-4171-a70c-bed80e1f9255.jpg",
+      "_id": {
+        "$oid": "66670d7c03c9ed1b2f511711"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/1b4ac97b-06ff-48b9-89ba-13568250b8dd.jpg",
+      "_id": {
+        "$oid": "66670d7c03c9ed1b2f511712"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "485c9e70-a109-4d3e-ae87-de6918d7926f",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "b24ac804-dde5-42fa-afee-530c076da231",
+          "name": "40"
+        },
+        {
+          "_id": "b28c3e06-d70b-4c45-a8e2-c5c5ad8ce7bc",
+          "name": "41"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "b24ac804-dde5-42fa-afee-530c076da231",
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 20
+      }
+    },
+    {
+      "_id": "b28c3e06-d70b-4c45-a8e2-c5c5ad8ce7bc",
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 20
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "b24ac804-dde5-42fa-afee-530c076da231"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 20
+      }
+    },
+    {
+      "path": [
+        "b28c3e06-d70b-4c45-a8e2-c5c5ad8ce7bc"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 20,
+        "disPrice": 20
+      }
+    }
+  ],
+  "createDate": "1718029692503",
+  "modifyDate": "1718030293458",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66670e5803c9ed1b2f511ab7"
+  },
+  "name": "Converse Run Star Hike Hi Top Black",
+  "tag": "converse, hike, shoe, hi top, black",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/21f3bb46-75ad-4fdc-904a-e472483d6c49.jpg",
+      "_id": {
+        "$oid": "66670e5803c9ed1b2f511ab8"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/02df0b6c-7c9f-486e-be85-b1ec0ddf15a6.jpg",
+      "_id": {
+        "$oid": "66670e5803c9ed1b2f511ab9"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/75d7e353-421f-406f-80f6-0074d1d147e7.jpg",
+      "_id": {
+        "$oid": "66670e5803c9ed1b2f511aba"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "fd74124f-c635-4fe8-94e5-03f1d6fd13fe",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "13c1bbe4-3df3-41dd-93ea-500a326b3876",
+          "name": "39"
+        },
+        {
+          "_id": "3799b560-a97e-47c7-b1ad-9b65bc12504e",
+          "name": "40"
+        },
+        {
+          "_id": "be1832e4-5087-4f13-a8ca-55393b63c932",
+          "name": "41"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "13c1bbe4-3df3-41dd-93ea-500a326b3876",
+      "detail": {
+        "stock": 20,
+        "price": 25,
+        "disPrice": 25
+      }
+    },
+    {
+      "_id": "3799b560-a97e-47c7-b1ad-9b65bc12504e",
+      "detail": {
+        "stock": 20,
+        "price": 25,
+        "disPrice": 25
+      }
+    },
+    {
+      "_id": "be1832e4-5087-4f13-a8ca-55393b63c932",
+      "detail": {
+        "stock": 20,
+        "price": 30,
+        "disPrice": 26
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "13c1bbe4-3df3-41dd-93ea-500a326b3876"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 25,
+        "disPrice": 25
+      }
+    },
+    {
+      "path": [
+        "3799b560-a97e-47c7-b1ad-9b65bc12504e"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 25,
+        "disPrice": 25
+      }
+    },
+    {
+      "path": [
+        "be1832e4-5087-4f13-a8ca-55393b63c932"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 30,
+        "disPrice": 26
+      }
+    }
+  ],
+  "createDate": "1718029912314",
+  "modifyDate": "1718030314221",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66670f0c03c9ed1b2f511e6c"
+  },
+  "name": "Vans Old Skool Classic Black – Size Nữ Bigsale",
+  "tag": "vans, old skool, classic, shoe, black",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/e71db779-f8bd-43dd-883d-574f3a2c0eb0.jpg",
+      "_id": {
+        "$oid": "66670f0c03c9ed1b2f511e6d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ddcbe888-3a5a-44ec-99d4-58ff0c2955de.jpg",
+      "_id": {
+        "$oid": "66670f0c03c9ed1b2f511e6e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e2c04d57-5a8a-4916-8402-1dcdb6b2a886.jpg",
+      "_id": {
+        "$oid": "66670f0c03c9ed1b2f511e6f"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "1a416b26-d8af-464f-8289-617fe95ec64b",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "ba1eabe7-7bd5-44f9-a777-c5158b844907",
+          "name": "38"
+        },
+        {
+          "_id": "204e3848-9052-4dec-9b28-efc8ff2d3dc7",
+          "name": "39"
+        },
+        {
+          "_id": "21f433d9-6330-4f4a-a1a0-7d228bbb872b",
+          "name": "39.5"
+        },
+        {
+          "_id": "d142f7c4-ffca-4671-b9d8-753737ce3b28",
+          "name": "40"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "ba1eabe7-7bd5-44f9-a777-c5158b844907",
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 20
+      }
+    },
+    {
+      "_id": "204e3848-9052-4dec-9b28-efc8ff2d3dc7",
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 20
+      }
+    },
+    {
+      "_id": "21f433d9-6330-4f4a-a1a0-7d228bbb872b",
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 20
+      }
+    },
+    {
+      "_id": "d142f7c4-ffca-4671-b9d8-753737ce3b28",
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 20
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c7d157be892f7f3683f0"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "ba1eabe7-7bd5-44f9-a777-c5158b844907"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 20
+      }
+    },
+    {
+      "path": [
+        "204e3848-9052-4dec-9b28-efc8ff2d3dc7"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 20
+      }
+    },
+    {
+      "path": [
+        "21f433d9-6330-4f4a-a1a0-7d228bbb872b"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 20
+      }
+    },
+    {
+      "path": [
+        "d142f7c4-ffca-4671-b9d8-753737ce3b28"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 40,
+        "disPrice": 20
+      }
+    }
+  ],
+  "createDate": "1718030092252",
+  "modifyDate": "1718030305816",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66670f7a03c9ed1b2f51222e"
+  },
+  "name": "Yeezy Boost 700 Inertia",
+  "tag": "yeezy, shoe, sneeker",
+  "stock": 0,
+  "price": 0,
+  "discountPrice": 0,
+  "description": "<p>-</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/1187a3e6-5560-4329-a790-b3a1fdfbf1f0.jpg",
+      "_id": {
+        "$oid": "66670f7a03c9ed1b2f51222f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e835aab5-1ec4-4a8c-ade1-33b65e276f51.jpg",
+      "_id": {
+        "$oid": "66670f7a03c9ed1b2f512230"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/98ea7f64-95f7-4b69-9e2c-042616f99ac4.jpg",
+      "_id": {
+        "$oid": "66670f7a03c9ed1b2f512231"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/38278752-c784-45b2-ba59-7bcae1ba5163.jpg",
+      "_id": {
+        "$oid": "66670f7a03c9ed1b2f512232"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": [
+    {
+      "_id": "290182c8-d927-4d8a-9119-261657efb968",
+      "name": "Size",
+      "data": [
+        {
+          "_id": "64beb25e-129e-4fc5-9da7-9d716fc8743a",
+          "name": "39"
+        },
+        {
+          "_id": "e6b8dcbd-e5fa-4679-a7c0-91ad03c309f2",
+          "name": "40"
+        },
+        {
+          "_id": "c2d1f678-6760-4cf3-9f4c-b039bdbe1c57",
+          "name": "41"
+        }
+      ]
+    }
+  ],
+  "variantDetail": [
+    {
+      "_id": "64beb25e-129e-4fc5-9da7-9d716fc8743a",
+      "detail": {
+        "stock": 20,
+        "price": 21,
+        "disPrice": 14
+      }
+    },
+    {
+      "_id": "e6b8dcbd-e5fa-4679-a7c0-91ad03c309f2",
+      "detail": {
+        "stock": 20,
+        "price": 21,
+        "disPrice": 14
+      }
+    },
+    {
+      "_id": "c2d1f678-6760-4cf3-9f4c-b039bdbe1c57",
+      "detail": {
+        "stock": 20,
+        "price": 21,
+        "disPrice": 14
+      }
+    }
+  ],
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c72657be892f7f3683ce"
+  },
+  "classify": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "routePath": [
+    {
+      "path": [
+        "64beb25e-129e-4fc5-9da7-9d716fc8743a"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 21,
+        "disPrice": 14
+      }
+    },
+    {
+      "path": [
+        "e6b8dcbd-e5fa-4679-a7c0-91ad03c309f2"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 21,
+        "disPrice": 14
+      }
+    },
+    {
+      "path": [
+        "c2d1f678-6760-4cf3-9f4c-b039bdbe1c57"
+      ],
+      "detail": {
+        "stock": 20,
+        "price": 21,
+        "disPrice": 14
+      }
+    }
+  ],
+  "createDate": "1718030202229",
+  "modifyDate": "1718030233291",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667163803c9ed1b2f51bba3"
+  },
+  "name": "Canon 5D Mark IV Body",
+  "tag": "camera, canon, 5D, mark",
+  "stock": 10,
+  "price": 2700,
+  "discountPrice": 2700,
+  "description": "<ul><li>- Cảm biến CMOS toàn khung hình 30,4MP<br>- Bộ xử lý hình ảnh DIGIC 6+<br>- Màn hình LCD cảm ứng 3,2″ 1,62m điểm<br>- Video DCI 4K ở tốc độ 30 khung hình / giây; 8.8MP vẫn lấy được<br>- Lấy nét tự động dạng lưới mật độ cao 61 điểm<br>- ISO gốc 32000, được mở rộng thành ISO 102400<br>Canon EOS 5D Mark IV đã đáp ứng được sự kỳ vọng mà tất cả mọi người mong đợi với những cải tiến vượt bậc bởi những công nghệ tiên tiến nhất hiện nay.</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/0ccd8107-3227-47ad-8d90-c12fabf40bf7.jpg",
+      "_id": {
+        "$oid": "6667163803c9ed1b2f51bba4"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e36acfee-86e5-4827-a9c9-af1459c342c5.jpg",
+      "_id": {
+        "$oid": "6667163803c9ed1b2f51bba5"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/6675919b-604a-4330-b6d2-9cc5d2bbfd71.jpg",
+      "_id": {
+        "$oid": "6667163803c9ed1b2f51bba6"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc4e57be892f7f36849e"
+  },
+  "classify": {
+    "$oid": "6667152503c9ed1b2f51b054"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718031928913",
+  "modifyDate": "1718031934954",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667170d03c9ed1b2f51bfcc"
+  },
+  "name": "Canon 77D + 18-55mm STM",
+  "tag": "canon, 77d, stm",
+  "stock": 10,
+  "price": 420,
+  "discountPrice": 400,
+  "description": "<ul><li>- Cảm biến CMOS APS-C 24.2MP<br>- Bộ xử lý hình ảnh DIGIC 7<br>- Màn hình cảm ứng LCD 3inch 1.04m-Dot<br>- Quay video Full HD 1080p tại 60fps<br>- Hệ thống lấy nét theo pha 45 điểm Cross-Type<br>- Dual Pixel CMOS AF<br>- Tốc độ chụp liên tục 6fps, ISO mở rộng 51200<br>- Tích hợp kết nối Wifi, NFC, Bluetooth<br>- Cảm biến RGB+IR 7560 Pixel<br>- Pin tương thích LP-E17<br>- Sản phẩm mới 100%<br>- Chính hãng Canon Vietnam<br>- Giá đã bao gồm VAT<br>- Sản xuất tại Nhật Bản<br>- Bảo hành 24 tháng chính hãng</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/2c926bd5-af79-4cd5-9d33-0a4b5d72532d.jpg",
+      "_id": {
+        "$oid": "6667170d03c9ed1b2f51bfcd"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/9298b76d-54a1-4821-9fe6-02848029852f.jpg",
+      "_id": {
+        "$oid": "6667170d03c9ed1b2f51bfce"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc4e57be892f7f36849e"
+  },
+  "classify": {
+    "$oid": "6667152503c9ed1b2f51b054"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718032141065",
+  "modifyDate": "1718032147279",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666717a103c9ed1b2f51c531"
+  },
+  "name": "Canon 800D + 18-55mm STM",
+  "tag": "canon, stm, 800d",
+  "stock": 10,
+  "price": 400,
+  "discountPrice": 400,
+  "description": "<ul><li>- Cảm biến: CMOS APS-C 24MP<br>- Chip xử lý: DIGIC 7<br>- Lấy nét AF: 45 điểm cross-type<br>- Công nghệ lấy nét Dual Pixel<br>- Tốc độ chụp liên tục: 6 ảnh/giây<br>- Tốc độ màn trập: 30s-1/4000s<br>- Ống ngắm quan học OVF bao phủ 95%, phóng đại 0.82X<br>- Màn hình LCD cảm ứng xoay lật đa chiều 3 inch<br>- Quay phim: Full HD 60p (tính năng HDR)<br>- Thẻ nhớ: SD/SDHC/SDXC (chuẩn UHS-I)<br>- Pin: LP-E17 (600 tấm)<br>- Kết nối: Wi-fi, NFC, mini HDMI, USB<br>- Sản phẩm mới 100%<br>- Chính hãng Canon Vietnam<br>- Giá đã bao gồm VAT<br>- Sản xuất tại Nhật Bản<br>Bảo hành 24 tháng chính hãng</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/cb90f571-5637-4450-b5da-a6136d29a792.jpg",
+      "_id": {
+        "$oid": "666717a103c9ed1b2f51c532"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/5cdd7280-687e-40e8-860a-0906efafd874.jpg",
+      "_id": {
+        "$oid": "666717a103c9ed1b2f51c533"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/1e9ae9b9-e655-4916-987c-1478ccf5a42a.jpg",
+      "_id": {
+        "$oid": "666717a103c9ed1b2f51c534"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc4e57be892f7f36849e"
+  },
+  "classify": {
+    "$oid": "6667152503c9ed1b2f51b054"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718032289223",
+  "modifyDate": "1718032300987",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667181903c9ed1b2f51cab4"
+  },
+  "name": "Canon EOS 1D X Mark II",
+  "tag": "canon, eos, mark II, mark 2",
+  "stock": 10,
+  "price": 4700,
+  "discountPrice": 4500,
+  "description": "<ul><li>- Cảm biến CMOS Full frame 20.2MP<br>- Bộ xử lý hình ảnh Dual DIGIC 6+<br>- Màn hình LCD cảm ứng 3.2″ 1.62m-Dot<br>- Quay phim DCI 4K 60fps, cắt ảnh tĩnh từ video 8.8MP<br>- Tốc độ chụp liên tiếp lên đến 14fps; đạt 16fps ở chế độ Live View<br>- Hệ thống lấy nét tự động High Density Reticular AF II 61 điểm<br>- ISO 100-51200 (mở rộng đến 409600)<br>- Động cơ lấy nét tự động Dual Pixel CMOS và Movie Servo<br>- Khe cắm thẻ nhớ CFast và CF<br>- Tích hợp kết nối GPS<br>- Sản phẩm mới 100%<br>- Chính hãng Canon Vietnam<br>- Giá đã bao gồm VAT<br>- Sản xuất tại Nhật Bản<br>Bảo hành 24 tháng chính hãng</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/d0b0873c-7487-417d-b572-1fc2174db9f8.jpg",
+      "_id": {
+        "$oid": "6667181903c9ed1b2f51cab5"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/dfd2a3fd-bb79-4fe0-91ca-be1434afb09e.jpg",
+      "_id": {
+        "$oid": "6667181903c9ed1b2f51cab6"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/7dec7d1f-4148-4eb1-8c1c-c10384116cf4.jpg",
+      "_id": {
+        "$oid": "6667181903c9ed1b2f51cab7"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc4e57be892f7f36849e"
+  },
+  "classify": {
+    "$oid": "6667152503c9ed1b2f51b054"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718032409823",
+  "modifyDate": "1718032415035",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667189303c9ed1b2f51cf29"
+  },
+  "name": "DJI Avata (Only Body)",
+  "tag": "drone, flycam, DJI, Avata",
+  "stock": 20,
+  "price": 1100,
+  "discountPrice": 1000,
+  "description": "<ul><li><strong>Thông tin nổi bật</strong><br>- Quay phim cận cảnh trong nhà hoặc bên ngoài<br>- Video ổn định 4K100p siêu rộng<br>- Bảo vệ cánh quạt để bay an toàn<br>- Phạm vi truyền video lên tới 6,2 dặm<br>- Cảm biến hướng xuống Tránh chướng ngại vật<br>- Phanh khẩn cấp &amp; Tính năng an toàn RTH<br>- Thời gian bay lên tới 18 phút<br>- 3 chế độ tốc độ từ 17,9 đến 60,4 dặm / giờ<br>Quay phim ổn định, video siêu rộng ổn định 4K một cách an toàn trong nhà hoặc ngoài trời, bên trong và xung quanh các vật thể với DJI Avata FPV . Thể thao mà một số người gọi là thiết kế “cinewhoop”, Avata có kích thước bằng lòng bàn tay với cả bốn cánh quạt được bảo vệ bằng các tấm chắn kèm theo.</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/ba92c8c8-6182-4eea-9ab8-7c7ced82e1f5.jpg",
+      "_id": {
+        "$oid": "6667189303c9ed1b2f51cf2a"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5457be892f7f3684a5"
+  },
+  "classify": {
+    "$oid": "6667153403c9ed1b2f51b062"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718032531534",
+  "modifyDate": "1718032537838",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667192a03c9ed1b2f51d3a4"
+  },
+  "name": "DJI ENTERPRISE Phantom 4 RTK SE Combo",
+  "tag": "drone, phantom,phantom 4, dji",
+  "stock": 20,
+  "price": 3000,
+  "discountPrice": 3000,
+  "description": "<ul><li>- Tình trạng: mới 100%<br>- Hàng chính hãng<br>- Bảo hành chính hãng<br>- Xuất xứ: DJI</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/7d0bae38-84c5-45a8-8145-6b00ad0a1fc9.jpg",
+      "_id": {
+        "$oid": "6667192a03c9ed1b2f51d3a5"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/90ba4d43-deba-4f0d-92a5-48e18eb32eeb.jpg",
+      "_id": {
+        "$oid": "6667192a03c9ed1b2f51d3a6"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ccda9f86-a7bb-498a-9fe5-36be433094e3.jpg",
+      "_id": {
+        "$oid": "6667192a03c9ed1b2f51d3a7"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/404af715-6d0c-4b15-a14b-ec40d477f211.jpg",
+      "_id": {
+        "$oid": "6667192a03c9ed1b2f51d3a8"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5457be892f7f3684a5"
+  },
+  "classify": {
+    "$oid": "6667153403c9ed1b2f51b062"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718032682479",
+  "modifyDate": "1718032687713",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667197e03c9ed1b2f51d84c"
+  },
+  "name": "DJI Mavic 3 Basic Chính Hãng",
+  "tag": "drone, flycam, mavic, mavic 3, dji",
+  "stock": 10,
+  "price": 1500,
+  "discountPrice": 1500,
+  "description": "<ul><li>- Cảm biến chướng ngại vật đa hướng<br>- Máy ảnh Hasselblad 4/3 CMOS<br>- Phạm vi truyền tối đa 15km<br>- Quay 5.1K / 50 khung hình / giây, 4K / 120 khung hình / giây</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/801ab459-5f55-41ad-bd19-4d355205c23a.jpg",
+      "_id": {
+        "$oid": "6667197e03c9ed1b2f51d84d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/8122b925-4a05-437d-9785-79b9d97ee265.jpg",
+      "_id": {
+        "$oid": "6667197e03c9ed1b2f51d84e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/d6a7f922-7345-41a7-a83b-a64fdac11740.jpg",
+      "_id": {
+        "$oid": "6667197e03c9ed1b2f51d84f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/014e0d76-ca4b-42b4-8eee-fdfb620730c2.jpg",
+      "_id": {
+        "$oid": "6667197e03c9ed1b2f51d850"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5457be892f7f3684a5"
+  },
+  "classify": {
+    "$oid": "6667153403c9ed1b2f51b062"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718032766274",
+  "modifyDate": "1718032771539",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671a1e03c9ed1b2f51dd16"
+  },
+  "name": "DJI Mavic 3 Pro Cine Premium Combo (DJI RC Pro)",
+  "tag": "dji, drone, flycam, mavic, mavic 3, premium",
+  "stock": 10,
+  "price": 3500,
+  "discountPrice": 3500,
+  "description": "<ul><li><strong>Thông tin nổi bật</strong><br>- Camera sử dụng cảm biến 4/3 CMOS Hasselblad<br>- Cụm Camera Tele kép<br>- Hỗ trợ Apple ProRes trên cả ba camera<br>- Thời gian bay tối đa lên tới 43 phút<br>- Cảm biến chướng ngại vật đa hướng<br>- Phạm vi truyền video HD 15km<br>DJI Mavic 3 Series có hiệu suất hình ảnh cấp độ tiếp theo. Hệ thống ba camera của Mavic 3 Pro mở ra một kỷ nguyên mới của máy bay không người lái trang bị máy ảnh phục vụ nhiếp ảnh chuyên nghiệp bằng cách mang ba camera với cảm biến và ống kính có độ dài tiêu cự khác nhau.</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/99140b7f-9d17-4561-a84d-0a1fc7dd5403.jpg",
+      "_id": {
+        "$oid": "66671a1e03c9ed1b2f51dd17"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/4937c78c-28c7-4adc-bb67-f58a75475f1c.jpg",
+      "_id": {
+        "$oid": "66671a1e03c9ed1b2f51dd18"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/4ae8f2ab-cf8a-4392-8e4e-9aea081b487b.jpg",
+      "_id": {
+        "$oid": "66671a1e03c9ed1b2f51dd19"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/1d50a218-cc04-4363-8d79-421a34489075.jpg",
+      "_id": {
+        "$oid": "66671a1e03c9ed1b2f51dd1a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/514e0ab1-2b82-486d-bb45-3b33c4b0231a.jpg",
+      "_id": {
+        "$oid": "66671a1e03c9ed1b2f51dd1b"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5457be892f7f3684a5"
+  },
+  "classify": {
+    "$oid": "6667153403c9ed1b2f51b062"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718032926616",
+  "modifyDate": "1718032932705",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671a8a03c9ed1b2f51e31e"
+  },
+  "name": "DJI Mini 3 Pro Smart Controller",
+  "tag": "flycam, drone, dji, mini",
+  "stock": 20,
+  "price": 1000,
+  "discountPrice": 900,
+  "description": "<ul><li><strong>Thông tin nổi bật</strong><br>- Nặng dưới 249 g<br>- Cảm biến chướng ngại vật ba hướng (Tiến / Lùi / Xuống)<br>- Quay video lên tới 4K / 60fps và video 4K / 30fps HDR<br>- Thời gian bay tối đa 34 phút<br>- Chụp góc thẳng đứng chân thực</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/5faddbb5-4914-4332-b452-24bb1e007fa6.jpg",
+      "_id": {
+        "$oid": "66671a8a03c9ed1b2f51e31f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/0b2bd9f6-9039-47c1-9cac-97a2d2b11fd4.jpg",
+      "_id": {
+        "$oid": "66671a8a03c9ed1b2f51e320"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/a8c4aaa5-193d-4eb4-a710-0da4c1accc20.jpg",
+      "_id": {
+        "$oid": "66671a8a03c9ed1b2f51e321"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/8fdb6354-9b85-4aaa-8d5e-d1edae9bf381.jpg",
+      "_id": {
+        "$oid": "66671a8a03c9ed1b2f51e322"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5457be892f7f3684a5"
+  },
+  "classify": {
+    "$oid": "6667153403c9ed1b2f51b062"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033034072",
+  "modifyDate": "1718033040124",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671b0703c9ed1b2f51e834"
+  },
+  "name": "Sony E 10-20mm f4 PZ G",
+  "tag": "lens, sony",
+  "stock": 19,
+  "price": 800,
+  "discountPrice": 800,
+  "description": "<ul><li><strong>Sony E 10-20mm f/4 PZ G là ống kính zoom APS-C góc siêu rộng nhẹ và linh hoạt, cấu tạo quang học tân tiến được thiết kế dành cho người chụp ảnh đa năng.</strong></li><li>- Ống kính ngàm Sony E | Định dạng cảm biến APS-C<br>- Độ dài tiêu cự tương đương 35mm: 15-30mm<br>- Phạm vi khẩu độ: f/4 đến f/22<br>- Động cơ AF tuyến tính kép<br>- Các thấu kính ED và phi cầu<br>- Cơ chế zoom điện<br>- Màng chắn 7 lá khẩu<br>- Thiết kế chống bụi và chống ẩm</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/6aefcef2-b6ec-4470-947c-cfa888ed5087.jpg",
+      "_id": {
+        "$oid": "66671b0703c9ed1b2f51e835"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/610eee8c-a039-4356-bf79-bee4b46065be.jpg",
+      "_id": {
+        "$oid": "66671b0703c9ed1b2f51e836"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/5dcf8239-1c06-4e5e-a20c-00cefe576c6f.jpg",
+      "_id": {
+        "$oid": "66671b0703c9ed1b2f51e837"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b5e65c2f-dc13-439d-8a00-539f5f5c119b.jpg",
+      "_id": {
+        "$oid": "66671b0703c9ed1b2f51e838"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5d57be892f7f3684ac"
+  },
+  "classify": {
+    "$oid": "6667152c03c9ed1b2f51b05b"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033159993",
+  "modifyDate": "1718033165269",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671b5203c9ed1b2f51ed6c"
+  },
+  "name": "Sony E 11mm f1.8",
+  "tag": "lens, sony",
+  "stock": 18,
+  "price": 900,
+  "discountPrice": 900,
+  "description": "<ul><li><strong>Sony E 11mm f/1.8 là một trong số những chiếc ống kính APS-C rộng nhất, cung cấp tiêu cự tương đương 16,5 mm cùng với thiết kế f/1.8 sáng.</strong></li><li>- Ống kính ngàm Sony E | Định dạng cảm biến APS-C<br>- Tiêu cự tương đương 35mm: 16,5mm<br>- Phạm vi khẩu độ: f/1.8 đến f/16<br>- Động cơ AF tuyến tính kép<br>- Thiết kế chống bụi và chống ẩm<br>- Màng chắn 7 lá khẩu</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/e3f43eae-c706-4356-b0e6-3dfa2a27c1ad.jpg",
+      "_id": {
+        "$oid": "66671b5203c9ed1b2f51ed6d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/abfd74b6-9288-4e26-9d16-fa47139e92a2.jpg",
+      "_id": {
+        "$oid": "66671b5203c9ed1b2f51ed6e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/57a4c716-cc2b-4e1c-9d77-3d7f9938561c.jpg",
+      "_id": {
+        "$oid": "66671b5203c9ed1b2f51ed6f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/423bf66b-49fd-4972-8f85-a186cfcbe562.jpg",
+      "_id": {
+        "$oid": "66671b5203c9ed1b2f51ed70"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5d57be892f7f3684ac"
+  },
+  "classify": {
+    "$oid": "6667152c03c9ed1b2f51b05b"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033234986",
+  "modifyDate": "1718033245184",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671b9e03c9ed1b2f51f2c6"
+  },
+  "name": "Sony FE 16-35mm f2.8 GM II",
+  "tag": "lens, sony",
+  "stock": 10,
+  "price": 2000,
+  "discountPrice": 2000,
+  "description": "<ul><li>- Ống kính full frame<br>- Zoom góc rộng nhanh<br>- Nhẹ hơn 20%, Nhỏ hơn 10% so với phiên bản trước<br>- Bốn động cơ AF tuyến tính XD<br>- Công tắc khóa khẩu độ<br>- Cấu trúc chống bụi và chống ẩm<br>- Khẩu độ f/2.8<br>- Lớp phủ Flo</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/39e1187e-ea8f-4ae4-964e-9b86f005b48e.jpg",
+      "_id": {
+        "$oid": "66671b9e03c9ed1b2f51f2c7"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/1b922022-2da8-4961-b835-5ef4f325227b.jpg",
+      "_id": {
+        "$oid": "66671b9e03c9ed1b2f51f2c8"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/8c198f73-969d-4b3c-94b3-84823408f7cb.jpg",
+      "_id": {
+        "$oid": "66671b9e03c9ed1b2f51f2c9"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/681d68ce-d98d-4299-b726-05dc5340e5fc.jpg",
+      "_id": {
+        "$oid": "66671b9e03c9ed1b2f51f2ca"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/15c26ae2-d182-43a7-ae80-d49eba1b3d7a.jpg",
+      "_id": {
+        "$oid": "66671b9e03c9ed1b2f51f2cb"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5d57be892f7f3684ac"
+  },
+  "classify": {
+    "$oid": "6667152c03c9ed1b2f51b05b"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033310861",
+  "modifyDate": "1718033317716",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671bf203c9ed1b2f51f973"
+  },
+  "name": "Sony FE 20-70mm f4 G",
+  "tag": "lens, sony",
+  "stock": 18,
+  "price": 1000,
+  "discountPrice": 980,
+  "description": "<ul><li><strong>Sony FE 20-70mm f/4 G là ống kính zoom tiêu chuẩn phù hợp để bạn có thể sử dụng hàng ngày với độ dài tiêu cự phổ biến và linh hoạt cùng thiết kế nhỏ gọn.</strong></li><li>- Định dạng cảm biến full-frame<br>- Khẩu độ f/4 đến f/22<br>- Zoom tiêu chuẩn siêu rộng<br>- Hệ thống lấy nét nội bộ nhanh<br>- Hỗ trợ điều khiển khẩu độ<br>- Lớp phủ Flo<br>- Màng chắn 9 lá khẩu tròn<br>- Cấu trúc chống bụi và chống ẩm</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/f11b5551-73f4-4c2f-90d4-27a816b3b273.jpg",
+      "_id": {
+        "$oid": "66671bf203c9ed1b2f51f974"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/963dd296-d9b9-487f-9cec-81be0ee1fe1a.jpg",
+      "_id": {
+        "$oid": "66671bf203c9ed1b2f51f975"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/3b5e4e0e-8836-4aa7-9e4c-384022d7583d.jpg",
+      "_id": {
+        "$oid": "66671bf203c9ed1b2f51f976"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/a4e1d657-ef65-42c6-a9cd-d41d1a51c6ae.jpg",
+      "_id": {
+        "$oid": "66671bf203c9ed1b2f51f977"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b9405e37-15e2-44b5-a4e8-84154b987c1f.jpg",
+      "_id": {
+        "$oid": "66671bf203c9ed1b2f51f978"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5d57be892f7f3684ac"
+  },
+  "classify": {
+    "$oid": "6667152c03c9ed1b2f51b05b"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033394301",
+  "modifyDate": "1718033399238",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671c5003c9ed1b2f51ff24"
+  },
+  "name": "Sony FE 24-50mm f2.8 G",
+  "tag": "lens, sony",
+  "stock": 20,
+  "price": 1100,
+  "discountPrice": 1100,
+  "description": "<ul><li><strong>Sony FE 24-50mm f/2.8 G là một chiếc ống kính zoom tầm trung linh hoạt được thiết kế để bạn có thể dễ dàng đem theo ở mọi lúc, mọi nơi.</strong></li><li>- Tương thích máy ảnh full-frame | Khẩu độ f/2.8<br>- Công tắc khóa và khóa khẩu độ<br>- Lớp phủ Flo<br>- Ống kính zoom tầm trung nhẹ và gọn<br>- Thấu kính phi cầu và thấu kính ED<br>- Cấu trúc chống bụi và chống ẩm</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/87dc32c7-0abc-40a6-991c-8f3f3455e536.jpg",
+      "_id": {
+        "$oid": "66671c5003c9ed1b2f51ff25"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/2318af46-13ed-4e4e-8b80-176b43ed79cb.jpg",
+      "_id": {
+        "$oid": "66671c5003c9ed1b2f51ff26"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/17fba4f2-8ca3-48f1-9488-34e50b45dac7.jpg",
+      "_id": {
+        "$oid": "66671c5003c9ed1b2f51ff27"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/9801b179-cc92-4147-a98f-4f9411ce141b.jpg",
+      "_id": {
+        "$oid": "66671c5003c9ed1b2f51ff28"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5d57be892f7f3684ac"
+  },
+  "classify": {
+    "$oid": "6667152c03c9ed1b2f51b05b"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033488311",
+  "modifyDate": "1718033493998",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671c9503c9ed1b2f520623"
+  },
+  "name": "Sony FE PZ 28-135mm f4 G OSS",
+  "tag": "lens, sony",
+  "stock": 20,
+  "price": 1500,
+  "discountPrice": 1500,
+  "description": "<ul><li><strong>Sony FE PZ 28-135mm f/4 G OSS được thiết kế để có thể đáp ứng khả năng quay phim chuyên nghiệp ở định dạng độ phân giải 4K trở lên.</strong></li><li>- Phù hợp định dạng cảm biến full-frame<br>- Phạm vi khẩu độ f/4 đến f/22<br>- Quang học chuyển động mượt mà Hỗ trợ video 4K<br>- Zoom hỗ trợ tốc độ yên tĩnh, có thể điều chỉnh<br>- Giảm thiểu hiện tượng No Focus Shift và Breathing<br>- Chống rung quang học SteadyShot<br>- Thiết kế chống bụi và chống ẩm<br>- Nhỏ gọn và nhẹ</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/b39cdb45-7c43-4911-b244-d44f9a97bdf5.jpg",
+      "_id": {
+        "$oid": "66671c9503c9ed1b2f520624"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/2d28e93d-effb-4178-9144-947bb9c4fa09.jpg",
+      "_id": {
+        "$oid": "66671c9503c9ed1b2f520625"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/1cf9585c-0299-41c8-9788-ed1e693c0048.jpg",
+      "_id": {
+        "$oid": "66671c9503c9ed1b2f520626"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/7b976168-9e3f-4ea8-9cfb-dab8ff87a14d.jpg",
+      "_id": {
+        "$oid": "66671c9503c9ed1b2f520627"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc5d57be892f7f3684ac"
+  },
+  "classify": {
+    "$oid": "6667152c03c9ed1b2f51b05b"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033557907",
+  "modifyDate": "1718033563843",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671d3103c9ed1b2f520d48"
+  },
+  "name": "Comica Audio ADCaster C1-K1 Streaming and Podcasting Audio Kit",
+  "tag": "audio, kit, streaming",
+  "stock": 50,
+  "price": 50,
+  "discountPrice": 50,
+  "description": "<ul><li>Comica Audio ADCaster C1-K1 Streaming and Podcasting Audio Kit sẽ mở rộng khả năng phát trực tuyến và podcast. Với giao diện condenser 25mm và khả năng thu âm thanh 24 bit/48 kHz và các tính năng thu âm nâng cao hướng tới những nhà sáng tạo nội dung thời đại mới. Mic cardioid STA-X2S giảm thiểu tiếng ồn môi trường không mong muốn để thu âm rõ ràng và trang bị DSP tích hợp để làm phong phú nội dung của bạn, bao gồm ba chế độ EQ, ba chế độ hồi âm và năm chế độ thay đổi giọng nói.</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/7eea24d6-3b3b-443e-9d65-ba34df80208a.jpg",
+      "_id": {
+        "$oid": "66671d3103c9ed1b2f520d49"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/7b307941-6029-4419-96d0-27ffaecc16c6.jpg",
+      "_id": {
+        "$oid": "66671d3103c9ed1b2f520d4a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f3e146a9-70fc-4988-81a2-03d1919e786e.jpg",
+      "_id": {
+        "$oid": "66671d3103c9ed1b2f520d4b"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/9f0cbafc-77ab-4552-b0aa-d5b48594e743.jpg",
+      "_id": {
+        "$oid": "66671d3103c9ed1b2f520d4c"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c95857be892f7f3683fc"
+  },
+  "classify": {
+    "$oid": "6667154103c9ed1b2f51b069"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033713928",
+  "modifyDate": "1718033719357",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671d7b03c9ed1b2f52135c"
+  },
+  "name": "Comica Audio VM10 PRO Mini Cardioid",
+  "tag": "mic, micro, comica, audio, vm10",
+  "stock": 50,
+  "price": 40,
+  "discountPrice": 40,
+  "description": "<ul><li>Comica Audio VM10 PRO Mini Cardioid là một chiếc micro kỹ thuật số/analog nhỏ gọn &nbsp;giúp bạn có thể ghi lại âm thanh rõ ràng và giảm thiểu tối đa tiếng ồn xung quanh. Bạn hoàn toàn có thể sử dụng chiếc micro này trên máy ảnh hoặc với máy tính khi livestream</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/b7ee81e1-2f62-407a-9e21-e5337c89a31e.jpg",
+      "_id": {
+        "$oid": "66671d7b03c9ed1b2f52135d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/9855a4df-e393-494b-8b21-6c01ed9c947c.jpg",
+      "_id": {
+        "$oid": "66671d7b03c9ed1b2f52135e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/132cf58e-71e7-499c-ae59-0119ebab07c6.jpg",
+      "_id": {
+        "$oid": "66671d7b03c9ed1b2f52135f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/eeb3da8e-caef-486f-9dbe-2ce533a78938.jpg",
+      "_id": {
+        "$oid": "66671d7b03c9ed1b2f521360"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ad9e1eaf-3648-49a3-b837-733d1f96aa86.jpg",
+      "_id": {
+        "$oid": "66671d7b03c9ed1b2f521361"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c95857be892f7f3683fc"
+  },
+  "classify": {
+    "$oid": "6667154103c9ed1b2f51b069"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033787312",
+  "modifyDate": "1718033792389",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671de703c9ed1b2f52199d"
+  },
+  "name": "DJI Osmo Mobile 3 Combo",
+  "tag": "gimbal, phone, camera, dji, osmo",
+  "stock": 20,
+  "price": 100,
+  "discountPrice": 100,
+  "description": "<ul><li>- Tình trạng: mới 100%<br>- Hàng chính hãng<br>- Bảo hành chính hãng<br>- Xuất xứ: DJI<br>- Chưa bao gồm VAT</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/8cba5127-7b0e-4ad5-9241-0cdf42a0724a.jpg",
+      "_id": {
+        "$oid": "66671de703c9ed1b2f52199e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/a7c3ef58-62bb-455a-a53e-0aa4de2f5015.jpeg",
+      "_id": {
+        "$oid": "66671de703c9ed1b2f52199f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/d24b86d8-94f4-47cc-bedf-036a2cf73bd6.jpg",
+      "_id": {
+        "$oid": "66671de703c9ed1b2f5219a0"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/ff36a886-ee3f-4c20-8681-4c95151c53bb.jpg",
+      "_id": {
+        "$oid": "66671de703c9ed1b2f5219a1"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc9b57be892f7f3684c6"
+  },
+  "classify": {
+    "$oid": "6667154103c9ed1b2f51b069"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033895849",
+  "modifyDate": "1718033911100",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671e4703c9ed1b2f5221ee"
+  },
+  "name": "DJI Ronin – S",
+  "tag": "gimbal, camera, dji, ronin",
+  "stock": 28,
+  "price": 900,
+  "discountPrice": 900,
+  "description": "<ul><li>- Tình trạng: mới 100%<br>- Hàng chính hãng<br>- Bảo hành chính hãng<br>- Xuất xứ: DJI<br>- Chưa bao gồm VAT</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/9e46c46a-5cb1-4228-87c5-a328fca0fe45.jpg",
+      "_id": {
+        "$oid": "66671e4703c9ed1b2f5221ef"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/a79dd171-5526-43ef-8c31-cad5933d3d09.jpg",
+      "_id": {
+        "$oid": "66671e4703c9ed1b2f5221f0"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/afbfb288-14ee-490a-a68f-c1bf4c1b074d.jpg",
+      "_id": {
+        "$oid": "66671e4703c9ed1b2f5221f1"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/63001b2a-625a-43a4-baa3-b8a9043c2663.jpg",
+      "_id": {
+        "$oid": "66671e4703c9ed1b2f5221f2"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/2009df18-e2b7-4f74-ad71-3e03b76e839a.jpg",
+      "_id": {
+        "$oid": "66671e4703c9ed1b2f5221f3"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cc9b57be892f7f3684c6"
+  },
+  "classify": {
+    "$oid": "6667154103c9ed1b2f51b069"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718033991924",
+  "modifyDate": "1718033999047",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66671ea703c9ed1b2f5229c0"
+  },
+  "name": "SYNCO G2 (A2)",
+  "tag": "mic, micro, synco, synco g2",
+  "stock": 29,
+  "price": 60,
+  "discountPrice": 55,
+  "description": "<ul><li>- Các tính năng chính<br>- Dành cho nhà báo, vlogger, người dùng YouTube<br>- Máy phát có Mic tích hợp + Micrô Lav<br>- Bộ thu một kênh siêu nhỏ gọn<br>- Kết nối với đầu vào 3,5 mm trên máy ảnh<br>- Dễ sử dụng, ghép nối tự động<br>- Màn hình TFT trên Máy phát &amp; Máy thu<br>- Mức tăng có thể điều chỉnh trên máy thu, nút tắt tiếng<br>- Cáp 3.5mm cho Máy ảnh &amp; Thiết bị Di động<br>- Pin sạc USB tích hợp trong 8 giờ<br>- Phạm vi 230 ‘, truyền được mã hóa</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/31c46838-ffba-49f6-b848-6dcaf328952a.jpg",
+      "_id": {
+        "$oid": "66671ea703c9ed1b2f5229c1"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/943a4cf1-14ff-4d2a-be65-e545e40f0635.jpg",
+      "_id": {
+        "$oid": "66671ea703c9ed1b2f5229c2"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/350491a8-8539-47b1-b82b-0d8247c562bb.jpg",
+      "_id": {
+        "$oid": "66671ea703c9ed1b2f5229c3"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/8f19b248-a6d6-4709-8af8-c226cb6b4cb4.jpg",
+      "_id": {
+        "$oid": "66671ea703c9ed1b2f5229c4"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c95857be892f7f3683fc"
+  },
+  "classify": {
+    "$oid": "6667154103c9ed1b2f51b069"
+  },
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "routePath": null,
+  "createDate": "1718034087301",
+  "modifyDate": "1718034093938",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666d56d91b7c4a87ce076170"
+  },
+  "name": "HG CE Black Knight Squad Rud-Ro.A (Tentative Ver)",
+  "tag": "black knight, figue, gundam",
+  "stock": 20,
+  "price": 10,
+  "discountPrice": 10,
+  "description": "<ul><li>Tỉ lệ: 1/144<br>Series: HG Cosmic Era<br>Hàng chính hãng Bandai (Nhật Bản)<br>Phân phối bởi AZGundam<br>Giao hàng Toàn Quốc</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/75dd35a2-9eb5-4293-8f19-7efb99923822.jpg",
+      "_id": {
+        "$oid": "666d56d91b7c4a87ce076171"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1718441689674",
+  "modifyDate": "1718442530831",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666d57311b7c4a87ce076467"
+  },
+  "name": "Mô hình lắp ráp 1100 Saint Armor ORACLE",
+  "tag": "Saint, armor, figue, oracle",
+  "stock": 20,
+  "price": 17,
+  "discountPrice": 15,
+  "description": "<ul><li>Tỉ lệ: 1/100<br>Chiều cao: ~ 22cm<br>Khung xương được làm bằng kim loại.<br>Hãng sản xuất: ZAOWORKSHOP – China</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/0da35d80-b93f-4253-b30a-3184f1f37b48.jpg",
+      "_id": {
+        "$oid": "666d57311b7c4a87ce076468"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1718441777418",
+  "modifyDate": "1718442555929",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666d57a21b7c4a87ce076763"
+  },
+  "name": "Mô hình lắp ráp MNP-XH04A Nezha – Na Tra",
+  "tag": "natra, figue, nezha",
+  "stock": 20,
+  "price": 20,
+  "discountPrice": 19,
+  "description": "<ul><li>Tỉ lệ: 1/100<br>Chiều cao: ~ 21cm<br>Hãng sản xuất: Motor Nuclear</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/bc7204f2-1957-49d3-9857-b83b3171f631.jpg",
+      "_id": {
+        "$oid": "666d57a21b7c4a87ce076764"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/62655902-6b1a-4c5c-a65d-5f2d9b799508.jpg",
+      "_id": {
+        "$oid": "666d57a21b7c4a87ce076765"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/57c12aa2-56a7-42d0-9a40-c1c3d24babcf.jpg",
+      "_id": {
+        "$oid": "666d57a21b7c4a87ce076766"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1718441890746",
+  "modifyDate": "1718442575111",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666d57f51b7c4a87ce076a6e"
+  },
+  "name": "Mô hình Luffy Gear 5 Nika Haki Bá Vương - Mẫu 1 - anime One Piece",
+  "tag": "luffy, figue, gear 5, one piece",
+  "stock": 47,
+  "price": 10,
+  "discountPrice": 9,
+  "description": "<p>Mô hình Luffy Gear 5 Nika Haki Bá Vương - Mẫu 1 - anime One Piece<br>● Loại hàng : UNOFF.</p><p>● Kích thước : 17.5cm.</p><p>● Chất liệu : Nhựa PVC.</p><p>● Đóng gói : Box.</p>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/01693cff-b1cb-4c90-ba51-9938793875f4.webp",
+      "_id": {
+        "$oid": "666d57f51b7c4a87ce076a6f"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/d66bced5-4eca-4ebb-a23c-1fbbe5d3dbdd.webp",
+      "_id": {
+        "$oid": "666d57f51b7c4a87ce076a70"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/14e486b8-c213-41d4-9f92-874fd341e12b.webp",
+      "_id": {
+        "$oid": "666d57f51b7c4a87ce076a71"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/da65f4dd-3836-40f3-bcc1-e53278b32947.jpg",
+      "_id": {
+        "$oid": "666d57f51b7c4a87ce076a72"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1718441973132",
+  "modifyDate": "1718442526228",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666d584d1b7c4a87ce076d8b"
+  },
+  "name": "One Piece Film Red DXF – Brook Vol.9",
+  "tag": "one piece, red, figue",
+  "stock": 20,
+  "price": 10,
+  "discountPrice": 10,
+  "description": "<ul><li>Series: One Piece<br>Chiều cao: ~ 16cm<br>Hàng chính hãng Banpresto – Bandai Namco (Nhật Bản)<br>Phân phối bởi AZGundam.<br>Giao hàng trên Toàn Quốc.</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/9f1faf5d-58f3-4ade-b427-06f0cef06083.jpg",
+      "_id": {
+        "$oid": "666d584d1b7c4a87ce076d8c"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/0e257494-d3bc-4aec-ab5a-b1accbd37e77.jpg",
+      "_id": {
+        "$oid": "666d584d1b7c4a87ce076d8d"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/9affad31-b3dd-4c1a-92b1-1add6a2a150b.jpg",
+      "_id": {
+        "$oid": "666d584d1b7c4a87ce076d8e"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/6fa129bc-71b3-4cdd-bba0-ab19b7df5774.jpg",
+      "_id": {
+        "$oid": "666d584d1b7c4a87ce076d8f"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627c93157be892f7f3683f8"
+  },
+  "classify": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1718442061015",
+  "modifyDate": "1718442537812",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666d58ad1b7c4a87ce0770b9"
+  },
+  "name": "Biomutant - PC (UK Import)",
+  "tag": "disk, game disk, biomutant",
+  "stock": 9,
+  "price": 12,
+  "discountPrice": 12,
+  "description": "<ul><li><strong>About this item</strong><br>- A NEW TAKE ON 3rd PERSON COMBAT: The martial arts style combat system allows you maximum freedom of movement and agility while mixing shooting, melee and powers from your mutations<br>- EVOLVE YOUR GAME-PLAY: You'll be able to recode your genetic structure to change the way you look and play<br>- NEXT LEVEL OF CRAFTING: Mix and match parts to create your own unique single- or double-handed slash, crush and pierce melee weapons<br>- GEAR UP FOR ADVENTURE: You have full freedom when equipping your character. Not only when it comes to choosing weapons you created, but also what type of gear you wear<br>- SURVIVE IN A VIBRANT OPEN WORLD: You'll create your own adventure as you journey explore the open world and what lies beneath its surface, by foot, much, jet-ski, air-balloon and more</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/a8a59998-9178-4da6-854d-d38bdb083b61.jpg",
+      "_id": {
+        "$oid": "666d58ad1b7c4a87ce0770ba"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/61dc8c60-b881-4080-8734-6ab5f737e0e6.jpg",
+      "_id": {
+        "$oid": "666d58ad1b7c4a87ce0770bb"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/c8b4f8d4-baa1-4d76-9216-c135ffd6f355.jpg",
+      "_id": {
+        "$oid": "666d58ad1b7c4a87ce0770bc"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/2a4b41b8-49aa-49ce-bdcb-758373654cd3.jpg",
+      "_id": {
+        "$oid": "666d58ad1b7c4a87ce0770bd"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cbff57be892f7f368474"
+  },
+  "classify": {
+    "$oid": "662a08cf3b9a273aa89f6654"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1718442157893",
+  "modifyDate": "1718442543175",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666d59171b7c4a87ce0773f8"
+  },
+  "name": "Far Cry 6 Standard Edition  PC Code - Ubisoft Connect",
+  "tag": "disk, game disk, far cry, far cry 6",
+  "stock": 20,
+  "price": 17,
+  "discountPrice": 15,
+  "description": "<ul><li><strong>About this item</strong><br>- Welcome to Yara, a tropical paradise frozen in time.<br>- Play as Dani Rojas, a local Yaran, as you fight alongside a modern-day guerrilla revolution.<br>- Explore jungles, beaches, and cities on foot, horseback, or in a wide variety of vehicles.<br>- Feel the thrill of combat with an arsenal of hundreds of weapons alongside helpful amigos.<br>- Ubisoft Connect account required to download and install.</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/bdad9446-4cf7-4e7c-9edb-540dc1e03913.jpg",
+      "_id": {
+        "$oid": "666d59171b7c4a87ce0773f9"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/6af1eb01-720e-443a-950d-12af20fce927.jpg",
+      "_id": {
+        "$oid": "666d59171b7c4a87ce0773fa"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/131311fa-d5ce-43e8-99a6-aa80bc671c56.jpg",
+      "_id": {
+        "$oid": "666d59171b7c4a87ce0773fb"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/37fd3a2f-5e75-419c-b7b7-5f5b43034345.jpg",
+      "_id": {
+        "$oid": "666d59171b7c4a87ce0773fc"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cbff57be892f7f368474"
+  },
+  "classify": {
+    "$oid": "662a08cf3b9a273aa89f6654"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1718442263213",
+  "modifyDate": "1718442562249",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666d59671b7c4a87ce077748"
+  },
+  "name": "Ghostwire Tokyo Deluxe Edition - PC",
+  "tag": "disk, game disk, Ghostwire, tokyo",
+  "stock": 20,
+  "price": 13,
+  "discountPrice": 13,
+  "description": "<ul><li><strong>About this item</strong><br>- Tokyo's population has vanished, and deadly supernatural forces prowl the streets<br>- Use an arsenal of elemental abilities to unravel the truth behind the disappearance and save Tokyo<br>- Face the unknown, uncover the truth and save the city<br>- The Deluxe Edition includes Streetwear Outfit Pack, Shinobi Outfit &amp; Kunai Weapon, and Ghostwire: Tokyo Game<br>- Pre-order now to get the following digital content: Hannya Outfit</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/90105525-e50b-4bbe-90fa-39b5bf685928.jpg",
+      "_id": {
+        "$oid": "666d59671b7c4a87ce077749"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/06e21e9b-ade8-4085-a428-63c7a2e7b861.jpg",
+      "_id": {
+        "$oid": "666d59671b7c4a87ce07774a"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/527daecd-91be-40a2-9e29-25faba074a06.jpg",
+      "_id": {
+        "$oid": "666d59671b7c4a87ce07774b"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/0a962597-d728-4a18-99ef-7fb8bcf10aa9.jpg",
+      "_id": {
+        "$oid": "666d59671b7c4a87ce07774c"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cbff57be892f7f368474"
+  },
+  "classify": {
+    "$oid": "662a08cf3b9a273aa89f6654"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1718442343092",
+  "modifyDate": "1718442549200",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666d59bb1b7c4a87ce077aa9"
+  },
+  "name": "Sid Meier's Civilization VI - PC",
+  "tag": "disk, game disk, sid, Civilization, 6, VI",
+  "stock": 23,
+  "price": 19,
+  "discountPrice": 19,
+  "description": "<ul><li><strong>About this item</strong><br>- EXPANSIVE EMPIRES: See the marvels of your empire spread across the map like never before.<br>- ACTIVE RESEARCH: Unlock boosts that speed your civilization's progress through history.<br>- DYNAMIC DIPLOMACY: Interactions with other civilizations change over the course of the game.<br>- COMBINED ARMS: Expanding on the “one unit per tile” design, support units can now be embedded with other units.</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/f6d20432-4c17-4f74-adcc-926965c80151.jpg",
+      "_id": {
+        "$oid": "666d59bb1b7c4a87ce077aaa"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b42f1897-33bc-4c74-8993-a574f65e234f.jpg",
+      "_id": {
+        "$oid": "666d59bb1b7c4a87ce077aab"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/00edf8e3-40a4-4836-a8ea-dad6ae21aa8f.jpg",
+      "_id": {
+        "$oid": "666d59bb1b7c4a87ce077aac"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cbff57be892f7f368474"
+  },
+  "classify": {
+    "$oid": "662a08cf3b9a273aa89f6654"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1718442427193",
+  "modifyDate": "1718442581872",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666d5a0f1b7c4a87ce077e16"
+  },
+  "name": "Tom Clancy's Splinter Cell Blacklist - PC",
+  "tag": "disk, game disk, Tom Clancy, Splinter, cell",
+  "stock": 18,
+  "price": 19,
+  "discountPrice": 18,
+  "description": "<ul><li><strong>About this item</strong><br>- OWN YOUR PLAY STYLE: Splinter Cell Blacklist builds on the stealth roots of the franchise, while exploring new directions to embrace the realms of action and adventure. Players can define their personal play styles and be rewarded for those choices.<br>- TOOLS OF THE TRADE: Fans of stealth will be happy to make the most of Sam's sneaking abilities to abduct and carry enemies, while Killing in Motion allows the player to strike with surgical precision by marking and executing multiple enemies in one fluid motion.<br>- SPIES VS. MERCS RETURNS: Spies vs. Mercs is back with a new take on asymmetrical gameplay. Players will be able to face off in teams of 4 while creating their very own Spy or Merc according to their playstyles via thorough customization elements. The original Classic Spies vs. Mercs experience also makes its long awaited comeback for the fans.<br>- COOP: Co-Op is back and bigger than ever with 14 maps &amp; 4 mission types. While you play you also earn in-game currency and unlock additional weapons or gadgets via specialized missions assigned by Grim, Briggs, Charlie and Kobin.</li></ul>",
+  "images": [
+    {
+      "url": "http://localhost:4000/public/uploads/36d873cd-7ddf-4b25-8c9e-30d6749081dc.jpg",
+      "_id": {
+        "$oid": "666d5a0f1b7c4a87ce077e17"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/b84392f8-c04d-46dd-af00-c873dee045e8.jpg",
+      "_id": {
+        "$oid": "666d5a0f1b7c4a87ce077e18"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/f98e1808-0859-41d4-81a8-88ccbc91e46d.jpg",
+      "_id": {
+        "$oid": "666d5a0f1b7c4a87ce077e19"
+      }
+    },
+    {
+      "url": "http://localhost:4000/public/uploads/e15c5f99-12d5-4f66-ad2a-389c8b7b06a6.jpg",
+      "_id": {
+        "$oid": "666d5a0f1b7c4a87ce077e1a"
+      }
+    }
+  ],
+  "review": [],
+  "status": "active",
+  "variantData": null,
+  "variantDetail": null,
+  "orders": [],
+  "ordersCount": 0,
+  "category": {
+    "$oid": "6627cbff57be892f7f368474"
+  },
+  "classify": {
+    "$oid": "662a08cf3b9a273aa89f6654"
+  },
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "routePath": null,
+  "createDate": "1718442511334",
+  "modifyDate": "1718442568650",
+  "__v": 0
+}]

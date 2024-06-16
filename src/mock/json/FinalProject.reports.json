@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "662f1c4f9cc9628912ef4753"
+  },
+  "target": {
+    "type": "Review",
+    "id": {
+      "$oid": "662ee7a7db1919477c3930eb"
+    }
+  },
+  "sender": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "reason": "okk",
+  "createDate": "1714363471261",
+  "modifyDate": "1716534967892",
+  "__v": 0,
+  "markAtRead": false
+},
+{
+  "_id": {
+    "$oid": "663a38f794b8be618ba93332"
+  },
+  "target": {
+    "type": "Product",
+    "id": {
+      "$oid": "662a11df3b9a273aa89f67c4"
+    }
+  },
+  "markAtRead": true,
+  "sender": {
+    "$oid": "6600d0d240368b9bb27ebb14"
+  },
+  "reason": "oke",
+  "createDate": "1715091703101",
+  "modifyDate": "1718377343731",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664ac29ea75e1e0b91843575"
+  },
+  "target": {
+    "type": "Review",
+    "id": {
+      "$oid": "662ee7a7db1919477c3930eb"
+    }
+  },
+  "markAtRead": false,
+  "sender": {
+    "$oid": "662b762db1d24b962c71a12d"
+  },
+  "reason": "lao",
+  "createDate": "1716175518504",
+  "modifyDate": "1718376127762",
+  "__v": 0
+}]

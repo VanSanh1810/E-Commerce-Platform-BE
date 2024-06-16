@@ -1,0 +1,144 @@
+[{
+  "_id": {
+    "$oid": "6627d17da8b9da25e1f35bb9"
+  },
+  "name": null,
+  "phone": "0",
+  "address": {
+    "province": 77,
+    "district": 747,
+    "ward": 26521,
+    "detail": "95 Lê Lợi"
+  },
+  "isHome": false,
+  "isWork": false,
+  "createDate": "1713885565149",
+  "modifyDate": "1713918476404",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66288402e578a74099259e3a"
+  },
+  "name": null,
+  "phone": "0",
+  "address": {
+    "province": 79,
+    "district": 769,
+    "ward": 26815,
+    "detail": "5 Đường số 6, Linh Chiểu"
+  },
+  "isHome": false,
+  "isWork": false,
+  "createDate": "1713931266764",
+  "modifyDate": "1713931266764",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a562b3b9a273aa89f8578"
+  },
+  "name": null,
+  "phone": "0",
+  "address": {
+    "province": 1,
+    "district": 18,
+    "ward": 556,
+    "detail": "50"
+  },
+  "isHome": false,
+  "isWork": false,
+  "createDate": "1714050603743",
+  "modifyDate": "1714050603743",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662b8f4cb1d24b962c71ad86"
+  },
+  "name": "Nguyen Van Sanh",
+  "phone": "0838464006",
+  "address": {
+    "province": 51,
+    "district": 524,
+    "ward": 21091,
+    "detail": "95 Lê  Lợi"
+  },
+  "isHome": false,
+  "isWork": true,
+  "createDate": "1714130764518",
+  "modifyDate": "1714130764518",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664e69c65afe33bf2d36c2b3"
+  },
+  "name": "sanh",
+  "phone": "0947782733",
+  "address": {
+    "province": 1,
+    "district": 2,
+    "ward": 76,
+    "detail": "123"
+  },
+  "isHome": true,
+  "isWork": false,
+  "createDate": "1716414918520",
+  "modifyDate": "1716414918520",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666714aa03c9ed1b2f51af37"
+  },
+  "name": null,
+  "phone": "0",
+  "address": {
+    "province": 79,
+    "district": 769,
+    "ward": 26794,
+    "detail": "100 Hoàng Diệu"
+  },
+  "isHome": false,
+  "isWork": false,
+  "createDate": "1718031530263",
+  "modifyDate": "1718031530263",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666714bd03c9ed1b2f51af3c"
+  },
+  "name": null,
+  "phone": "0",
+  "address": {
+    "province": 79,
+    "district": 769,
+    "ward": 26794,
+    "detail": "100 Hoàng Diệu"
+  },
+  "isHome": false,
+  "isWork": false,
+  "createDate": "1718031549565",
+  "modifyDate": "1718031549565",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666714db03c9ed1b2f51af41"
+  },
+  "name": null,
+  "phone": "0",
+  "address": {
+    "province": 79,
+    "district": 769,
+    "ward": 26794,
+    "detail": "100 Hoàng Diệu"
+  },
+  "isHome": false,
+  "isWork": false,
+  "createDate": "1718031579730",
+  "modifyDate": "1718031579730",
+  "__v": 0
+}]

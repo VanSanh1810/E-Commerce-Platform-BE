@@ -1,0 +1,132 @@
+[{
+  "_id": {
+    "$oid": "662a08cf3b9a273aa89f6654"
+  },
+  "name": "Game disk",
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "createDate": "1714030799843",
+  "modifyDate": "1714030799843",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a099b3b9a273aa89f6685"
+  },
+  "name": "Figure",
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "createDate": "1714031003521",
+  "modifyDate": "1714031013884",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a09d63b9a273aa89f669c"
+  },
+  "name": "Game console",
+  "shop": {
+    "$oid": "6627cfc1a8b9da25e1f35b94"
+  },
+  "createDate": "1714031062301",
+  "modifyDate": "1714031062301",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a289b3b9a273aa89f6e8f"
+  },
+  "name": "Shoe",
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "createDate": "1714038939418",
+  "modifyDate": "1714038939418",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a28a33b9a273aa89f6e96"
+  },
+  "name": "Backpack",
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "createDate": "1714038947643",
+  "modifyDate": "1714038947643",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a28a83b9a273aa89f6e9d"
+  },
+  "name": "Cloth",
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "createDate": "1714038952786",
+  "modifyDate": "1714038952786",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662a28b33b9a273aa89f6ea6"
+  },
+  "name": "Watch",
+  "shop": {
+    "$oid": "6627ce8457be892f7f368503"
+  },
+  "createDate": "1714038963495",
+  "modifyDate": "1714038963495",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667152503c9ed1b2f51b054"
+  },
+  "name": "Camera",
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "createDate": "1718031653468",
+  "modifyDate": "1718031653468",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667152c03c9ed1b2f51b05b"
+  },
+  "name": "Lens",
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "createDate": "1718031660984",
+  "modifyDate": "1718031660984",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667153403c9ed1b2f51b062"
+  },
+  "name": "Drone",
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "createDate": "1718031668461",
+  "modifyDate": "1718031668461",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6667154103c9ed1b2f51b069"
+  },
+  "name": "Other",
+  "shop": {
+    "$oid": "666713e303c9ed1b2f51ad1a"
+  },
+  "createDate": "1718031681321",
+  "modifyDate": "1718031681321",
+  "__v": 0
+}]
