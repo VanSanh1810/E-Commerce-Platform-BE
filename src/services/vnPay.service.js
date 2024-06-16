@@ -2,11 +2,12 @@ const crypto = require('crypto');
 const querystring = require('qs');
 const moment = require('moment'); // Thêm moment nếu bạn cần xử lý ngày giờ
 const config = require('config');
+require('dotenv').config();
 const VNPayConfig = {
-    vnp_Url: config.get('vnp_Url'),
-    vnp_ReturnUrl: config.get('vnp_ReturnUrl'), // Đổi thành URL thực tế của bạn
-    vnp_TmnCode: config.get('vnp_TmnCode'),
-    vnp_HashSecret: config.get('vnp_HashSecret'),
+    vnp_Url: process.env.VNP_URL,
+    vnp_ReturnUrl: process.env.VNP_RETURN_URL, // Đổi thành URL thực tế của bạn
+    vnp_TmnCode: process.env.VNP_TMNCODE,
+    vnp_HashSecret: process.env.VNP_HASHSECRET,
     vnp_Version: '2.1.0',
     vnp_CurrCode: 'VND',
 };

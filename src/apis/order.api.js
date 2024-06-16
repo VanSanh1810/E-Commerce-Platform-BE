@@ -1,31 +1,22 @@
-const mongoose = require('mongoose');
 const User = require('../models/user.model');
 const Shop = require('../models/shop.model');
 const Order = require('../models/order.model');
-const Add = require('../models/cart.model');
 const Address = require('../models/address.model');
 const Product = require('../models/product.model');
 const ProductSnapshot = require('../models/productSnapShot.model');
 const ShipCost = require('../models/shipCost.model');
 const { StatusCodes } = require('http-status-codes');
-const CustomError = require('../errors');
-const path = require('path');
-const fs = require('fs');
-const { format } = require('date-fns');
-const { createTokenUser, attachCookiesToResponse, checkPermissions, addTagHistory } = require('../utils');
+const { addTagHistory } = require('../utils');
 const { sortObject, generateVNPayUrl } = require('../services/vnPay.service');
 const { sendEmail } = require('../services/sendMail.service');
-let config = require('config');
 let querystring = require('qs');
 let crypto = require('crypto');
 const moment = require('moment'); // Thêm moment nếu bạn cần xử lý ngày giờ
-const httpProxy = require('http-proxy');
 const { isObjectIdOrHexString } = require('mongoose');
 const Category = require('../models/category.model');
 const Banner = require('../models/banner.model');
 const { saveNotifyToDb } = require('../utils/notification.util');
 const Cart = require('../models/cart.model');
-const proxy = httpProxy.createProxyServer();
 
 const updateProductStockWhenPlacedOrder = async (id, variant, quantity) => {
     try {
@@ -524,7 +515,7 @@ const vnpINP = async (req, res, next) => {
         delete vnp_Params['vnp_SecureHashType'];
 
         vnp_Params = sortObject(vnp_Params);
-        const secretKey = config.get('vnp_HashSecret');
+        const secretKey = process.env.VNP_HASHSECRET;
         const signData = querystring.stringify(vnp_Params, { encode: false });
         const hmac = crypto.createHmac('sha512', secretKey);
         const checkSum = hmac.update(Buffer.from(signData, 'utf-8')).digest('hex');
