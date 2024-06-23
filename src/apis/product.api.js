@@ -179,6 +179,9 @@ const getAllProducts = async (req, res) => {
         const getAllRelatedCategory = async (rootCate) => {
             let listRelatedCategory = [];
             const recursiveAtion = async (cateId) => {
+                if (!cateId || !isObjectIdOrHexString(cateId)) {
+                    return;
+                }
                 const cate = await Category.findById(cateId);
                 if (!cate) return;
                 listRelatedCategory.push(cate.id);
@@ -193,7 +196,7 @@ const getAllProducts = async (req, res) => {
         };
         ///
 
-        if (productQuery?.category) {
+        if (productQuery?.category && isObjectIdOrHexString(productQuery.category)) {
             const relateCate = await getAllRelatedCategory(productQuery.category);
             // console.log(relateCate);
             const filteredProducts = products.filter((product) => relateCate.includes(product.category.id));

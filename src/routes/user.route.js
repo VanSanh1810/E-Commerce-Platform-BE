@@ -6,6 +6,8 @@ const { authenticateUser, authorizePermissions } = require('../middlewares/authe
 
 const userApi = require('../apis/user.api');
 
+route.post('/verifyEmail', authenticateUser, userApi.verifyEmail);
+
 route.patch('/updateUserPassword', authenticateUser, userApi.updateUserPassword);
 
 route.get('/:id', authenticateUser, userApi.getUser);

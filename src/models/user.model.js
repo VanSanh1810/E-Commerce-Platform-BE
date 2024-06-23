@@ -26,6 +26,11 @@ const UserSchema = new mongoose.Schema({
             message: 'Please provide valid email',
         },
     },
+    isVerified: {
+        type: Boolean,
+        required: true,
+        default: false,
+    },
     avatar: imageSchema,
     password: {
         type: String,

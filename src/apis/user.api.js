@@ -1,3 +1,4 @@
+require('dotenv').config();
 const User = require('../models/user.model');
 const Cart = require('../models/cart.model');
 const { StatusCodes } = require('http-status-codes');
@@ -7,6 +8,8 @@ const fs = require('fs');
 const { format } = require('date-fns');
 const { createTokenUser, attachCookiesToResponse, checkPermissions } = require('../utils');
 const { isObjectIdOrHexString } = require('mongoose');
+const nodemailer = require('nodemailer');
+const jwt = require('jsonwebtoken');
 
 //** ======================== Update user password ========================
 const updateUserPassword = async (req, res) => {
@@ -39,7 +42,7 @@ const updateUserData = async (req, res) => {
         if (!user) {
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'No user found' });
         }
-        user.email = req.body.email;
+        // user.email = req.body.email;
         user.name = req.body.name;
         await user.save();
         return res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Account updated' } });
@@ -125,9 +128,72 @@ const getAllUsers = async (req, res) => {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: 'error', data: err });
     }
 };
+
+const verifyEmail = async (req, res) => {
+    try {
+        const user = await User.findOne({ _id: req.user.userId });
+        if (!user) {
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+                status: 'error',
+                data: { message: 'No user found !' },
+            });
+        }
+        if (user.isVerified) {
+            return res.status(StatusCodes.OK).json({
+                status: 'ok',
+                data: { message: 'Email already verified !' },
+            });
+        }
+
+        const createJWT = ({ payload }) => {
+            const token = jwt.sign(payload, process.env.JWT_SECRET, {
+                expiresIn: '5m',
+            });
+            return token;
+        };
+        //
+        const token = createJWT({ payload: { userId: user.id } });
+        //
+        const url = `http://localhost:4000/verifyEmail/?token=${token}`;
+        //
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            host: 'smtp.gmail.com',
+            port: 587,
+            secure: false, // true for 465, false for other ports
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASSWORD,
+            },
+        });
+        //
+        const mailConfig = {
+            from: {
+                name: 'Newpee',
+                address: process.env.SMTP_USER,
+            },
+            to: [user.email],
+            subject: 'Email Verification',
+            text: 'Van sanh',
+            html: `<p>Verify link</p><a href='${url}'>Click here to verify your email</a>`,
+        };
+        await transporter.sendMail(mailConfig);
+        return res.status(StatusCodes.OK).json({
+            status: 'success',
+            data: { message: 'Mail sended' },
+        });
+    } catch (err) {
+        console.log(err);
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+            status: 'error',
+            data: { message: err },
+        });
+    }
+};
 module.exports = {
     updateUserPassword,
     getUser,
     updateUserData,
     getAllUsers,
+    verifyEmail,
 };

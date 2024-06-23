@@ -28,6 +28,7 @@ const orderSchema = new mongoose.Schema({
     },
     email: {
         type: String,
+        required: true,
     },
     paymentMethod: { type: Boolean, default: true },
     status: {
@@ -35,6 +36,7 @@ const orderSchema = new mongoose.Schema({
         enum: ['Pending', 'Fail', 'Confirmed', 'Shipped', 'Delivered', 'Done', 'Cancel'],
         default: 'Pending',
     }, // You can have various status like 'Pending', 'Shipped', 'Delivered', etc.
+    isConfirmed: { type: Boolean },
     onlPayStatus: { type: String, enum: ['Pending', 'Fail', 'Confirmed', 'None'], default: 'None' },
     paymentUrl: { type: String, default: '' },
     createDate: {

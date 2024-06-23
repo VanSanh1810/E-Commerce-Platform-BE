@@ -94,6 +94,12 @@ const login = async (req, res) => {
         const sourcePort = req.headers.origin.split(':')[2]; // Lấy phần tử thứ 2 sau dấu ':'
         if (sourcePort === '3006') {
             _isAdminPage = true;
+            if (!user.isVerified) {
+                return res.status(StatusCodes.UNAUTHORIZED).json({
+                    status: 'error',
+                    data: { message: 'Your email is not verify !' },
+                });
+            }
         } else {
             // Nếu role khác 'vendor', chỉ lấy sản phẩm có status là 'active'
             _isAdminPage === false;

@@ -15,11 +15,14 @@ const notifyRoute = require('./notification.route');
 const resetPassRoute = require('./resetPass.route');
 const conversationRoute = require('./conversation.route');
 const shipCostRoute = require('./shipCost.route');
+const transactionRoute = require('./transaction.route');
 const { trackingOrder } = require('../controllers/order.controller');
 const socketService = require('../services/socket.service');
 const { saveNotifyToDb } = require('../utils/notification.util');
 const Product = require('../models/product.model');
 const Category = require('../models/category.model');
+const { isTokenValid } = require('../utils');
+const userModel = require('../models/user.model');
 
 function route(app) {
     app.use('/api/auth', authRouter);
@@ -40,6 +43,24 @@ function route(app) {
     app.use('/resetPassword', resetPassRoute);
     app.use('/api/conversation', conversationRoute);
     app.use('/api/shipCost', shipCostRoute);
+    app.use('/api/transaction', transactionRoute);
+    //
+    app.get('/verifyEmail', async (req, res) => {
+        const { token } = req.query;
+        try {
+            const decodedToken = await isTokenValid({ token: token });
+            const user = await userModel.findById(decodedToken.userId);
+            if (!user) {
+                console.log('User not found');
+            }
+            user.isVerified = true;
+            await user.save();
+            console.log(decodedToken);
+            return res.render('verifyEmail', { token: token });
+        } catch (e) {
+            return res.render('verifyEmail', { expried: true });
+        }
+    });
     //
     app.get('/test', async (req, res) => {
         await saveNotifyToDb(['6600d0d240368b9bb27ebb14'], {

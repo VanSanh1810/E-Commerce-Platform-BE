@@ -17,6 +17,7 @@ const Category = require('../models/category.model');
 const Banner = require('../models/banner.model');
 const { saveNotifyToDb } = require('../utils/notification.util');
 const Cart = require('../models/cart.model');
+const Transaction = require('../models/transaction.model');
 
 const updateProductStockWhenPlacedOrder = async (id, variant, quantity) => {
     try {
@@ -117,15 +118,15 @@ const placeOrder = async (req, res, next) => {
             } else {
                 // new address
                 const newAddressData = { ...bodyData.address.data };
-                orderAddressData.email = bodyData.address.email;
+                orderAddressData.email = newAddressData.email;
                 orderAddressData.phone = newAddressData.phone;
                 orderAddressData.province = newAddressData.province;
                 orderAddressData.district = newAddressData.district;
                 orderAddressData.ward = newAddressData.ward;
                 orderAddressData.detail = newAddressData.detail;
                 orderAddressData.name = newAddressData.name;
-                orderAddressData.isWork = newAddressData.isWork;
-                orderAddressData.isHome = newAddressData.isHome;
+                orderAddressData.isWork = !!newAddressData.isWork;
+                orderAddressData.isHome = !!newAddressData.isHome;
             }
             // create order for each shop
             const paymentDataToProcess = [];
@@ -247,10 +248,22 @@ const placeOrder = async (req, res, next) => {
                 const sCost = await ShipCost.find();
                 if (shopAddress.address.province === parseInt(orderAddressData.province)) {
                     order.shippingCost = sCost[0].inShipCost;
-                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + sCost[0].inShipCost });
+                    paymentDataToProcess.push({
+                        orderId: order._id,
+                        code: order.code,
+                        email: order.email,
+                        phone: order.phoneNumber,
+                        price: totalPrice + sCost[0].inShipCost,
+                    });
                 } else {
                     order.shippingCost = sCost[0].outShipCost;
-                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + sCost[0].outShipCost });
+                    paymentDataToProcess.push({
+                        orderId: order._id,
+                        code: order.code,
+                        email: order.email,
+                        phone: order.phoneNumber,
+                        price: totalPrice + sCost[0].outShipCost,
+                    });
                 }
                 //
                 await order.save();
@@ -264,12 +277,25 @@ const placeOrder = async (req, res, next) => {
                 sendEmail(order.email, order._id);
                 // payment
                 if (!bodyData.paymentMethod) {
+                    //create transaction
+                    const transaction = new Transaction();
+                    transaction.stringyData = JSON.stringify([
+                        {
+                            orderId: order._id,
+                            code: order.code,
+                            email: order.email,
+                            phone: order.phoneNumber,
+                            price: totalPrice + order.shippingCost,
+                        },
+                    ]);
+                    await transaction.save();
+                    // create VNPay url
                     let date = new Date();
                     let createDate = moment(date).format('YYYYMMDDHHmmss'); // Sử dụng thư viện date-fns hoặc tương tự để định dạng ngày
                     const paymentData = {
                         amount: totalPrice + order.shippingCost, // Tổng số tiền của đơn hàng
-                        orderId: JSON.stringify([{ orderId: order._id, price: totalPrice + order.shippingCost }]), // ID của đơn hàng mới tạo
-                        description: 'Thanh toan cho ma GD:' + order._id, // Mô tả đơn hàng
+                        orderId: transaction.id, // ID của đơn hàng mới tạo
+                        description: 'Thanh toan cho ma GD: ' + transaction.id, // Mô tả đơn hàng
                         ipAddress: req.ip, // IP của khách hàng đặt hàng
                         createDate: createDate, // Ngày giờ tạo đơn hàng theo định dạng VNPay
                     };
@@ -285,15 +311,18 @@ const placeOrder = async (req, res, next) => {
                     (accumulator, currentValue) => accumulator + currentValue.price,
                     0,
                 );
-                const description = paymentDataToProcess.map((paymentData) => {
-                    return paymentData.orderId + ' ';
-                });
+
+                //create total transaction
+                const transaction = new Transaction();
+                transaction.stringyData = JSON.stringify([...paymentDataToProcess]);
+                await transaction.save();
+
                 let date = new Date();
                 let createDate = moment(date).format('YYYYMMDDHHmmss'); // Sử dụng thư viện date-fns hoặc tương tự để định dạng ngày
                 const paymentData = {
                     amount: allOrderPrice, // Tổng số tiền của đơn hàng
-                    orderId: JSON.stringify([...paymentDataToProcess]), // ID của đơn hàng mới tạo
-                    description: 'Thanh toan cho ma GD:' + description, // Mô tả đơn hàng
+                    orderId: transaction.id, // ID của đơn hàng mới tạo
+                    description: 'Thanh toan cho ma GD:' + transaction.id, // Mô tả đơn hàng
                     ipAddress: req.ip, // IP của khách hàng đặt hàng
                     createDate: createDate, // Ngày giờ tạo đơn hàng theo định dạng VNPay
                 };
@@ -301,9 +330,7 @@ const placeOrder = async (req, res, next) => {
                 const redirectUrl = generateVNPayUrl(paymentData);
                 return res.status(StatusCodes.OK).json({ status: 'success', url: redirectUrl });
             }
-            ////////////////////////////////
-            // removeFromCartAfterPlaceOrder(bodyData.itemData, req.user?.userId);
-            //
+
             return res.status(StatusCodes.OK).json({ status: 'success', data: { msg: 'Order created' } });
         } catch (err) {
             console.log(err);
@@ -324,8 +351,8 @@ const placeOrder = async (req, res, next) => {
                 orderAddressData.ward = newAddressData.ward;
                 orderAddressData.detail = newAddressData.detail;
                 orderAddressData.name = newAddressData.name;
-                orderAddressData.isWork = newAddressData.isWork;
-                orderAddressData.isHome = newAddressData.isHome;
+                orderAddressData.isWork = !!newAddressData.isWork;
+                orderAddressData.isHome = !!newAddressData.isHome;
             } else {
                 return res.status(StatusCodes.NOT_ACCEPTABLE).json({ status: 'success', data: { err: 'Unexpected error' } });
             }
@@ -444,10 +471,22 @@ const placeOrder = async (req, res, next) => {
                 const sCost = await ShipCost.find();
                 if (shopAddress.address.province === parseInt(orderAddressData.province)) {
                     order.shippingCost = sCost[0].inShipCost;
-                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + sCost[0].inShipCost });
+                    paymentDataToProcess.push({
+                        orderId: order._id,
+                        code: order.code,
+                        email: order.email,
+                        phone: order.phoneNumber,
+                        price: totalPrice + sCost[0].inShipCost,
+                    });
                 } else {
                     order.shippingCost = sCost[0].outShipCost;
-                    paymentDataToProcess.push({ orderId: order._id, price: totalPrice + sCost[0].outShipCost });
+                    paymentDataToProcess.push({
+                        orderId: order._id,
+                        code: order.code,
+                        email: order.email,
+                        phone: order.phoneNumber,
+                        price: totalPrice + sCost[0].outShipCost,
+                    });
                 }
                 //
                 await order.save();
@@ -461,12 +500,25 @@ const placeOrder = async (req, res, next) => {
                 sendEmail(order.email, order._id);
                 // payment
                 if (!bodyData.paymentMethod) {
+                    //create transaction
+                    const transaction = new Transaction();
+                    transaction.stringyData = JSON.stringify([
+                        {
+                            orderId: order._id,
+                            code: order.code,
+                            email: order.email,
+                            phone: order.phoneNumber,
+                            price: totalPrice + order.shippingCost,
+                        },
+                    ]);
+                    await transaction.save();
+                    // create VNPay url
                     let date = new Date();
                     let createDate = moment(date).format('YYYYMMDDHHmmss'); // Sử dụng thư viện date-fns hoặc tương tự để định dạng ngày
                     const paymentData = {
                         amount: totalPrice, // Tổng số tiền của đơn hàng
-                        orderId: JSON.stringify([{ orderId: order._id, price: totalPrice + order.shippingCost }]), // ID của đơn hàng mới tạo
-                        description: 'Thanh toan cho ma GD:' + order._id, // Mô tả đơn hàng
+                        orderId: transaction.id, // ID của đơn hàng mới tạo
+                        description: 'Thanh toan cho ma GD:' + transaction.id, // Mô tả đơn hàng
                         ipAddress: req.ip, // IP của khách hàng đặt hàng
                         createDate: createDate, // Ngày giờ tạo đơn hàng theo định dạng VNPay
                     };
@@ -482,15 +534,17 @@ const placeOrder = async (req, res, next) => {
                     (accumulator, currentValue) => accumulator + currentValue.price,
                     0,
                 );
-                const description = paymentDataToProcess.map((paymentData) => {
-                    return paymentData.orderId + ' ';
-                });
+                //create total transaction
+                const transaction = new Transaction();
+                transaction.stringyData = JSON.stringify([...paymentDataToProcess]);
+                await transaction.save();
+
                 let date = new Date();
                 let createDate = moment(date).format('YYYYMMDDHHmmss'); // Sử dụng thư viện date-fns hoặc tương tự để định dạng ngày
                 const paymentData = {
                     amount: allOrderPrice, // Tổng số tiền của đơn hàng
-                    orderId: JSON.stringify([...paymentDataToProcess]), // ID của đơn hàng mới tạo
-                    description: 'Thanh toan cho ma GD:' + description, // Mô tả đơn hàng
+                    orderId: transaction.id, // ID của đơn hàng mới tạo
+                    description: 'Thanh toan cho ma GD:' + transaction.id, // Mô tả đơn hàng
                     ipAddress: req.ip, // IP của khách hàng đặt hàng
                     createDate: createDate, // Ngày giờ tạo đơn hàng theo định dạng VNPay
                 };
@@ -521,11 +575,15 @@ const vnpINP = async (req, res, next) => {
         const checkSum = hmac.update(Buffer.from(signData, 'utf-8')).digest('hex');
         console.log('Calculated checkSum:', checkSum); // In giá trị checkSum đã tính
         console.log('Received secureHash:', secureHash);
+        //
         if (secureHash === checkSum) {
-            const orderCode = vnp_Params['vnp_TxnRef'];
-            console.log(orderCode);
-            const ordersHaveProcess = JSON.parse(decodeURIComponent(orderCode));
+            const transactionId = vnp_Params['vnp_TxnRef'];
+            // console.log(orderCode);
+            const _transactionId = decodeURIComponent(transactionId);
+            const transaction = await Transaction.findById(_transactionId);
+            const ordersHaveProcess = [...JSON.parse(transaction.stringyData)];
             const resultCode = vnp_Params['vnp_ResponseCode'];
+
             // Giả định bạn đã cập nhật trạng thái trong CSDL tại đây, ví dụ: paymentStatus = '1' hoặc '2'
             if (resultCode === '00') {
                 for (let i = 0; i < ordersHaveProcess.length; i++) {
