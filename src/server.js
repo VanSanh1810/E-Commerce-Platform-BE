@@ -98,9 +98,9 @@ const start = async () => {
         // app.listen(port, () => console.log(`🚀 Server is listening on port ${port}... ${__dirname}`));
         server.listen(port, () => console.log(`🚀 Server is listening on port ${port}... ${__dirname}`));
         // Get your endpoint online
-        ngrok
-            .connect({ addr: port, authtoken_from_env: true })
-            .then((listener) => console.log(`Ingress established at: ${listener.url()}`));
+        // ngrok
+        //     .connect({ addr: port, authtoken_from_env: true })
+        //     .then((listener) => console.log(`Ingress established at: ${listener.url()}`));
     } catch (error) {
         console.log(error);
     }

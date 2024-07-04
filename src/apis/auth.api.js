@@ -61,7 +61,10 @@ const login = async (req, res) => {
         let { email, password, isAdminPage } = req.body;
 
         if (!email || !password) {
-            throw new CustomError.BadRequestError('Please provide email and password');
+            return res.status(StatusCodes.UNAUTHORIZED).json({
+                status: 'error',
+                data: { message: 'Incorrect email or password' },
+            });
         }
 
         email = email.toLowerCase();
@@ -69,7 +72,10 @@ const login = async (req, res) => {
         const user = await User.findOne({ email });
 
         if (!user) {
-            throw new CustomError.UnauthorizedError('No user found');
+            return res.status(StatusCodes.UNAUTHORIZED).json({
+                status: 'error',
+                data: { message: 'Incorrect email or password' },
+            });
         }
 
         // Check if the user is banned
