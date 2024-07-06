@@ -59,14 +59,14 @@ const getAllReports = async (req, res) => {
     try {
         let query = {};
 
-        if (reportQuery?.reportType?.trim() !== '') {
+        if (reportQuery?.reportType.trim() !== '') {
             if (reportQuery?.reportType === 'pending') {
                 query = {
-                    markAsRead: false,
+                    markAtRead: false,
                 };
             } else {
                 query = {
-                    markAsRead: true,
+                    markAtRead: true,
                 };
             }
         }
