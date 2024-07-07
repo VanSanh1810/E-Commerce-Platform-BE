@@ -1,4 +1,4 @@
-const mongose = require('mongoose');
+const mongoose = require('mongoose');
 require('dotenv').config();
 const addressData = require('../mock/json/FinalProject.addresses.json');
 const bannersData = require('../mock/json/FinalProject.banners.json');
@@ -33,22 +33,100 @@ const userModel = require('../models/user.model');
 const genMockData = async () => {
     try {
         // establish connection
-        await mongose.connect(process.env.MONGO_URL);
+        await mongoose.connect(process.env.MONGO_URL);
+        //normalization data
+
+        function convertObject(obj) {
+            if (Array.isArray(obj)) {
+                return obj.map(convertObject);
+            } else if (obj !== null && typeof obj === 'object') {
+                if (obj.$oid) {
+                    return mongoose.Types.ObjectId(obj.$oid);
+                } else if (obj.$numberLong) {
+                    return parseInt(obj.$numberLong, 10);
+                } else {
+                    const newObj = {};
+                    for (const key in obj) {
+                        newObj[key] = convertObject(obj[key]);
+                    }
+                    return newObj;
+                }
+            } else {
+                return obj;
+            }
+        }
+
+        // //** ======================== Address ========================
+        // const normalizedAddress = addressData.map((address) => {});
+
+        // //** ======================== Banner ========================
+        // const normalizedBanner = bannersData.map((banner) => {});
+
+        // //** ======================== Cart ========================
+        // const normalizedCart = cartsData.map((cart) => {});
+
+        // //** ======================== Category ========================
+        // const normalizedCategory = categoriesData.map((category) => {});
+
+        // //** ======================== Classify ========================
+        // const normalizedClassify = classifiesData.map((classify) => {});
+
+        // //** ======================== Conversation ========================
+        // const normalizedConversation = conversationsData.map((conversation) => {});
+
+        // //** ======================== Notify ========================
+        // const normalizedNotify = notifiesData.map((notify) => {});
+
+        // //** ======================== Order ========================
+        // const normalizedOrder = ordersData.map((order) => {});
+
+        // //** ======================== Product ========================
+        // const normalizedProduct = productsData.map((product) => {});
+
+        // //** ======================== ProductSnapshot ========================
+        // const normalizedProductSnapShot = productSnapShotsData.map((productSnapshot) => {});
+
+        // //** ======================== Report ========================
+        // const normalizedReport = reportsData.map((report) => {});
+
+        // //** ======================== Review ========================
+        // const normalizedReview = reviewsData.map((review) => {});
+
+        // //** ======================== Shop ========================
+        // const normalizedShop = shopsData.map((shop) => {});
+
+        // //** ======================== User ========================
+        // const normalizedUser = usersData.map((user) => {
+        //     if (user._id && user._id.$oid) {
+        //         user._id = mongose.Types.ObjectId(user._id.$oid);
+        //     }
+        //     if (user.cart && user.cart.$oid) {
+        //         user.cart = mongose.Types.ObjectId(user.cart.$oid);
+        //     }
+
+        //     if (user.shop && user.shop.$oid) {
+        //         user.shop = mongose.Types.ObjectId(user.shop.$oid);
+        //     }
+        //     return user;
+        // });
+
+        // generate data
+
         Promise.all([
-            addressModel.insertMany(addressData),
-            Banner.insertMany(bannersData),
-            Cart.insertMany(cartsData),
-            Category.insertMany(categoriesData),
-            Classify.insertMany(classifiesData),
-            Conversation.insertMany(conversationsData),
-            Notify.insertMany(notifiesData),
-            Order.insertMany(ordersData),
-            Product.insertMany(productsData),
-            ProductSnapshot.insertMany(productSnapShotsData),
-            Report.insertMany(reportsData),
-            reviewModel.insertMany(reviewsData),
-            Shop.insertMany(shopsData),
-            userModel.insertMany(usersData),
+            addressModel.insertMany(convertObject(addressData)),
+            Banner.insertMany(convertObject(bannersData)),
+            Cart.insertMany(convertObject(cartsData)),
+            Category.insertMany(convertObject(categoriesData)),
+            Classify.insertMany(convertObject(classifiesData)),
+            Conversation.insertMany(convertObject(conversationsData)),
+            Notify.insertMany(convertObject(notifiesData)),
+            Order.insertMany(convertObject(ordersData)),
+            Product.insertMany(convertObject(productsData)),
+            ProductSnapshot.insertMany(convertObject(productSnapShotsData)),
+            Report.insertMany(convertObject(reportsData)),
+            reviewModel.insertMany(convertObject(reviewsData)),
+            Shop.insertMany(convertObject(shopsData)),
+            userModel.insertMany(convertObject(usersData)),
         ])
             .then((res) => {
                 console.log('Data created successfully ! ');
