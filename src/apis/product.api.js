@@ -798,7 +798,9 @@ const relatedProducts = async (req, res) => {
                     { category: { $in: allCateInTree } }, // Tìm các sản phẩm có category thuộc allCateInTree
                     { tag: { $regex: tags.join('|') } }, // Tìm các sản phẩm có tag tương tự với list tags
                 ],
-            });
+            })
+                .populate({ path: 'shop', select: 'name' })
+                .populate({ path: 'category', select: 'name' });
             return products;
         } catch (error) {
             console.error('Error finding products:', error);
@@ -906,7 +908,9 @@ const recomendProduct = async (req, res) => {
                     $or: [
                         { tag: { $regex: namesArray.join('|') } }, // Tìm các sản phẩm có tag tương tự với list tags
                     ],
-                });
+                })
+                    .populate({ path: 'shop', select: 'name' })
+                    .populate({ path: 'category', select: 'name' });
                 return products;
             } catch (error) {
                 console.error('Error finding products:', error);

@@ -7,6 +7,7 @@ const orderApi = require('../apis/order.api');
 route.get('/vnpay_ipn', orderApi.vnpINP);
 route.post('/placeOrder', authenticateUser2, orderApi.placeOrder);
 route.post('/tracking', orderApi.trackingOrder);
+route.post('/validateProduct', orderApi.validateProduct);
 
 route.get('/:orderId', authenticateUser, orderApi.getSingleOrder);
 route.post('/:orderId', authenticateUser2, orderApi.updateOrderStatus);

@@ -6,7 +6,7 @@ const Product = require('../models/product.model');
 const ProductSnapshot = require('../models/productSnapShot.model');
 const ShipCost = require('../models/shipCost.model');
 const { StatusCodes } = require('http-status-codes');
-const { addTagHistory } = require('../utils');
+const { addTagHistory, arraysAreEqual } = require('../utils');
 const { sortObject, generateVNPayUrl } = require('../services/vnPay.service');
 const { sendEmail } = require('../services/sendMail.service');
 let querystring = require('qs');
@@ -851,6 +851,107 @@ const trackingOrder = async (req, res) => {
     }
 };
 
+// ** ===================  VALIDATE PRODUCT BEFORE CHECKOUT  ===================
+const validateProduct = async (req, res) => {
+    try {
+        const { data } = req.body;
+        const validateSingleProduct = async (_id, _variant, _quantity, _price) => {
+            // 0 : discount change, 1: stock dont have enough, 2: product dont exits, -1 : validate success
+            const product = await Product.findById(_id);
+            if (!product) {
+                return { code: 2, proIndex: _id + _variant.join() };
+            }
+
+            // validate variant
+            if (
+                (product.variantData && _variant && _variant.length > 0) ||
+                (!product.variantData && _variant && _variant.length <= 0)
+            ) {
+                if (product.variantData) {
+                    for (let i = 0; i < _variant.length; i++) {
+                        const index = product.variantData[i].data.findIndex((v) => v._id === _variant[i]);
+                        if (index === -1) {
+                            return { code: 2, proIndex: _id + _variant.join() };
+                        }
+                    }
+                }
+            } else {
+                return { code: 2, proIndex: _id + _variant.join() };
+            }
+
+            // validate quantity and price
+            if (product.variantData) {
+                const pathIndex = product.routePath.findIndex((data) => arraysAreEqual(data.path, _variant));
+                if (pathIndex === -1) {
+                    return { code: 2, proIndex: _id + _variant.join() };
+                }
+                if (_quantity > product.routePath[pathIndex].detail.stock) {
+                    return { code: 1, proIndex: _id + _variant.join() };
+                }
+                const price =
+                    product.routePath[pathIndex].detail.disPrice &&
+                    product.routePath[pathIndex].detail.disPrice < product.routePath[pathIndex].detail.price
+                        ? product.routePath[pathIndex].detail.disPrice
+                        : product.routePath[pathIndex].detail.price;
+                let serverPrice = 0;
+                const voucherData = await vouchersChecker(product.id);
+                serverPrice = voucherData?.discount > 0 ? calculateVoucherPrice(price, { ...voucherData }) : price;
+                //
+                console.log(parseFloat(serverPrice.toFixed(2)));
+                console.log(parseFloat(_price.toFixed(2)));
+                if (serverPrice && parseFloat(serverPrice.toFixed(2)) === parseFloat(_price / _quantity.toFixed(2))) {
+                    return { code: -1, proIndex: _id + _variant.join() };
+                } else {
+                    return { code: 0, proIndex: _id + _variant.join() };
+                }
+            } else {
+                if (_quantity > product.stock) {
+                    return { code: 1, proIndex: _id + _variant.join() };
+                }
+                const price =
+                    product.discountPrice && product.discountPrice < product.price ? product.discountPrice : product.price;
+                let serverPrice = 0;
+                const voucherData = await vouchersChecker(product.id);
+                serverPrice = voucherData?.discount > 0 ? calculateVoucherPrice(price, { ...voucherData }) : price;
+                //
+                console.log(parseFloat(serverPrice.toFixed(2)));
+                console.log(parseFloat(_price.toFixed(2)));
+                if (serverPrice && parseFloat(serverPrice.toFixed(2)) === parseFloat(_price / _quantity.toFixed(2))) {
+                    return { code: -1, proIndex: _id + _variant.join() };
+                } else {
+                    return { code: 0, proIndex: _id + _variant.join() };
+                }
+            }
+        };
+        const listProductSelected = [...JSON.parse(data)];
+        for (let i = 0; i < listProductSelected.length; i++) {
+            let result = await validateSingleProduct(
+                listProductSelected[i]._id,
+                listProductSelected[i].variant,
+                listProductSelected[i].quantity,
+                listProductSelected[i].price,
+            );
+            if (result.code !== -1) {
+                if (result.code === 0) {
+                    return res.status(StatusCodes.OK).json({ status: 'Validate fail', message: 'Discount changed !', code: 0 });
+                }
+                if (result.code === 1) {
+                    return res
+                        .status(StatusCodes.OK)
+                        .json({ status: 'Validate fail', message: 'Stock dont have enough items !', code: 1 });
+                }
+                if (result.code === 2) {
+                    return res.status(StatusCodes.OK).json({ status: 'Validate fail', message: 'Product dont exist !', code: 2 });
+                }
+            }
+        }
+        return res.status(StatusCodes.OK).json({ status: 'Validate success', message: 'All product is up to date', code: -1 });
+    } catch (e) {
+        console.log(e);
+        return res.status(StatusCodes.BAD_REQUEST).json({ status: 'error', message: 'Missing aggument !' });
+    }
+};
+
 ////////////////////////////////////////////////////////////////
 const vouchersChecker = async (product) => {
     const _product = await Product.findById(product);
@@ -879,9 +980,12 @@ const vouchersChecker = async (product) => {
     };
     //
     const listBanner = await Banner.find();
-    let discount;
-    let maxValue;
+    let discount = null;
+    let maxValue = null;
     for (let i = 0; i < listBanner.length; i++) {
+        if (listBanner[i].startDate > new Date().getTime() || listBanner[i].endDate < new Date().getTime()) {
+            continue;
+        }
         const cateChild = await getAllRelatedCategory(listBanner[i].category);
         if (cateChild.includes(category.id)) {
             discount = listBanner[i].discount;
@@ -892,14 +996,20 @@ const vouchersChecker = async (product) => {
     return { discount: discount, maxValue: maxValue };
 };
 
-const calculateVoucherPrice = (price, voucherData) => {
+const calculateVoucherPrice = (price, voucherData, quantity) => {
     // console.log(typeof price);
+    let _quantity;
+    if (!quantity || quantity === 0) {
+        _quantity = 1;
+    } else {
+        _quantity = quantity;
+    }
     if (typeof price === 'number') {
-        const discountAmount = (parseFloat(price) / 100) * parseFloat(voucherData.discount);
+        const discountAmount = (parseFloat(price) / _quantity / 100) * parseFloat(voucherData.discount);
         if (discountAmount <= parseFloat(voucherData.maxValue)) {
-            return parseFloat(price) - discountAmount;
+            return parseFloat(price) - discountAmount * _quantity;
         } else {
-            return parseFloat(price) - parseFloat(voucherData.maxValue);
+            return parseFloat(price) - parseFloat(voucherData.maxValue) * _quantity;
         }
     }
 };
@@ -911,4 +1021,5 @@ module.exports = {
     getSingleOrder,
     updateOrderStatus,
     trackingOrder,
+    validateProduct,
 };
