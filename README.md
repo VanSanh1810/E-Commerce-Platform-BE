@@ -1,7 +1,7 @@
 
 # Ecomerce platform API
 
-This is a API service for client UI in this [repo](https://gitlab.com/kltl-ute/242k/02-fe.git).
+This is a API service for client UI in this [repo](https://github.com/VanSanh1810/E-Commerce-Platform-FE).
 
 
 ## Tech Stack
@@ -73,7 +73,7 @@ src
 ```bash
   npm run devStart
 ```
-> Also run the UI source [here](https://gitlab.com/kltl-ute/242k/02-fe.git).
+> Also run the UI source [here](https://github.com/VanSanh1810/E-Commerce-Platform-FE).
 
 ## Authors
 
